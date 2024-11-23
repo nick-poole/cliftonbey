@@ -41,12 +41,49 @@ const swiperServices = new Swiper('.services__swiper', {
 	loop: true,
 	grabCursor: true,
 	spaceBetween: 24,
-	slidesPerView: 'auto',
+	slidesPerView: '1',
 
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+
+	// Additional Swiper settings
+	autoplay: {
+		delay: 8000,
+		disableOnInteraction: false,
+	},
+	effect: 'slide', // 'slide', 'fade', 'cube', 'coverflow', 'flip'
+	speed: 500,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+		draggable: true,
+	},
+	mousewheel: {
+		invert: false,
+	},
+	keyboard: {
+		enabled: true,
+		onlyInViewport: true,
+	},
+	// breakpoints: {
+	// 	640: {
+	// 		slidesPerView: 1,
+	// 		spaceBetween: 20,
+	// 	},
+	// 	768: {
+	// 		slidesPerView: 2,
+	// 		spaceBetween: 30,
+	// 	},
+	// 	1024: {
+	// 		slidesPerView: 3,
+	// 		spaceBetween: 40,
+	// 	},
+	// },
 });
 
 /*=============== SHOW SCROLL UP ===============*/

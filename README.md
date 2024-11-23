@@ -18,9 +18,16 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 11/23/24
 
+feat: add services section with detailed descriptions
+
+- Created "Our Services" section to showcase Clifton Bey's offerings.
+- Added five service cards: Classic Haircuts, Modern Fades, Beard Sculpting, Straight Razor Shaves, and Kids’ Haircuts.
+- Included detailed descriptions to highlight expertise and client benefits.
+
 INIT Commit
 
-Carry over from alhakeems. Project direction changes due to client circumstances. BEGIN cliftonbey.com
+- Carry over from alhakeems. Project direction changes due to client circumstances.
+- BEGIN cliftonbey.com
 
 ---
 
