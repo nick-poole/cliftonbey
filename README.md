@@ -18,6 +18,12 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 11/23/24
 
+feat: add contact section and footer
+
+- Created "Contact" section with H1, H2, and call-to-action for client inquiries and bookings.
+- Added footer to include site navigation, branding, and contact details.
+- Enhanced site accessibility and user engagement with clear contact options.
+
 feat: add portfolio section with client haircut gallery
 
 - Created "Portfolio" section to showcase Clifton Bey's previous client haircuts.
