@@ -433,14 +433,15 @@ img {
 .services__card {
 	width: 260px;
 	background-color: var(--container-color);
-	border: 2px solid var(--gray-border);
+	/* border: 2px solid var(--gray-border); */
+	border-color: var(--first-color);
 	padding: 1rem 1rem 0 1rem;
 	transition: border-color 0.4s;
 }
-
+/* 
 .services__card:hover {
 	border-color: var(--first-color);
-}
+} */
 
 /* .services__icon {
 	width: 70px;
@@ -526,6 +527,10 @@ img {
 
 .projects__card:hover {
 	border-color: var(--first-color);
+}
+
+.projects__img {
+	width: 350px;
 }
 
 .projects__data {

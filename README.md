@@ -18,6 +18,12 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 11/23/24
 
+feat: add portfolio section with client haircut gallery
+
+- Created "Portfolio" section to showcase Clifton Bey's previous client haircuts.
+- Added all portfolio images to highlight Cliff's expertise and style transformations.
+- Included section heading, subheading, and description for context.
+
 feat: add services section with detailed descriptions
 
 - Created "Our Services" section to showcase Clifton Bey's offerings.
