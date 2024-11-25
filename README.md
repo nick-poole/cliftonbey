@@ -16,6 +16,14 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+11/24/24
+
+feat: create cranial prosthesis page with hero banner and article content
+
+- Designed hero banner with background positioning and absolute positioning for h1 and h2 within the hgroup.
+- Added initial styles for the article section.
+- Included half of the cranial prosthesis content to start building out the page.
+
 11/23/24
 
 feat: add contact section and footer
