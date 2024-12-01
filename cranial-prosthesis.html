@@ -19,6 +19,14 @@
 			integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer" />
+
+		<!--=============== BOOTSTRAP ===============-->
+		<!-- <link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous" /> -->
+
 		<!--=============== CSS ===============-->
 		<link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -80,8 +88,9 @@
 					<h2 class="subheading">Cranial Prosthetic Specialist</h2>
 				</hgroup>
 			</div>
-			<div class="container">
-				<article id="cranialArticle">
+
+			<article id="cranialArticle">
+				<div class="container">
 					<section class="article__section">
 						<h2>What is Cranial Prosthesis?</h2>
 
@@ -103,7 +112,7 @@
 					<section class="article__section">
 						<h2>Who Can Benefit from Cranial Prosthesis?</h2>
 						<p>Cranial prostheses are ideal for individuals experiencing hair loss due to:</p>
-						<ul class="list">
+						<ul class="list grid cranial__list-grid">
 							<li class="list__item">
 								<i class="ri-checkbox-circle-line"></i>
 								<span>
@@ -142,54 +151,55 @@
 							personalized solution tailored to your needs.
 						</p>
 					</section>
-					<section class="article__section black__section">
-						<div class="clearfix">
-							<img src="/assets/images/julian-myles.jpg" class="cranial__portrait" alt="" />
-							<h2>The Cranial Prosthesis Process</h2>
-							<p>
-								Clifton Bey is a certified cranial prosthesis specialist dedicated to providing
-								compassionate care and exceptional results. Here’s how the process works:
-							</p>
-							<ol>
-								<li>
-									<b>Consultation</b>
-									<br />
-									The journey begins with a
-									<b>private consultation</b>
-									where Cliff assesses your scalp condition and discusses your goals. During this
-									session, he’ll take precise measurements of your head to ensure a perfect fit.
-								</li>
+				</div>
+				<section class="article__section black__section">
+					<div class="clearfix shove-right">
+						<img src="/assets/images/julian-myles.jpg" class="cranial__portrait float-end" alt="" />
+						<h2>The Process</h2>
+						<p>
+							Clifton Bey is a certified cranial prosthesis specialist dedicated to providing
+							compassionate care and exceptional results. Here’s how the process works:
+						</p>
+						<ol>
+							<li>
+								<b>Consultation</b>
+								<br />
+								The journey begins with a
+								<b>private consultation</b>
+								where Cliff assesses your scalp condition and discusses your goals. During this session,
+								he’ll take precise measurements of your head to ensure a perfect fit.
+							</li>
 
-								<li>
-									<b>Custom Design</b>
-									<br />
-									Based on your preferences, Cliff will work with you to select the
-									<b>texture, color, and style</b>
-									of your cranial prosthesis. Each piece is designed to look natural and blend
-									seamlessly with your features.
-								</li>
+							<li>
+								<b>Custom Design</b>
+								<br />
+								Based on your preferences, Cliff will work with you to select the
+								<b>texture, color, and style</b>
+								of your cranial prosthesis. Each piece is designed to look natural and blend seamlessly
+								with your features.
+							</li>
 
-								<li>
-									<b>Creation and Fitting</b>
-									<br />
-									Using the measurements and design preferences, the cranial prosthesis is crafted to
-									exact specifications. Once complete, Cliff ensures a perfect fit by adjusting the
-									prosthesis as needed.
-								</li>
+							<li>
+								<b>Creation and Fitting</b>
+								<br />
+								Using the measurements and design preferences, the cranial prosthesis is crafted to
+								exact specifications. Once complete, Cliff ensures a perfect fit by adjusting the
+								prosthesis as needed.
+							</li>
 
-								<li>
-									<b>Styling and Care Guidance</b>
-									<br />
-									After the fitting, Cliff will style your prosthesis to match your desired look and
-									provide detailed instructions on how to maintain it, ensuring longevity and ease of
-									use.
-								</li>
-							</ol>
-						</div>
-					</section>
+							<li>
+								<b>Styling and Care Guidance</b>
+								<br />
+								After the fitting, Cliff will style your prosthesis to match your desired look and
+								provide detailed instructions on how to maintain it, ensuring longevity and ease of use.
+							</li>
+						</ol>
+					</div>
+				</section>
+				<div class="container">
 					<section class="article__section">
 						<h2>Why Choose Clifton Bey?</h2>
-						<ul class="list">
+						<ul class="list grid cranial__list-grid">
 							<li class="list__item">
 								<i class="ri-checkbox-circle-line"></i>
 								<span>
@@ -235,8 +245,11 @@
 							us today to schedule a consultation and begin your journey to a renewed sense of self.
 						</p>
 					</section>
-				</article>
-			</div>
+					<div class="home__buttons">
+						<a href="/contact.html" class="button article__button">Get in Touch</a>
+					</div>
+				</div>
+			</article>
 		</main>
 		<!--========== FOOTER ==========-->
 		<footer class="footer">
