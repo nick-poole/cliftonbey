@@ -9,17 +9,23 @@
 
 	/*========== Colors ==========*/
 	/*Color mode HSL(hue, saturation, lightness)*/
-	--first-color: hsl(18, 95%, 55%);
+	/* --first-color: hsl(18, 95%, 55%); */
+	--first-color: #ba5c12;
 	--second-color: hsl(42, 98%, 52%);
-	--first-gradient: linear-gradient(90deg, hsl(18, 95%, 55%), hsl(18, 98%, 64%));
+	/* --first-gradient: linear-gradient(90deg, hsl(18, 95%, 55%), hsl(18, 98%, 64%)); */
+	/* --first-gradient: #c9a227; */
+	--first-gradient: hsl(50, 70%, 40%);
 	--title-color: hsl(255, 12%, 12%);
 	--text-color: hsl(225, 12%, 24%);
 	--text-color-light: hsl(255, 4%, 70%);
-	--body-color: hsl(0, 0%, 100%);
+	--body-color: hsl(28, 59%, 95%);
+
 	--container-color: hsl(0, 0%, 100%);
 	--white-color: hsl(0, 0%, 100%);
-	--black-color: hsl(255, 20%, 10%);
-	--gray-border: hsl(255, 6%, 90%);
+	/* --black-color: hsl(255, 20%, 10%); */
+	/* --black-color: hsl(353, 47%, 11%); */
+	--black-color: hsl(0, 100%, 2%);
+	)--gray-border: hsl(255, 6%, 90%);
 	--black-border: hsl(255, 10%, 20%);
 
 	/*========== Font and typography ==========*/
@@ -272,18 +278,69 @@ img {
 	color: var(--first-color);
 }
 /*=============== HERO ===============*/
-.hero {
+#hero {
+	position: relative;
 	margin-top: 5.5rem;
-	/* background-image: url('/assets/images/snapseed_perfil.jpg'); */
+	background-image: url('/assets/images/snapseed_perfil.jpg');
 	background-size: cover;
-	background-position: center;
+	background-position-x: right;
 	background-repeat: no-repeat;
+}
+
+.hero__container {
+	position: relative;
+	row-gap: 3rem;
+	padding-block: 2.5rem 6rem;
+}
+.hero__content {
+	row-gap: 2.5rem;
+}
+.hero__data {
+	text-align: center;
+}
+
+.hero__title {
+	color: var(--white-color);
+	font-size: var(--big-font-size);
+	font-weight: var(--font-bold);
+	margin-bottom: 1rem;
+	text-align: right;
+}
+.hero__description {
+	margin-bottom: 2.5rem;
+	color: var(--white-color);
+	text-align: right;
+}
+.hero__buttons {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	gap: 1rem;
+}
+
+.hero__info {
+	display: flex;
+	justify-content: end;
+	column-gap: 4.5rem;
+}
+
+.hero__info-title {
+	color: var(--second-color);
+	font-size: var(--big-font-size);
+	font-weight: var(--font-bold);
+	margin-bottom: 0.5rem;
+}
+
+.hero__info-description {
+	font-size: var(--small-font-size);
+	color: var(--white-color);
 }
 
 /*=============== HOME ===============*/
 .home {
 	position: relative;
 	background-color: var(--black-color);
+	display: none;
 }
 
 .home__container {

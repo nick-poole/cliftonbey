@@ -16,6 +16,14 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+12/9/24
+
+feat: implement black and gold color scheme and activate hero section
+
+- Experimented with a black and gold color scheme for a bold, premium aesthetic.
+- Activated the hero section with a banner image as the background.
+- Aligned hero section text to the right for a dynamic and visually appealing layout.
+
 11//30/24
 
 feat: improve cranial prosthesis page with responsive grid and enhanced styling
