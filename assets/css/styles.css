@@ -9,24 +9,30 @@
 
 	/*========== Colors ==========*/
 	/*Color mode HSL(hue, saturation, lightness)*/
-	/* --first-color: hsl(18, 95%, 55%); */
-	--first-color: #ba5c12;
+
+	--first-color: hsl(0, 55%, 48%);
 	--second-color: hsl(42, 98%, 52%);
-	/* --first-gradient: linear-gradient(90deg, hsl(18, 95%, 55%), hsl(18, 98%, 64%)); */
-	/* --first-gradient: #c9a227; */
-	--first-gradient: hsl(50, 70%, 40%);
-	--title-color: hsl(255, 12%, 12%);
+	/* --first-gradient: linear-gradient(90deg, hsl(204, 93%, 11%), hsl(0, 55%, 48%)); */
+	--first-gradient: hsl(0, 55%, 48%);
+
+	/* --title-color: hsl(255, 12%, 12%); */
+	--title-color: hsl(204, 93%, 11%);
 	--text-color: hsl(225, 12%, 24%);
 	--text-color-light: hsl(255, 4%, 70%);
-	--body-color: hsl(28, 59%, 95%);
-
+	/* --body-color: hsl(48, 90%, 92%); */
+	--body-color: hsl(84, 22%, 95%);
 	--container-color: hsl(0, 0%, 100%);
-	--white-color: hsl(0, 0%, 100%);
+	--white-color: hsl(84, 22%, 95%);
 	/* --black-color: hsl(255, 20%, 10%); */
 	/* --black-color: hsl(353, 47%, 11%); */
-	--black-color: hsl(0, 100%, 2%);
-	)--gray-border: hsl(255, 6%, 90%);
+	--black-color: #bf3737;
+	--gray-border: hsl(255, 6%, 90%);
 	--black-border: hsl(255, 10%, 20%);
+
+	--prussian-blue: hsl(204, 93%, 11%);
+	--cornsilk: hsl(48, 90%, 92%);
+	--persian-red: hsl(0, 55%, 48%);
+	--baby-powder: hsl(84, 22%, 95%);
 
 	/*========== Font and typography ==========*/
 	/*.5rem = 8px | 1rem = 16px ...*/
@@ -201,6 +207,9 @@ img {
 	align-items: center;
 	column-gap: 0.25rem;
 }
+.nav__logo img {
+	width: 100px;
+}
 
 .nav__logo span {
 	color: var(--white-color);
@@ -242,13 +251,13 @@ img {
 }
 
 .nav__link {
-	color: var(--text-color-light);
+	color: var(--baby-powder);
 	font-weight: var(--font-semi-bold);
 	transition: color 0.4s;
 }
 
 .nav__link:hover {
-	color: var(--first-color);
+	color: var(--cornsilk);
 }
 
 .nav__close {
@@ -280,7 +289,7 @@ img {
 /*=============== HERO ===============*/
 #hero {
 	position: relative;
-	margin-top: 5.5rem;
+	/* margin-top: 5.5rem; */
 	background-image: url('/assets/images/snapseed_perfil.jpg');
 	background-size: cover;
 	background-position-x: right;
@@ -457,6 +466,19 @@ img {
 .button__link:hover i {
 	transform: translateX(0.25rem);
 }
+/*
+.quad-button {
+	display: inline-block;
+	background-color: var(--title-color);
+	color: var(--white-color);
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+	transform: skew(-20deg);
+	border: none;
+	cursor: pointer;
+	font-size: ;
+} */
 
 /*=============== ABOUT ===============*/
 .about__container {
@@ -773,7 +795,7 @@ img {
 
 .black__section {
 	/* width: auto; */
-	background-color: var(--black-color);
+	background-color: var(--prussian-blue);
 	padding: 1.5rem 0 2rem 1.5rem;
 	margin: 0 0 0 3rem;
 	border: 10px solid var(--first-color);
@@ -898,7 +920,7 @@ ol li {
 	/* padding-left: -3.5rem; */
 	list-style: none;
 	counter-increment: list-counter;
-	color: var(--text-color);
+	color: var(--persian-red);
 }
 
 ol li::before {
@@ -910,7 +932,7 @@ ol li::before {
 }
 /*=============== FOOTER ===============*/
 .footer {
-	background-color: var(--black-color);
+	background-color: var(--prussian-blue);
 	color: var(--text-color-light);
 	padding-block: 3.5rem 2rem;
 }
@@ -924,6 +946,7 @@ ol li::before {
 .footer__logo {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	column-gap: 0.25rem;
 }
 
@@ -936,6 +959,11 @@ ol li::before {
 .footer__logo i {
 	color: var(--first-color);
 	font-size: 1.5rem;
+}
+
+.footer__logo img {
+	/* width: 200px; */
+	margin: -55px -55px;
 }
 
 .footer__description {
@@ -1132,13 +1160,15 @@ ol li::before {
 		align-items: center;
 		column-gap: 4rem;
 	}
-
+	.bg-header {
+		background-color: var(--cornsilk);
+	}
 	.bg-header .nav__link {
-		color: var(--text-color);
+		color: var(--prussian-blue);
 	}
 	.bg-header .active-link,
 	.bg-header .nav__link:hover {
-		color: var(--first-color);
+		color: var(--persian-red);
 	}
 	.bg-header .button,
 	.bg-header .button:hover {

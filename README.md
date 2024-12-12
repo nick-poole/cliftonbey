@@ -16,6 +16,18 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+12/12/24
+
+feat: finalize color scheme and begin logo integration
+
+- Updated color scheme to final palette:
+  --prussian-blue: hsl(204, 93%, 11%);
+  --cornsilk: hsl(48, 90%, 92%);
+  --persian-red: hsl(0, 55%, 48%);
+  --baby-powder: hsl(84, 22%, 95%).
+- Added rough drafts of emblem logo, bar logo, and logos with background removed.
+- Started implementing the new color scheme across the site for consistency.
+
 12/9/24
 
 feat: implement black and gold color scheme and activate hero section
