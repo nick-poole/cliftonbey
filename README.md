@@ -16,6 +16,14 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+12/16/24
+
+feat: add social media icons, links, and refine footer styling
+
+- Added social media icons with links to platforms (Facebook, Instagram, Threads, X, TikTok, LinkedIn).
+- Implemented responsive grid layout for footer icons.
+- Refined footer styling for spacing, alignment, and hover effects.
+
 12/12/24
 
 feat: finalize color scheme and begin logo integration
