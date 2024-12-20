@@ -16,6 +16,13 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+12/19/24
+feat: reorganize footer layout and update mobile design
+
+- Solidified the footer layout for mobile devices using a responsive grid structure.
+- Started building out the footer for larger screen sizes.
+- Replaced the footer logo with an updated version.
+
 12/16/24
 
 feat: add social media icons, links, and refine footer styling
