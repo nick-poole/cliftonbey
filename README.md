@@ -16,7 +16,15 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+12/28/24
+
+feat: enhance contact section with additional info and improved styling
+
+- Added new contact information to the contact section.
+- Introduced hover styles and icons for better user interaction.
+
 12/19/24
+
 feat: reorganize footer layout and update mobile design
 
 - Solidified the footer layout for mobile devices using a responsive grid structure.

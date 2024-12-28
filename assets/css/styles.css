@@ -191,7 +191,7 @@ img {
 	/* background-color: transparent; */
 	background-color: var(--black-color);
 	z-index: var(--z-fixed);
-	transition: background-color 0.4s;
+	transition: background-color 0.5s ease-in;
 }
 
 .nav {
@@ -214,7 +214,7 @@ img {
 .nav__logo span {
 	color: var(--white-color);
 	font-weight: var(--font-semi-bold);
-	transition: color 0.4s;
+	transition: color 0.5s ease-in;
 }
 
 .nav__logo i {
@@ -227,7 +227,7 @@ img {
 	font-size: 1.5rem;
 	color: var(--white-color);
 	cursor: pointer;
-	transition: color 0.4s;
+	transition: color 0.5s ease-in;
 }
 
 /* Navigation for mobile devices */
@@ -241,7 +241,7 @@ img {
 		height: 100%;
 		padding: 7.5rem 3.5rem 0;
 		border-left: 2px solid var(--black-border);
-		transition: right 0.4s;
+		transition: right 0.5s ease-in;
 	}
 }
 .nav__list {
@@ -253,7 +253,7 @@ img {
 .nav__link {
 	color: var(--baby-powder);
 	font-weight: var(--font-semi-bold);
-	transition: color 0.4s;
+	transition: color 0.5s ease-in;
 }
 
 .nav__link:hover {
@@ -439,7 +439,7 @@ img {
 	color: var(--white-color);
 	font-weight: var(--font-semi-bold);
 	padding: 1rem 2rem;
-	transition: box-shadow 0.4s;
+	transition: box-shadow 0.5s ease-in;
 }
 
 .button:hover {
@@ -460,7 +460,7 @@ img {
 
 .button__link i {
 	font-size: 1.5rem;
-	transition: transform 0.4s;
+	transition: transform 0.5s ease-in;
 }
 
 .button__link:hover i {
@@ -571,7 +571,7 @@ img {
 	background-color: var(--container-color);
 	border: 2px solid var(--gray-border);
 	padding: 2rem 1rem 3.5rem;
-	transition: border-color 0.4s;
+	transition: border-color 0.5s ease-in;
 }
 /*
 .services__card:hover {
@@ -657,7 +657,7 @@ img {
 	background-color: var(--container-color);
 	border: 2px solid transparent;
 	background-clip: content-box;
-	transition: border-color 0.4s;
+	transition: border-color 0.5s ease-in;
 }
 
 .projects__card:hover {
@@ -691,7 +691,7 @@ img {
 }
 
 .contact__img {
-	width: 320px;
+	width: 520px;
 	justify-self: center;
 }
 
@@ -702,22 +702,31 @@ img {
 }
 
 .contact__card {
-	background-color: var(--container-color);
-	border: 2px solid var(--gray-border);
+	background-color: var(--title-color);
+	border: solid var(--title-color);
+
 	padding: 1.5rem 1rem;
-	text-align: left;
-	transition: border-color 0.4s;
+	text-align: center;
+	transition: border-color 0.5s ease-in;
 }
 
 .contact__card:hover {
+	background-color: var(--white-color);
 	border-color: var(--first-color);
+}
+.contact__card:hover .contact__icon {
+	color: var(--title-color);
+
+	background-color: var(--first-color);
+	color: var(--white-color);
+	transition: 0.5s ease-in;
 }
 
 .contact__icon {
 	width: 48px;
 	height: 48px;
-	background-color: var(--black-color);
-	color: var(--white-color);
+	background-color: var(--white-color);
+	color: var(--first-color);
 	border-radius: 50%;
 	display: grid;
 	place-items: center;
@@ -727,27 +736,29 @@ img {
 
 .contact__title {
 	font-size: var(--h2-font-size);
+	color: var(--cornsilk);
 	margin-bottom: 0.5rem;
+	text-align: center;
+}
+.contact__card:hover .contact__title {
+	color: var(--title-color);
+	transition: 0.5s ease-in;
 }
 
 .contact__info {
 	font-style: normal;
 }
-
-.contact__social {
-	display: flex;
-	justify-content: center;
-	column-gap: 1rem;
+.contact__info.contact__address {
+	text-align: left;
 }
 
-.contact__social-link {
-	font-size: 1.5rem;
+.contact__link {
+	font-size: 1rem;
+	color: var(--white-color);
+	transition: transform 0.5s ease-in;
+}
+.contact__card:hover .contact__link {
 	color: var(--first-color);
-	transition: transform 0.4s;
-}
-
-.contact__social-link:hover {
-	transform: translateY(-0.25rem);
 }
 
 /*=============== MAPS EMBED ===============*/
@@ -934,13 +945,13 @@ ol li::before {
 .footer {
 	background-color: var(--prussian-blue);
 	color: var(--text-color-light);
-	padding-block: 3.5rem 2rem;
+	padding-block: 2rem 2rem;
 }
 
 .footer__container {
-	row-gap: 4rem;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid var(--baby-powder);
+	/* row-gap: 4rem; */
+	/* padding-bottom: 1rem; */
+	/* border-bottom: 1px solid var(--baby-powder); */
 }
 /* .footer__masthead {
 	display: flex;
@@ -1012,7 +1023,7 @@ ol li::before {
 
 .footer__link {
 	color: var(--baby-powder);
-	transition: color 0.4s;
+	transition: color 0.5s ease-in;
 }
 
 .footer__link:hover {
@@ -1025,7 +1036,6 @@ ol li::before {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
-
 	padding: 1rem;
 }
 
@@ -1033,7 +1043,7 @@ ol li::before {
 	font-size: 2.5rem;
 	color: var(--first-color);
 	margin: 0 auto;
-	transition: transform 0.4s;
+	transition: transform 0.5s ease-in;
 }
 
 .footer__social-link:hover {
@@ -1044,7 +1054,7 @@ ol li::before {
 	display: block;
 	text-align: center;
 	font-size: var(--small-font-size);
-	margin-top: 2rem;
+	margin-top: 1rem;
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -1073,7 +1083,7 @@ ol li::before {
 	padding: 6px;
 	font-size: 1.25rem;
 	z-index: var(--z-tooltip);
-	transition: bottom 0.4s, transform 0.4s;
+	transition: bottom 0.5s ease-in, transform 0.5s ease-in;
 }
 
 .scrollup:hover {
@@ -1340,9 +1350,9 @@ ol li::before {
 	.contact__data {
 		gap: 2rem;
 	}
-	.contact__card {
+	/* .contact__card {
 		border-width: 3px;
-	}
+	} */
 	.contact__title {
 		font-size: var(--h3-font-size);
 	}
