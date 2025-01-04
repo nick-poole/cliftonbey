@@ -40,6 +40,8 @@ bgHeader();
 const swiperServices = new Swiper('.services__swiper', {
 	loop: true,
 	grabCursor: true,
+	centeredSlides: true,
+	autoHeight: true,
 	spaceBetween: 24,
 	slidesPerView: '1',
 
@@ -50,7 +52,7 @@ const swiperServices = new Swiper('.services__swiper', {
 
 	// Additional Swiper settings
 	autoplay: {
-		delay: 8000,
+		delay: 89000,
 		disableOnInteraction: false,
 	},
 	effect: 'slide', // 'slide', 'fade', 'flip'
@@ -70,20 +72,24 @@ const swiperServices = new Swiper('.services__swiper', {
 		enabled: true,
 		onlyInViewport: true,
 	},
-	// breakpoints: {
-	// 	640: {
-	// 		slidesPerView: 1,
-	// 		spaceBetween: 20,
-	// 	},
-	// 	768: {
-	// 		slidesPerView: 2,
-	// 		spaceBetween: 30,
-	// 	},
-	// 	1024: {
-	// 		slidesPerView: 3,
-	// 		spaceBetween: 40,
-	// 	},
-	// },
+	breakpoints: {
+		// 450: {
+		// 	slidesPerView: 1,
+		// 	spaceBetween: 0,
+		// },
+		540: {
+			slidesPerView: 1.5,
+			spaceBetween: 0,
+		},
+		768: {
+			slidesPerView: 2.5,
+			spaceBetween: 0,
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 0,
+		},
+	},
 });
 
 /*=============== SWIPER 2 SERVICES ===============*/
