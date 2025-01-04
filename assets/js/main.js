@@ -52,8 +52,8 @@ const swiperServices = new Swiper('.services__swiper', {
 
 	// Additional Swiper settings
 	autoplay: {
-		delay: 89000,
-		disableOnInteraction: false,
+		delay: 8000,
+		disableOnInteraction: true,
 	},
 	effect: 'slide', // 'slide', 'fade', 'flip'
 	speed: 500,
@@ -65,9 +65,9 @@ const swiperServices = new Swiper('.services__swiper', {
 		el: '.swiper-scrollbar',
 		draggable: true,
 	},
-	mousewheel: {
-		invert: false,
-	},
+	// mousewheel: {
+	// 	mousewheel: false,
+	// },
 	keyboard: {
 		enabled: true,
 		onlyInViewport: true,
@@ -96,18 +96,20 @@ const swiperServices = new Swiper('.services__swiper', {
 const swiperPortfolio = new Swiper('.portfolio__swiper', {
 	loop: true,
 	grabCursor: true,
-	spaceBetween: 24,
-	slidesPerView: '3',
+	centeredSlides: true,
+	spaceBetween: 20,
+	slidesPerView: '1.25',
 
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
-
+	mousewheel: false,
 	// Additional Swiper settings
 	autoplay: {
 		delay: 2000,
 		disableOnInteraction: false,
+		reverseDirection: true,
 	},
 	effect: 'slide', // 'slide', 'fade', 'flip'
 	speed: 500,
@@ -119,27 +121,40 @@ const swiperPortfolio = new Swiper('.portfolio__swiper', {
 		el: '.swiper-scrollbar',
 		draggable: true,
 	},
-	mousewheel: {
-		invert: false,
-	},
+	// mousewheel: {
+	// 	invert: false,
+	// },
 	keyboard: {
 		enabled: true,
 		onlyInViewport: true,
 	},
-	// breakpoints: {
-	// 	640: {
-	// 		slidesPerView: 1,
-	// 		spaceBetween: 20,
-	// 	},
-	// 	768: {
-	// 		slidesPerView: 2,
-	// 		spaceBetween: 30,
-	// 	},
-	// 	1024: {
-	// 		slidesPerView: 3,
-	// 		spaceBetween: 40,
-	// 	},
-	// },
+
+	breakpoints: {
+		450: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+		540: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		650: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+		1024: {
+			slidesPerView: 5,
+			spaceBetween: 20,
+		},
+		1200: {
+			slidesPerView: 6,
+			spaceBetween: 20,
+		},
+	},
 });
 
 /*=============== SHOW SCROLL UP ===============*/

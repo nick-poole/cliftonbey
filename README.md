@@ -16,6 +16,14 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+1/4/25
+
+feat: finalize Style Showcase section with responsive Swiper updates
+
+- Updated hgroup content for improved messaging
+- Enhanced Swiper.js responsiveness for better display across devices
+- Tightened layout and design for the projects section
+
 1/3/25
 
 feat: finalize services section with responsive swiper integration
