@@ -18,6 +18,12 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 1/4/25
 
+feat: edit hero banner image and restructure hero section
+
+- Updated hero banner image for enhanced visual appeal
+- Began restructuring hero section layout for improved design
+- Adjusted styles to align with new hero section structure
+
 feat: finalize Style Showcase section with responsive Swiper updates
 
 - Updated hgroup content for improved messaging

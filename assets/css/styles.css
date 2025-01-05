@@ -292,30 +292,60 @@ img {
 /*=============== HERO ===============*/
 #hero {
 	position: relative;
-	/* margin-top: 5.5rem; */
-	background-image: url('/assets/images/snapseed_perfil.jpg');
+	margin-top: var(--header-height);
+	/* padding-top: var(--header-height); */
+	background-image: url('/assets/images/tonsorial-hero.jpg');
 	background-size: cover;
-	background-position-x: right;
+	background-position: 33% 50%;
+	/* background-origin: */
 	background-repeat: no-repeat;
+	height: 100vh;
 }
 
+/* .hero__overlay {
+	background: rgba(253, 246, 216, 0.2);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(4px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 120vh;
+	pointer-events: none;
+	z-index: 1;
+} */
+
+/* #hero {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
+} */
+
 .hero__container {
-	position: relative;
+	/* position: relative; */
+	height: 100vh;
 	row-gap: 3rem;
-	padding-block: 2.5rem 6rem;
+	/* padding-block: var(--header-height) 6rem; */
 }
 .hero__content {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	/* height: 50vh; */
 	row-gap: 2.5rem;
 }
+
 .hero__data {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+	align-items: end;
 }
 
 .hero__title {
 	color: var(--white-color);
 	font-size: var(--big-font-size);
 	font-weight: var(--font-bold);
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	text-align: right;
 }
 .hero__description {
@@ -324,10 +354,15 @@ img {
 	text-align: right;
 }
 .hero__buttons {
+	width: fit-content;
 	display: flex;
-	justify-content: end;
-	align-items: center;
+	flex-direction: column;
+
+	align-items: end;
+	text-align: right;
 	gap: 1rem;
+	background-color: var(--cornsilk);
+	padding: 0.5rem;
 }
 
 .hero__info {
@@ -1266,6 +1301,9 @@ ol li::before {
 		flex-direction: row;
 		align-items: center;
 		column-gap: 4rem;
+	}
+
+	#hero {
 	}
 	.bg-header {
 		background-color: var(--cornsilk);
