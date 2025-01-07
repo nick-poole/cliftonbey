@@ -357,7 +357,6 @@ img {
 	width: fit-content;
 	display: flex;
 	flex-direction: column;
-
 	align-items: end;
 	text-align: right;
 	gap: 1rem;
@@ -519,8 +518,11 @@ img {
 } */
 
 /*=============== ABOUT ===============*/
+.about.section {
+	padding-block: 4rem 1rem;
+}
 .about__container {
-	row-gap: 8rem;
+	row-gap: 1rem;
 }
 
 .about__data {
@@ -582,7 +584,7 @@ img {
 }
 
 .about__img-2 {
-	width: 350px;
+	width: 650px;
 	margin-right: 2.5rem;
 }
 
@@ -876,6 +878,14 @@ img {
 .black__section li {
 	color: var(--white-color);
 }
+
+.about__hero {
+	margin-top: 3.5rem;
+	height: 500px;
+	background-image: url('/assets/images/about-hero.jpg');
+	background-position: 80% 50%;
+}
+
 /*=============== CRANIAL ===============*/
 .cranial__hero {
 	height: 400px;
@@ -1183,14 +1193,14 @@ ol li::before {
 	}
 
 	.about__list {
-		grid-template-columns: repeat(1, 200px);
+		grid-template-columns: repeat(1, 300px);
 	}
 	.about__img-1 {
 		width: 150px;
 		left: 4rem;
 	}
 	.about__img-2 {
-		width: 200px;
+		width: 300px;
 		margin-right: 0;
 	}
 
@@ -1224,10 +1234,13 @@ ol li::before {
 /* For medium devices */
 @media screen and (min-width: 540px) {
 	.home__container,
-	.about__container,
 	.services__container,
 	.projects__container {
 		grid-template-columns: 360px;
+		justify-content: center;
+	}
+	.about__container {
+		grid-template-columns: 500px;
 		justify-content: center;
 	}
 	.contact__data {
@@ -1288,7 +1301,7 @@ ol li::before {
 	}
 
 	.nav {
-		height: calc(var(--header-height) + 2rem);
+		height: calc(var(--header-height) + 1rem);
 	}
 	.nav__toggle,
 	.nav__close {
@@ -1361,9 +1374,9 @@ ol li::before {
 	}
 
 	.about__container {
-		grid-template-columns: repeat(2, 480px);
-		column-gap: 9rem;
-		padding-block: 9rem 2rem;
+		grid-template-columns: 650px 420px;
+		column-gap: 3rem;
+		padding-block: 4rem 3rem;
 	}
 	.about__images {
 		order: -1;
@@ -1375,7 +1388,7 @@ ol li::before {
 		left: 11rem;
 	}
 	.about__img-2 {
-		width: 470px;
+		width: 650px;
 	}
 	.about__data,
 	.about__data :is(.section__title, .section__subtitle) {

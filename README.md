@@ -16,6 +16,15 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+1/6/25
+
+feat: update homepage about section and begin /about.html construction
+
+- Replaced image in homepage about section for better visual impact
+- Refined padding and responsive grid layout on homepage
+- Added hero banner image to /about.html
+- Began building out Clifton Bey's bio content for the about page
+
 1/4/25
 
 feat: edit hero banner image and restructure hero section
