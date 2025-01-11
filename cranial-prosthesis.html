@@ -36,25 +36,25 @@
 		<!--========== HEADER ==========-->
 		<header class="header" id="header">
 			<nav class="nav container">
-				<a href="/index.html" class="nav__logo">
+				<a href="index.html" class="nav__logo">
 					<img src="assets/images/logo/500/bar-bgrm-500x500.png" alt="" />
 				</a>
 
 				<div class="nav__menu" id="nav-menu">
 					<ul class="nav__list">
 						<li>
-							<a href="/index.html" class="nav__link active-link">Home</a>
+							<a href="index.html" class="nav__link active-link">Home</a>
 						</li>
 
 						<li>
-							<a href="/index.html#about" class="nav__link">About</a>
+							<a href="about.html" class="nav__link">About</a>
 						</li>
 						<li>
-							<a href="/index.html#services" class="nav__link">Services</a>
+							<a href="index.html#services" class="nav__link">Services</a>
 						</li>
 
 						<li>
-							<a href="/cranial-prosthesis.html" class="nav__link">Cranial Prosthesis</a>
+							<a href="cranial-prosthesis.html" class="nav__link">Cranial Prosthesis</a>
 						</li>
 
 						<li>
@@ -81,15 +81,14 @@
 			</nav>
 		</header>
 		<main id="cranial">
-			<div class="hero cranial__hero">
-				<hgroup>
-					<h1 class="heading">Clifton Bey</h1>
-					<h2 class="subheading">Cranial Prosthetic Specialist</h2>
-				</hgroup>
-			</div>
+			<div class="hero cranial__hero"></div>
 
-			<article id="cranialArticle">
+			<article id="article">
 				<div class="container">
+					<hgroup>
+						<h1 class="heading">Clifton Bey</h1>
+						<h2 class="subheading">Cranial Prosthetic Specialist</h2>
+					</hgroup>
 					<section class="article__section">
 						<h2>What is Cranial Prosthesis?</h2>
 
@@ -245,7 +244,13 @@
 						</p>
 					</section>
 					<div class="home__buttons">
-						<a href="index.html#contact" class="button article__button">Get in Touch</a>
+						<a
+							href="index.html#contact"
+							class="button article__button"
+							id="cranialButton"
+							title="Get in touch">
+							Get in Touch
+						</a>
 					</div>
 				</div>
 			</article>
