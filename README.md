@@ -16,6 +16,24 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+1/18/25
+
+feat: implement hybrid favicon setup and enhanced Web App Manifest
+
+- Added favicon.ico with 16x16, 32x32, and 96x96 resolutions for legacy and modern browser support
+- Included additional favicon PNGs in /assets/images/favicons/ (16x16, 32x32, 96x96, 192x192, 512x512)
+- Configured Web App Manifest with start_url, scope, orientation, and detailed description
+- Enhanced manifest icons with "any maskable" purpose for PWA adaptability
+- Updated HTML to reference favicon assets and manifest for seamless integration
+
+1/11/25
+
+feat: finalize hero hgroup responsiveness and complete about page content
+
+- Finalized responsive behavior and styling for hero hgroup on about and cranial prosthesis pages
+- Added floated images and filled out content for the about page
+- Styled and added button to the about page for improved user interaction
+
 1/6/25
 
 feat: update homepage about section and begin /about.html construction
