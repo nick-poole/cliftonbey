@@ -18,6 +18,8 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 1/18/25
 
+feat: added sitemap.xml and robots.txt for SEO optimization and search engine indexing. Fixed broken links across the site to enhance navigation and user experience.
+
 feat: implement hybrid favicon setup and enhanced Web App Manifest
 
 - Added favicon.ico with 16x16, 32x32, and 96x96 resolutions for legacy and modern browser support

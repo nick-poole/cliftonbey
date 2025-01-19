@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /temp/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://alhakeems.com/sitemap.xml
