@@ -4,6 +4,8 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## HTML / CSS / Javascript
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4b232e02-180e-4391-9381-e1b6b8c268f1/deploy-status)](https://app.netlify.com/sites/cliftonbey/deploys)
+
 ---
 
 -HTML
@@ -15,6 +17,10 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 ---
 
 ## Commit Log
+
+1/20/25
+
+feat: Alter nav show-menu to prussian blue & finalize width sizing
 
 1/18/25
 

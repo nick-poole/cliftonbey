@@ -253,10 +253,11 @@ img {
 		position: fixed;
 		top: 0;
 		right: -100%;
-		background-color: var(--black-color);
-		width: 80%;
-		height: 100%;
-		padding: 7.5rem 3.5rem 0;
+		/* background-color: var(--black-color); */
+		background-color: var(--title-color);
+		width: 50vw;
+		height: 100vh;
+		padding: 7.5rem 1.5rem 0 1.5rem;
 		border-left: 2px solid var(--black-border);
 		transition: right 0.5s ease-in;
 	}
