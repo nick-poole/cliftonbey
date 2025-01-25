@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "format:html": "prettier --write '*.html' && sed -i '' -E '/<(img|meta|link|input|area|br|hr|col|embed|source|track|wbr)[^>]*?>/!s/\\/>/>/g' *.html"
+  }
+}
