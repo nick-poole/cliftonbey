@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home Page -->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://alhakeems.com/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2025-05-09T00:19:54+00:00</lastmod>
+    <priority>1.00</priority>
   </url>
 
-  <!-- About Page -->
   <url>
     <loc>https://alhakeems.com/about</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-05-09T00:19:54+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 
-  <!-- Cranial Prosthesis Page -->
   <url>
     <loc>https://alhakeems.com/cranial-prosthesis</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-05-09T00:19:54+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
+
 </urlset>

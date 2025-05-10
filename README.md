@@ -18,6 +18,10 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+5/9/25
+
+chore: Cleans up broken links, changes section IDs, and adds SEO and accessibility chore elements
+
 1/25/25
 
 feat: Added meta descriptions, Open Graph, and Twitter card metadata to all pages. Completed initial W3C validation sitewide. Improved SEO and social sharing compatibility.
