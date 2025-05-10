@@ -199,6 +199,30 @@ img {
 .visually-hidden {
 	display: none;
 }
+
+.skip-link {
+	position: absolute;
+	left: -999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: 100;
+	background-color: #fff;
+	color: #000;
+	padding: 0.5rem 1rem;
+	font-weight: bold;
+	border: 2px solid #000;
+	text-decoration: none;
+}
+
+.skip-link:focus {
+	left: 1rem;
+	top: 1rem;
+	width: auto;
+	height: auto;
+}
+
 /*=============== HEADER & NAV ===============*/
 .header {
 	position: fixed;
@@ -906,7 +930,7 @@ img {
 	background-image: url('/assets/images/about-hero.jpg');
 	background-position: 80% 50%;
 }
-#bio hgroup {
+#bio .hero__headings {
 	display: none;
 }
 #bio .heading,
@@ -934,7 +958,7 @@ img {
 	background-position: 80% 50%;
 }
 
-#cranial hgroup {
+#cranial .hero__headings {
 	display: inline-block;
 	position: relative;
 	bottom: 10rem;
@@ -1310,7 +1334,7 @@ ol li::before {
 		margin-left: 3rem;
 	}
 
-	#cranial hgroup {
+	#cranial .hero__headings {
 		display: inline-block;
 		position: relative;
 		bottom: 15rem;
@@ -1353,7 +1377,7 @@ ol li::before {
 
 /* For large devices */
 @media screen and (min-width: 1000px) {
-	#bio hgroup {
+	#bio .hero__headings {
 		display: inline-block;
 		position: relative;
 		bottom: 10rem;
@@ -1514,8 +1538,8 @@ ol li::before {
 	/* .projects.section {
 		padding-block: 15rem 2rem;
 	} */
-	.projects hgroup .section__title,
-	.projects hgroup .section__subtitle {
+	.projects .hero__headings .section__title,
+	.projects .hero__headings .section__subtitle {
 		text-align: center;
 	}
 	.projects__container {

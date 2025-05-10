@@ -18,6 +18,10 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+5/10/25
+
+chore: accessibility updates, link hygiene, and HTML cleanup across site
+
 5/9/25
 
 chore: Cleans up broken links, changes section IDs, and adds SEO and accessibility chore elements
