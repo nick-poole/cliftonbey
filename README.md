@@ -18,6 +18,10 @@ Personal Barber Website for Clifton "Al-Hakeem" Bey
 
 ## Commit Log
 
+9/19/25
+
+chore: updates phone number to temporary line
+
 5/10/25
 
 chore: accessibility updates, link hygiene, and HTML cleanup across site
