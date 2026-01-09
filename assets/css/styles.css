@@ -953,7 +953,7 @@ img {
 
 /*=============== CRANIAL ===============*/
 .cranial__hero {
-	height: 400px;
+	height: 500px;
 	background-image: url('/assets/images/cranial-wall.jpg');
 	background-position: 80% 50%;
 }
@@ -961,7 +961,7 @@ img {
 #cranial .hero__headings {
 	display: inline-block;
 	position: relative;
-	bottom: 12rem;
+	bottom: 15rem;
 }
 #cranial .heading,
 #cranial .subheading {
