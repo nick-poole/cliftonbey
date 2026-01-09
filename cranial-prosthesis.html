@@ -65,54 +65,62 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Service",
-				"name": "Cranial Prosthesis",
-				"alternateName": ["Medical Wigs", "Hair Replacement for Medical Hair Loss"],
-				"description": "Custom cranial prosthesis and medical wigs for individuals experiencing hair loss due to alopecia, chemotherapy, lupus, and other medical conditions.",
-				"provider": {
-					"@type": "Person",
-					"name": "Clifton Bey",
-					"alternateName": "Al-Hakeem",
-					"jobTitle": "Certified Cranial Prosthesis Specialist",
-					"url": "https://alhakeems.com/cranial-prosthesis"
-				},
-				"areaServed": {
-					"@type": "City",
-					"name": "Owings Mills",
-					"addressRegion": "MD"
-				},
-				"serviceType": "Cranial Prosthesis",
-				"audience": {
-					"@type": "MedicalAudience",
-					"audienceType": "Patients experiencing medical hair loss"
-				},
-				"hasOfferCatalog": {
-					"@type": "OfferCatalog",
-					"name": "Cranial Prosthesis Services",
-					"itemListElement": [
-						{
-							"@type": "Offer",
-							"itemOffered": {
-								"@type": "Service",
-								"name": "Consultation and Head Measurement"
-							}
+				"@graph": [
+					{
+						"@type": ["Organization", "LocalBusiness", "BarberShop"],
+						"@id": "https://alhakeems.com/#business",
+						"name": "Al-Hakeem's Tonsorial",
+						"legalName": "Al-Hakeem's Enterprises LLC",
+						"url": "https://alhakeems.com/",
+						"telephone": "+1-347-815-5706",
+						"email": "clifton@alhakeems.com",
+						"address": {
+							"@type": "PostalAddress",
+							"streetAddress": "9419 Common Brook Rd",
+							"addressLocality": "Owings Mills",
+							"addressRegion": "MD",
+							"postalCode": "21117",
+							"addressCountry": "US"
 						},
-						{
-							"@type": "Offer",
-							"itemOffered": {
-								"@type": "Service",
-								"name": "Custom Prosthesis Design and Fitting"
+						"openingHoursSpecification": [
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+								"opens": "10:00",
+								"closes": "18:00"
+							},
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": "Sunday",
+								"opens": "10:00",
+								"closes": "15:00"
 							}
-						},
-						{
-							"@type": "Offer",
-							"itemOffered": {
-								"@type": "Service",
-								"name": "Styling and Maintenance Guidance"
-							}
-						}
-					]
-				}
+						],
+						"hasMap": "https://maps.app.goo.gl/ezBWKPNrNovZ6gPZ8",
+						"sameAs": [
+							"https://www.facebook.com/alhakeemthebarber",
+							"https://www.instagram.com/alhakeemthebarber/",
+							"https://www.threads.com/@alhakeemthebarber",
+							"https://x.com/CliffAlHakeem",
+							"https://www.tiktok.com/@starmel53",
+							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
+						]
+					},
+					{
+						"@type": "Person",
+						"@id": "https://alhakeems.com/#clifton-bey",
+						"name": "Clifton \"Al-Hakeem\" Bey",
+						"jobTitle": "Master Barber",
+						"worksFor": { "@id": "https://alhakeems.com/#business" }
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://alhakeems.com/#website",
+						"url": "https://alhakeems.com/",
+						"name": "Al-Hakeem's Tonsorial",
+						"publisher": { "@id": "https://alhakeems.com/#business" }
+					}
+				]
 			}
 		</script>
 	</head>
