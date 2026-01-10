@@ -1017,6 +1017,63 @@ img {
 #cranialButton {
 	margin-top: -10rem;
 }
+
+/*=============== BLOG ===============*/
+.blog__hero {
+	height: 500px;
+	background-position: center;
+}
+
+.blog__meta {
+	font-size: var(--small-font-size);
+	color: var(--text-color-light);
+	margin-bottom: 1.5rem;
+	font-style: italic;
+}
+
+.blog__featured-image {
+	width: 100%;
+	max-width: 800px;
+	margin: 1.5rem auto;
+	border-radius: 10px;
+	display: block;
+}
+
+.blog__caption {
+	font-size: var(--small-font-size);
+	color: var(--text-color-light);
+	text-align: center;
+	margin-top: -1rem;
+	margin-bottom: 1.5rem;
+	font-style: italic;
+}
+
+.blog__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1.5rem 0;
+}
+
+.blog__tag {
+	background-color: var(--prussian-blue);
+	color: var(--baby-powder);
+	font-size: var(--small-font-size);
+	padding: 0.25rem 0.75rem;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+}
+
+.blog__tag:hover {
+	background-color: var(--first-color);
+}
+
+.blog__cta {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
+}
+
 /*=============== ARTICLE SECTION ===============*/
 .article__section a {
 	color: var(--first-color);
