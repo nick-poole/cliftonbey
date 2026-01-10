@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<meta name="description" content="{{META_DESCRIPTION}}" />
+		<title>{{PAGE_TITLE}} | Al-Hakeem's Tonsorial</title>
+		<link rel="canonical" href="https://alhakeems.com/blog/{{SLUG}}" />
+
+		<!--=============== OpenGraph ===============-->
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="{{OG_TITLE}}" />
+		<meta property="og:description" content="{{OG_DESCRIPTION}}" />
+		<meta property="og:url" content="https://alhakeems.com/blog/{{SLUG}}" />
+		<meta property="og:image" content="https://alhakeems.com/assets/images/blog/{{OG_IMAGE}}" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="{{OG_IMAGE_ALT}}" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Al-Hakeem's Tonsorial" />
+		<meta property="article:published_time" content="{{PUBLISH_DATE}}" />
+		<meta property="article:author" content="Clifton Bey" />
+
+		<!--=============== Twitter Cards ===============-->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{{TWITTER_TITLE}}" />
+		<meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}" />
+		<meta name="twitter:image" content="https://alhakeems.com/assets/images/blog/{{TWITTER_IMAGE}}" />
+		<meta name="twitter:image:alt" content="{{TWITTER_IMAGE_ALT}}" />
+		<meta name="twitter:site" content="@CliffAlHakeem" />
+		<meta name="twitter:creator" content="@CliffAlHakeem" />
+
+		<!--=============== GLOBAL STRUCTURED DATA ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": ["Organization", "LocalBusiness", "BarberShop"],
+						"@id": "https://alhakeems.com/#business",
+						"name": "Al-Hakeem's Tonsorial",
+						"legalName": "Al-Hakeem's Enterprises LLC",
+						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland.",
+						"url": "https://alhakeems.com/",
+						"telephone": "+1-347-815-5706",
+						"email": "clifton@alhakeems.com",
+						"image": "https://alhakeems.com/assets/images/tonsorial-hero.jpg",
+						"logo": {
+							"@type": "ImageObject",
+							"url": "https://alhakeems.com/assets/images/logo/500/emblem-bgrm-500x500.png"
+						},
+						"address": {
+							"@type": "PostalAddress",
+							"streetAddress": "9419 Common Brook Rd",
+							"addressLocality": "Owings Mills",
+							"addressRegion": "MD",
+							"postalCode": "21117",
+							"addressCountry": "US"
+						},
+						"geo": {
+							"@type": "GeoCoordinates",
+							"latitude": 39.399147,
+							"longitude": -76.800557
+						},
+						"openingHoursSpecification": [
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+								"opens": "10:00",
+								"closes": "18:00"
+							},
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": "Sunday",
+								"opens": "10:00",
+								"closes": "15:00"
+							}
+						],
+						"priceRange": "$$",
+						"areaServed": [
+							{ "@type": "City", "name": "Owings Mills" },
+							{ "@type": "City", "name": "Baltimore" },
+							{ "@type": "AdministrativeArea", "name": "Baltimore County" }
+						],
+						"hasMap": "https://maps.app.goo.gl/ezBWKPNrNovZ6gPZ8",
+						"founder": { "@id": "https://alhakeems.com/#clifton-bey" },
+						"sameAs": [
+							"https://www.facebook.com/alhakeemthebarber",
+							"https://www.instagram.com/alhakeemthebarber/",
+							"https://www.threads.com/@alhakeemthebarber",
+							"https://x.com/CliffAlHakeem",
+							"https://www.tiktok.com/@starmel53",
+							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
+						],
+						"potentialAction": {
+							"@type": "ReserveAction",
+							"target": {
+								"@type": "EntryPoint",
+								"urlTemplate": "https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+							},
+							"result": {
+								"@type": "Reservation",
+								"name": "Book Appointment"
+							}
+						}
+					},
+					{
+						"@type": "Person",
+						"@id": "https://alhakeems.com/#clifton-bey",
+						"name": "Clifton \"Al-Hakeem\" Bey",
+						"jobTitle": ["Master Barber", "Certified Cranial Prosthesis Specialist"],
+						"description": "Master Barber with over 30 years of experience specializing in classic cuts, modern fades, and cranial prosthesis fitting.",
+						"knowsAbout": [
+							"Barbering",
+							"Fade Haircuts",
+							"Beard Sculpting",
+							"Straight Razor Shaves",
+							"Cranial Prosthesis",
+							"Medical Wigs"
+						],
+						"worksFor": { "@id": "https://alhakeems.com/#business" }
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://alhakeems.com/#website",
+						"url": "https://alhakeems.com/",
+						"name": "Al-Hakeem's Tonsorial",
+						"publisher": { "@id": "https://alhakeems.com/#business" }
+					}
+				]
+			}
+		</script>
+
+		<!--=============== BLOG POST STRUCTURED DATA ===============-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BlogPosting",
+				"headline": "{{HEADLINE}}",
+				"description": "{{BLOG_DESCRIPTION}}",
+				"image": "https://alhakeems.com/assets/images/blog/{{BLOG_IMAGE}}",
+				"url": "https://alhakeems.com/blog/{{SLUG}}",
+				"datePublished": "{{PUBLISH_DATE}}",
+				"dateModified": "{{MODIFIED_DATE}}",
+				"author": {
+					"@id": "https://alhakeems.com/#clifton-bey"
+				},
+				"publisher": {
+					"@id": "https://alhakeems.com/#business"
+				},
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://alhakeems.com/blog/{{SLUG}}"
+				},
+				"isPartOf": {
+					"@id": "https://alhakeems.com/#website"
+				}
+			}
+		</script>
+
+		<!--=============== FAVICON ===============-->
+		<link rel="icon" type="image/png" href="../assets/images/favicons/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="../assets/images/favicons/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="../assets/images/favicons/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/svg+xml" href="../assets/images/favicons/favicon.svg" />
+		<link rel="icon" href="../assets/images/favicons/favicon.ico" />
+		<link rel="apple-touch-icon" href="../assets/images/favicons/apple-touch-icon.png" sizes="180x180" />
+		<meta name="apple-mobile-web-app-title" content="Al-Hakeem's Tonsorial" />
+		<link rel="manifest" href="../assets/images/favicons/site.webmanifest" />
+
+		<!--=============== External Preconnects ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+		<!--=============== REMIXICONS ===============-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css"
+			integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<!--=============== CSS ===============-->
+		<link rel="stylesheet" href="../assets/css/styles.css" />
+	</head>
+	<body>
+		<!--========== SKIP TO MAIN ==========-->
+		<a href="#blog-post" class="skip-link">Skip to main content</a>
+		<!--========== HEADER ==========-->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="../index.html" class="nav__logo">
+					<span class="visually-hidden">Al-Hakeem's Tonsorial</span>
+					<img src="../assets/images/logo/500/bar-bgrm-500x500.png" alt="Al-Hakeem's Tonsorial logo" />
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<ul class="nav__list">
+						<li>
+							<a href="../index.html" class="nav__link">Home</a>
+						</li>
+						<li>
+							<a href="../about.html" class="nav__link">About</a>
+						</li>
+						<li>
+							<a href="../index.html#services" class="nav__link">Services</a>
+						</li>
+
+						<li>
+							<a href="../cranial-prosthesis.html" class="nav__link">Cranial Prosthesis</a>
+						</li>
+
+						<li>
+							<a href="../index.html#contact" title="Contact" class="nav__link button">Contact</a>
+						</li>
+					</ul>
+
+					<!-- Close button -->
+					<div class="nav__close" id="nav-close">
+						<i class="ri-close-large-line"></i>
+					</div>
+				</div>
+
+				<!-- Toggle menu -->
+				<div class="nav__toggle" id="nav-toggle">
+					<i class="ri-menu-4-line"></i>
+				</div>
+			</nav>
+		</header>
+		<!--========== MAIN ==========-->
+		<div class="hero blog__hero-1"></div>
+		<main id="blog-post">
+			<article id="article">
+				<div class="container">
+					<div class="hero__headings">
+						<h1 class="heading">{{H1_TITLE}}</h1>
+						<p class="subheading">{{SUBHEADING}}</p>
+					</div>
+					<p class="blog__meta">Published {{PUBLISH_DATE_DISPLAY}} by Clifton Bey</p>
+
+					<div class="blog__tags">
+						<span class="blog__tag">{{TAG_1}}</span>
+						<span class="blog__tag">{{TAG_2}}</span>
+					</div>
+
+					<section class="article__section">
+						<h2>{{SECTION_1_HEADING}}</h2>
+
+						<p>{{SECTION_1_PARAGRAPH_1}}</p>
+
+						<figure>
+							<img
+								src="../assets/images/blog/{{FEATURED_IMAGE}}"
+								alt="{{FEATURED_IMAGE_ALT}}"
+								class="blog__featured-image" />
+							<figcaption class="blog__caption">{{FEATURED_IMAGE_CAPTION}}</figcaption>
+						</figure>
+
+						<p>{{SECTION_1_PARAGRAPH_2}}</p>
+						<p>{{SECTION_1_PARAGRAPH_3}}</p>
+					</section>
+
+					<div class="blog__cta">
+						<a
+							href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+							class="button article__button"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Book an Appointment">
+							Book Now
+						</a>
+					</div>
+				</div>
+			</article>
+		</main>
+		<!--========== FOOTER ==========-->
+		<footer class="footer">
+			<div class="footer__container container grid">
+				<div class="footer__masthead">
+					<a href="../index.html" class="footer__logo">
+						<span class="visually-hidden">Al-Hakeem's Tonsorial Emblem</span>
+						<img
+							src="../assets/images/logo/500/emblem-bgrm-500x500.png"
+							alt="Al-Hakeem's Tonsorial emblem" />
+					</a>
+				</div>
+				<div class="footer__social-box">
+					<div class="footer__social">
+						<a
+							href="https://www.facebook.com/alhakeemthebarber?mibextid=LQQJ4d"
+							title="View Clifton's Facebook Page"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-facebook-circle-line"></i>
+						</a>
+
+						<a
+							href="https://www.instagram.com/alhakeemthebarber/"
+							title="Follow Clifton on Instagram"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-instagram-line"></i>
+						</a>
+						<a
+							href="https://www.threads.net/@alhakeemthebarber"
+							title="Follow Clifton on Threads"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-threads-line"></i>
+						</a>
+
+						<a
+							href="https://x.com/CliffAlHakeem"
+							title="Follow Clifton on X"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-twitter-x-fill"></i>
+						</a>
+
+						<a
+							href="https://www.tiktok.com/@starmel53?_t=8qpbdi9zbn8&_r=1"
+							title="Follow Clifton on TikTok"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-tiktok-fill"></i>
+						</a>
+
+						<a
+							href="https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
+							title="Follow Clifton on LinkedIn"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-linkedin-box-fill"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer__content grid">
+				<div class="footer__information">
+					<h3 class="footer__title">Information</h3>
+					<ul class="footer__list">
+						<li>
+							<i class="ri-phone-fill"></i>
+							<a
+								href="tel:347-815-5706"
+								class="footer__link"
+								title="347-815-5706"
+								aria-label="Telephone Number: 3 4 7. 8 1 5. 5 7 0 6.">
+								(347) 815-5706
+							</a>
+						</li>
+
+						<li>
+							<i class="ri-mail-send-fill"></i>
+
+							<address class="footer__email">
+								<a href="mailto:clifton@alhakeems.com" class="footer__link">clifton@alhakeems.com</a>
+							</address>
+						</li>
+						<li>
+							<i class="ri-map-pin-line"></i>
+							<address class="footer__info">
+								9419 Common Brook Rd
+								<br />
+								Owings Mills, MD 21117
+							</address>
+						</li>
+
+						<li>
+							<i class="ri-time-line"></i>
+							<address class="footer__info">
+								Monday &mdash; Saturday
+								<br />
+								10 AM &ndash; 6 PM
+								<br />
+								(Sundays until 3PM)
+							</address>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__company">
+					<h3 class="footer__title">Company</h3>
+					<ul class="footer__links">
+						<li>
+							<a href="../index.html#services" class="footer__link" title="Services">Services</a>
+						</li>
+
+						<li>
+							<a href="../index.html#projects" class="footer__link" title="Portfolio">Portfolio</a>
+						</li>
+						<li>
+							<a
+								href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="footer__link">
+								Booking
+							</a>
+						</li>
+						<li>
+							<a href="../cranial-prosthesis.html" class="footer__link">Cranial Prosthesis</a>
+						</li>
+						<li>
+							<a href="../index.html#local" class="footer__link" title="Your Local Barber in Owings Mills">
+								Your Local Barber
+							</a>
+						</li>
+						<li>
+							<a href="https://nickpoole.dev" class="footer__link" title="Webmaster">Webmaster</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<span class="footer__copy">2026 &#169; Al-Hakeem's Enterprises LLC</span>
+		</footer>
+
+		<!--========== SCROLL UP ==========-->
+		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up">
+			<i class="ri-arrow-up-line"></i>
+		</a>
+		<!--=============== SCROLLREVEAL ===============-->
+		<script src="../assets/js/scrollreveal.min.js"></script>
+
+		<!--=============== MAIN JS ===============-->
+		<script src="../assets/js/main.js"></script>
+	</body>
+</html>
