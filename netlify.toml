@@ -1,0 +1,8 @@
+[build]
+  publish = "public"
+
+# Redirect trailing slashes for cleaner URLs
+[[redirects]]
+  from = "/*/"
+  to = "/:splat"
+  status = 301
