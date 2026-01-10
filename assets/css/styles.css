@@ -1019,9 +1019,16 @@ img {
 }
 
 /*=============== BLOG ===============*/
-.blog__hero {
-	height: 500px;
-	background-position: center;
+/* .blog__hero {
+	height: 250px;
+	background-image: url('/assets/images/blog/*');
+	background-position: 50% 50%;
+} */
+
+.blog__hero-1 {
+	height: 250px;
+	background-image: url('/assets/images/blog/redd-francisco.webp');
+	background-position: 50% 50%;
 }
 
 .blog__meta {
