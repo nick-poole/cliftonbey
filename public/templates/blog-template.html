@@ -186,7 +186,7 @@
 	</head>
 	<body>
 		<!--========== SKIP TO MAIN ==========-->
-		<a href="#blog-post" class="skip-link">Skip to main content</a>
+		<a href="#{{ARTICLE_ID}}" class="skip-link">Skip to main content</a>
 		<!--========== HEADER ==========-->
 		<header class="header" id="header">
 			<nav class="nav container">
@@ -229,22 +229,22 @@
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
-		<div class="hero blog__hero-1"></div>
-		<main id="blog-post">
-			<article id="article">
+		<div class="hero {{HERO_CLASS}}"></div>
+		<main class="blog-post" id="{{ARTICLE_ID}}">
+			<article id="blog-article">
 				<div class="container">
-					<div class="hero__headings">
-						<h1 class="heading">{{H1_TITLE}}</h1>
-						<p class="subheading">{{SUBHEADING}}</p>
+					<div class="blog__headings">
+						<h1 class="blog__heading">{{H1_TITLE}}</h1>
+						<p class="blog__subheading">{{SUBHEADING}}</p>
 					</div>
-					<p class="blog__meta">Published {{PUBLISH_DATE_DISPLAY}} by Clifton Bey</p>
+					<p class="blog__meta">by <b>Clifton Bey</b><br>{{PUBLISH_DATE_DISPLAY}}</p>
 
 					<div class="blog__tags">
 						<span class="blog__tag">{{TAG_1}}</span>
 						<span class="blog__tag">{{TAG_2}}</span>
 					</div>
 
-					<section class="article__section">
+					<section class="article__section" id="{{SECTION_1_ID}}">
 						<h2>{{SECTION_1_HEADING}}</h2>
 
 						<p>{{SECTION_1_PARAGRAPH_1}}</p>
@@ -261,16 +261,19 @@
 						<p>{{SECTION_1_PARAGRAPH_3}}</p>
 					</section>
 
-					<div class="blog__cta">
+					<!-- Book Your Appointment -->
+					<section class="blog__callout" id="book-appointment">
+						<h2>Book Your Appointment</h2>
+						<p>Ready to experience the Al-Hakeem's Tonsorial difference? Book your appointment today.</p>
 						<a
 							href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-							class="button article__button"
+							class="button"
 							target="_blank"
 							rel="noopener noreferrer"
 							title="Book an Appointment">
 							Book Now
 						</a>
-					</div>
+					</section>
 				</div>
 			</article>
 		</main>
