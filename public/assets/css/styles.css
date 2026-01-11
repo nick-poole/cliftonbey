@@ -901,11 +901,11 @@ img {
 
 .heading {
 	/* font-size: var(--big-font-size); */
-	font-size: 2rem;
+	font-size: var(--h2-font-size);
 }
 .subheading {
 	/* font-size: var(--h1-font-size); */
-	font-size: var(--h2-font-size);
+	font-size: var(--h3-font-size);
 }
 
 .black__section {
@@ -1079,6 +1079,41 @@ img {
 	display: flex;
 	justify-content: center;
 	margin: 2rem 0;
+}
+
+/*=============== BLOG POST HEADINGS ===============*/
+.blog-post .article__section h2 {
+	font-size: var(--h3-font-size);
+}
+
+/*=============== BLOG CTA CALLOUT ===============*/
+.blog__callout {
+	background-color: var(--prussian-blue);
+	padding: 2rem;
+	border-radius: 8px;
+	margin: 2rem 0;
+	text-align: center;
+}
+
+.blog__callout h2,
+.blog__callout p {
+	color: var(--white-color);
+}
+
+.blog__callout h2 {
+	margin-bottom: 1rem;
+}
+
+.blog__callout .button {
+	background: var(--white-color);
+	color: var(--prussian-blue);
+	margin-top: 1rem;
+}
+
+.blog__callout .button:hover {
+	background: var(--baby-powder);
+	color: var(--prussian-blue);
+	box-shadow: 0 8px 32px hsla(0, 0%, 100%, 0.3);
 }
 
 /*=============== ARTICLE SECTION ===============*/
