@@ -883,7 +883,9 @@ img {
 }
 
 #article h2,
-#article p {
+#article p,
+#blog-article h2,
+#blog-article p {
 	margin-bottom: 1rem;
 }
 
