@@ -186,7 +186,7 @@
 	</head>
 	<body>
 		<!--========== SKIP TO MAIN ==========-->
-		<a href="#blog-post" class="skip-link">Skip to main content</a>
+		<a href="#{{ARTICLE_ID}}" class="skip-link">Skip to main content</a>
 		<!--========== HEADER ==========-->
 		<header class="header" id="header">
 			<nav class="nav container">
@@ -229,8 +229,8 @@
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
-		<div class="hero blog__hero-1"></div>
-		<main id="blog-post">
+		<div class="hero {{HERO_CLASS}}"></div>
+		<main class="blog-post" id="{{ARTICLE_ID}}">
 			<article id="article">
 				<div class="container">
 					<div class="hero__headings">
