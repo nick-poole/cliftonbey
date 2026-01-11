@@ -1045,6 +1045,10 @@ img {
 	font-size: var(--h3-font-size);
 }
 
+#blog-article {
+	margin: 1rem auto 5rem auto;
+}
+
 .blog__meta {
 	font-size: var(--small-font-size);
 	color: var(--persian-red);
@@ -1119,14 +1123,14 @@ img {
 }
 
 .blog__callout .button {
-	background: var(--white-color);
-	color: var(--prussian-blue);
+	background: var(--persian-red);
+	color: var(--white-color);
 	margin-top: 1rem;
 }
 
 .blog__callout .button:hover {
-	background: var(--baby-powder);
-	color: var(--prussian-blue);
+	background: var(--first-color);
+	color: var(--white-color);
 	box-shadow: 0 8px 32px hsla(0, 0%, 100%, 0.3);
 }
 
