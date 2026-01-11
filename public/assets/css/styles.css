@@ -1031,6 +1031,20 @@ img {
 	background-position: 50% 50%;
 }
 
+.blog__heading,
+.blog__subheading {
+	font-weight: var(--font-bold);
+	font-family: var(--second-font);
+}
+
+.blog__heading {
+	font-size: var(--h2-font-size);
+}
+
+.blog__subheading {
+	font-size: var(--h3-font-size);
+}
+
 .blog__meta {
 	font-size: var(--small-font-size);
 	color: var(--persian-red);
