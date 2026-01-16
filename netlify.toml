@@ -1,8 +1,36 @@
 [build]
   publish = "public"
 
+# Enable pretty URLs (removes .html extension)
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
 # Redirect trailing slashes for cleaner URLs
 [[redirects]]
   from = "/*/"
   to = "/:splat"
+  status = 301
+
+# Redirect .html URLs to clean URLs (301 for SEO)
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/cranial-prosthesis.html"
+  to = "/cranial-prosthesis"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*.html"
+  to = "/blog/:splat"
   status = 301
