@@ -31,6 +31,11 @@
   status = 301
 
 [[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+
+[[redirects]]
   from = "/blog/*.html"
   to = "/blog/:splat"
   status = 301
