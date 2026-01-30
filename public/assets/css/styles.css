@@ -327,7 +327,7 @@ img {
 
 /* Active link */
 .active-link {
-	color: var(--first-color);
+	color: var(--cornsilk);
 }
 /*=============== HERO ===============*/
 #hero {
@@ -1350,15 +1350,15 @@ img {
 
 /*=============== SERVICES PAGE ===============*/
 .services-page__hero {
-	height: 300px;
-	background-image: url('/assets/images/tonsorial-hero.jpg');
-	background-position: 33% 50%;
+	height: 500px;
+	background-image: url('/assets/images/blog/drink-drippy.webp');
+	background-position: 50% 50%;
 }
 
 #services-page .hero__headings {
 	display: inline-block;
 	position: relative;
-	bottom: 10rem;
+	bottom: 15rem;
 }
 #services-page .heading,
 #services-page .subheading {
@@ -1368,15 +1368,24 @@ img {
 	font-size: var(--h1-font-size);
 }
 #services-page #article {
-	margin: 3rem auto -2rem auto;
+	margin: 3rem auto -5rem auto;
 }
 #services-page .article__section {
 	position: relative;
-	bottom: 5rem;
+	bottom: 8rem;
 }
 
 .services-page__book-top {
 	margin: 1.5rem 0 0 0;
+}
+
+.services-page__book-top .button {
+	color: antiquewhite;
+	text-decoration: none;
+}
+
+.services-page__book-top .button:hover {
+	color: antiquewhite;
 }
 
 .services-page__category h2 {
@@ -1557,7 +1566,7 @@ img {
 	#services-page .hero__headings {
 		display: inline-block;
 		position: relative;
-		bottom: 12rem;
+		bottom: 17rem;
 	}
 }
 
