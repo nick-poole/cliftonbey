@@ -1416,9 +1416,10 @@ img {
 
 .services-page__item-header {
 	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-	margin-bottom: 0.5rem;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 0.5rem;
+	margin-bottom: 0.25rem;
 }
 
 .services-page__item-header h3 {
@@ -1428,12 +1429,20 @@ img {
 	margin: 0;
 }
 
+.services-page__price {
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-bold);
+	color: var(--prussian-blue);
+	white-space: nowrap;
+}
+
 .services-page__duration {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.25rem;
 	font-size: var(--small-font-size);
 	color: var(--text-color-light);
+	margin-bottom: 0.5rem;
 }
 
 .services-page__duration i {
