@@ -1413,7 +1413,7 @@ img {
 
 /*=============== SERVICES PAGE ===============*/
 .services-page__hero {
-	height: 500px;
+	height: 250px;
 	background-image: url('/assets/images/tonsorial-kit.jpg');
 	background-position: 50% 50%;
 }
@@ -1421,7 +1421,7 @@ img {
 #services-page .hero__headings {
 	display: inline-block;
 	position: relative;
-	bottom: 10rem;
+	bottom: 3rem;
 }
 #services-page .heading,
 #services-page .subheading {
@@ -1642,7 +1642,7 @@ img {
 	#services-page .hero__headings {
 		display: inline-block;
 		position: relative;
-		bottom: 10rem;
+		bottom: 3rem;
 	}
 }
 
