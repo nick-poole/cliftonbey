@@ -332,7 +332,7 @@ img {
 	position: relative;
 	margin-top: var(--header-height);
 	/* padding-top: var(--header-height); */
-	background-image: url('/assets/images/tonsorial-hero.jpg');
+	background-image: url('/assets/images/tonsorial-hero.webp');
 	background-size: cover;
 	background-position: 33% 50%;
 	/* background-origin: */
