@@ -1,7 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap'); */
-
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Fonts loaded via <link> tags in HTML <head> for better performance */
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -1413,7 +1411,7 @@ img {
 
 /*=============== SERVICES PAGE ===============*/
 .services-page__hero {
-	height: 250px;
+	height: 500px;
 	background-image: url('/assets/images/tonsorial-kit.jpg');
 	background-position: 50% 50%;
 }
@@ -1421,7 +1419,7 @@ img {
 #services-page .hero__headings {
 	display: inline-block;
 	position: relative;
-	bottom: 3rem;
+	bottom: 10rem;
 }
 #services-page .heading,
 #services-page .subheading {
@@ -1642,7 +1640,7 @@ img {
 	#services-page .hero__headings {
 		display: inline-block;
 		position: relative;
-		bottom: 3rem;
+		bottom: 10rem;
 	}
 }
 
