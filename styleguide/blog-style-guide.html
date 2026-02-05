@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex, nofollow" />
+		<title>Blog Style Guide | Al-Hakeem's Tonsorial (Internal)</title>
+
+		<!--=============== REMIXICONS ===============-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css"
+			integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<!--=============== GOOGLE FONTS ===============-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
+		<!--=============== SITE CSS ===============-->
+		<link rel="stylesheet" href="../public/assets/css/styles.css" />
+
+		<style>
+			/* Style guide specific: section labels and spacing */
+			.sg-label {
+				background: var(--prussian-blue);
+				color: var(--cornsilk);
+				font-family: var(--second-font);
+				font-size: 0.7rem;
+				font-weight: var(--font-bold);
+				text-transform: uppercase;
+				letter-spacing: 0.15em;
+				padding: 0.3rem 0.75rem;
+				border-radius: 3px;
+				display: inline-block;
+				margin-bottom: 0.75rem;
+				margin-top: 2.5rem;
+			}
+			.sg-label:first-of-type {
+				margin-top: 0;
+			}
+			.sg-divider {
+				border: none;
+				border-top: 2px dashed hsla(204, 93%, 11%, 0.15);
+				margin: 3rem 0;
+			}
+			.sg-note {
+				background: hsla(42, 98%, 52%, 0.1);
+				border-left: 3px solid var(--second-color);
+				padding: 0.75rem 1rem;
+				font-size: var(--small-font-size);
+				color: var(--text-color);
+				border-radius: 0 6px 6px 0;
+				margin: 1rem 0;
+				line-height: 1.6;
+			}
+			.sg-spec {
+				font-family: monospace;
+				font-size: 0.75rem;
+				color: var(--first-color);
+			}
+		</style>
+	</head>
+	<body>
+		<!--========== HEADER ==========-->
+		<header class="header" id="header" style="position: relative;">
+			<nav class="nav container">
+				<a href="../public/index.html" class="nav__logo">
+					<span class="visually-hidden">Al-Hakeem's Tonsorial</span>
+					<img src="../public/assets/images/logo/500/bar-bgrm-500x500.png" alt="Al-Hakeem's Tonsorial logo" />
+				</a>
+			</nav>
+		</header>
+		<!--========== HERO ==========-->
+		<div class="hero blog__hero-1"></div>
+		<!--========== MAIN ==========-->
+		<main class="blog-post" id="blog-style-guide">
+			<article id="blog-article">
+				<div class="container">
+
+					<!-- ======================================= -->
+					<!-- HERO HEADING OVERLAY                     -->
+					<!-- ======================================= -->
+					<div class="blog__headings">
+						<h1 class="blog__heading">Blog Style Guide: Lorem Ipsum Dolor Sit Amet</h1>
+						<h2 class="blog__subheading">A Subtitle That Sits Cleanly Over Any Hero Image</h2>
+					</div>
+					<p class="blog__meta">by <b>Clifton Al-Hakeem</b><br>02.05.2026</p>
+
+					<div class="blog__tags">
+						<span class="blog__tag">Style Guide</span>
+						<span class="blog__tag">Internal</span>
+					</div>
+
+					<a href="#" class="blog__back-link">
+						<i class="ri-arrow-left-line"></i> Back to Blog
+					</a>
+
+					<div class="sg-note">
+						This page demonstrates every blog component with live styling. Open in a browser alongside the CSS to test changes. This file lives outside <code>/public</code> and will not be deployed.
+					</div>
+
+					<!-- ======================================= -->
+					<!-- HEADING HIERARCHY                        -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Heading Hierarchy</span>
+
+					<section class="article__section">
+						<h2>This Is an H2 Section Heading</h2>
+						<p class="sg-spec">font-size: 1.35rem mobile &rarr; 1.65rem desktop | font-family: Kanit | weight: 600 (semi-bold)</p>
+						<p>The h2 is used for each major section of a blog post. It should be clearly larger than body text and distinctly different from h3 subheadings. Each section gets one h2 at the top.</p>
+
+						<h3>This Is an H3 Subsection Heading</h3>
+						<p class="sg-spec">font-size: 1.1rem mobile &rarr; 1.2rem desktop | font-family: Kanit | weight: 500 (medium)</p>
+						<p>The h3 is used for subsections within a section. For example, if the section is "Haircut Frequency by Style," each style (Fades, Short Cuts, etc.) gets an h3. It should be noticeably smaller than h2 but still stand out from body text.</p>
+
+						<h3>Another H3 Subsection</h3>
+						<p>Notice the spacing: h3 has more margin-top (1.5rem) to create separation from the previous paragraph, and 0.75rem margin-bottom for breathing room before its content begins.</p>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- PARAGRAPH AND BODY TEXT                  -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Paragraph &amp; Body Text</span>
+
+					<section class="article__section">
+						<h2>Body Text and Paragraph Spacing</h2>
+						<p class="sg-spec">font-size: 0.938rem mobile &rarr; 1rem desktop | font-family: Ubuntu | line-height: 1.8 | max-width: 780px container</p>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+						<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- INLINE TEXT FORMATTING                   -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Inline Text Formatting</span>
+
+					<section class="article__section">
+						<h2>Bold, Italic, Links, and Emphasis</h2>
+
+						<p>This paragraph contains <strong>bold text for emphasis</strong> and <em>italic text for softer emphasis</em>. You can also combine <strong><em>bold italic</em></strong> when something is really important.</p>
+
+						<p>Links look like this: <a href="#">read our complete guide on haircut frequency</a>. They use the brand red with underline and transition to gold on hover.</p>
+
+						<p>Use <strong>bold</strong> to highlight key takeaways within paragraphs. Use <em>italics</em> sparingly for terms, titles, or slight emphasis. Avoid underlining anything that is not a link.</p>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- UNORDERED LISTS (CHECKMARKS)             -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Unordered Lists (Checkmark Style)</span>
+
+					<section class="article__section">
+						<h2>Unordered List with Remixicon Checkmarks</h2>
+						<p class="sg-spec">Uses ri-checkbox-circle-line (\EB83) via CSS ::before | color: var(--first-color) | gap: 0.6rem</p>
+
+						<p>All blog unordered lists automatically render with the brand checkmark icon:</p>
+
+						<ul>
+							<li>Blends stay clean and smooth between visits</li>
+							<li>The haircut maintains its intended structure</li>
+							<li>Your neckline stays sharp and defined</li>
+							<li>Beard edges remain crisp and professional</li>
+							<li>Scalp health is monitored by your barber regularly</li>
+						</ul>
+
+						<h3>Short List Example</h3>
+						<ul>
+							<li>Ingrown hairs</li>
+							<li>Razor bumps</li>
+							<li>Dry scalp</li>
+						</ul>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- ORDERED LISTS                            -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Ordered Lists</span>
+
+					<section class="article__section">
+						<h2>Ordered Lists with Custom Numbering</h2>
+						<p class="sg-spec">Uses counter-reset/counter-increment | number color: var(--first-color) | weight: bold</p>
+
+						<p>When sequence matters, use an ordered list:</p>
+
+						<ol>
+							<li>Book your appointment at least a week in advance</li>
+							<li>Arrive five minutes early to discuss your goals</li>
+							<li>Communicate what you want clearly during the consultation</li>
+							<li>Trust the process and let your barber work</li>
+							<li>Schedule your next appointment before you leave the chair</li>
+						</ol>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- BLOCKQUOTE                               -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Blockquote</span>
+
+					<section class="article__section">
+						<h2>Blockquotes for Emphasis and Attribution</h2>
+						<p class="sg-spec">border-left: 4px solid var(--first-color) | background: hsla(204, 93%, 11%, 0.04) | padding: 1.25rem 1.5rem</p>
+
+						<p>Use blockquotes to highlight key wisdom, client testimonials, or important principles:</p>
+
+						<blockquote>
+							Grooming is not about fixing problems. It is about preventing them. The men who look their best are the ones who never let things get bad in the first place.
+							<cite>&mdash; Clifton Al-Hakeem Bey</cite>
+						</blockquote>
+
+						<p>Blockquotes work well for pulling out a key message that you want the reader to remember. They break the visual monotony of body text and draw the eye.</p>
+
+						<blockquote>
+							Your barber should not be a random stop when things look rough. They should be part of your routine, like your doctor or your dentist.
+						</blockquote>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- TABLE                                    -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Data Table</span>
+
+					<section class="article__section">
+						<h2>Table Component</h2>
+						<p class="sg-spec">background: var(--prussian-blue) | thead: hsla(0, 0%, 0%, 0.2) | border-radius: 8px | min-width: 480px</p>
+
+						<p>Tables should be wrapped in <code>.table-responsive</code> for horizontal scroll on mobile:</p>
+
+						<div class="table-responsive">
+							<table class="article__table">
+								<thead>
+									<tr>
+										<th>Style</th>
+										<th>Frequency</th>
+										<th>Reason</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Fades and Tapers</td>
+										<td>Every 2&ndash;3 weeks</td>
+										<td>Blend loses structure quickly</td>
+									</tr>
+									<tr>
+										<td>Short Natural Cuts</td>
+										<td>Every 3&ndash;4 weeks</td>
+										<td>Growth becomes noticeable</td>
+									</tr>
+									<tr>
+										<td>Longer Styles / Locs</td>
+										<td>Every 4&ndash;6 weeks</td>
+										<td>Edges and hairline need shaping</td>
+									</tr>
+									<tr>
+										<td>Lineups / Edge Ups</td>
+										<td>Every 1&ndash;2 weeks</td>
+										<td>Hairline grows out fast</td>
+									</tr>
+									<tr>
+										<td>Beard Lineups</td>
+										<td>Every 1&ndash;2 weeks</td>
+										<td>Edges blur without maintenance</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- FEATURED IMAGE + CAPTION                 -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Featured Image with Caption</span>
+
+					<section class="article__section">
+						<h2>Images and Captions</h2>
+						<p class="sg-spec">max-width: 800px | border-radius: 10px | caption: italic, small, centered</p>
+
+						<p>Use the figure/figcaption pattern for blog images:</p>
+
+						<figure>
+							<img
+								src="../public/assets/images/blog/redd-francisco.webp"
+								alt="Sample barbershop image for style guide"
+								class="blog__featured-image"
+								loading="lazy" />
+							<figcaption class="blog__caption">A caption describing the image above. Keep it brief and relevant.</figcaption>
+						</figure>
+
+						<p>Images should be 800 x 500px for in-article use, and 1200 x 630px for the hero/OG image. WebP format preferred.</p>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- HORIZONTAL RULE                          -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Horizontal Rule / Section Divider</span>
+
+					<section class="article__section">
+						<h2>Horizontal Rules</h2>
+						<p>Use <code>&lt;hr&gt;</code> to visually separate major topic changes within a post when a new h2 section feels too heavy:</p>
+
+						<hr />
+
+						<p>The rule above is a subtle 1px line with soft opacity, providing separation without visual weight.</p>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- CTA CALLOUT                              -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Call-to-Action Callout</span>
+
+					<section class="blog__callout">
+						<h2>Book Your Next Appointment</h2>
+						<p>Stay ahead of your grooming routine. Priority booking and membership options available.</p>
+						<a
+							href="#"
+							class="button"
+							title="Book an Appointment">
+							Book Now
+						</a>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- FAQ SECTION                              -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">FAQ Section</span>
+
+					<section class="article__section article__faq">
+						<h2>Frequently Asked Questions</h2>
+
+						<div class="faq__item">
+							<h3>How often should men get a haircut?</h3>
+							<p>Most men should get a haircut every 2 to 4 weeks. Fades and tapers need maintenance every 2 to 3 weeks. Short natural cuts hold shape for 3 to 4 weeks. Longer styles can go 4 to 6 weeks.</p>
+						</div>
+
+						<div class="faq__item">
+							<h3>Does cutting your hair make it grow faster?</h3>
+							<p>No. Hair grows from the follicle at an average rate of about half an inch per month. Regular haircuts remove damaged ends and maintain shape, but do not change the growth rate.</p>
+						</div>
+
+						<div class="faq__item">
+							<h3>How do I know when I need a haircut?</h3>
+							<p>Common signs: your fade has lost its blend, your neckline looks uneven, your lineup has grown out, or your hair takes longer to style. If you notice these, you have waited too long.</p>
+						</div>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- COMBINED COMPONENTS SAMPLE               -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Full Section Sample (All Components Together)</span>
+
+					<section class="article__section">
+						<h2>What Professional Grooming Actually Looks Like</h2>
+
+						<p>Most people think a haircut is a haircut. You sit down, the barber cuts, you leave. But professional grooming operates on a completely different level. It is a system built on consistency, documentation, and trust between the client and the barber.</p>
+
+						<blockquote>
+							The best haircuts are not accidental. They are maintained. That requires a barber who knows your hair as well as you do.
+							<cite>&mdash; Clifton Al-Hakeem Bey</cite>
+						</blockquote>
+
+						<h3>What Your Barber Tracks</h3>
+
+						<p>A professional barber does more than remember your name. They build a profile over time:</p>
+
+						<ul>
+							<li>Your preferred style and any variations you have tried</li>
+							<li>How your hair grows and in which directions</li>
+							<li>Problem areas like thinning, cowlicks, or uneven growth</li>
+							<li>Products that work for your texture and lifestyle</li>
+							<li>Seasonal adjustments to your routine</li>
+						</ul>
+
+						<h3>A Schedule That Works</h3>
+
+						<p>The simplest way to stay sharp is to set a recurring schedule. Here is a starting point:</p>
+
+						<ol>
+							<li>Decide on your style and discuss maintenance expectations</li>
+							<li>Book your first appointment and establish a baseline cut</li>
+							<li>Return in 2 to 3 weeks for your first maintenance visit</li>
+							<li>Evaluate and adjust the timing based on growth</li>
+							<li>Lock in a recurring schedule that fits your calendar</li>
+						</ol>
+
+						<div class="table-responsive">
+							<table class="article__table">
+								<thead>
+									<tr>
+										<th>Service</th>
+										<th>Frequency</th>
+										<th>Purpose</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Full Haircut</td>
+										<td>Every 2&ndash;4 weeks</td>
+										<td>Shape, blend, and structure</td>
+									</tr>
+									<tr>
+										<td>Lineup Only</td>
+										<td>Every 1&ndash;2 weeks</td>
+										<td>Crisp edges between cuts</td>
+									</tr>
+									<tr>
+										<td>Beard Trim</td>
+										<td>Every 2&ndash;3 weeks</td>
+										<td>Even growth and definition</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<p>The goal is not to be at the barbershop constantly. The goal is to never let things get to a point where your barber is correcting instead of maintaining. That distinction saves you time, money, and frustration.</p>
+
+						<hr />
+
+						<p>When you commit to a schedule, you stop thinking about when your next haircut is. It becomes automatic, and so does looking sharp.</p>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- TYPOGRAPHY QUICK REFERENCE               -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Typography Quick Reference</span>
+
+					<section class="article__section">
+						<h2>Typography Scale</h2>
+
+						<div class="table-responsive">
+							<table class="article__table">
+								<thead>
+									<tr>
+										<th>Element</th>
+										<th>Mobile</th>
+										<th>Desktop (1150px+)</th>
+										<th>Font</th>
+										<th>Weight</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>H1 (blog title)</td>
+										<td>1.75rem</td>
+										<td>2.5rem</td>
+										<td>Kanit</td>
+										<td>700 (bold)</td>
+									</tr>
+									<tr>
+										<td>H2 subtitle</td>
+										<td>1rem</td>
+										<td>1.25rem</td>
+										<td>Kanit</td>
+										<td>500 (medium)</td>
+									</tr>
+									<tr>
+										<td>H2 (section)</td>
+										<td>1.35rem</td>
+										<td>1.65rem</td>
+										<td>Kanit</td>
+										<td>600 (semi-bold)</td>
+									</tr>
+									<tr>
+										<td>H3 (subsection)</td>
+										<td>1.1rem</td>
+										<td>1.2rem</td>
+										<td>Kanit</td>
+										<td>500 (medium)</td>
+									</tr>
+									<tr>
+										<td>Body text</td>
+										<td>0.938rem</td>
+										<td>1rem</td>
+										<td>Ubuntu</td>
+										<td>400 (regular)</td>
+									</tr>
+									<tr>
+										<td>Small / meta</td>
+										<td>0.813rem</td>
+										<td>0.813rem</td>
+										<td>Ubuntu</td>
+										<td>400 (regular)</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- IMAGE SIZE REFERENCE                     -->
+					<!-- ======================================= -->
+					<section class="article__section">
+						<h2>Image Specifications</h2>
+
+						<div class="table-responsive">
+							<table class="article__table">
+								<thead>
+									<tr>
+										<th>Usage</th>
+										<th>Dimensions</th>
+										<th>Format</th>
+										<th>Notes</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Hero / OG image</td>
+										<td>1200 x 630px</td>
+										<td>WebP</td>
+										<td>Also used for social sharing</td>
+									</tr>
+									<tr>
+										<td>In-article image</td>
+										<td>800 x 500px</td>
+										<td>WebP</td>
+										<td>Use figure + figcaption</td>
+									</tr>
+									<tr>
+										<td>Blog card thumbnail</td>
+										<td>800 x 500px</td>
+										<td>WebP</td>
+										<td>Same as article images</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+				</div>
+			</article>
+		</main>
+		<!--========== FOOTER ==========-->
+		<footer class="footer" style="margin-top: 3rem;">
+			<div class="footer__container container grid">
+				<div class="footer__masthead">
+					<a href="#" class="footer__logo">
+						<span class="visually-hidden">Al-Hakeem's Tonsorial Emblem</span>
+						<img
+							src="../public/assets/images/logo/500/emblem-bgrm-500x500.png"
+							alt="Al-Hakeem's Tonsorial emblem" />
+					</a>
+				</div>
+			</div>
+			<span class="footer__copy">Blog Style Guide &mdash; Internal Use Only</span>
+		</footer>
+
+		<!--=============== MAIN JS ===============-->
+		<script src="../public/assets/js/main.js"></script>
+	</body>
+</html>
