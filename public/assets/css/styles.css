@@ -1909,20 +1909,24 @@ img {
 
 /*=============== BLOG FIGURE (centered images with captions) ===============*/
 .blog-post figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin: 1.5rem 0;
 	text-align: center;
 }
 
 .blog-post figure img {
 	display: block;
-	float: none;
-	margin-left: auto;
-	margin-right: auto;
+	float: none !important;
+	margin: 0 auto;
 	width: auto;
+	max-width: 100%;
 }
 
 .blog-post figure figcaption {
 	margin-top: 0.5rem;
+	text-align: center;
 }
 
 /*=============== BLOG CONTENT IMAGE (natural size, for non-standard dimensions) ===============*/
