@@ -1809,6 +1809,48 @@ img {
 	margin: 0 auto;
 }
 
+/*=============== BLOG ARTICLE TABLE ===============*/
+.table-responsive {
+	overflow-x: auto;
+	margin: 1.5rem 0;
+	border-radius: 8px;
+}
+
+.article__table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--prussian-blue);
+	color: var(--baby-powder);
+	border-radius: 8px;
+	overflow: hidden;
+	min-width: 480px;
+}
+
+.article__table th,
+.article__table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+	font-size: var(--small-font-size);
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.article__table thead th {
+	background-color: hsla(0, 0%, 0%, 0.2);
+	color: var(--cornsilk);
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	padding: 1rem;
+}
+
+.article__table tbody tr:hover {
+	background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.article__table tbody td:first-child {
+	font-weight: var(--font-medium);
+	color: var(--white-color);
+}
+
 /*=============== FAQ SECTION ===============*/
 .article__faq {
 	background-color: var(--container-color);
