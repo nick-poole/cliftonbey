@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--=============== PRECONNECTS (early hints) ===============-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+		<meta name="robots" content="noindex, nofollow" />
+		<title>Page Not Found | Al-Hakeem's Tonsorial</title>
+
+		<!--=============== FAVICON ===============-->
+		<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/svg+xml" href="/assets/images/favicons/favicon.svg" />
+		<link rel="icon" href="/assets/images/favicons/favicon.ico" />
+		<link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.png" sizes="180x180" />
+		<meta name="apple-mobile-web-app-title" content="Al-Hakeem's Tonsorial" />
+		<link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
+
+		<!--=============== REMIXICONS ===============-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css"
+			integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<!--=============== GOOGLE FONTS ===============-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
+		<!--=============== CSS ===============-->
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+
+		<style>
+			.error-page {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				min-height: 60vh;
+				padding: 3rem 1.5rem;
+			}
+			.error-page__code {
+				font-family: 'Kanit', sans-serif;
+				font-size: 6rem;
+				font-weight: 600;
+				line-height: 1;
+				color: var(--first-color, #c8956c);
+				margin-bottom: 0.5rem;
+			}
+			.error-page__heading {
+				font-family: 'Kanit', sans-serif;
+				font-size: 1.5rem;
+				font-weight: 500;
+				margin-bottom: 1rem;
+			}
+			.error-page__text {
+				max-width: 480px;
+				margin-bottom: 2rem;
+				color: var(--text-color-light, #999);
+			}
+			.error-page__links {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+				justify-content: center;
+			}
+			.error-page__link {
+				color: var(--first-color, #c8956c);
+				font-weight: 500;
+				transition: color 0.3s;
+			}
+			.error-page__link:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<!--========== SKIP TO MAIN ==========-->
+		<a href="#main" class="skip-link">Skip to main content</a>
+		<!--========== HEADER ==========-->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="index.html" class="nav__logo">
+					<span class="visually-hidden">Al-Hakeem's Tonsorial</span>
+					<img src="/assets/images/logo/500/bar-bgrm-500x500.png" alt="Al-Hakeem's Tonsorial logo" />
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<ul class="nav__list">
+						<li>
+							<a href="index.html" class="nav__link">Home</a>
+						</li>
+						<li>
+							<a href="about.html" class="nav__link">About</a>
+						</li>
+						<li>
+							<a href="services.html" class="nav__link">Services</a>
+						</li>
+
+						<li>
+							<a href="blog.html" class="nav__link">Blog</a>
+						</li>
+
+						<li>
+							<a href="cranial-prosthesis.html" class="nav__link">Cranial Prosthesis</a>
+						</li>
+
+						<li>
+							<a href="index.html#contact" title="Contact" class="nav__link button">
+								Contact
+							</a>
+						</li>
+					</ul>
+
+					<!-- Close button -->
+					<button class="nav__close" id="nav-close" aria-label="Close menu">
+						<i class="ri-close-large-line"></i>
+					</button>
+				</div>
+
+				<!-- Toggle menu -->
+				<button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+					<i class="ri-menu-4-line"></i>
+				</button>
+			</nav>
+		</header>
+		<!--========== MAIN ==========-->
+		<main id="main">
+			<div class="error-page container">
+				<span class="error-page__code">404</span>
+				<h1 class="error-page__heading">Page Not Found</h1>
+				<p class="error-page__text">
+					The page you're looking for doesn't exist or may have been moved. Let's get you back on track.
+				</p>
+				<div class="error-page__links">
+					<a href="/" class="button">Back to Home</a>
+					<a href="/services" class="button">View Services</a>
+					<a
+						href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button">
+						Book Now
+					</a>
+				</div>
+			</div>
+		</main>
+		<!--========== FOOTER ==========-->
+		<footer class="footer">
+			<div class="footer__container container grid">
+				<div class="footer__masthead">
+					<a href="index.html" class="footer__logo">
+						<span class="visually-hidden">Al-Hakeem's Tonsorial Emblem</span>
+						<img src="/assets/images/logo/500/emblem-bgrm-500x500.png" alt="Al-Hakeem's Tonsorial emblem" />
+					</a>
+				</div>
+				<div class="footer__social-box">
+					<div class="footer__social">
+						<a
+							href="https://www.facebook.com/alhakeemthebarber?mibextid=LQQJ4d"
+							title="View Clifton's Facebook Page"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-facebook-circle-line"></i>
+						</a>
+
+						<a
+							href="https://www.instagram.com/alhakeemthebarber/"
+							title="Follow Clifton on Instagram"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-instagram-line"></i>
+						</a>
+						<a
+							href="https://www.threads.net/@alhakeemthebarber"
+							title="Follow Clifton on Threads"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-threads-line"></i>
+						</a>
+
+						<a
+							href="https://x.com/CliffAlHakeem"
+							title="Follow Clifton on X"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-twitter-x-fill"></i>
+						</a>
+
+						<a
+							href="https://www.tiktok.com/@starmel53?_t=8qpbdi9zbn8&_r=1"
+							title="Follow Clifton on TikTok"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-tiktok-fill"></i>
+						</a>
+
+						<a
+							href="https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
+							title="Follow Clifton on LinkedIn"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link">
+							<i class="ri-linkedin-box-fill"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer__content grid">
+				<div class="footer__information">
+					<h2 class="footer__title">Information</h2>
+					<ul class="footer__list">
+						<li>
+							<i class="ri-phone-fill"></i>
+							<a
+								href="tel:347-815-5706"
+								class="footer__link"
+								title="347-815-5706"
+								aria-label="Telephone Number: 3 4 7. 8 1 5. 5 7 0 6.">
+								(347) 815-5706
+							</a>
+						</li>
+
+						<li>
+							<i class="ri-mail-send-fill"></i>
+
+							<address class="footer__email">
+								<a href="mailto:clifton@alhakeems.com" class="footer__link">clifton@alhakeems.com</a>
+							</address>
+						</li>
+						<li>
+							<i class="ri-map-pin-line"></i>
+							<address class="footer__info">
+								9419 Common Brook Rd
+								<br />
+								Owings Mills, MD 21117
+							</address>
+						</li>
+
+						<li>
+							<i class="ri-time-line"></i>
+							<address class="footer__info">
+								Monday &mdash; Saturday
+								<br />
+								10 AM &ndash; 6 PM
+								<br />
+								(Sundays until 3PM)
+							</address>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__company">
+					<h2 class="footer__title">Company</h2>
+					<ul class="footer__links">
+						<li>
+							<a href="about.html" class="footer__link" title="About">About</a>
+						</li>
+
+						<li>
+							<a href="services.html" class="footer__link" title="Services">Services</a>
+						</li>
+
+						<li>
+							<a href="blog.html" class="footer__link" title="Blog">Blog</a>
+						</li>
+						<li>
+							<a
+								href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="footer__link">
+								Booking
+							</a>
+						</li>
+						<li>
+							<a href="cranial-prosthesis.html" class="footer__link">Cranial Prosthesis</a>
+						</li>
+						<li>
+							<a href="index.html#local" class="footer__link" title="Your Local Barber in Owings Mills">
+								Your Local Barber
+							</a>
+						</li>
+						<li>
+							<a href="https://nickpoole.dev" class="footer__link" title="Webmaster">Webmaster</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<span class="footer__copy">2026 &#169; Al-Hakeem's Enterprises LLC</span>
+		</footer>
+
+		<!--========== SCROLL UP ==========-->
+		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+			<i class="ri-arrow-up-line"></i>
+		</a>
+		<!--=============== MAIN JS ===============-->
+		<script src="/assets/js/main.js" defer></script>
+	</body>
+</html>
