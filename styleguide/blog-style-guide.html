@@ -158,24 +158,29 @@
 
 					<section class="article__section">
 						<h2>Unordered List with Remixicon Checkmarks</h2>
-						<p class="sg-spec">Uses ri-checkbox-circle-line (\EB83) via CSS ::before | color: var(--first-color) | gap: 0.6rem</p>
+						<p class="sg-spec">Uses &lt;i class="ri-checkbox-circle-line" aria-hidden="true"&gt; inside each &lt;li&gt; | color: var(--first-color) | gap: 0.6rem</p>
 
-						<p>All blog unordered lists automatically render with the brand checkmark icon:</p>
+						<p>All blog unordered lists use an explicit Remixicon <code>&lt;i&gt;</code> tag as the list decoration. Include <code>aria-hidden="true"</code> on each icon since it is purely decorative:</p>
 
 						<ul>
-							<li>Blends stay clean and smooth between visits</li>
-							<li>The haircut maintains its intended structure</li>
-							<li>Your neckline stays sharp and defined</li>
-							<li>Beard edges remain crisp and professional</li>
-							<li>Scalp health is monitored by your barber regularly</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Blends stay clean and smooth between visits</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>The haircut maintains its intended structure</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Your neckline stays sharp and defined</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Beard edges remain crisp and professional</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Scalp health is monitored by your barber regularly</li>
 						</ul>
 
 						<h3>Short List Example</h3>
 						<ul>
-							<li>Ingrown hairs</li>
-							<li>Razor bumps</li>
-							<li>Dry scalp</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Ingrown hairs</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Razor bumps</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Dry scalp</li>
 						</ul>
+
+						<div class="sg-note">
+							<strong>Pattern:</strong> <code>&lt;li&gt;&lt;i class="ri-checkbox-circle-line" aria-hidden="true"&gt;&lt;/i&gt;List item text&lt;/li&gt;</code><br />
+							The <code>aria-hidden="true"</code> attribute hides the decorative icon from screen readers. CSS <code>::before</code> fallback remains for backward compatibility with older posts.
+						</div>
 					</section>
 
 					<!-- ======================================= -->
@@ -230,18 +235,19 @@
 					<span class="sg-label">Data Table</span>
 
 					<section class="article__section">
-						<h2>Table Component</h2>
-						<p class="sg-spec">background: var(--prussian-blue) | thead: hsla(0, 0%, 0%, 0.2) | border-radius: 8px | min-width: 480px</p>
+						<h2>Table: Default (Prussian Blue)</h2>
+						<p class="sg-spec">Class: .article__table | background: var(--prussian-blue) | thead: hsla(0, 0%, 0%, 0.2) | border-radius: 8px</p>
 
-						<p>Tables should be wrapped in <code>.table-responsive</code> for horizontal scroll on mobile:</p>
+						<p>Tables should be wrapped in <code>.table-responsive</code> for horizontal scroll on mobile. Always include <code>scope="col"</code> on <code>&lt;th&gt;</code> elements and a <code>&lt;caption&gt;</code> for accessibility:</p>
 
 						<div class="table-responsive">
 							<table class="article__table">
+								<caption>Grooming frequency by style type</caption>
 								<thead>
 									<tr>
-										<th>Style</th>
-										<th>Frequency</th>
-										<th>Reason</th>
+										<th scope="col">Style</th>
+										<th scope="col">Frequency</th>
+										<th scope="col">Reason</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -272,6 +278,100 @@
 									</tr>
 								</tbody>
 							</table>
+						</div>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- TABLE: SECONDARY ALTERNATE (Red Header) -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Data Table: Secondary Alternate</span>
+
+					<section class="article__section">
+						<h2>Table: Secondary Alternate (Red Header)</h2>
+						<p class="sg-spec">Class: .article__table.article__table--alt | thead: var(--persian-red) background, var(--prussian-blue) text | body: white</p>
+
+						<p>Add <code>.article__table--alt</code> alongside <code>.article__table</code> for a light table with a red header:</p>
+
+						<div class="table-responsive">
+							<table class="article__table article__table--alt">
+								<caption>Beard grooming schedule overview</caption>
+								<thead>
+									<tr>
+										<th scope="col">Service</th>
+										<th scope="col">Frequency</th>
+										<th scope="col">Purpose</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Beard Lineup</td>
+										<td>Every 1&ndash;2 weeks</td>
+										<td>Keeps cheek and jaw edges sharp</td>
+									</tr>
+									<tr>
+										<td>Beard Trim</td>
+										<td>Every 2&ndash;3 weeks</td>
+										<td>Maintains shape and even growth</td>
+									</tr>
+									<tr>
+										<td>Beard Wash &amp; Sculpt</td>
+										<td>Monthly</td>
+										<td>Cleanses skin, prevents dryness</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					<!-- ======================================= -->
+					<!-- TABLE: SKELETON (Outline Only)          -->
+					<!-- ======================================= -->
+					<hr class="sg-divider" />
+					<span class="sg-label">Data Table: Skeleton</span>
+
+					<section class="article__section">
+						<h2>Table: Skeleton (Outline Only)</h2>
+						<p class="sg-spec">Class: .article__table.article__table--skeleton | transparent background | border: 2px solid var(--prussian-blue)</p>
+
+						<p>Add <code>.article__table--skeleton</code> for a minimal outline-only table with no background fills:</p>
+
+						<div class="table-responsive">
+							<table class="article__table article__table--skeleton">
+								<caption>Seasonal grooming adjustments</caption>
+								<thead>
+									<tr>
+										<th scope="col">Season</th>
+										<th scope="col">Adjustment</th>
+										<th scope="col">Why</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Summer</td>
+										<td>Tighten schedule by half a week</td>
+										<td>Faster growth from heat and circulation</td>
+									</tr>
+									<tr>
+										<td>Winter</td>
+										<td>Maintain schedule, add moisture</td>
+										<td>Cold air dries scalp and beard</td>
+									</tr>
+									<tr>
+										<td>Spring / Fall</td>
+										<td>Standard schedule</td>
+										<td>Stable growth period</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="sg-note">
+							<strong>Table accessibility checklist:</strong><br />
+							1. Wrap in <code>&lt;div class="table-responsive"&gt;</code> for mobile scroll<br />
+							2. Add <code>scope="col"</code> to every <code>&lt;th&gt;</code> element<br />
+							3. Include a <code>&lt;caption&gt;</code> describing the table's content<br />
+							4. Use <code>.article__table</code> as the base class, then add a modifier for variants
 						</div>
 					</section>
 
@@ -377,11 +477,11 @@
 						<p>A professional barber does more than remember your name. They build a profile over time:</p>
 
 						<ul>
-							<li>Your preferred style and any variations you have tried</li>
-							<li>How your hair grows and in which directions</li>
-							<li>Problem areas like thinning, cowlicks, or uneven growth</li>
-							<li>Products that work for your texture and lifestyle</li>
-							<li>Seasonal adjustments to your routine</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Your preferred style and any variations you have tried</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>How your hair grows and in which directions</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Problem areas like thinning, cowlicks, or uneven growth</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Products that work for your texture and lifestyle</li>
+							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Seasonal adjustments to your routine</li>
 						</ul>
 
 						<h3>A Schedule That Works</h3>
@@ -398,11 +498,12 @@
 
 						<div class="table-responsive">
 							<table class="article__table">
+								<caption>Recommended grooming service frequency</caption>
 								<thead>
 									<tr>
-										<th>Service</th>
-										<th>Frequency</th>
-										<th>Purpose</th>
+										<th scope="col">Service</th>
+										<th scope="col">Frequency</th>
+										<th scope="col">Purpose</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -443,13 +544,14 @@
 
 						<div class="table-responsive">
 							<table class="article__table">
+								<caption>Blog typography scale across breakpoints</caption>
 								<thead>
 									<tr>
-										<th>Element</th>
-										<th>Mobile</th>
-										<th>Desktop (1150px+)</th>
-										<th>Font</th>
-										<th>Weight</th>
+										<th scope="col">Element</th>
+										<th scope="col">Mobile</th>
+										<th scope="col">Desktop (1150px+)</th>
+										<th scope="col">Font</th>
+										<th scope="col">Weight</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -508,12 +610,13 @@
 
 						<div class="table-responsive">
 							<table class="article__table">
+								<caption>Required image dimensions and formats for blog content</caption>
 								<thead>
 									<tr>
-										<th>Usage</th>
-										<th>Dimensions</th>
-										<th>Format</th>
-										<th>Notes</th>
+										<th scope="col">Usage</th>
+										<th scope="col">Dimensions</th>
+										<th scope="col">Format</th>
+										<th scope="col">Notes</th>
 									</tr>
 								</thead>
 								<tbody>

@@ -1909,6 +1909,28 @@ img {
 	margin: 0 auto;
 }
 
+/*=============== BLOG CONTENT IMAGE (natural size, for non-standard dimensions) ===============*/
+.blog__content-image {
+	max-width: 100%;
+	height: auto;
+	margin: 1.5rem auto;
+	border-radius: 10px;
+	display: block;
+}
+
+/*=============== BLOG LIST ICON (explicit <i> tag approach) ===============*/
+.blog-post .article__section ul li > i:first-child {
+	color: var(--first-color);
+	font-size: 1.15rem;
+	flex-shrink: 0;
+	margin-top: 0.15rem;
+}
+
+/* Hide CSS pseudo-element when explicit <i> icon is provided */
+.blog-post .article__section ul li:has(> i:first-child)::before {
+	content: none;
+}
+
 /*=============== BLOG ARTICLE TABLE ===============*/
 .table-responsive {
 	overflow-x: auto;
@@ -1949,6 +1971,71 @@ img {
 .article__table tbody td:first-child {
 	font-weight: var(--font-medium);
 	color: var(--white-color);
+}
+
+/*=============== TABLE: SECONDARY ALTERNATE (Red Header) ===============*/
+.article__table--alt {
+	background-color: var(--container-color);
+	color: var(--text-color);
+}
+
+.article__table--alt th,
+.article__table--alt td {
+	border-bottom: 1px solid var(--gray-border);
+}
+
+.article__table--alt thead th {
+	background-color: var(--persian-red);
+	color: var(--prussian-blue);
+	font-weight: var(--font-bold);
+}
+
+.article__table--alt tbody td:first-child {
+	color: var(--title-color);
+	font-weight: var(--font-medium);
+}
+
+.article__table--alt tbody tr:hover {
+	background-color: hsla(0, 55%, 48%, 0.06);
+}
+
+/*=============== TABLE: SKELETON (Outline Only) ===============*/
+.article__table--skeleton {
+	background-color: transparent;
+	color: var(--text-color);
+	border: 2px solid var(--prussian-blue);
+}
+
+.article__table--skeleton th,
+.article__table--skeleton td {
+	border: 1px solid hsla(204, 93%, 11%, 0.25);
+	color: var(--text-color);
+}
+
+.article__table--skeleton thead th {
+	background-color: transparent;
+	color: var(--prussian-blue);
+	font-weight: var(--font-bold);
+	border-bottom: 2px solid var(--prussian-blue);
+}
+
+.article__table--skeleton tbody td:first-child {
+	color: var(--title-color);
+	font-weight: var(--font-medium);
+}
+
+.article__table--skeleton tbody tr:hover {
+	background-color: hsla(204, 93%, 11%, 0.04);
+}
+
+/*=============== TABLE CAPTION (Accessibility) ===============*/
+.article__table caption {
+	caption-side: bottom;
+	font-size: var(--small-font-size);
+	color: var(--text-color-light);
+	padding: 0.75rem 0.25rem 0;
+	text-align: left;
+	font-style: italic;
 }
 
 /*=============== FAQ SECTION ===============*/
