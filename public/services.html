@@ -464,8 +464,6 @@
 			referrerpolicy="no-referrer" />
 
 		<!--=============== GOOGLE FONTS ===============-->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
 		<!--=============== CSS ===============-->
 		<link rel="stylesheet" href="assets/css/styles.css" />
@@ -509,19 +507,19 @@
 					</ul>
 
 					<!-- Close button -->
-					<div class="nav__close" id="nav-close">
+					<button class="nav__close" id="nav-close" aria-label="Close menu">
 						<i class="ri-close-large-line"></i>
-					</div>
+					</button>
 				</div>
 
 				<!-- Toggle menu -->
-				<div class="nav__toggle" id="nav-toggle">
+				<button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
 					<i class="ri-menu-4-line"></i>
-				</div>
+				</button>
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
-		<div class="hero services-page__hero" role="img" aria-label="Professional tonsorial barber kit with clippers, scissors, combs, and grooming tools in a leather carrying case"></div>
+		<div class="hero services-page__hero"></div>
 		<main id="services-page">
 			<article id="article">
 				<div class="container">
@@ -1115,7 +1113,7 @@
 			</div>
 			<div class="footer__content grid">
 				<div class="footer__information">
-					<h3 class="footer__title">Information</h3>
+					<h2 class="footer__title">Information</h2>
 					<ul class="footer__list">
 						<li>
 							<i class="ri-phone-fill"></i>
@@ -1157,7 +1155,7 @@
 					</ul>
 				</div>
 				<div class="footer__company">
-					<h3 class="footer__title">Company</h3>
+					<h2 class="footer__title">Company</h2>
 					<ul class="footer__links">
 						<li>
 							<a href="about.html" class="footer__link" title="About">About</a>
@@ -1201,7 +1199,7 @@
 			<span class="footer__copy">2026 &#169; Al-Hakeem's Enterprises LLC</span>
 		</footer>
 		<!--========== SCROLL UP ==========-->
-		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up">
+		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up" aria-label="Scroll to top">
 			<i class="ri-arrow-up-line"></i>
 		</a>
 		<!--=============== MAIN JS ===============-->
