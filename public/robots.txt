@@ -5,4 +5,10 @@ Disallow: /temp/
 Disallow: /private/
 Allow: /
 
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: AhrefsSiteAudit
+Allow: /
+
 Sitemap: https://alhakeems.com/sitemap.xml
