@@ -151,35 +151,35 @@
 					</section>
 
 					<!-- ======================================= -->
-					<!-- UNORDERED LISTS (CHECKMARKS)             -->
+					<!-- UNORDERED LISTS (EM-DASH)                -->
 					<!-- ======================================= -->
 					<hr class="sg-divider" />
-					<span class="sg-label">Unordered Lists (Checkmark Style)</span>
+					<span class="sg-label">Unordered Lists (Em-dash Style)</span>
 
 					<section class="article__section">
-						<h2>Unordered List with Remixicon Checkmarks</h2>
-						<p class="sg-spec">Uses &lt;i class="ri-checkbox-circle-line" aria-hidden="true"&gt; inside each &lt;li&gt; | color: var(--first-color) | gap: 0.6rem</p>
+						<h2>Unordered List with Em-dash Decoration</h2>
+						<p class="sg-spec">Uses CSS ::before with content: '—' | color: var(--first-color) | padding-left: 1.75rem</p>
 
-						<p>All blog unordered lists use an explicit Remixicon <code>&lt;i&gt;</code> tag as the list decoration. Include <code>aria-hidden="true"</code> on each icon since it is purely decorative:</p>
+						<p>All blog unordered lists automatically render with an em-dash decoration via CSS. No extra markup needed&mdash;just use standard <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> elements:</p>
 
 						<ul>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Blends stay clean and smooth between visits</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>The haircut maintains its intended structure</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Your neckline stays sharp and defined</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Beard edges remain crisp and professional</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Scalp health is monitored by your barber regularly</li>
+							<li>Blends stay clean and smooth between visits</li>
+							<li>The haircut maintains its intended structure</li>
+							<li>Your neckline stays sharp and defined</li>
+							<li>Beard edges remain crisp and professional</li>
+							<li>Scalp health is monitored by your barber regularly</li>
 						</ul>
 
 						<h3>Short List Example</h3>
 						<ul>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Ingrown hairs</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Razor bumps</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Dry scalp</li>
+							<li>Ingrown hairs</li>
+							<li>Razor bumps</li>
+							<li>Dry scalp</li>
 						</ul>
 
 						<div class="sg-note">
-							<strong>Pattern:</strong> <code>&lt;li&gt;&lt;i class="ri-checkbox-circle-line" aria-hidden="true"&gt;&lt;/i&gt;List item text&lt;/li&gt;</code><br />
-							The <code>aria-hidden="true"</code> attribute hides the decorative icon from screen readers. CSS <code>::before</code> fallback remains for backward compatibility with older posts.
+							<strong>Pattern:</strong> <code>&lt;ul&gt;&lt;li&gt;List item text&lt;/li&gt;&lt;/ul&gt;</code><br />
+							The em-dash is applied automatically via CSS <code>::before</code> pseudo-element. Traditional indentation is built in.
 						</div>
 					</section>
 
@@ -477,11 +477,11 @@
 						<p>A professional barber does more than remember your name. They build a profile over time:</p>
 
 						<ul>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Your preferred style and any variations you have tried</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>How your hair grows and in which directions</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Problem areas like thinning, cowlicks, or uneven growth</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Products that work for your texture and lifestyle</li>
-							<li><i class="ri-checkbox-circle-line" aria-hidden="true"></i>Seasonal adjustments to your routine</li>
+							<li>Your preferred style and any variations you have tried</li>
+							<li>How your hair grows and in which directions</li>
+							<li>Problem areas like thinning, cowlicks, or uneven growth</li>
+							<li>Products that work for your texture and lifestyle</li>
+							<li>Seasonal adjustments to your routine</li>
 						</ul>
 
 						<h3>A Schedule That Works</h3>
@@ -621,16 +621,22 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Hero / OG image</td>
+										<td>Blog Hero</td>
+										<td>1800 x 500px</td>
+										<td>WebP</td>
+										<td>Full-width background, 500px height</td>
+									</tr>
+									<tr>
+										<td>OG / Social image</td>
 										<td>1200 x 630px</td>
 										<td>WebP</td>
-										<td>Also used for social sharing</td>
+										<td>Used for social sharing previews</td>
 									</tr>
 									<tr>
 										<td>In-article image</td>
 										<td>800 x 500px</td>
 										<td>WebP</td>
-										<td>Use figure + figcaption</td>
+										<td>Use figure + figcaption, centered</td>
 									</tr>
 									<tr>
 										<td>Blog card thumbnail</td>

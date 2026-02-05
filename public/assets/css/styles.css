@@ -1093,13 +1093,13 @@ img {
 } */
 
 .blog__hero-1 {
-	height: 300px;
+	height: 500px;
 	background-image: url('/assets/images/blog/redd-francisco.webp');
 	background-position: 50% 50%;
 }
 
 .blog__hero-2 {
-	height: 300px;
+	height: 500px;
 	background-image: url('/assets/images/blog/how-often-haircut.webp');
 	background-position: 50% 50%;
 }
@@ -1242,28 +1242,26 @@ img {
 	line-height: 1.8;
 }
 
-/*=============== BLOG CHECKMARK LISTS ===============*/
+/*=============== BLOG UNORDERED LISTS (Em-dash Style) ===============*/
 .blog-post .article__section ul {
 	list-style: none;
 	margin: 1rem 0;
-	padding-left: 0;
+	padding-left: 1.75rem;
 }
 
 .blog-post .article__section ul li {
-	display: flex;
-	align-items: flex-start;
-	gap: 0.6rem;
+	position: relative;
 	margin: 0.6rem 0;
+	padding-left: 0.25rem;
 	line-height: 1.6;
 }
 
 .blog-post .article__section ul li::before {
-	content: '\EB83';
-	font-family: 'remixicon';
+	content: '—';
+	position: absolute;
+	left: -1.5rem;
 	color: var(--first-color);
-	font-size: 1.15rem;
-	flex-shrink: 0;
-	margin-top: 0.1rem;
+	font-weight: var(--font-medium);
 }
 
 /*=============== BLOG BLOCKQUOTE ===============*/
@@ -1931,19 +1929,6 @@ img {
 	margin: 0 auto;
 	border-radius: 10px;
 	display: block;
-}
-
-/*=============== BLOG LIST ICON (explicit <i> tag approach) ===============*/
-.blog-post .article__section ul li > i:first-child {
-	color: var(--first-color);
-	font-size: 1.15rem;
-	flex-shrink: 0;
-	margin-top: 0.15rem;
-}
-
-/* Hide CSS pseudo-element when explicit <i> icon is provided */
-.blog-post .article__section ul li:has(> i:first-child)::before {
-	content: none;
 }
 
 /*=============== BLOG ARTICLE TABLE ===============*/
@@ -2645,6 +2630,6 @@ ol li::before {
 	}
 	.blog__hero-1,
 	.blog__hero-2 {
-		height: 350px;
+		height: 500px;
 	}
 }
