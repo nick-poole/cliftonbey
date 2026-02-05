@@ -1532,6 +1532,8 @@ img {
 }
 
 .services-page__membership-card {
+	display: flex;
+	flex-direction: column;
 	background-color: var(--prussian-blue);
 	border-radius: 10px;
 	padding: 1.5rem;
@@ -1563,9 +1565,6 @@ img {
 }
 
 .services-page__membership-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
 	margin-bottom: 1rem;
 	padding-bottom: 0.75rem;
 	border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
@@ -1578,11 +1577,23 @@ img {
 	margin: 0;
 }
 
+.services-page__membership-pricing {
+	margin-top: auto;
+	padding-top: 1rem;
+	border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+	text-align: center;
+}
+
 .services-page__membership-price {
 	font-size: var(--h3-font-size);
 	font-weight: var(--font-bold);
 	color: var(--second-color);
-	white-space: nowrap;
+}
+
+.services-page__membership-price small {
+	font-size: var(--small-font-size);
+	font-weight: var(--font-medium);
+	color: var(--baby-powder);
 }
 
 .services-page__membership-list {
