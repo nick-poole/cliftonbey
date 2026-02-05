@@ -1914,8 +1914,11 @@ img {
 }
 
 .blog-post figure img {
+	display: block;
+	float: none;
 	margin-left: auto;
 	margin-right: auto;
+	width: auto;
 }
 
 .blog-post figure figcaption {
