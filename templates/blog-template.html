@@ -41,7 +41,7 @@
 						"@id": "https://alhakeems.com/#business",
 						"name": "Al-Hakeem's Tonsorial",
 						"legalName": "Al-Hakeem's Enterprises LLC",
-						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland.",
+						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland. Serving Pikesville, Garrison, Randallstown, Milford Mill, Lochearn, and Baltimore County.",
 						"url": "https://alhakeems.com/",
 						"telephone": "+1-347-815-5706",
 						"email": "clifton@alhakeems.com",
@@ -81,7 +81,13 @@
 						"areaServed": [
 							{ "@type": "City", "name": "Owings Mills" },
 							{ "@type": "City", "name": "Baltimore" },
-							{ "@type": "AdministrativeArea", "name": "Baltimore County" }
+							{ "@type": "AdministrativeArea", "name": "Baltimore County" },
+							{ "@type": "City", "name": "Garrison" },
+							{ "@type": "City", "name": "Pikesville" },
+							{ "@type": "City", "name": "Milford Mill" },
+							{ "@type": "City", "name": "Lochearn" },
+							{ "@type": "City", "name": "Randallstown" },
+							{ "@type": "AdministrativeArea", "name": "Northwest Baltimore" }
 						],
 						"hasMap": "https://maps.app.goo.gl/ezBWKPNrNovZ6gPZ8",
 						"founder": { "@id": "https://alhakeems.com/#clifton-bey" },
@@ -111,6 +117,8 @@
 						"name": "Clifton \"Al-Hakeem\" Bey",
 						"jobTitle": ["Master Barber", "Certified Cranial Prosthesis Specialist"],
 						"description": "Master Barber with over 30 years of experience specializing in classic cuts, modern fades, and cranial prosthesis fitting.",
+						"image": "https://alhakeems.com/assets/images/portfolio8.jpg",
+						"url": "https://alhakeems.com/about",
 						"knowsAbout": [
 							"Barbering",
 							"Fade Haircuts",
@@ -118,6 +126,10 @@
 							"Straight Razor Shaves",
 							"Cranial Prosthesis",
 							"Medical Wigs"
+						],
+						"sameAs": [
+							"https://www.instagram.com/alhakeemthebarber/",
+							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
 						],
 						"worksFor": { "@id": "https://alhakeems.com/#business" }
 					},
@@ -181,6 +193,8 @@
 			integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer" />
+		<!--=============== GOOGLE FONTS ===============-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
 		<!--=============== CSS ===============-->
 		<link rel="stylesheet" href="../assets/css/styles.css" />
 	</head>
@@ -221,15 +235,15 @@
 					</ul>
 
 					<!-- Close button -->
-					<div class="nav__close" id="nav-close">
+					<button class="nav__close" id="nav-close" aria-label="Close menu">
 						<i class="ri-close-large-line"></i>
-					</div>
+					</button>
 				</div>
 
 				<!-- Toggle menu -->
-				<div class="nav__toggle" id="nav-toggle">
+				<button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
 					<i class="ri-menu-4-line"></i>
-				</div>
+				</button>
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
@@ -352,7 +366,7 @@
 			</div>
 			<div class="footer__content grid">
 				<div class="footer__information">
-					<h3 class="footer__title">Information</h3>
+					<h2 class="footer__title">Information</h2>
 					<ul class="footer__list">
 						<li>
 							<i class="ri-phone-fill"></i>
@@ -394,7 +408,7 @@
 					</ul>
 				</div>
 				<div class="footer__company">
-					<h3 class="footer__title">Company</h3>
+					<h2 class="footer__title">Company</h2>
 					<ul class="footer__links">
 						<li>
 							<a href="../about.html" class="footer__link" title="About">About</a>
@@ -435,12 +449,9 @@
 		</footer>
 
 		<!--========== SCROLL UP ==========-->
-		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up">
+		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up" aria-label="Scroll to top">
 			<i class="ri-arrow-up-line"></i>
 		</a>
-		<!--=============== SCROLLREVEAL ===============-->
-		<script src="../assets/js/scrollreveal.min.js"></script>
-
 		<!--=============== MAIN JS ===============-->
 		<script src="../assets/js/main.js"></script>
 	</body>

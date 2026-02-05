@@ -6,7 +6,7 @@
 		<meta name="robots" content="index, follow" />
 		<meta
 			name="description"
-			content="Clifton 'Al-Hakeem' Bey offers expert haircuts, beard sculpting, and cranial prosthesis services in Owings Mills, MD. Over 30 years of barbering excellence." />
+			content="Clifton 'Al-Hakeem' Bey offers expert haircuts, beard sculpting, and cranial prosthesis services in Owings Mills, MD. Serving Pikesville, Garrison, Randallstown, and Baltimore County." />
 		<title>Al-Hakeem's Tonsorial | Your Local Barber in Owings Mills, MD</title>
 		<link rel="canonical" href="https://alhakeems.com/" />
 
@@ -15,7 +15,7 @@
 		<meta property="og:title" content="Al-Hakeem's Tonsorial - Expert Barbering Services in Owings Mills" />
 		<meta
 			property="og:description"
-			content="Al-Hakeem's Tonsorial offers precision haircuts, beard sculpting, and cranial prosthesis solutions in Owings Mills, MD. Experience artistry in grooming." />
+			content="Al-Hakeem's Tonsorial offers precision haircuts, beard sculpting, and cranial prosthesis solutions in Owings Mills, MD. Serving Pikesville, Garrison, Randallstown, and Baltimore County." />
 		<meta property="og:url" content="https://alhakeems.com/" />
 		<meta property="og:image" content="https://alhakeems.com/assets/images/tonsorial-hero.jpg" />
 		<meta property="og:image:width" content="4000" />
@@ -29,7 +29,7 @@
 		<meta name="twitter:title" content="Al-Hakeem's Tonsorial - Expert Barbering Services in Owings Mills" />
 		<meta
 			name="twitter:description"
-			content="Clifton Bey offers precision haircuts, beard sculpting, and cranial prosthesis solutions in Owings Mills, MD. Experience artistry in grooming." />
+			content="Clifton Bey offers precision haircuts, beard sculpting, and cranial prosthesis solutions in Owings Mills, MD. Serving Pikesville, Garrison, Randallstown, and Baltimore County." />
 		<meta name="twitter:image" content="https://alhakeems.com/assets/images/tonsorial-hero.jpg" />
 		<meta name="twitter:image:alt" content="Hero image showcasing Al-Hakeem's barbering services" />
 		<meta name="twitter:site" content="@CliffAlHakeem" />
@@ -45,7 +45,7 @@
 						"@id": "https://alhakeems.com/#business",
 						"name": "Al-Hakeem's Tonsorial",
 						"legalName": "Al-Hakeem's Enterprises LLC",
-						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland.",
+						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland. Serving Pikesville, Garrison, Randallstown, Milford Mill, Lochearn, and Baltimore County.",
 						"url": "https://alhakeems.com/",
 						"telephone": "+1-347-815-5706",
 						"email": "clifton@alhakeems.com",
@@ -85,7 +85,13 @@
 						"areaServed": [
 							{ "@type": "City", "name": "Owings Mills" },
 							{ "@type": "City", "name": "Baltimore" },
-							{ "@type": "AdministrativeArea", "name": "Baltimore County" }
+							{ "@type": "AdministrativeArea", "name": "Baltimore County" },
+							{ "@type": "City", "name": "Garrison" },
+							{ "@type": "City", "name": "Pikesville" },
+							{ "@type": "City", "name": "Milford Mill" },
+							{ "@type": "City", "name": "Lochearn" },
+							{ "@type": "City", "name": "Randallstown" },
+							{ "@type": "AdministrativeArea", "name": "Northwest Baltimore" }
 						],
 						"hasMap": "https://maps.app.goo.gl/ezBWKPNrNovZ6gPZ8",
 						"founder": { "@id": "https://alhakeems.com/#clifton-bey" },
@@ -115,6 +121,8 @@
 						"name": "Clifton \"Al-Hakeem\" Bey",
 						"jobTitle": ["Master Barber", "Certified Cranial Prosthesis Specialist"],
 						"description": "Master Barber with over 30 years of experience specializing in classic cuts, modern fades, and cranial prosthesis fitting.",
+						"image": "https://alhakeems.com/assets/images/portfolio8.jpg",
+						"url": "https://alhakeems.com/about",
 						"knowsAbout": [
 							"Barbering",
 							"Fade Haircuts",
@@ -122,6 +130,10 @@
 							"Straight Razor Shaves",
 							"Cranial Prosthesis",
 							"Medical Wigs"
+						],
+						"sameAs": [
+							"https://www.instagram.com/alhakeemthebarber/",
+							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
 						],
 						"worksFor": { "@id": "https://alhakeems.com/#business" }
 					},
@@ -151,6 +163,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
+		<!--=============== PRELOAD LCP HERO IMAGE ===============-->
+		<link rel="preload" as="image" href="/assets/images/tonsorial-hero.webp" fetchpriority="high" />
+
 		<!--=============== REMIXICONS ===============-->
 		<link
 			rel="stylesheet"
@@ -161,6 +176,9 @@
 
 		<!--=============== SWIPER CSS ===============-->
 		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+		<!--=============== GOOGLE FONTS ===============-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
 
 		<!--=============== CSS ===============-->
 		<link rel="stylesheet" href="assets/css/styles.css" />
@@ -187,7 +205,7 @@
 							<a href="about.html" class="nav__link">About</a>
 						</li>
 						<li>
-							<a href="#services" class="nav__link">Services</a>
+							<a href="services.html" class="nav__link">Services</a>
 						</li>
 
 						<li>
@@ -206,15 +224,15 @@
 					</ul>
 
 					<!-- Close button -->
-					<div class="nav__close" id="nav-close">
+					<button class="nav__close" id="nav-close" aria-label="Close menu">
 						<i class="ri-close-large-line"></i>
-					</div>
+					</button>
 				</div>
 
 				<!-- Toggle menu -->
-				<div class="nav__toggle" id="nav-toggle">
+				<button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
 					<i class="ri-menu-4-line"></i>
-				</div>
+				</button>
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
@@ -292,6 +310,7 @@
 						<img
 							src="assets/images/apothecary-87.jpg"
 							alt="Apothecary barber station"
+							loading="lazy"
 							class="about__img-2" />
 						<a href="about.html" class="button__link">
 							<span>Learn More</span>
@@ -341,6 +360,7 @@
 									src="assets/images/portfolio/portfolio13.jpg"
 									alt=""
 									role="presentation"
+									loading="lazy"
 									class="slide__img" />
 							</div>
 
@@ -365,6 +385,7 @@
 									src="assets/images/portfolio/portfolio20.jpeg"
 									alt=""
 									role="presentation"
+									loading="lazy"
 									class="slide__img" />
 							</div>
 
@@ -388,6 +409,7 @@
 									src="assets/images/portfolio/portfolio30.jpg"
 									alt=""
 									role="presentation"
+									loading="lazy"
 									class="slide__img" />
 							</div>
 
@@ -410,6 +432,7 @@
 									src="assets/images/portfolio/portfolio14.jpg"
 									alt=""
 									role="presentation"
+									loading="lazy"
 									class="slide__img" />
 							</div>
 
@@ -433,19 +456,20 @@
 									src="assets/images/portfolio/portfolio19.jpeg"
 									alt=""
 									role="presentation"
+									loading="lazy"
 									class="slide__img" />
 							</div>
 
 							<h3 class="services__title">
-								Kids'
+								Youth
 								<br />
 								Haircuts
 							</h3>
 
 							<p class="services__description">
 								(Ages 9&ndash;16) Patient and skilled cuts for young clients, ensuring a comfortable
-								experience. Cliff creates a welcoming environment to help kids feel at ease while
-								achieving stylish results.
+								experience. Cliff creates a welcoming environment to help young clients feel at ease
+								while achieving stylish results.
 							</p>
 						</article>
 					</div>
@@ -602,8 +626,13 @@
 			<!--========== CONTACT ==========-->
 			<section class="contact section" id="contact">
 				<div class="container">
-					<span class="section__subtitle">CONTACT</span>
-					<h2 class="section__title">Get In Touch</h2>
+					<span class="section__subtitle">GET IN TOUCH</span>
+					<h2 class="section__title">Contact Your Barber in Owings Mills</h2>
+
+					<p class="contact__description">
+						Located inside Brookside Barbershop on Common Brook Road, Al-Hakeem's Tonsorial
+						is open six days a week. Book an appointment through theCut app or stop by today.
+					</p>
 
 					<div class="contact__container grid">
 						<img
@@ -623,8 +652,8 @@
 										<i class="ri-phone-line"></i>
 									</div>
 
-									<h3 class="contact__title">Phone</h3>
-									<br />
+									<h3 class="contact__title">Phone</h2>
+					<br />
 									<span class="contact__info">(347) 815-5706</span>
 								</a>
 							</div>
@@ -636,8 +665,8 @@
 									<div class="contact__icon">
 										<i class="ri-mail-send-fill"></i>
 									</div>
-									<h3 class="contact__title">Email</h3>
-									<br />
+									<h3 class="contact__title">Email</h2>
+					<br />
 
 									<address class="contact__info">clifton@alhakeems.com</address>
 								</a>
@@ -688,6 +717,56 @@
 				</div>
 			</section>
 
+			<!--========== AREAS SERVED ==========-->
+			<section class="areas-served section" id="areas-served">
+				<div class="areas-served__container container">
+					<span class="section__subtitle">AREAS SERVED</span>
+					<h2 class="section__title">Serving the Greater Baltimore Area</h2>
+
+					<p class="areas-served__description">
+						Al-Hakeem's Tonsorial is located inside Brookside Barbershop in Owings Mills, MD,
+						and proudly serves clients from communities across Baltimore County and Northwest Baltimore.
+						Whether you're coming from down the road or across town, experience precision barbering
+						and personalized grooming tailored to your style.
+					</p>
+
+					<div class="areas-served__grid">
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Owings Mills</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Garrison</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Pikesville</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Milford Mill</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Lochearn</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Randallstown</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Baltimore County</span>
+						</div>
+						<div class="areas-served__item">
+							<i class="ri-map-pin-line"></i>
+							<span>Northwest Baltimore</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!--========== MAPS EMBED ==========-->
 			<section id="map">
 				<h2 class="visually-hidden">Google Maps Location of Brookside Barbershop</h2>
@@ -708,7 +787,7 @@
 				<div class="footer__masthead">
 					<a href="index.html" class="footer__logo">
 						<span class="visually-hidden">Al-Hakeem's Tonsorial Emblem</span>
-						<img src="assets/images/logo/500/emblem-bgrm-500x500.png" alt="Al-Hakeem's Tonsorial emblem" />
+						<img src="assets/images/logo/500/emblem-bgrm-500x500.png" alt="Al-Hakeem's Tonsorial emblem" loading="lazy" />
 					</a>
 				</div>
 				<div class="footer__social-box">
@@ -770,7 +849,7 @@
 			</div>
 			<div class="footer__content grid">
 				<div class="footer__information">
-					<h3 class="footer__title">Information</h3>
+					<h2 class="footer__title">Information</h2>
 					<ul class="footer__list">
 						<li>
 							<i class="ri-phone-fill"></i>
@@ -812,14 +891,14 @@
 					</ul>
 				</div>
 				<div class="footer__company">
-					<h3 class="footer__title">Company</h3>
+					<h2 class="footer__title">Company</h2>
 					<ul class="footer__links">
 						<li>
 							<a href="about.html" class="footer__link" title="About">About</a>
 						</li>
 
 						<li>
-							<a href="#services" class="footer__link" title="Services">Services</a>
+							<a href="services.html" class="footer__link" title="Services">Services</a>
 						</li>
 
 						<li>
@@ -856,12 +935,9 @@
 			<span class="footer__copy">2026 &#169; Al-Hakeem's Enterprises LLC</span>
 		</footer>
 		<!--========== SCROLL UP ==========-->
-		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up">
+		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up" aria-label="Scroll to top">
 			<i class="ri-arrow-up-line"></i>
 		</a>
-		<!--=============== SCROLLREVEAL ===============-->
-		<script src="assets/js/scrollreveal.min.js"></script>
-
 		<!--=============== SWIPER JS ===============-->
 		<script src="assets/js/swiper-bundle.min.js"></script>
 

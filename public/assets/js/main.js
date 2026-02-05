@@ -28,20 +28,17 @@ const linkAction = () => {
 navLink.forEach((n) => n.addEventListener('click', linkAction));
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
+const header = document.getElementById('header');
 const bgHeader = () => {
-	const header = document.getElementById('header');
-	// Add a class if the bottom offset is greater than 50 of the viewport
-	this.scrollY >= 50 ? header.classList.add('bg-header') : header.classList.remove('bg-header');
+	window.scrollY >= 50 ? header.classList.add('bg-header') : header.classList.remove('bg-header');
 };
-window.addEventListener('scroll', bgHeader);
-bgHeader();
 
 /*=============== SWIPER SERVICES ===============*/
 const swiperServices = new Swiper('.services__swiper', {
 	loop: true,
 	grabCursor: true,
 	centeredSlides: true,
-	autoHeight: true,
+	autoHeight: false,
 	spaceBetween: 24,
 	slidesPerView: '1',
 
@@ -158,13 +155,10 @@ const swiperPortfolio = new Swiper('.portfolio__swiper', {
 });
 
 /*=============== SHOW SCROLL UP ===============*/
+const scrollUpEl = document.getElementById('scroll-up');
 const scrollUp = () => {
-	const scrollUp = document.getElementById('scroll-up');
-	// When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll') : scrollUp.classList.remove('show-scroll');
+	window.scrollY >= 350 ? scrollUpEl.classList.add('show-scroll') : scrollUpEl.classList.remove('show-scroll');
 };
-window.addEventListener('scroll', scrollUp);
-scrollUp();
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]');
@@ -172,32 +166,44 @@ const sections = document.querySelectorAll('section[id]');
 const scrollActive = () => {
 	const scrollDown = window.scrollY;
 
+	// Batch all layout reads first
+	const sectionData = [];
 	sections.forEach((current) => {
-		const sectionHeight = current.offsetHeight,
-			sectionTop = current.offsetTop - 58,
-			sectionId = current.getAttribute('id'),
-			sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+		const sectionId = current.getAttribute('id');
+		const link = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+		if (link) {
+			sectionData.push({
+				top: current.offsetTop - 58,
+				height: current.offsetHeight,
+				link: link,
+			});
+		}
+	});
 
-		if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
-			sectionsClass.classList.add('active-link');
+	// Batch all DOM writes after
+	sectionData.forEach((data) => {
+		if (scrollDown > data.top && scrollDown <= data.top + data.height) {
+			data.link.classList.add('active-link');
 		} else {
-			sectionsClass.classList.remove('active-link');
+			data.link.classList.remove('active-link');
 		}
 	});
 };
-window.addEventListener('scroll', scrollActive);
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-	origin: 'top',
-	distance: '100px',
-	duration: 2500,
-	delay: 400,
-	// reset: true, // Animations repeat
-});
+/*=============== UNIFIED SCROLL HANDLER (rAF throttled) ===============*/
+let scrollTicking = false;
+const onScroll = () => {
+	if (!scrollTicking) {
+		scrollTicking = true;
+		requestAnimationFrame(() => {
+			bgHeader();
+			scrollUp();
+			scrollActive();
+			scrollTicking = false;
+		});
+	}
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+bgHeader();
+scrollUp();
 
-sr.reveal(`.home__content, .services__data, .services__swiper, .footer__container`);
-sr.reveal(`.home__images`, { origin: 'bottom', delay: 1000 });
-sr.reveal(`.about__images, .contact__img`, { origin: 'left' });
-sr.reveal(`.about__data, .contact__data`, { origin: 'right' });
-sr.reveal(`.projects__card`, { interval: 100 });
