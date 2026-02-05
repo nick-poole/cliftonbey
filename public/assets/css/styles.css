@@ -1523,6 +1523,94 @@ img {
 	margin-top: 0.5rem !important;
 }
 
+/* Pricing Comparison Table */
+.services-page__comparison-wrapper {
+	overflow-x: auto;
+	margin-top: 1.5rem;
+	border-radius: 10px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.services-page__comparison-table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--prussian-blue);
+	color: var(--baby-powder);
+	border-radius: 10px;
+	overflow: hidden;
+	min-width: 480px;
+}
+
+.services-page__comparison-table th,
+.services-page__comparison-table td {
+	padding: 0.75rem 1rem;
+	text-align: center;
+	font-size: var(--small-font-size);
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.services-page__comparison-table thead th {
+	background-color: hsla(0, 0%, 0%, 0.2);
+	color: var(--cornsilk);
+	font-family: var(--second-font);
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-bold);
+	padding: 1rem;
+}
+
+.services-page__comparison-feature-label {
+	width: 40%;
+}
+
+.services-page__comparison-table tbody td:first-child {
+	text-align: left;
+	font-weight: var(--font-medium);
+	color: var(--white-color);
+}
+
+.services-page__comparison-table tbody td i {
+	color: var(--first-color);
+	font-size: 1.1rem;
+}
+
+.services-page__comparison-featured {
+	background-color: hsla(45, 80%, 60%, 0.1);
+}
+
+.services-page__comparison-table tbody tr:hover {
+	background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.services-page__comparison-table tfoot td {
+	border-top: 2px solid hsla(0, 0%, 100%, 0.2);
+	border-bottom: none;
+	padding: 1rem;
+	font-size: var(--normal-font-size);
+	color: var(--second-color);
+}
+
+.services-page__comparison-table tfoot td:first-child {
+	text-align: left;
+	font-weight: var(--font-bold);
+	color: var(--cornsilk);
+}
+
+.services-page__comparison-note {
+	font-size: var(--small-font-size);
+	color: var(--text-color);
+	font-style: italic;
+	text-align: center;
+	margin-top: 0.75rem;
+	margin-bottom: 0;
+}
+
+.services-page__plans-subheading {
+	font-size: var(--h2-font-size);
+	color: var(--title-color);
+	margin-top: 2.5rem;
+	margin-bottom: 0;
+}
+
 /* Membership Cards */
 .services-page__membership-grid {
 	display: grid;
