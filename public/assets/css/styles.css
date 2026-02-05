@@ -1093,27 +1093,53 @@ img {
 } */
 
 .blog__hero-1 {
-	height: 250px;
+	height: 300px;
 	background-image: url('/assets/images/blog/redd-francisco.webp');
 	background-position: 50% 50%;
 }
 
-.blog__heading,
-.blog__subheading {
-	font-weight: var(--font-bold);
+.blog__hero-2 {
+	height: 300px;
+	background-image: url('/assets/images/blog/how-often-haircut.webp');
+	background-position: 50% 50%;
+}
+
+/*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
+.blog-post .blog__headings {
+	position: relative;
+	margin-top: -5rem;
+	padding: 1.5rem 1.75rem;
+	background: hsla(204, 93%, 11%, 0.7);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 8px;
+	margin-bottom: 1rem;
+}
+
+.blog-post .blog__heading {
+	font-size: 1.75rem;
 	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	color: var(--white-color);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
 }
 
-.blog__heading {
-	font-size: var(--h1-font-size);
-}
-
-.blog__subheading {
-	font-size: var(--h3-font-size);
+.blog-post .blog__subheading {
+	font-size: 1rem;
+	font-family: var(--second-font);
+	font-weight: var(--font-medium);
+	color: var(--cornsilk);
+	line-height: 1.4;
+	margin-bottom: 0;
 }
 
 #blog-article {
 	margin: 1rem auto 5rem auto;
+}
+
+#blog-article .container {
+	max-width: 780px;
 }
 
 .blog__meta {
@@ -1190,9 +1216,83 @@ img {
 	margin: 2rem 0;
 }
 
-/*=============== BLOG POST HEADINGS ===============*/
+/*=============== BLOG POST SECTION HEADINGS ===============*/
 .blog-post .article__section h2 {
-	font-size: var(--h3-font-size);
+	font-size: 1.35rem;
+	font-family: var(--second-font);
+	font-weight: var(--font-semi-bold);
+	color: var(--title-color);
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	line-height: 1.3;
+}
+
+.blog-post .article__section h3 {
+	font-size: 1.1rem;
+	font-family: var(--second-font);
+	font-weight: var(--font-medium);
+	color: var(--title-color);
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+	line-height: 1.3;
+}
+
+.blog-post .article__section p {
+	margin-bottom: 1rem;
+	line-height: 1.8;
+}
+
+/*=============== BLOG CHECKMARK LISTS ===============*/
+.blog-post .article__section ul {
+	list-style: none;
+	margin: 1rem 0;
+	padding-left: 0;
+}
+
+.blog-post .article__section ul li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.6rem;
+	margin: 0.6rem 0;
+	line-height: 1.6;
+}
+
+.blog-post .article__section ul li::before {
+	content: '\EB83';
+	font-family: 'remixicon';
+	color: var(--first-color);
+	font-size: 1.15rem;
+	flex-shrink: 0;
+	margin-top: 0.1rem;
+}
+
+/*=============== BLOG BLOCKQUOTE ===============*/
+.blog-post blockquote {
+	border-left: 4px solid var(--first-color);
+	background: hsla(204, 93%, 11%, 0.04);
+	margin: 1.5rem 0;
+	padding: 1.25rem 1.5rem;
+	border-radius: 0 8px 8px 0;
+	font-style: italic;
+	color: var(--text-color);
+	line-height: 1.8;
+}
+
+.blog-post blockquote cite,
+.blog-post blockquote footer {
+	display: block;
+	margin-top: 0.75rem;
+	font-style: normal;
+	font-size: var(--small-font-size);
+	color: var(--first-color);
+	font-weight: var(--font-medium);
+}
+
+/*=============== BLOG HORIZONTAL RULE ===============*/
+.blog-post hr {
+	border: none;
+	border-top: 1px solid hsla(204, 93%, 11%, 0.12);
+	margin: 2rem 0;
 }
 
 /*=============== BLOG CTA CALLOUT ===============*/
@@ -1809,6 +1909,48 @@ img {
 	margin: 0 auto;
 }
 
+/*=============== BLOG ARTICLE TABLE ===============*/
+.table-responsive {
+	overflow-x: auto;
+	margin: 1.5rem 0;
+	border-radius: 8px;
+}
+
+.article__table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--prussian-blue);
+	color: var(--baby-powder);
+	border-radius: 8px;
+	overflow: hidden;
+	min-width: 480px;
+}
+
+.article__table th,
+.article__table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+	font-size: var(--small-font-size);
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.article__table thead th {
+	background-color: hsla(0, 0%, 0%, 0.2);
+	color: var(--cornsilk);
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	padding: 1rem;
+}
+
+.article__table tbody tr:hover {
+	background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.article__table tbody td:first-child {
+	font-weight: var(--font-medium);
+	color: var(--white-color);
+}
+
 /*=============== FAQ SECTION ===============*/
 .article__faq {
 	background-color: var(--container-color);
@@ -2379,5 +2521,27 @@ ol li::before {
 
 	.scrollup {
 		right: 3rem;
+	}
+
+	/* Blog post desktop typography */
+	.blog-post .blog__heading {
+		font-size: 2.5rem;
+	}
+	.blog-post .blog__subheading {
+		font-size: 1.25rem;
+	}
+	.blog-post .article__section h2 {
+		font-size: 1.65rem;
+	}
+	.blog-post .article__section h3 {
+		font-size: 1.2rem;
+	}
+	.blog-post .blog__headings {
+		margin-top: -5.5rem;
+		padding: 2rem 2.5rem;
+	}
+	.blog__hero-1,
+	.blog__hero-2 {
+		height: 350px;
 	}
 }
