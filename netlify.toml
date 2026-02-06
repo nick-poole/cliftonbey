@@ -77,6 +77,11 @@
   status = 301
 
 [[redirects]]
+  from = "/privacy-policy.html"
+  to = "/privacy-policy"
+  status = 301
+
+[[redirects]]
   from = "/blog/*.html"
   to = "/blog/:splat"
   status = 301
