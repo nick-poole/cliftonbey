@@ -1104,6 +1104,12 @@ img {
 	background-position: 80% 50%;
 }
 
+.blog__hero-3 {
+	height: 500px;
+	background-image: url('/assets/images/blog/interview-prep.webp');
+	background-position: 50% 25%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2638,7 +2644,8 @@ ol li::before {
 		padding: 2rem 2.5rem;
 	}
 	.blog__hero-1,
-	.blog__hero-2 {
+	.blog__hero-2,
+	.blog__hero-3 {
 		height: 500px;
 	}
 }
