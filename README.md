@@ -21,6 +21,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/beard-maintenance-between-barber-visits` | Article: How to Maintain a Sharp Beard Between Barbershop Visits |
 | Blog Post | `/blog/professional-grooming-first-impressions` | Article: The Power of Professional Grooming |
 | Blog Post | `/blog/how-often-should-you-get-a-haircut` | Article: How Often Should You Get a Haircut? |
 | Blog Post | `/blog/modern-barbershop-experience` | Article: The Modern Barbershop Experience |
@@ -55,6 +56,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── beard-maintenance-between-barber-visits.html
 │   ├── professional-grooming-first-impressions.html
 │   ├── how-often-should-you-get-a-haircut.html
 │   └── modern-barbershop-experience.html

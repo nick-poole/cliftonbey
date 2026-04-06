@@ -1110,6 +1110,12 @@ img {
 	background-position: 30% 50%;
 }
 
+.blog__hero-4 {
+	height: 500px;
+	background-image: url('/assets/images/blog/beard-between-visits.webp');
+	background-position: 50% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2645,7 +2651,8 @@ ol li::before {
 	}
 	.blog__hero-1,
 	.blog__hero-2,
-	.blog__hero-3 {
+	.blog__hero-3,
+	.blog__hero-4 {
 		height: 500px;
 	}
 }
