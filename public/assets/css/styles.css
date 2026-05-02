@@ -2768,57 +2768,59 @@ ol li::before {
 	border-top-color: hsla(204, 93%, 11%, 0.1);
 }
 
-/* Chart 1: Training requirements (vertical columns) */
-.chart-training {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 1rem;
-	align-items: end;
-	padding-top: 0.5rem;
+/* Theme: red (brand persian red) */
+.chart-card--red {
+	background: var(--persian-red);
+	border-color: transparent;
+	color: var(--cornsilk);
+}
+.chart-card--red .chart-card__title { color: var(--white-color); }
+.chart-card--red .chart-card__subtitle { color: hsla(48, 90%, 92%, 0.85); }
+.chart-card--red .chart-card__footer {
+	color: hsla(48, 90%, 92%, 0.7);
+	border-top-color: hsla(0, 0%, 100%, 0.15);
+}
+.chart-card--red .chart-card__legend {
+	border-top-color: hsla(0, 0%, 100%, 0.15);
+	color: hsla(48, 90%, 92%, 0.85);
 }
 
-.chart-training__col {
+/* Chart 1: Training requirements (horizontal bars) */
+.chart-training__row {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	gap: 0.4rem;
+	gap: 0.75rem;
+	margin-bottom: 0.65rem;
 }
 
-.chart-training__value {
+.chart-training__label {
+	width: 150px;
+	min-width: 120px;
 	font-family: var(--second-font);
-	font-size: 1.1rem;
+	font-size: 0.78rem;
 	font-weight: var(--font-bold);
-	text-align: center;
-	padding-bottom: 0.25rem;
-	color: var(--white-color);
-	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	text-align: right;
+	flex-shrink: 0;
+	color: hsla(48, 90%, 92%, 0.85);
+	line-height: 1.3;
 }
+.chart-training__row--unlicensed .chart-training__label { color: hsl(2, 75%, 65%); }
+.chart-training__row--master .chart-training__label { color: var(--second-color); }
 
-.chart-training__value--zero { color: hsl(2, 75%, 65%); }
-.chart-training__value--master { color: var(--second-color); }
-
-.chart-training__stack {
-	width: 100%;
-	height: 200px;
+.chart-training__track {
+	flex: 1;
+	height: 26px;
+	background: hsla(0, 0%, 100%, 0.07);
+	border-radius: 6px;
+	overflow: hidden;
 	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	gap: 2px;
 }
 
 .chart-training__bar {
-	width: 80%;
-	border-radius: 4px 4px 0 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: var(--second-font);
-	font-size: 0.7rem;
-	font-weight: var(--font-bold);
-	color: var(--white-color);
-	line-height: 1;
-	text-align: center;
+	height: 100%;
+	border-radius: 0;
 }
 
 .chart-training__bar--school {
@@ -2826,31 +2828,26 @@ ol li::before {
 }
 .chart-training__bar--experience {
 	background: var(--second-color);
-	color: var(--prussian-blue);
-	font-size: 0.62rem;
 }
 .chart-training__bar--zero {
 	background: var(--persian-red);
-	height: 4px;
 }
-.chart-training__bar:not(:first-child):not(.chart-training__bar--zero) {
-	border-radius: 0;
-}
+.chart-training__bar:first-child { border-radius: 6px 0 0 6px; }
+.chart-training__bar:last-child { border-radius: 0 6px 6px 0; }
+.chart-training__bar:only-child { border-radius: 6px; }
 
-.chart-training__label {
+.chart-training__hours {
 	font-family: var(--second-font);
-	font-size: 0.72rem;
 	font-weight: var(--font-bold);
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
-	text-align: center;
-	line-height: 1.3;
-	min-height: 2.6em;
+	color: var(--white-color);
+	font-size: 0.85rem;
+	min-width: 60px;
+	text-align: right;
+	flex-shrink: 0;
+	letter-spacing: 0.02em;
 }
-.chart-training__label--unlicensed { color: hsl(2, 75%, 65%); }
-.chart-training__label--stylist { color: hsla(48, 90%, 92%, 0.7); }
-.chart-training__label--barber { color: hsl(207, 75%, 70%); }
-.chart-training__label--master { color: var(--second-color); }
+.chart-training__row--unlicensed .chart-training__hours { color: hsl(2, 75%, 65%); }
+.chart-training__row--master .chart-training__hours { color: var(--second-color); }
 
 /* Chart 2: Exam breakdown (horizontal gradient bars) */
 .chart-exam__row {
@@ -3055,10 +3052,13 @@ ol li::before {
 	.chart-card__body { padding: 1rem 1.25rem 1.25rem; }
 	.chart-card__footer { padding: 0.6rem 1.25rem; }
 
-	.chart-training { gap: 0.5rem; }
-	.chart-training__bar { width: 90%; }
-	.chart-training__value { font-size: 0.95rem; }
-	.chart-training__label { font-size: 0.6rem; }
+	.chart-training__label {
+		width: 110px;
+		min-width: 90px;
+		font-size: 0.68rem;
+	}
+	.chart-training__hours { font-size: 0.78rem; min-width: 50px; }
+	.chart-training__track { height: 22px; }
 
 	.chart-exam__label {
 		width: 110px;
@@ -3067,4 +3067,7 @@ ol li::before {
 	}
 	.chart-exam__pct { font-size: 0.78rem; width: 36px; }
 	.chart-exam__bar-track { height: 22px; }
+
+	.chart-venn__card li { padding-left: 0; }
+	.chart-venn__card li::before { content: none; }
 }
