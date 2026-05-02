@@ -412,62 +412,63 @@
 						<p>And with that title comes a specific legal privilege: only a master barber can supervise and train apprentices in Maryland. That's not a marketing distinction. It's a regulatory one. The state trusts master barbers to train the next generation &mdash; because they've proven, through examination and experience, that they know the craft at a level worth passing on.</p>
 
 						<!-- Chart 1: Maryland Barber Training Requirements -->
-						<figure class="chart-card" role="group" aria-labelledby="chart-training-title">
-							<h3 class="chart-card__title" id="chart-training-title">Maryland Barber Training Requirements</h3>
-							<p class="chart-card__subtitle">Hours required by credential tier &mdash; school path vs. apprentice path</p>
-
-							<div class="chart-training__row">
-								<span class="chart-training__label">Unlicensed</span>
-								<div class="chart-training__bars">
-									<div class="chart-training__bar chart-training__bar--unlicensed" aria-label="Zero hours of training">0 hrs</div>
-								</div>
+						<figure class="chart-card chart-card--navy" role="group" aria-labelledby="chart-training-title">
+							<div class="chart-card__header">
+								<h3 class="chart-card__title" id="chart-training-title">Maryland Barber Training Requirements</h3>
+								<p class="chart-card__subtitle">Minimum hours before you can legally cut hair in Maryland (school path shown; apprentice path is longer)</p>
 							</div>
-
-							<div class="chart-training__row">
-								<span class="chart-training__label">Barber-Stylist</span>
-								<div class="chart-training__bars">
-									<div class="chart-training__bar" style="width: 28%;" aria-label="School path: 900 hours">School &middot; 900 hrs</div>
-									<div class="chart-training__bar chart-training__bar--apprentice" style="width: 51%;" aria-label="Apprentice path: 1650 hours">Apprentice &middot; 1,650 hrs</div>
-								</div>
-							</div>
-
-							<div class="chart-training__row">
-								<span class="chart-training__label">Licensed Barber</span>
-								<div class="chart-training__bars">
-									<div class="chart-training__bar" style="width: 37%;" aria-label="School path: 1200 hours">School &middot; 1,200 hrs</div>
-									<div class="chart-training__bar chart-training__bar--apprentice" style="width: 70%;" aria-label="Apprentice path: 2250 hours">Apprentice &middot; 2,250 hrs</div>
-								</div>
-							</div>
-
-							<div class="chart-training__row">
-								<span class="chart-training__label">Master Barber</span>
-								<div class="chart-training__bars">
-									<div style="display: flex; gap: 4px;">
-										<div class="chart-training__bar" style="width: 37%;" aria-label="School path: 1200 hours">School &middot; 1,200 hrs</div>
-										<div class="chart-training__bar chart-training__bar--experience" style="width: 30%;" aria-label="Plus 15 months work experience">+15 mo work</div>
+							<div class="chart-card__body">
+								<div class="chart-training">
+									<div class="chart-training__col">
+										<div class="chart-training__value chart-training__value--zero">0</div>
+										<div class="chart-training__stack">
+											<div class="chart-training__bar chart-training__bar--zero" aria-label="Zero hours of training"></div>
+										</div>
+										<div class="chart-training__label chart-training__label--unlicensed">Unlicensed</div>
 									</div>
-									<div style="display: flex; gap: 4px;">
-										<div class="chart-training__bar chart-training__bar--apprentice" style="width: 70%;" aria-label="Apprentice path: 2250 hours">Apprentice &middot; 2,250 hrs</div>
-										<div class="chart-training__bar chart-training__bar--experience" style="width: 30%;" aria-label="Plus 15 months work experience">+15 mo work</div>
+
+									<div class="chart-training__col">
+										<div class="chart-training__value">900</div>
+										<div class="chart-training__stack">
+											<div class="chart-training__bar chart-training__bar--school" style="height: 56px;" aria-label="900 hours of barber school"></div>
+										</div>
+										<div class="chart-training__label chart-training__label--stylist">Barber-<br />Stylist</div>
+									</div>
+
+									<div class="chart-training__col">
+										<div class="chart-training__value">1,200</div>
+										<div class="chart-training__stack">
+											<div class="chart-training__bar chart-training__bar--school" style="height: 75px;" aria-label="1,200 hours of barber school"></div>
+										</div>
+										<div class="chart-training__label chart-training__label--barber">Licensed<br />Barber</div>
+									</div>
+
+									<div class="chart-training__col">
+										<div class="chart-training__value chart-training__value--master">2,160+</div>
+										<div class="chart-training__stack">
+											<div class="chart-training__bar chart-training__bar--experience" style="height: 60px;" aria-label="Plus 15 months of professional experience">+15 mo</div>
+											<div class="chart-training__bar chart-training__bar--school" style="height: 75px;" aria-label="1,200 hours of barber school"></div>
+										</div>
+										<div class="chart-training__label chart-training__label--master">Master<br />Barber</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="chart-card__legend" aria-label="Chart legend">
-								<span class="chart-card__legend-item">
-									<span class="chart-card__legend-swatch" style="background: var(--prussian-blue);"></span>
-									School path
-								</span>
-								<span class="chart-card__legend-item">
-									<span class="chart-card__legend-swatch" style="background: hsla(204, 93%, 11%, 0.55);"></span>
-									Apprentice path
-								</span>
-								<span class="chart-card__legend-item">
-									<span class="chart-card__legend-swatch" style="background: var(--persian-red);"></span>
-									Professional experience (master only)
-								</span>
+								<div class="chart-card__legend" aria-label="Chart legend">
+									<span class="chart-card__legend-item">
+										<span class="chart-card__legend-swatch" style="background: hsl(207, 60%, 47%);"></span>
+										School path hours
+									</span>
+									<span class="chart-card__legend-item">
+										<span class="chart-card__legend-swatch" style="background: var(--second-color);"></span>
+										Professional experience (master only)
+									</span>
+									<span class="chart-card__legend-item">
+										<span class="chart-card__legend-swatch" style="background: var(--persian-red);"></span>
+										Unlicensed &mdash; zero hours
+									</span>
+								</div>
 							</div>
-							<figcaption class="blog__caption" style="margin-top: 0.75rem;">Approximate hours. Master Barber experience is calculated as 15 months of professional work in addition to base training.</figcaption>
+							<figcaption class="chart-card__footer">Al-Hakeem's Tonsorial &middot; Owings Mills, MD</figcaption>
 						</figure>
 					</section>
 
@@ -494,65 +495,57 @@
 						<p>Every time someone with no training picks up clippers and breaks skin &mdash; even a nick &mdash; without understanding cross-contamination protocols, they are putting a client's health at risk.</p>
 
 						<!-- Chart 2: Exam Breakdown -->
-						<figure class="chart-card" role="group" aria-labelledby="chart-exam-title">
-							<h3 class="chart-card__title" id="chart-exam-title">Maryland Barber Theory Exam</h3>
-							<p class="chart-card__subtitle">100 questions &middot; 2 hours &middot; 70% minimum to pass</p>
-
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">Physical Services (Cut, Taper, Blend)</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill" style="width: 100%;"></div></div>
-								<span class="chart-exam__pct">~20%</span>
+						<figure class="chart-card chart-card--cream" role="group" aria-labelledby="chart-exam-title">
+							<div class="chart-card__header">
+								<h3 class="chart-card__title" id="chart-exam-title">Maryland Barber Theory Exam</h3>
+								<p class="chart-card__subtitle">100 questions &middot; 2 hours &middot; 70% minimum to pass</p>
 							</div>
+							<div class="chart-card__body">
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">Physical Services (Cut, Taper, Blend)</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--gold" style="width: 100%;"></div></div>
+									<span class="chart-exam__pct">20%</span>
+								</div>
 
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">Hair &amp; Scalp Science</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--science" style="width: 100%;"></div></div>
-								<span class="chart-exam__pct">~20%</span>
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">Hair &amp; Scalp Science</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--gold-deep" style="width: 100%;"></div></div>
+									<span class="chart-exam__pct">20%</span>
+								</div>
+
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">Chemical Services</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--navy" style="width: 75%;"></div></div>
+									<span class="chart-exam__pct">15%</span>
+								</div>
+
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">General Barbering Concepts</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--navy" style="width: 75%;"></div></div>
+									<span class="chart-exam__pct">15%</span>
+								</div>
+
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">Sanitation &amp; Infection Control</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--navy-soft" style="width: 60%;"></div></div>
+									<span class="chart-exam__pct">12%</span>
+								</div>
+
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">Shaving &amp; Facial Hair</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--navy-soft" style="width: 50%; opacity: 0.85;"></div></div>
+									<span class="chart-exam__pct">10%</span>
+								</div>
+
+								<div class="chart-exam__row">
+									<span class="chart-exam__label">Maryland Laws &amp; Regulations</span>
+									<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--navy-faded" style="width: 40%;"></div></div>
+									<span class="chart-exam__pct">8%</span>
+								</div>
+
+								<div class="chart-exam__practical">Practical Exam &middot; 84 minutes &middot; Mannequin &middot; Own supply kit &middot; 70% to pass</div>
 							</div>
-
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">Chemical Services</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--science" style="width: 75%;"></div></div>
-								<span class="chart-exam__pct">~15%</span>
-							</div>
-
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">General Barbering Concepts</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill" style="width: 75%;"></div></div>
-								<span class="chart-exam__pct">~15%</span>
-							</div>
-
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">Sanitation &amp; Infection Control</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill chart-exam__bar-fill--science" style="width: 60%;"></div></div>
-								<span class="chart-exam__pct">~12%</span>
-							</div>
-
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">Shaving &amp; Facial Hair</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill" style="width: 50%;"></div></div>
-								<span class="chart-exam__pct">~10%</span>
-							</div>
-
-							<div class="chart-exam__row">
-								<span class="chart-exam__label">Maryland Laws &amp; Regulations</span>
-								<div class="chart-exam__bar-track"><div class="chart-exam__bar-fill" style="width: 40%;"></div></div>
-								<span class="chart-exam__pct">~8%</span>
-							</div>
-
-							<div class="chart-card__legend">
-								<span class="chart-card__legend-item">
-									<span class="chart-card__legend-swatch" style="background: var(--persian-red);"></span>
-									Pure science (anatomy, chemistry, microbiology)
-								</span>
-								<span class="chart-card__legend-item">
-									<span class="chart-card__legend-swatch" style="background: var(--prussian-blue);"></span>
-									Technique, law, and general concepts
-								</span>
-							</div>
-
-							<div class="chart-exam__footer">Practical Exam &middot; 84 minutes &middot; Mannequin &middot; Own supply kit &middot; 70% to pass</div>
-							<figcaption class="blog__caption" style="margin-top: 0.75rem;">Approximate weights based on the Maryland exam content outline. Roughly half the exam is grounded in science, not just cutting technique.</figcaption>
+							<figcaption class="chart-card__footer">Al-Hakeem's Tonsorial &middot; Owings Mills, MD</figcaption>
 						</figure>
 					</section>
 
@@ -702,60 +695,64 @@
 
 						<p><strong>What an unlicensed person uniquely risks:</strong> cross-contamination, misidentified scalp conditions, permanent hairline damage, chemical burns, infection transmission, and zero legal recourse for the client if something goes wrong.</p>
 
-						<!-- Chart 4: Venn Diagram (card layout) -->
-						<figure class="chart-card chart-venn" role="group" aria-labelledby="chart-venn-title">
-							<h3 class="chart-card__title" id="chart-venn-title">Where They Overlap &mdash; And Where They Don't</h3>
-							<p class="chart-card__subtitle">Unlicensed &middot; Licensed Barber &middot; Master Barber</p>
+						<!-- Chart 4: Where They Overlap (navy theme) -->
+						<figure class="chart-card chart-card--navy chart-venn" role="group" aria-labelledby="chart-venn-title">
+							<div class="chart-card__header">
+								<h3 class="chart-card__title" id="chart-venn-title">Where They Overlap &mdash; And Where They Don't</h3>
+								<p class="chart-card__subtitle">Unlicensed &middot; Licensed Barber &middot; Master Barber</p>
+							</div>
+							<div class="chart-card__body">
+								<div class="chart-venn__cards">
+									<div class="chart-venn__card chart-venn__card--unlicensed">
+										<h4 class="chart-venn__card-title">Unlicensed</h4>
+										<p class="chart-venn__card-meta">0 hours &middot; 0 exams</p>
+										<ul>
+											<li>No anatomy training</li>
+											<li>No sanitation protocols</li>
+											<li>No legal accountability</li>
+											<li>Infection &amp; hairline risk</li>
+										</ul>
+									</div>
 
-							<div class="chart-venn__cards">
-								<div class="chart-venn__card chart-venn__card--unlicensed">
-									<h4 class="chart-venn__card-title">Unlicensed</h4>
-									<p class="chart-venn__card-meta">0 hours &middot; 0 exams</p>
-									<ul>
-										<li>No anatomy training</li>
-										<li>No sanitation protocols</li>
-										<li>No legal accountability</li>
-										<li>Infection &amp; hairline risk</li>
-									</ul>
+									<div class="chart-venn__card">
+										<h4 class="chart-venn__card-title">Licensed Barber</h4>
+										<p class="chart-venn__card-meta">1,200+ hrs &middot; 2 exams</p>
+										<ul>
+											<li>Theory + practical exams</li>
+											<li>Anatomy &amp; scalp science</li>
+											<li>Sanitation certified</li>
+											<li>Legal authority to practice</li>
+										</ul>
+									</div>
+
+									<div class="chart-venn__card chart-venn__card--master">
+										<h4 class="chart-venn__card-title">Master Barber</h4>
+										<p class="chart-venn__card-meta">+15 mo experience &middot; 3 exams</p>
+										<ul>
+											<li>Additional master exam</li>
+											<li>Can train apprentices</li>
+											<li>Decades of refinement</li>
+											<li>Advanced consultation</li>
+										</ul>
+									</div>
 								</div>
 
-								<div class="chart-venn__card">
-									<h4 class="chart-venn__card-title">Licensed Barber</h4>
-									<p class="chart-venn__card-meta">1,200+ hrs &middot; 2 exams</p>
-									<ul>
-										<li>Theory + practical exams</li>
-										<li>Anatomy &amp; scalp science</li>
-										<li>Sanitation certified</li>
-										<li>Legal authority to practice</li>
-									</ul>
+								<div class="chart-venn__overlap">
+									<strong>Shared by all three</strong>
+									<p>"Can hold clippers." &mdash; that's it.</p>
 								</div>
 
-								<div class="chart-venn__card">
-									<h4 class="chart-venn__card-title">Master Barber</h4>
-									<p class="chart-venn__card-meta">+15 mo experience &middot; 3 exams</p>
-									<ul>
-										<li>Additional master exam</li>
-										<li>Can train apprentices</li>
-										<li>Decades of refinement</li>
-										<li>Advanced consultation</li>
-									</ul>
+								<div class="chart-venn__overlap">
+									<strong>Shared by Licensed &amp; Master only</strong>
+									<p>State-tested knowledge and infection control certification.</p>
+								</div>
+
+								<div class="chart-venn__bottom">
+									<strong>The Bottom Line</strong>
+									<p>The only thing all three share is the ability to pick up clippers. Everything else requires training, testing, and licensing.</p>
 								</div>
 							</div>
-
-							<div class="chart-venn__overlap">
-								<strong>Shared by all three</strong>
-								<p>"Can hold clippers." &mdash; that's it.</p>
-							</div>
-
-							<div class="chart-venn__overlap">
-								<strong>Shared by Licensed &amp; Master only</strong>
-								<p>State-tested knowledge and infection control certification.</p>
-							</div>
-
-							<div class="chart-venn__bottom">
-								<strong>The Bottom Line</strong>
-								<p>The only thing all three share is the ability to pick up clippers. Everything else requires training, testing, and licensing.</p>
-							</div>
+							<figcaption class="chart-card__footer">Al-Hakeem's Tonsorial &middot; Owings Mills, MD</figcaption>
 						</figure>
 					</section>
 
