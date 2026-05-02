@@ -2059,7 +2059,7 @@ img {
 .article__table caption {
 	caption-side: bottom;
 	font-size: var(--small-font-size);
-	color: var(--text-color-light);
+	color: var(--text-color);
 	padding: 0.75rem 0.25rem 0;
 	text-align: left;
 	font-style: italic;
@@ -2664,6 +2664,12 @@ ol li::before {
 	}
 }
 
+/*=============== BLOG ORDERED-LIST QUESTION HIGHLIGHT ===============*/
+.blog-post #what-to-look-for ol li > strong:first-child {
+	color: var(--first-color);
+	font-weight: var(--font-bold);
+}
+
 /*=============== BLOG CHART COMPONENTS ===============*/
 .chart-card {
 	margin: 2rem 0;
@@ -2678,7 +2684,7 @@ ol li::before {
 	padding: 1.75rem 1.75rem 0.5rem;
 }
 
-.chart-card__title {
+.blog-post .chart-card__title {
 	font-family: var(--second-font);
 	font-weight: var(--font-bold);
 	color: var(--prussian-blue);
@@ -2742,7 +2748,7 @@ ol li::before {
 	border-color: transparent;
 	color: var(--cornsilk);
 }
-.chart-card--navy .chart-card__title { color: var(--white-color); }
+.blog-post .chart-card--navy .chart-card__title { color: var(--white-color); }
 .chart-card--navy .chart-card__subtitle { color: hsla(48, 90%, 92%, 0.65); }
 .chart-card--navy .chart-card__footer {
 	color: var(--second-color);
@@ -2759,7 +2765,7 @@ ol li::before {
 	border-color: transparent;
 	color: var(--text-color);
 }
-.chart-card--cream .chart-card__title { color: var(--prussian-blue); }
+.blog-post .chart-card--cream .chart-card__title { color: var(--prussian-blue); }
 .chart-card--cream .chart-card__footer {
 	color: hsla(204, 93%, 11%, 0.45);
 	border-top-color: hsla(204, 93%, 11%, 0.1);
@@ -2774,7 +2780,7 @@ ol li::before {
 	border-color: transparent;
 	color: var(--cornsilk);
 }
-.chart-card--red .chart-card__title { color: var(--white-color); }
+.blog-post .chart-card--red .chart-card__title { color: var(--white-color); }
 .chart-card--red .chart-card__subtitle { color: hsla(48, 90%, 92%, 0.85); }
 .chart-card--red .chart-card__footer {
 	color: hsla(48, 90%, 92%, 0.7);
