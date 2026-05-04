@@ -2665,6 +2665,9 @@ ol li::before {
 }
 
 /*=============== BLOG ORDERED-LIST QUESTION HIGHLIGHT ===============*/
+.blog-post #what-to-look-for ol li {
+	color: var(--text-color);
+}
 .blog-post #what-to-look-for ol li > strong:first-child {
 	color: var(--first-color);
 	font-weight: var(--font-bold);
