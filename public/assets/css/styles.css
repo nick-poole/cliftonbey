@@ -2978,21 +2978,15 @@ ol li::before {
 	margin: 0;
 }
 
-.chart-venn__card li {
-	padding-left: 1rem;
-	position: relative;
-	margin-bottom: 0.4rem;
+.blog-post .article__section .chart-venn__card ul li {
+	padding-left: 0;
+	margin: 0 0 0.4rem 0;
 	font-size: 0.85rem;
 	color: hsla(48, 90%, 92%, 0.85);
 	line-height: 1.5;
 }
-.chart-venn__card li::before {
-	content: '\203A';
-	color: var(--second-color);
-	position: absolute;
-	left: 0;
-	top: 0;
-	font-weight: var(--font-bold);
+.blog-post .article__section .chart-venn__card ul li::before {
+	content: none;
 }
 
 .chart-venn__overlap {
@@ -3077,6 +3071,4 @@ ol li::before {
 	.chart-exam__pct { font-size: 0.78rem; width: 36px; }
 	.chart-exam__bar-track { height: 22px; }
 
-	.chart-venn__card li { padding-left: 0; }
-	.chart-venn__card li::before { content: none; }
 }
