@@ -2166,7 +2166,7 @@ ol li::before {
 
 .footer__social {
 	display: grid;
-	grid-template-columns: repeat(4, max-content);
+	grid-template-columns: repeat(3, max-content);
 	column-gap: 1.5rem;
 	row-gap: 1.25rem;
 	padding: 1rem;
