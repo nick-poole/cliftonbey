@@ -2166,9 +2166,11 @@ ol li::before {
 
 .footer__social {
 	display: grid;
-	grid-template-columns: repeat(3, max-content);
-	gap: 2rem;
+	grid-template-columns: repeat(4, max-content);
+	column-gap: 1.5rem;
+	row-gap: 1.25rem;
 	padding: 1rem;
+	justify-content: center;
 }
 
 .footer__social-link {
@@ -2407,9 +2409,6 @@ ol li::before {
 	.footer__container {
 		grid-template-columns: 1fr 3fr;
 	}
-	.footer__social {
-		grid-template-columns: repeat(6, 1fr);
-	}
 	.footer__content {
 		grid-template-columns: 3fr 2fr;
 		gap: 8rem;
@@ -2437,6 +2436,10 @@ ol li::before {
 
 	#articleButton {
 		margin-top: -10rem;
+	}
+
+	.footer__social {
+		grid-template-columns: repeat(8, max-content);
 	}
 }
 
