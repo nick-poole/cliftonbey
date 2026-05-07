@@ -2170,7 +2170,6 @@ ol li::before {
 	column-gap: 1.5rem;
 	row-gap: 1.25rem;
 	padding: 1rem;
-	justify-content: center;
 }
 
 .footer__social-link {
@@ -2409,6 +2408,9 @@ ol li::before {
 	.footer__container {
 		grid-template-columns: 1fr 3fr;
 	}
+	.footer__social {
+		grid-template-columns: repeat(4, 1fr);
+	}
 	.footer__content {
 		grid-template-columns: 3fr 2fr;
 		gap: 8rem;
@@ -2439,7 +2441,7 @@ ol li::before {
 	}
 
 	.footer__social {
-		grid-template-columns: repeat(8, max-content);
+		grid-template-columns: repeat(8, 1fr);
 	}
 }
 
