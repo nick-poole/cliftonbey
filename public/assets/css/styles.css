@@ -1116,6 +1116,12 @@ img {
 	background-position: 50% 50%;
 }
 
+.blog__hero-5 {
+	height: 500px;
+	background-image: url('/assets/images/blog/barber-vs-master-barber.webp');
+	background-position: 50% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2053,7 +2059,7 @@ img {
 .article__table caption {
 	caption-side: bottom;
 	font-size: var(--small-font-size);
-	color: var(--text-color-light);
+	color: var(--text-color);
 	padding: 0.75rem 0.25rem 0;
 	text-align: left;
 	font-style: italic;
@@ -2161,7 +2167,8 @@ ol li::before {
 .footer__social {
 	display: grid;
 	grid-template-columns: repeat(3, max-content);
-	gap: 2rem;
+	column-gap: 1.5rem;
+	row-gap: 1.25rem;
 	padding: 1rem;
 }
 
@@ -2402,7 +2409,7 @@ ol li::before {
 		grid-template-columns: 1fr 3fr;
 	}
 	.footer__social {
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 	.footer__content {
 		grid-template-columns: 3fr 2fr;
@@ -2431,6 +2438,10 @@ ol li::before {
 
 	#articleButton {
 		margin-top: -10rem;
+	}
+
+	.footer__social {
+		grid-template-columns: repeat(8, 1fr);
 	}
 }
 
@@ -2652,7 +2663,417 @@ ol li::before {
 	.blog__hero-1,
 	.blog__hero-2,
 	.blog__hero-3,
-	.blog__hero-4 {
+	.blog__hero-4,
+	.blog__hero-5 {
 		height: 500px;
 	}
+}
+
+/*=============== BLOG ORDERED-LIST QUESTION HIGHLIGHT ===============*/
+.blog-post #what-to-look-for ol li {
+	color: var(--text-color);
+}
+.blog-post #what-to-look-for ol li > strong:first-child {
+	color: var(--first-color);
+	font-weight: var(--font-bold);
+}
+
+/*=============== BLOG CHART COMPONENTS ===============*/
+.chart-card {
+	margin: 2rem 0;
+	border-radius: 12px;
+	overflow: hidden;
+	background: var(--container-color);
+	border: 1px solid var(--gray-border);
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.08);
+}
+
+.chart-card__header {
+	padding: 1.75rem 1.75rem 0.5rem;
+}
+
+.blog-post .chart-card__title {
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	color: var(--prussian-blue);
+	font-size: 1.25rem;
+	margin: 0 0 0.3rem 0;
+	line-height: 1.25;
+}
+
+.chart-card__subtitle {
+	font-size: 0.85rem;
+	color: var(--text-color-light);
+	margin: 0;
+	font-style: italic;
+	line-height: 1.4;
+}
+
+.chart-card__body {
+	padding: 1.25rem 1.75rem 1.5rem;
+}
+
+.chart-card__footer {
+	padding: 0.75rem 1.75rem;
+	font-size: 0.7rem;
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--text-color-light);
+	border-top: 1px solid var(--gray-border);
+}
+
+.chart-card__legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem 1.25rem;
+	padding-top: 1.25rem;
+	margin-top: 1.5rem;
+	border-top: 1px solid var(--gray-border);
+	font-size: 0.75rem;
+	color: var(--text-color);
+}
+
+.chart-card__legend-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+}
+
+.chart-card__legend-swatch {
+	width: 12px;
+	height: 12px;
+	border-radius: 2px;
+	flex-shrink: 0;
+	display: inline-block;
+}
+
+/* Theme: navy */
+.chart-card--navy {
+	background: var(--prussian-blue);
+	border-color: transparent;
+	color: var(--cornsilk);
+}
+.blog-post .chart-card--navy .chart-card__title { color: var(--white-color); }
+.chart-card--navy .chart-card__subtitle { color: hsla(48, 90%, 92%, 0.65); }
+.chart-card--navy .chart-card__footer {
+	color: var(--second-color);
+	border-top-color: hsla(0, 0%, 100%, 0.08);
+}
+.chart-card--navy .chart-card__legend {
+	border-top-color: hsla(0, 0%, 100%, 0.08);
+	color: hsla(48, 90%, 92%, 0.7);
+}
+
+/* Theme: cream */
+.chart-card--cream {
+	background: var(--cornsilk);
+	border-color: transparent;
+	color: var(--text-color);
+}
+.blog-post .chart-card--cream .chart-card__title { color: var(--prussian-blue); }
+.chart-card--cream .chart-card__footer {
+	color: hsla(204, 93%, 11%, 0.45);
+	border-top-color: hsla(204, 93%, 11%, 0.1);
+}
+.chart-card--cream .chart-card__legend {
+	border-top-color: hsla(204, 93%, 11%, 0.1);
+}
+
+/* Theme: red (brand persian red) */
+.chart-card--red {
+	background: var(--persian-red);
+	border-color: transparent;
+	color: var(--cornsilk);
+}
+.blog-post .chart-card--red .chart-card__title { color: var(--white-color); }
+.chart-card--red .chart-card__subtitle { color: hsla(48, 90%, 92%, 0.85); }
+.chart-card--red .chart-card__footer {
+	color: hsla(48, 90%, 92%, 0.7);
+	border-top-color: hsla(0, 0%, 100%, 0.15);
+}
+.chart-card--red .chart-card__legend {
+	border-top-color: hsla(0, 0%, 100%, 0.15);
+	color: hsla(48, 90%, 92%, 0.85);
+}
+
+/* Chart 1: Training requirements (horizontal bars) */
+.chart-training__row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.65rem;
+}
+
+.chart-training__label {
+	width: 150px;
+	min-width: 120px;
+	font-family: var(--second-font);
+	font-size: 0.78rem;
+	font-weight: var(--font-bold);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	text-align: right;
+	flex-shrink: 0;
+	color: hsla(48, 90%, 92%, 0.85);
+	line-height: 1.3;
+}
+.chart-training__row--unlicensed .chart-training__label { color: hsl(2, 75%, 65%); }
+.chart-training__row--master .chart-training__label { color: var(--second-color); }
+
+.chart-training__track {
+	flex: 1;
+	height: 26px;
+	background: hsla(0, 0%, 100%, 0.07);
+	border-radius: 6px;
+	overflow: hidden;
+	display: flex;
+}
+
+.chart-training__bar {
+	height: 100%;
+	border-radius: 0;
+}
+
+.chart-training__bar--school {
+	background: hsl(207, 60%, 47%);
+}
+.chart-training__bar--experience {
+	background: var(--second-color);
+}
+.chart-training__bar--zero {
+	background: var(--persian-red);
+}
+.chart-training__bar:first-child { border-radius: 6px 0 0 6px; }
+.chart-training__bar:last-child { border-radius: 0 6px 6px 0; }
+.chart-training__bar:only-child { border-radius: 6px; }
+
+.chart-training__hours {
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	color: var(--white-color);
+	font-size: 0.85rem;
+	min-width: 60px;
+	text-align: right;
+	flex-shrink: 0;
+	letter-spacing: 0.02em;
+}
+.chart-training__row--unlicensed .chart-training__hours { color: hsl(2, 75%, 65%); }
+.chart-training__row--master .chart-training__hours { color: var(--second-color); }
+
+/* Chart 2: Exam breakdown (horizontal gradient bars) */
+.chart-exam__row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.65rem;
+}
+
+.chart-exam__label {
+	width: 200px;
+	min-width: 140px;
+	text-align: right;
+	font-size: 0.82rem;
+	font-weight: var(--font-medium);
+	color: var(--text-color);
+	line-height: 1.3;
+	flex-shrink: 0;
+}
+
+.chart-exam__bar-track {
+	flex: 1;
+	height: 26px;
+	background: hsla(204, 93%, 11%, 0.08);
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.chart-exam__bar-fill {
+	height: 100%;
+	border-radius: 6px;
+}
+
+.chart-exam__bar-fill--gold {
+	background: linear-gradient(90deg, var(--second-color), hsl(42, 98%, 65%));
+}
+.chart-exam__bar-fill--gold-deep {
+	background: linear-gradient(90deg, hsl(42, 70%, 38%), var(--second-color));
+}
+.chart-exam__bar-fill--navy {
+	background: linear-gradient(90deg, hsl(204, 70%, 22%), var(--prussian-blue));
+}
+.chart-exam__bar-fill--navy-soft {
+	background: hsl(204, 60%, 28%);
+}
+.chart-exam__bar-fill--navy-faded {
+	background: hsla(204, 93%, 11%, 0.7);
+}
+
+.chart-exam__pct {
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	color: var(--prussian-blue);
+	font-size: 0.9rem;
+	width: 42px;
+	text-align: right;
+	flex-shrink: 0;
+}
+
+.chart-exam__practical {
+	background: var(--prussian-blue);
+	color: var(--cornsilk);
+	border-radius: 8px;
+	padding: 0.85rem 1.25rem;
+	text-align: center;
+	font-family: var(--second-font);
+	font-size: 0.82rem;
+	font-weight: var(--font-bold);
+	margin-top: 1.25rem;
+	letter-spacing: 0.02em;
+	line-height: 1.4;
+}
+
+/* Chart 4: Overlap cards (navy theme) */
+.chart-venn__cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.chart-venn__card {
+	background: hsla(0, 0%, 100%, 0.04);
+	border: 2px solid hsla(0, 0%, 100%, 0.18);
+	border-radius: 10px;
+	padding: 1.25rem;
+}
+
+.chart-venn__card--unlicensed {
+	border-style: dashed;
+	border-color: hsl(2, 75%, 60%);
+}
+.chart-venn__card--master {
+	border-color: var(--second-color);
+}
+
+.chart-venn__card-title {
+	font-family: var(--second-font);
+	font-weight: var(--font-bold);
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--cornsilk);
+	margin-bottom: 0.15rem;
+}
+.chart-venn__card--unlicensed .chart-venn__card-title { color: hsl(2, 80%, 72%); }
+.chart-venn__card--master .chart-venn__card-title { color: var(--second-color); }
+
+.chart-venn__card-meta {
+	font-size: 0.72rem;
+	color: hsla(48, 90%, 92%, 0.5);
+	margin-bottom: 0.85rem;
+	font-style: italic;
+	letter-spacing: 0.02em;
+}
+
+.chart-venn__card ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.blog-post .article__section .chart-venn__card ul li {
+	padding-left: 0;
+	margin: 0 0 0.4rem 0;
+	font-size: 0.85rem;
+	color: hsla(48, 90%, 92%, 0.85);
+	line-height: 1.5;
+}
+.blog-post .article__section .chart-venn__card ul li::before {
+	content: none;
+}
+
+.chart-venn__overlap {
+	margin-top: 1rem;
+	padding: 0.85rem 1rem;
+	background: hsla(42, 98%, 52%, 0.08);
+	border-left: 3px solid var(--second-color);
+	border-radius: 0 6px 6px 0;
+	font-size: 0.85rem;
+	color: hsla(48, 90%, 92%, 0.85);
+}
+
+.chart-venn__overlap strong {
+	font-family: var(--second-font);
+	color: var(--second-color);
+	display: block;
+	margin-bottom: 0.2rem;
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: var(--font-bold);
+}
+
+.chart-venn__overlap p {
+	margin: 0;
+	font-style: italic;
+}
+
+.chart-venn__bottom {
+	margin-top: 1.25rem;
+	background: var(--second-color);
+	color: var(--prussian-blue);
+	padding: 1rem 1.25rem;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.chart-venn__bottom strong {
+	display: block;
+	font-family: var(--second-font);
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	margin-bottom: 0.4rem;
+	color: var(--prussian-blue);
+	font-weight: var(--font-bold);
+}
+
+.chart-venn__bottom p {
+	margin: 0;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	color: var(--prussian-blue);
+	font-weight: var(--font-medium);
+}
+
+@media screen and (min-width: 720px) {
+	.chart-venn__cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.chart-card__header { padding: 1.25rem 1.25rem 0.5rem; }
+	.chart-card__title { font-size: 1.1rem; }
+	.chart-card__body { padding: 1rem 1.25rem 1.25rem; }
+	.chart-card__footer { padding: 0.6rem 1.25rem; }
+
+	.chart-training__label {
+		width: 110px;
+		min-width: 90px;
+		font-size: 0.68rem;
+	}
+	.chart-training__hours { font-size: 0.78rem; min-width: 50px; }
+	.chart-training__track { height: 22px; }
+
+	.chart-exam__label {
+		width: 110px;
+		min-width: 90px;
+		font-size: 0.72rem;
+	}
+	.chart-exam__pct { font-size: 0.78rem; width: 36px; }
+	.chart-exam__bar-track { height: 22px; }
+
 }
