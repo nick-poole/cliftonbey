@@ -108,7 +108,7 @@ Al-Hakeem's Tonsorial has moved to a new location inside **Salontra Select Suite
 > 10200 Grand Central Avenue, Suite 21
 > Owings Mills, MD 21117
 
-Every page (`index`, `services`, `about`, `cranial-prosthesis`, `blog`, all five blog posts, the 404 page, and both blog templates) was updated in three places: the LocalBusiness `PostalAddress.streetAddress` in JSON-LD, the footer address block, and any in-copy mention of the old venue name or street. The homepage contact card, location section, areas-served paragraph, and Google Maps iframe were also updated, along with the FAQ entry on `/services`. The schema `hasMap` URLs and the on-page Google Maps embed now point to a search-based Google Maps URL for the new address. `sitemap.xml` `lastmod` values were bumped to 2026-05-19 for every affected page.
+Every page (`index`, `services`, `about`, `cranial-prosthesis`, `blog`, all five blog posts, the 404 page, and both blog templates) was updated in three places: the LocalBusiness `PostalAddress.streetAddress` in JSON-LD, the footer address block, and any in-copy mention of the old venue name or street. The homepage contact card, location section, areas-served paragraph, and Google Maps iframe were also updated, along with the FAQ entry on `/services`. The schema `hasMap` URLs and the homepage location card now point to the canonical short URL `https://maps.app.goo.gl/E2xanCu54EYtj8u49`, the embedded iframe on the homepage uses the new place-keyed Google Maps embed for "Al-Hakeem's Tonsorial", and `GeoCoordinates` were updated to the new location (`39.406118`, `-76.781402`). `sitemap.xml` `lastmod` values were bumped to 2026-05-19 for every affected page.
 
 ### Barber vs. Master Barber post (May 5, 2026)
 
