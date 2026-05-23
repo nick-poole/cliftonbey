@@ -100,6 +100,10 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ## Recent Updates
 
+### Business email update (May 23, 2026)
+
+All public-facing references to the legacy `clifton@alhakeems.com` address were swapped for the new shared business inbox `info@alhakeems.com`. The change covers every footer `mailto:` link, the homepage contact card (`href`, `title`, and the visible `<address>`), and the LocalBusiness `email` field in JSON-LD on `index`, `services`, `about`, `cranial-prosthesis`, `blog`, the 404 page, all five blog posts, and both blog templates. The cranial-prosthesis CTA paragraph is the intentional exception: it still routes to the dedicated `clifton@alhakeemsmedicalwigs.com` inbox so medical-wig inquiries land in the correct mailbox. `sitemap.xml` `lastmod` values were bumped to 2026-05-23 for every page.
+
 ### Address change (May 19, 2026)
 
 Al-Hakeem's Tonsorial has moved to a new location inside **Salontra Select Suites**:
