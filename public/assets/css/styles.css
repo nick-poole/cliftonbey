@@ -1902,6 +1902,13 @@ img {
 	color: var(--second-color);
 }
 
+/* Buttons inside article sections keep their button text color, not the inline-link color */
+.article__section a.button,
+.article__section a.button:hover {
+	color: var(--white-color);
+	text-decoration: none;
+}
+
 .article__section ul,
 .article__section ol {
 	margin: 1rem 0;
