@@ -104,7 +104,7 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ### Father-Son Haircut post, membership pricing, hours, and SEO audit (June 5, 2026)
 
-**New blog post — Father-Son Haircuts (`/blog/father-son-haircut-owings-mills`).** A new entry in The Tonsorial Journal targeting the local-commercial keyword "father son haircut Owings Mills" for Father's Day 2026, written in Clifton's first-person voice. The primary focus is the evergreen message (father-son haircuts, confidence, discipline, tradition, and the philosophy that fatherhood is lived every day, not celebrated once a year), with Father's Day kept as light seasonal nods for June timing.
+**New blog post — Father-Son Haircuts (`/blog/father-son-haircut-owings-mills`).** A new entry in The Tonsorial Journal targeting the local-commercial keyword "father son haircut Owings Mills," written in Clifton's first-person voice. Per the client's brand direction, the article focuses year-round on the father-son relationship — mentorship, consistency, tradition, confidence, discipline, and self-respect passed from one generation to the next — with "The Corner Chair Experience" woven into the message and the closing emphasizing that fatherhood is lived every day, not celebrated once a year. Father's Day is intentionally kept to a single secondary FAQ mention rather than positioning the piece as a Father's Day article.
 
 - New `.blog__hero-6` hero variant (`assets/images/blog/black-father-son-haircut.webp`) plus an in-flow `father-son-tradition.webp` figure
 - BlogPosting + BreadcrumbList + FAQPage (6 Q&As) JSON-LD, `datePublished` / `dateModified` 2026-06-05, alongside the shared LocalBusiness/Person/WebSite graph
@@ -112,7 +112,9 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Added to the blog index grid (newest card), the blog `Blog` structured-data `blogPost` list, and `sitemap.xml`
 - CTA contrast fix: buttons placed inside `.article__section` now keep white text (a new rule prevents the inline-link color from overriding `.button`)
 
-**Father & Son Membership pricing.** Updated to **$170/month** with the current benefit list (2 haircuts/month for father, 2 for son, priority booking, consistent grooming for both, optional additional youth at +$65/month, $5 off via Cash or Zelle) on `/services` and reflected in the article body and FAQ.
+**Father & Son Membership pricing.** Updated to **$170/month** with the current benefit list (2 haircuts/month for father, 2 for son, priority booking, consistent grooming for both, optional additional youth at +$65/month) on `/services` and reflected in the article body and FAQ.
+
+**Promotions and payment methods.** Removed the Government / Military / Teacher / Student discount section from `/services` (no longer offered) and scrubbed all Zelle references site-wide (the "$5 off via Cash or Zelle" line on the Father & Son Membership and the metal-tier "Cash or Zelle" savings note, now "Cash payments"), as the shop no longer accepts Zelle.
 
 **Business hours (site-wide).** Updated everywhere — footers, the homepage contact card, and the LocalBusiness `openingHoursSpecification` JSON-LD on every page and both blog templates — to: **Closed Monday; Tuesday–Friday 10 AM–6 PM; Saturday 10 AM–4 PM; Sunday 10 AM–3 PM.**
 
