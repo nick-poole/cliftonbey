@@ -1122,6 +1122,12 @@ img {
 	background-position: 50% 50%;
 }
 
+.blog__hero-6 {
+	height: 500px;
+	background-image: url('/assets/images/blog/black-father-son-haircut.webp');
+	background-position: 50% 30%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -1896,6 +1902,13 @@ img {
 	color: var(--second-color);
 }
 
+/* Buttons inside article sections keep their button text color, not the inline-link color */
+.article__section a.button,
+.article__section a.button:hover {
+	color: var(--white-color);
+	text-decoration: none;
+}
+
 .article__section ul,
 .article__section ol {
 	margin: 1rem 0;
@@ -2664,7 +2677,8 @@ ol li::before {
 	.blog__hero-2,
 	.blog__hero-3,
 	.blog__hero-4,
-	.blog__hero-5 {
+	.blog__hero-5,
+	.blog__hero-6 {
 		height: 500px;
 	}
 }

@@ -24,8 +24,8 @@
 			content="Explore grooming tips, barbershop insights, and style advice from Master Barber Clifton Bey." />
 		<meta property="og:url" content="https://alhakeems.com/blog" />
 		<meta property="og:image" content="https://alhakeems.com/assets/images/blog/redd-francisco.webp" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
+		<meta property="og:image:width" content="1800" />
+		<meta property="og:image:height" content="500" />
 		<meta property="og:image:alt" content="Al-Hakeem's Tonsorial Blog" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Al-Hakeem's Tonsorial" />
@@ -76,9 +76,15 @@
 						"openingHoursSpecification": [
 							{
 								"@type": "OpeningHoursSpecification",
-								"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+								"dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
 								"opens": "10:00",
 								"closes": "18:00"
+							},
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": "Saturday",
+								"opens": "10:00",
+								"closes": "16:00"
 							},
 							{
 								"@type": "OpeningHoursSpecification",
@@ -177,6 +183,13 @@
 						"author": { "@id": "https://alhakeems.com/#clifton-bey" },
 						"isPartOf": { "@id": "https://alhakeems.com/#website" },
 						"blogPost": [
+							{
+								"@type": "BlogPosting",
+								"headline": "Why Father-Son Haircuts Build Confidence, Discipline, and Tradition",
+								"url": "https://alhakeems.com/blog/father-son-haircut-owings-mills",
+								"datePublished": "2026-06-05",
+								"author": { "@id": "https://alhakeems.com/#clifton-bey" }
+							},
 							{
 								"@type": "BlogPosting",
 								"headline": "Barber vs. Master Barber: What's the Real Difference?",
@@ -325,6 +338,37 @@
 
 				<!-- Blog Posts Grid -->
 				<section class="blog__grid" id="blog-posts">
+					<!-- Blog Post Card 6 - Father-Son Haircuts -->
+					<article class="blog__card">
+						<a href="/blog/father-son-haircut-owings-mills" class="blog__card-link">
+							<div class="blog__card-image">
+								<img
+									src="assets/images/blog/black-father-son-haircut.webp"
+									alt="Father and son getting haircuts together at Al-Hakeem's Tonsorial in Owings Mills, MD"
+									loading="lazy" />
+							</div>
+							<div class="blog__card-content">
+								<div class="blog__card-tags">
+									<span class="blog__tag">Father &amp; Son</span>
+									<span class="blog__tag">Tradition</span>
+								</div>
+								<h2 class="blog__card-title">Why Father-Son Haircuts Build Confidence, Discipline &amp; Tradition</h2>
+								<p class="blog__card-excerpt">
+									A father-son haircut is about more than grooming. It is how confidence,
+									discipline, and tradition get passed from one generation to the next, a
+									master barber's take from the chair in Owings Mills.
+								</p>
+								<div class="blog__card-meta">
+									<span class="blog__card-date">June 5, 2026</span>
+									<span class="blog__card-readmore">
+										Read Article
+										<i class="ri-arrow-right-line"></i>
+									</span>
+								</div>
+							</div>
+						</a>
+					</article>
+
 					<!-- Blog Post Card 5 - Barber vs. Master Barber -->
 					<article class="blog__card">
 						<a href="/blog/barber-vs-master-barber" class="blog__card-link">
@@ -610,11 +654,13 @@
 						<li>
 							<i class="ri-time-line"></i>
 							<address class="footer__info">
-								Monday &mdash; Saturday
+								Tuesday &ndash; Friday: 10 AM &ndash; 6 PM
 								<br />
-								10 AM &ndash; 6 PM
+								Saturday: 10 AM &ndash; 4 PM
 								<br />
-								(Sundays until 3PM)
+								Sunday: 10 AM &ndash; 3 PM
+								<br />
+								(Closed Mondays)
 							</address>
 						</li>
 					</ul>

@@ -21,6 +21,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/father-son-haircut-owings-mills` | Article: Why Father-Son Haircuts Build Confidence, Discipline, and Tradition (June 5, 2026) |
 | Blog Post | `/blog/barber-vs-master-barber` | Article: Barber vs. Master Barber — The Real Difference (May 5, 2026) |
 | Blog Post | `/blog/beard-maintenance-between-barber-visits` | Article: How to Maintain a Sharp Beard Between Barbershop Visits |
 | Blog Post | `/blog/professional-grooming-first-impressions` | Article: The Power of Professional Grooming |
@@ -39,7 +40,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - Skip-to-content links and ARIA landmarks for accessibility
 - Eight-link social row in the footer (Facebook, Instagram, Threads, YouTube, X, TikTok, LinkedIn, Apple Podcasts) with a responsive grid (3 columns on mobile, 4 columns at 768px, 8 columns at 1000px)
 - In-article chart components (`.chart-card` with navy, cream, and persian-red themes) used by the Barber vs. Master Barber post for training-hour bars, exam-breakdown bars, competency tables, and overlap cards
-- Site-wide cross-linking between the master-barber article and the four sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
+- Site-wide cross-linking between the master-barber article and the five sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -60,6 +61,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── father-son-haircut-owings-mills.html
 │   ├── barber-vs-master-barber.html
 │   ├── beard-maintenance-between-barber-visits.html
 │   ├── professional-grooming-first-impressions.html
@@ -99,6 +101,24 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Father-Son Haircut post, membership pricing, hours, and SEO audit (June 5, 2026)
+
+**New blog post — Father-Son Haircuts (`/blog/father-son-haircut-owings-mills`).** A new entry in The Tonsorial Journal targeting the local-commercial keyword "father son haircut Owings Mills," written in Clifton's first-person voice. Per the client's brand direction, the article focuses year-round on the father-son relationship — mentorship, consistency, tradition, confidence, discipline, and self-respect passed from one generation to the next — with "The Corner Chair Experience" woven into the message and the closing emphasizing that fatherhood is lived every day, not celebrated once a year. Father's Day is intentionally kept to a single secondary FAQ mention rather than positioning the piece as a Father's Day article.
+
+- New `.blog__hero-6` hero variant (`assets/images/blog/black-father-son-haircut.webp`) plus an in-flow `father-son-tradition.webp` figure
+- BlogPosting + BreadcrumbList + FAQPage (6 Q&As) JSON-LD, `datePublished` / `dateModified` 2026-06-05, alongside the shared LocalBusiness/Person/WebSite graph
+- Internal links to the Father & Son Membership (`/services#memberships`) and Youth Signature Cut (`/services#haircuts`), the theCut booking app, and four sibling posts; reverse contextual links added from the professional-grooming, how-often, and modern-barbershop posts
+- Added to the blog index grid (newest card), the blog `Blog` structured-data `blogPost` list, and `sitemap.xml`
+- CTA contrast fix: buttons placed inside `.article__section` now keep white text (a new rule prevents the inline-link color from overriding `.button`)
+
+**Father & Son Membership pricing.** Updated to **$170/month** with the current benefit list (2 haircuts/month for father, 2 for son, priority booking, consistent grooming for both, optional additional youth at +$65/month) on `/services` and reflected in the article body and FAQ.
+
+**Promotions and payment methods.** Removed the Government / Military / Teacher / Student discount section from `/services` (no longer offered) and scrubbed all Zelle references site-wide (the "$5 off via Cash or Zelle" line on the Father & Son Membership and the metal-tier "Cash or Zelle" savings note, now "Cash payments"), as the shop no longer accepts Zelle.
+
+**Business hours (site-wide).** Updated everywhere — footers, the homepage contact card, and the LocalBusiness `openingHoursSpecification` JSON-LD on every page and both blog templates — to: **Closed Monday; Tuesday–Friday 10 AM–6 PM; Saturday 10 AM–4 PM; Sunday 10 AM–3 PM.**
+
+**SEO / schema / accessibility audit.** Fixed a broken Open Graph / Twitter / schema image on the modern-barbershop post (it referenced a non-existent `modern-barbershop-experience.jpg`; now points to the image the post actually uses, `redd-francisco.webp`). Synced every page's declared `og:image:width` / `og:image:height` to the real file dimensions (several had falsely claimed 1200×630). Verified site-wide: one `<h1>` per page, `lang` attributes present, no duplicate element IDs, all images carry `alt` (decorative carousel images use `alt="" role="presentation"`), all `target="_blank"` links carry `rel="noopener noreferrer"`, clean heading order, and all JSON-LD blocks parse as valid. `sitemap.xml` `lastmod` values bumped to 2026-06-05 for every page. (Known minor item left as-is: `how-often-haircut.webp` contains JPEG bytes under a `.webp` extension — it renders correctly but could be re-encoded to true WebP.)
 
 ### Business email update (May 23, 2026)
 
