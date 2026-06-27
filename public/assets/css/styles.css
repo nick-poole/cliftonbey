@@ -1128,6 +1128,12 @@ img {
 	background-position: 50% 30%;
 }
 
+.blog__hero-7 {
+	height: 500px;
+	background-image: url('/assets/images/blog/first-class-razor.webp');
+	background-position: 50% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2678,7 +2684,8 @@ ol li::before {
 	.blog__hero-3,
 	.blog__hero-4,
 	.blog__hero-5,
-	.blog__hero-6 {
+	.blog__hero-6,
+	.blog__hero-7 {
 		height: 500px;
 	}
 }
