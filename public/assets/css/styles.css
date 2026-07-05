@@ -2019,6 +2019,37 @@ img {
 	color: var(--white-color);
 }
 
+/*=============== TABLE: STICKY FIRST COLUMN (mobile freeze-pane) ===============*/
+/* Keeps the row label (e.g. membership tier) visible while the wide table
+   scrolls horizontally, so labels and their values read together on mobile.
+   Uses border-collapse: separate so the sticky column keeps its width. */
+.article__table--sticky {
+	border-collapse: separate;
+	border-spacing: 0;
+	/* overflow:hidden on the base table traps position:sticky, so let it be
+	   visible here and round the corners via the .table-responsive wrapper. */
+	overflow: visible;
+	border-radius: 0;
+}
+
+.article__table--sticky th:first-child,
+.article__table--sticky td:first-child {
+	position: sticky;
+	left: 0;
+	white-space: nowrap;
+	box-shadow: 1px 0 0 hsla(0, 0%, 100%, 0.18);
+}
+
+.article__table--sticky tbody td:first-child {
+	background-color: var(--prussian-blue);
+	z-index: 1;
+}
+
+.article__table--sticky thead th:first-child {
+	background-color: hsl(204, 93%, 9%);
+	z-index: 2;
+}
+
 /*=============== TABLE: SECONDARY ALTERNATE (Red Header) ===============*/
 .article__table--alt {
 	background-color: var(--container-color);
