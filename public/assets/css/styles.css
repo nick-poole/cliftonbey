@@ -2054,6 +2054,17 @@ img {
 	}
 }
 
+/* Full-bleed: let the table span the whole viewport width on phones so the
+   columns get maximum room and never trigger a horizontal scrollbar. No
+   ancestor clips overflow, so this needs no markup restructuring. */
+@media screen and (max-width: 600px) {
+	.table-responsive--bleed {
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		padding-inline: 0.75rem;
+	}
+}
+
 /*=============== TABLE: SECONDARY ALTERNATE (Red Header) ===============*/
 .article__table--alt {
 	background-color: var(--container-color);
