@@ -21,6 +21,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/is-a-barbershop-membership-worth-it` | Article: Is a Barbershop Membership Worth It? The Value of Consistent Professional Grooming (July 5, 2026) |
 | Blog Post | `/blog/father-son-haircut-owings-mills` | Article: Why Father-Son Haircuts Build Confidence, Discipline, and Tradition (June 5, 2026) |
 | Blog Post | `/blog/barber-vs-master-barber` | Article: Barber vs. Master Barber — The Real Difference (May 5, 2026) |
 | Blog Post | `/blog/beard-maintenance-between-barber-visits` | Article: How to Maintain a Sharp Beard Between Barbershop Visits |
@@ -61,6 +62,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── is-a-barbershop-membership-worth-it.html
 │   ├── father-son-haircut-owings-mills.html
 │   ├── barber-vs-master-barber.html
 │   ├── beard-maintenance-between-barber-visits.html
@@ -101,6 +103,26 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Barbershop Membership post, membership repricing, and mobile table (July 5, 2026)
+
+**New blog post — Is a Barbershop Membership Worth It? (`/blog/is-a-barbershop-membership-worth-it`).** A new entry in The Tonsorial Journal targeting "barbershop membership," written in Clifton's first-person voice (he is a solo barber, so the copy stays "I"/"my" throughout — no "we"/"our"). The article makes the case for consistent professional grooming and includes a cost-comparison table that shows each metal tier against paying à la carte, using the real $60 Signature Cut. The Father & Son section intentionally emphasizes consistency, shared time, and tradition over dollar savings, per the client's direction.
+
+- New `.blog__hero-7` hero variant (`assets/images/blog/first-class-razor.webp`, background position `60% 50%`)
+- Cost-comparison table built on the reusable `.article__table`, plus a new `.article__table--sticky` modifier that freezes the first column on mobile so the tier names stay visible while the savings columns scroll horizontally (works around `overflow: hidden` trapping `position: sticky` by rounding corners on the `.table-responsive` wrapper instead)
+- Full SEO layer: title tag, meta description, canonical, Open Graph / Twitter cards, and BlogPosting + FAQPage + Person + Breadcrumb JSON-LD; visible FAQ kept in sync with the FAQPage schema
+- Internal links to `/services#memberships` and three sibling posts (father-son, professional-grooming, how-often, beard-maintenance)
+- Added to the blog index grid (newest card), the blog `Blog` structured-data `blogPost` list, and `sitemap.xml`
+
+**Membership repricing (site-wide).** Updated to the client's current pricing on `/services`, in the membership article's comparison table, and in the Father & Son article: **Bronze $110/month, Silver $165/month, Gold $215/month, Father & Son $180/month.** All monthly and annual savings in the article table were recalculated against the $60 Signature Cut (Bronze $10/mo · $120/yr; Silver $15/mo · $180/yr; Gold $25/mo · $300/yr).
+
+**Cash discount removed.** The additional cash-payment discount is no longer offered; the "Cash payments save $4–$5/mo" note was removed from `/services` and the corresponding line dropped from the article.
+
+**10% grooming-product discount narrowed to Silver and Gold.** Bronze no longer includes the 10% off grooming products. Updated the `/services` comparison table (Bronze cell now shows "—") and the article paragraph beneath the savings table to state the discount applies to Silver and Gold only.
+
+**Zelle.** Confirmed there are no remaining Zelle references anywhere on the site (the client now processes payments through Square).
+
+`sitemap.xml` `lastmod` values bumped to 2026-07-05 for `/blog`, the new membership article, `/services`, and the Father & Son article.
 
 ### Father-Son Haircut post, membership pricing, hours, and SEO audit (June 5, 2026)
 

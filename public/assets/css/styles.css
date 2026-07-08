@@ -1128,6 +1128,12 @@ img {
 	background-position: 50% 30%;
 }
 
+.blog__hero-7 {
+	height: 500px;
+	background-image: url('/assets/images/blog/first-class-razor.webp');
+	background-position: 60% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2013,6 +2019,52 @@ img {
 	color: var(--white-color);
 }
 
+/*=============== TABLE: COMPARISON (metrics as rows, plans as columns) ===============*/
+/* Same orientation as the Services membership comparison table. The data
+   columns are short numbers, so the table stays narrow enough to fit small
+   screens without a horizontal scrollbar (min-width floor removed). */
+.article__table--compare {
+	min-width: 0;
+}
+
+.article__table--compare thead th {
+	text-align: center;
+}
+
+.article__table--compare thead th:first-child {
+	text-align: left;
+}
+
+.article__table--compare tbody th {
+	text-align: left;
+	font-weight: var(--font-medium);
+	color: var(--white-color);
+	background-color: hsla(0, 0%, 0%, 0.12);
+}
+
+.article__table--compare tbody td {
+	text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+	.article__table--compare th,
+	.article__table--compare td {
+		padding: 0.55rem 0.35rem;
+		font-size: 0.75rem;
+	}
+}
+
+/* Full-bleed: let the table span the whole viewport width on phones so the
+   columns get maximum room and never trigger a horizontal scrollbar. No
+   ancestor clips overflow, so this needs no markup restructuring. */
+@media screen and (max-width: 600px) {
+	.table-responsive--bleed {
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		padding-inline: 0.75rem;
+	}
+}
+
 /*=============== TABLE: SECONDARY ALTERNATE (Red Header) ===============*/
 .article__table--alt {
 	background-color: var(--container-color);
@@ -2678,7 +2730,8 @@ ol li::before {
 	.blog__hero-3,
 	.blog__hero-4,
 	.blog__hero-5,
-	.blog__hero-6 {
+	.blog__hero-6,
+	.blog__hero-7 {
 		height: 500px;
 	}
 }
