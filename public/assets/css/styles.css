@@ -1136,8 +1136,8 @@ img {
 
 .blog__hero-8 {
 	height: 500px;
-	background-image: url('/assets/images/blog/low-mid-high-fade-hero.webp');
-	background-position: 50% 50%;
+	background-image: url('/assets/images/blog/fades-explained-hero.webp');
+	background-position: 65% 40%;
 }
 
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
@@ -1336,6 +1336,11 @@ img {
 	border-radius: 8px;
 	margin: 2rem 0;
 	text-align: center;
+}
+
+/* Left-aligned callout variant (opt-in per post) */
+.blog__callout--left {
+	text-align: left;
 }
 
 .blog__callout h2,

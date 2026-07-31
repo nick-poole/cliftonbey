@@ -43,6 +43,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - Eight-link social row in the footer (Facebook, Instagram, Threads, YouTube, X, TikTok, LinkedIn, Apple Podcasts) with a responsive grid (3 columns on mobile, 4 columns at 768px, 8 columns at 1000px)
 - In-article chart components (`.chart-card` with navy, cream, and persian-red themes) used by the Barber vs. Master Barber post for training-hour bars, exam-breakdown bars, competency tables, and overlap cards
 - Site-wide cross-linking between the master-barber article and the five sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
+- The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -63,6 +64,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── low-fade-vs-mid-fade-vs-high-fade.html
 │   ├── is-a-barbershop-membership-worth-it.html
 │   ├── father-son-haircut-owings-mills.html
 │   ├── barber-vs-master-barber.html
@@ -104,6 +106,10 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Fade-styles article — Low Fade vs. Mid Fade vs. High Fade (August 5, 2026)
+
+**New blog post — Which Fade Is Right for You? (`/blog/low-fade-vs-mid-fade-vs-high-fade`).** A new entry in The Tonsorial Journal targeting "low fade vs mid fade vs high fade," written in Clifton's first-person voice. The article explains where each fade begins (low, mid, high), clarifies the fade-vs-taper distinction, covers the temple taper, and walks through how to choose based on face shape, hair type, lifestyle, and profession. It carries the full metadata set (Open Graph/Twitter cards, BreadcrumbList, an enriched BlogPosting with an image array plus `inLanguage`/`articleSection`/`keywords`, and FAQPage), a `.blog__hero-8` hero (`fades-explained-hero.webp`, 1800×800) with a `role="img"` label, and left-aligned CTA copy via the opt-in `.blog__callout--left` modifier. The Low Fade, Mid Fade, and Temple Taper figures reuse real client photos from the portfolio; the High Fade slot and the three-up comparison strip remain drop-in placeholders until final images are produced. The post cross-links to all seven sibling articles plus the about and services pages.
 
 ### Barbershop Membership post, membership repricing, and mobile table (July 5, 2026)
 
