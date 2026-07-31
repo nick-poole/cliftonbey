@@ -1134,6 +1134,12 @@ img {
 	background-position: 60% 50%;
 }
 
+.blog__hero-8 {
+	height: 500px;
+	background-image: url('/assets/images/blog/low-mid-high-fade-hero.webp');
+	background-position: 50% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2731,7 +2737,8 @@ ol li::before {
 	.blog__hero-4,
 	.blog__hero-5,
 	.blog__hero-6,
-	.blog__hero-7 {
+	.blog__hero-7,
+	.blog__hero-8 {
 		height: 500px;
 	}
 }
