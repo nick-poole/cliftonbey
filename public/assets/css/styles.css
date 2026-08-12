@@ -1134,6 +1134,12 @@ img {
 	background-position: 60% 50%;
 }
 
+.blog__hero-8 {
+	height: 500px;
+	background-image: url('/assets/images/blog/fades-explained-hero.webp');
+	background-position: 65% 40%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -1330,6 +1336,11 @@ img {
 	border-radius: 8px;
 	margin: 2rem 0;
 	text-align: center;
+}
+
+/* Left-aligned callout variant (opt-in per post) */
+.blog__callout--left {
+	text-align: left;
 }
 
 .blog__callout h2,
@@ -2731,7 +2742,8 @@ ol li::before {
 	.blog__hero-4,
 	.blog__hero-5,
 	.blog__hero-6,
-	.blog__hero-7 {
+	.blog__hero-7,
+	.blog__hero-8 {
 		height: 500px;
 	}
 }
