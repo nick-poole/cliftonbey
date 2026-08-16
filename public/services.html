@@ -119,7 +119,11 @@
 							"@type": "ReserveAction",
 							"target": {
 								"@type": "EntryPoint",
-								"urlTemplate": "https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+								"urlTemplate": "https://alhakeems.com/book",
+								"actionPlatform": [
+									"https://schema.org/DesktopWebPlatform",
+									"https://schema.org/MobileWebPlatform"
+								]
 							},
 							"result": {
 								"@type": "Reservation",
@@ -419,7 +423,7 @@
 						"name": "How do I book an appointment at Al-Hakeem's Tonsorial?",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "All appointments are booked through theCut app. Visit my booking page at app.thecut.co to view available services, select your preferred time, and reserve your appointment. Walk-ins are not guaranteed, so booking in advance is recommended."
+							"text": "All appointments are booked online through my booking page. View available services, select your preferred time, and reserve your appointment. Walk-ins are not guaranteed, so booking in advance is recommended."
 						}
 					},
 					{
@@ -427,7 +431,7 @@
 						"name": "What is your cancellation policy?",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "I ask that clients cancel or reschedule their appointment through theCut app with reasonable notice. Late cancellations and no-shows may affect your ability to book priority time slots in the future. Respecting your barber's time ensures the best experience for all clients."
+							"text": "I ask that clients cancel or reschedule their appointment online with reasonable notice. Late cancellations and no-shows may affect your ability to book priority time slots in the future. Respecting your barber's time ensures the best experience for all clients."
 						}
 					},
 					{
@@ -451,7 +455,7 @@
 						"name": "Do I need an appointment or do you accept walk-ins?",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "Appointments are strongly recommended and can be booked through theCut app. Walk-ins are accommodated when availability allows, but booking ahead ensures you get the time slot that works best for your schedule."
+							"text": "Appointments are strongly recommended and can be booked online at any time. Walk-ins are accommodated when availability allows, but booking ahead ensures you get the time slot that works best for your schedule."
 						}
 					},
 					{
@@ -521,9 +525,10 @@
 						</li>
 
 						<li>
-							<a href="/#contact" title="Contact" class="nav__link button">
-								Contact
-							</a>
+							<a href="/book" title="Book an Appointment" class="nav__link button">Book</a>
+						</li>
+						<li>
+							<a href="/#contact" title="Contact" class="nav__link">Contact</a>
 						</li>
 					</ul>
 
@@ -560,12 +565,7 @@
 						</p>
 
 						<div class="services-page__book-top">
-							<a
-								href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-								target="_blank"
-								rel="noopener noreferrer"
-								title="View pricing and book on theCut"
-								class="button">
+							<a href="/book" title="View pricing and book" class="button">
 								View Pricing &amp; Book
 							</a>
 						</div>
@@ -969,22 +969,18 @@
 						<div class="faq__item">
 							<h3>How do I book an appointment?</h3>
 							<p>
-								All appointments are booked through
-								<a
-									href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-									target="_blank"
-									rel="noopener noreferrer">theCut app</a>.
-								Visit my booking page to view available services, select your preferred time, and
-								reserve your appointment. Walk-ins are not guaranteed, so booking in advance is
-								recommended.
+								All appointments are booked online through my
+								<a href="/book">booking page</a>. View available services, select your preferred
+								time, and reserve your appointment. Walk-ins are not guaranteed, so booking in
+								advance is recommended.
 							</p>
 						</div>
 
 						<div class="faq__item">
 							<h3>What is your cancellation policy?</h3>
 							<p>
-								I ask that clients cancel or reschedule their appointment through theCut app with
-								reasonable notice. Late cancellations and no-shows may affect your ability to book
+								I ask that clients cancel or reschedule their appointment online with reasonable
+								notice. Late cancellations and no-shows may affect your ability to book
 								priority time slots in the future. Respecting your barber's time ensures the best
 								experience for all clients.
 							</p>
@@ -1020,7 +1016,7 @@
 						<div class="faq__item">
 							<h3>Do I need an appointment, or do you accept walk-ins?</h3>
 							<p>
-								Appointments are strongly recommended and can be booked through theCut app. Walk-ins
+								Appointments are strongly recommended and can be booked online at any time. Walk-ins
 								are accommodated when availability allows, but booking ahead ensures you get the time
 								slot that works best for your schedule.
 							</p>
@@ -1041,12 +1037,7 @@
 					<section class="blog__callout services-page__cta" id="book-appointment">
 						<h2>Ready to Experience Grooming Done the Right Way?</h2>
 						<p>Book your appointment today and experience the tonsorial difference.</p>
-						<a
-							href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-							class="button"
-							target="_blank"
-							rel="noopener noreferrer"
-							title="Book an Appointment on theCut">
+						<a href="/book" class="button" title="Book an Appointment">
 							Book Now
 						</a>
 					</section>
@@ -1199,15 +1190,7 @@
 						</li>
 
 						<li>
-							<a
-								href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="footer__link"
-								title="Book Clifton on theCut"
-								aria-label="Book Clifton on theCut app. This link opens in a new window.">
-								Booking
-							</a>
+							<a href="/book" class="footer__link" title="Booking">Booking</a>
 						</li>
 						<li>
 							<a href="/cranial-prosthesis" class="footer__link">Cranial Prosthesis</a>

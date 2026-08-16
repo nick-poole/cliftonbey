@@ -20,6 +20,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Services | `/services` | Full service menu, pricing, membership comparison table, FAQs |
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
+| Book | `/book` | SQUIRE booking widget, with the hosted SQUIRE short link as fallback |
 | Blog | `/blog` | Blog landing page |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
 | Blog Post | `/blog/is-a-barbershop-membership-worth-it` | Article: Is a Barbershop Membership Worth It? The Value of Consistent Professional Grooming (July 5, 2026) |
@@ -107,6 +108,19 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ## Recent Updates
 
+### SQUIRE booking migration (August 16, 2026)
+
+**Booking moved from the previous provider to SQUIRE, and on-site.** The client launches SQUIRE on August 24, 2026, so every booking pathway was repointed off the old third-party booking URL. All 69 references across 17 HTML files are gone.
+
+- **New `/book` page (`public/book.html`).** Carries SQUIRE's inline widget snippet (brand `e5c1da05-…`) in `<head>`. The script is scoped to this page only — it is deliberately not site-wide, so the third-party request never touches the ranking pages and the widget cannot inject UI elsewhere. Includes a `<noscript>` fallback and a visible "Book directly on SQUIRE" link to the hosted short link `https://getsqr.co/clifton-22`, plus the phone number.
+- **URL is `/book`, not `/book/`.** The site-wide `/*/ → /:splat` rule in `netlify.toml` strips trailing slashes and every existing URL is extensionless-no-slash, so a `/book/` canonical would have fought that rule and looped.
+- **All CTAs now internal.** Hero, services, blog callouts, 404, both blog templates, and the footer "Booking" link all point at `/book` in the same tab (`target="_blank"`/`rel` removed). Prose and FAQ answers that named the old provider were rewritten rather than URL-swapped, with the visible FAQ text and its `FAQPage` JSON-LD kept in sync.
+- **Nav gained a Book item.** Added after Cranial Prosthesis as the single emphasized `nav__link button`; Contact was demoted to a plain `nav__link` so the nav still has exactly one button.
+- **Schema.** The `ReserveAction` `urlTemplate` in all 15 files carrying the graph now points at `https://alhakeems.com/book` and declares `actionPlatform` (desktop + mobile). New `BreadcrumbList` (Home → Book) on `/book`. `sameAs` was already clean; `getsqr.co` is deliberately not added there (booking endpoint, not a profile).
+- **CSP widened for SQUIRE.** `script-src`/`connect-src`/`frame-src`/`style-src`/`font-src` now allow `https://*.getsquire.com`. Without this the widget was blocked outright. Netlify applies every matching `[[headers]]` rule and browsers intersect duplicate CSP headers, so a `/book`-scoped policy would not have worked — the site-wide policy is the one that had to change.
+- **Redirects.** `/booking` and `/book.html` → `/book` (301). `/book/` is already handled by the existing trailing-slash rule.
+- New `.book__hero` (300px, reusing `tonsorial-hero.webp`) and `.book__widget` styles. The widget container uses `:not(:empty)` so it reserves no space if SQUIRE injects elsewhere.
+
 ### Fade-styles article — Low Fade vs. Mid Fade vs. High Fade (August 5, 2026)
 
 **New blog post — Which Fade Is Right for You? (`/blog/low-fade-vs-mid-fade-vs-high-fade`).** A new entry in The Tonsorial Journal targeting "low fade vs mid fade vs high fade," written in Clifton's first-person voice. The article explains where each fade begins (low, mid, high), clarifies the fade-vs-taper distinction, covers the temple taper, and walks through how to choose based on face shape, hair type, lifestyle, and profession. It carries the full metadata set (Open Graph/Twitter cards, BreadcrumbList, an enriched BlogPosting with an image array plus `inLanguage`/`articleSection`/`keywords`, and FAQPage), a `.blog__hero-8` hero (`fades-explained-hero.webp`, 1800×800) with a `role="img"` label, and left-aligned CTA copy via the opt-in `.blog__callout--left` modifier. The Low Fade, Mid Fade, and Temple Taper figures reuse real client photos from the portfolio; the High Fade slot and the three-up comparison strip remain drop-in placeholders until final images are produced. The post cross-links to all seven sibling articles plus the about and services pages.
@@ -137,7 +151,7 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 - New `.blog__hero-6` hero variant (`assets/images/blog/black-father-son-haircut.webp`) plus an in-flow `father-son-tradition.webp` figure
 - BlogPosting + BreadcrumbList + FAQPage (6 Q&As) JSON-LD, `datePublished` / `dateModified` 2026-06-05, alongside the shared LocalBusiness/Person/WebSite graph
-- Internal links to the Father & Son Membership (`/services#memberships`) and Youth Signature Cut (`/services#haircuts`), the theCut booking app, and four sibling posts; reverse contextual links added from the professional-grooming, how-often, and modern-barbershop posts
+- Internal links to the Father & Son Membership (`/services#memberships`) and Youth Signature Cut (`/services#haircuts`), the booking page (`/book`), and four sibling posts; reverse contextual links added from the professional-grooming, how-often, and modern-barbershop posts
 - Added to the blog index grid (newest card), the blog `Blog` structured-data `blogPost` list, and `sitemap.xml`
 - CTA contrast fix: buttons placed inside `.article__section` now keep white text (a new rule prevents the inline-link color from overriding `.button`)
 

@@ -25,7 +25,12 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self'"
+    # SQUIRE booking widget (loaded on /book only) needs its host allowed here.
+    # Netlify applies every matching [[headers]] rule, so a second /book-scoped
+    # CSP would be intersected by the browser and still block the widget --
+    # hence the single site-wide policy. Hosts unreferenced by a page have no
+    # effect on it, so other pages are unchanged in practice.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://widget.getsquire.com https://*.getsquire.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://*.getsquire.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com https://*.getsquire.com; img-src 'self' data: https:; frame-src https://www.google.com https://*.getsquire.com; connect-src 'self' https://*.getsquire.com"
 
 # Cache static assets (1 year)
 [[headers]]
@@ -79,4 +84,17 @@
 [[redirects]]
   from = "/blog/*.html"
   to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/book.html"
+  to = "/book"
+  status = 301
+
+# Likely guess-type for the booking page. /book/ -> /book is already covered
+# by the trailing-slash rule above, so no rule is added for it -- adding one
+# would fight that rule and loop.
+[[redirects]]
+  from = "/booking"
+  to = "/book"
   status = 301

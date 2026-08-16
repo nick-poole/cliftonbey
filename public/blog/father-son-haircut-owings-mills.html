@@ -115,7 +115,11 @@
 							"@type": "ReserveAction",
 							"target": {
 								"@type": "EntryPoint",
-								"urlTemplate": "https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+								"urlTemplate": "https://alhakeems.com/book",
+								"actionPlatform": [
+									"https://schema.org/DesktopWebPlatform",
+									"https://schema.org/MobileWebPlatform"
+								]
 							},
 							"result": {
 								"@type": "Reservation",
@@ -271,7 +275,7 @@
 						"name": "How do I book a father-son haircut?",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "Book online through the theCut app, where you can reserve a time for both you and your son. Appointments are strongly recommended over walk-ins, especially during busy seasons and around the holidays, when the chair fills quickly."
+							"text": "Book online through my booking page, where you can reserve a time for both you and your son. Appointments are strongly recommended over walk-ins, especially during busy seasons and around the holidays, when the chair fills quickly."
 						}
 					},
 					{
@@ -343,7 +347,10 @@
 						</li>
 
 						<li>
-							<a href="/#contact" class="nav__link button">Contact</a>
+							<a href="/book" title="Book an Appointment" class="nav__link button">Book</a>
+						</li>
+						<li>
+							<a href="/#contact" title="Contact" class="nav__link">Contact</a>
 						</li>
 					</ul>
 
@@ -444,12 +451,7 @@
 
 						<p>It is the kind of arrangement that turns a once-in-a-while visit into a standing date you both look forward to, month after month.</p>
 
-						<a
-							href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-							class="button"
-							target="_blank"
-							rel="noopener noreferrer"
-							title="Book Your Father-Son Visit on theCut">
+						<a href="/book" class="button" title="Book Your Father-Son Visit">
 							Book Your Father-Son Visit
 						</a>
 					</section>
@@ -476,12 +478,7 @@
 					<section class="blog__callout" id="book-appointment">
 						<h2>Standards Passed Down, One Cut at a Time</h2>
 						<p>At Al-Hakeem's Tonsorial in Owings Mills, every cut is more than a cut. Being a father isn't something you celebrate one day a year. It's something you live every day, in the standards you keep and the example you set. That is the whole idea behind The Corner Chair Experience: a father and son, side by side, passing down confidence, discipline, and self-respect from one generation to the next. Bring your son in, take the seat next to him, and start a tradition you'll both keep coming back to.</p>
-						<a
-							href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-							class="button"
-							target="_blank"
-							rel="noopener noreferrer"
-							title="Book Your Father-Son Haircut on theCut">
+						<a href="/book" class="button" title="Book Your Father-Son Haircut">
 							Book Now
 						</a>
 					</section>
@@ -512,7 +509,7 @@
 
 						<div class="faq__item">
 							<h3>How do I book a father-son haircut?</h3>
-							<p>Book online through the <a href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl" target="_blank" rel="noopener noreferrer">theCut app</a>, where you can reserve a time for both you and your son. Appointments are strongly recommended over walk-ins, especially during busy seasons and around the holidays, when the chair fills quickly.</p>
+							<p>Book online through my <a href="/book">booking page</a>, where you can reserve a time for both you and your son. Appointments are strongly recommended over walk-ins, especially during busy seasons and around the holidays, when the chair fills quickly.</p>
 						</div>
 
 						<div class="faq__item">
@@ -678,13 +675,7 @@
 							<a href="/blog" class="footer__link">Blog</a>
 						</li>
 						<li>
-							<a
-								href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="footer__link">
-								Booking
-							</a>
+							<a href="/book" class="footer__link" title="Booking">Booking</a>
 						</li>
 						<li>
 							<a href="/cranial-prosthesis" class="footer__link">Cranial Prosthesis</a>
