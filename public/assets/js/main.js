@@ -33,8 +33,18 @@ const bgHeader = () => {
 	window.scrollY >= 50 ? header.classList.add('bg-header') : header.classList.remove('bg-header');
 };
 
+/*=============== SWIPER GUARD ===============*/
+/* Swiper is only loaded on the homepage. Without this guard, the bare
+   `new Swiper(...)` calls below throw "Swiper is not defined" on every other
+   page, which aborts the rest of this file and silently kills the sticky
+   header background, the scroll-up button and the scroll-spy site-wide. */
+const initSwiper = (selector, options) =>
+	typeof Swiper !== 'undefined' && document.querySelector(selector)
+		? new Swiper(selector, options)
+		: null;
+
 /*=============== SWIPER SERVICES ===============*/
-const swiperServices = new Swiper('.services__swiper', {
+const swiperServices = initSwiper('.services__swiper', {
 	loop: true,
 	grabCursor: true,
 	centeredSlides: true,
@@ -90,7 +100,7 @@ const swiperServices = new Swiper('.services__swiper', {
 });
 
 /*=============== SWIPER 2 SERVICES ===============*/
-const swiperPortfolio = new Swiper('.portfolio__swiper', {
+const swiperPortfolio = initSwiper('.portfolio__swiper', {
 	loop: true,
 	grabCursor: true,
 	centeredSlides: true,

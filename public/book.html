@@ -248,6 +248,9 @@
 
 				<div class="nav__menu" id="nav-menu">
 					<ul class="nav__list">
+						<li class="nav__item--cta">
+							<a href="/book" title="Book an Appointment" class="nav__link button active-link">Book</a>
+						</li>
 						<li>
 							<a href="/" class="nav__link">Home</a>
 						</li>
@@ -266,9 +269,6 @@
 							<a href="/cranial-prosthesis" class="nav__link">Cranial Prosthesis</a>
 						</li>
 
-						<li>
-							<a href="/book" title="Book an Appointment" class="nav__link button active-link">Book</a>
-						</li>
 						<li>
 							<a href="/#contact" title="Contact" class="nav__link">Contact</a>
 						</li>
@@ -311,6 +311,17 @@
 							 targets a container, it is already here. Confirm which on the deploy
 							 preview and tighten if SQUIRE expects a specific id. -->
 						<div id="squire-booking" class="book__widget"></div>
+
+						<!-- Revealed by the script at the end of this page only if SQUIRE
+							 never rendered, so the page can never be a dead end. -->
+						<p id="book-fallback-cta" class="book__fallback-cta" hidden>
+							<span>The booking widget didn't load, but you can still book on SQUIRE directly.</span>
+							<a
+								href="https://getsqr.co/clifton-22"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="button">Book on SQUIRE</a>
+						</p>
 
 						<noscript>
 							<p>
@@ -529,5 +540,27 @@
 		</a>
 		<!--=============== MAIN JS ===============-->
 		<script src="assets/js/main.js" defer></script>
+
+		<!--=============== SQUIRE WIDGET FALLBACK ===============-->
+		<script>
+			/* SQUIRE renders asynchronously. If nothing has appeared after a few
+			   seconds -- script blocked, request failed, or inline mode wanted a
+			   container we did not provide -- surface the hosted booking link so
+			   the page is never a dead end. Kept inline and independent of
+			   main.js so it runs regardless of the shared bundle's state. */
+			(function () {
+				var mount = document.getElementById('squire-booking');
+				var fallback = document.getElementById('book-fallback-cta');
+				if (!mount || !fallback) return;
+				window.setTimeout(function () {
+					/* Look beyond the mount: if inline mode injected into <body>
+					   instead of our container, the widget is working. */
+					var injected = document.querySelector(
+						'iframe, [id*="squire" i]:not(#squire-booking), [class*="squire" i]'
+					);
+					if (!mount.firstElementChild && !injected) fallback.hidden = false;
+				}, 4000);
+			})();
+		</script>
 	</body>
 </html>

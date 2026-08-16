@@ -1045,6 +1045,20 @@ img {
 	font-size: var(--small-font-size);
 }
 
+.book__fallback-cta {
+	margin: 2rem 0 0 0;
+}
+
+.book__fallback-cta span {
+	display: block;
+	margin-bottom: 0.75rem;
+}
+
+/* Explicit, so no later display rule can defeat the hidden attribute. */
+.book__fallback-cta[hidden] {
+	display: none;
+}
+
 #book .faq__address {
 	margin-bottom: 1rem;
 }
@@ -2577,6 +2591,12 @@ ol li::before {
 		flex-direction: row;
 		align-items: center;
 		column-gap: 4rem;
+	}
+	/* Book leads the mobile panel in DOM order so it is the first thing a
+	   thumb reaches; on desktop it moves to the right-hand end, where a nav
+	   CTA conventionally sits. Every other item keeps the default order: 0. */
+	.nav__item--cta {
+		order: 1;
 	}
 	.bg-header {
 		background-color: var(--cornsilk);
