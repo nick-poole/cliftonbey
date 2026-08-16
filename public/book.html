@@ -544,22 +544,43 @@
 		<!--=============== SQUIRE WIDGET FALLBACK ===============-->
 		<script>
 			/* SQUIRE renders asynchronously. If nothing has appeared after a few
-			   seconds -- script blocked, request failed, or inline mode wanted a
-			   container we did not provide -- surface the hosted booking link so
-			   the page is never a dead end. Kept inline and independent of
-			   main.js so it runs regardless of the shared bundle's state. */
+			   seconds -- script blocked, request failed, brand not live yet, or
+			   inline mode wanted a container we did not provide -- surface the
+			   hosted booking link so the page is never a dead end. Kept inline
+			   and independent of main.js so it runs regardless of the shared
+			   bundle's state. */
 			(function () {
 				var mount = document.getElementById('squire-booking');
 				var fallback = document.getElementById('book-fallback-cta');
 				if (!mount || !fallback) return;
-				window.setTimeout(function () {
-					/* Look beyond the mount: if inline mode injected into <body>
-					   instead of our container, the widget is working. */
-					var injected = document.querySelector(
+
+				/* Look beyond the mount: if inline mode injected into <body>
+				   instead of our container, the widget is working. */
+				var rendered = function () {
+					return !!mount.firstElementChild || !!document.querySelector(
 						'iframe, [id*="squire" i]:not(#squire-booking), [class*="squire" i]'
 					);
-					if (!mount.firstElementChild && !injected) fallback.hidden = false;
-				}, 4000);
+				};
+
+				var timer = window.setTimeout(function () {
+					if (!rendered()) fallback.hidden = false;
+				}, 6000);
+
+				/* Self-correcting: on a slow connection the widget can arrive
+				   after the timeout, which would otherwise leave "didn't load"
+				   sitting above a perfectly working widget. */
+				var observer = new MutationObserver(function () {
+					if (!rendered()) return;
+					fallback.hidden = true;
+					window.clearTimeout(timer);
+					observer.disconnect();
+				});
+				observer.observe(document.body, { childList: true, subtree: true });
+
+				/* Stop watching after a minute; nothing is coming. */
+				window.setTimeout(function () {
+					observer.disconnect();
+				}, 60000);
 			})();
 		</script>
 	</body>
