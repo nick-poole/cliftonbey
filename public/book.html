@@ -8,6 +8,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+		<link rel="preconnect" href="https://widget.getsquire.com" crossorigin />
 		<link rel="preconnect" href="https://getsquire.com" />
 
 		<meta name="robots" content="index, follow" />
@@ -17,12 +18,13 @@
 		<title>Book an Appointment | Al-Hakeem's Tonsorial | Owings Mills, MD</title>
 		<link rel="canonical" href="https://alhakeems.com/book" />
 
-		<!-- SQUIRE booking is embedded in the page body as a direct iframe of
-			 the booking flow (see the SQUIRE BOOKING EMBED section). SQUIRE's
-			 widget.js loader is intentionally NOT used: it only offers a
-			 floating launcher bubble plus a fixed slide-in dialog, never an
-			 in-page embed. Brand ID for reference:
-			 e5c1da05-ce52-43b3-8151-97659dfd7de6 -->
+		<!--=============== SQUIRE BOOKING WIDGET ===============-->
+		<!-- Loads SQUIRE's slide-in booking dialog, scoped to this page only.
+			 x-squire-show-btn="false" (undocumented, verified in widget.js
+			 source) suppresses SQUIRE's floating corner bubble -- our own Book
+			 CTAs open the dialog instead via window.SquireWidget.open(); see
+			 the wiring script at the end of <body>. -->
+		<script type="text/javascript">!function(e,t){var i=e.createElement("script"),sa="setAttribute";i.src="https://widget.getsquire.com/widget.js?"+Date.now(),i[sa]("defer",""),i[sa]("type","text/javascript"),i[sa]("brand",t.brand),i[sa]("x-squire-inline-enabled",t.inline||!1),i[sa]("x-squire-show-btn","false"),e.head.appendChild(i)}(document,{brand:"e5c1da05-ce52-43b3-8151-97659dfd7de6",inline:true});</script>
 
 		<!--=============== OpenGraph ===============-->
 		<meta property="og:type" content="website" />
@@ -296,90 +298,185 @@
 				<div class="container">
 					<div class="hero__headings">
 						<h1 class="heading">Book Your Appointment</h1>
-						<p class="subheading">Reserve Your Chair at Al-Hakeem's Tonsorial</p>
+						<p class="subheading">Master Barbering in Owings Mills &mdash; by Appointment Only</p>
 					</div>
 
-					<section class="article__section">
+					<!--========== PRIMARY CTA ==========-->
+					<section class="article__section book__intro">
 						<p>
-							Al-Hakeem's Tonsorial is appointment-only. Choose your service and time below,
-							and you will get a confirmation straight away. New clients should book the
-							<a href="/services#haircuts">New Client / Reset Cut</a>, which includes a full
-							consultation.
+							The chair is yours in about a minute: pick a service, choose a time, and you are
+							booked. Booking opens right here on the page through SQUIRE.
 						</p>
-
-						<!--========== SQUIRE BOOKING EMBED ==========-->
-						<!-- Direct embed of SQUIRE's booking flow, in the page flow. SQUIRE's
-							 own widget loader offers no inline mode -- its frameLoader.js
-							 hardcodes a fixed-position slide-in dialog plus a floating launcher
-							 button -- so we frame the same booking URL its widget uses
-							 (verified loading on this origin, deploy preview 25). The slug
-							 (al-hakeems-tonsorial-owings-mills-1 / clifton-al-hakeem-bey-1)
-							 comes from SQUIRE; if it ever changes, the fallback below and the
-							 short link https://getsqr.co/clifton-22 still work. -->
-						<div class="book__embed">
-							<iframe
-								id="squire-embed"
-								class="book__embed-frame"
-								src="https://getsquire.com/booking/book/al-hakeems-tonsorial-owings-mills-1/barber/clifton-al-hakeem-bey-1/services?platform=widget&viewMode=singleBarber"
-								title="Book an appointment at Al-Hakeem's Tonsorial"
-								allow="geolocation; payment"></iframe>
-						</div>
-
-						<!-- Revealed by the script at the end of this page only if the SQUIRE
-							 frame never loads, so the page can never be a dead end. -->
-						<p id="book-fallback-cta" class="book__fallback-cta" hidden>
-							<span>The booking widget didn't load, but you can still book on SQUIRE directly.</span>
+						<div class="book__cta-row">
 							<a
 								href="https://getsqr.co/clifton-22"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="button">Book on SQUIRE</a>
-						</p>
-
-						<noscript>
-							<p>
-								Online booking needs JavaScript enabled.
-								<a
-									href="https://getsqr.co/clifton-22"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="button">
-									Book on SQUIRE
-								</a>
-							</p>
-						</noscript>
-
+								class="button book__cta"
+								data-squire-open>
+								<i class="ri-calendar-check-line"></i>
+								Book Now
+							</a>
+							<span class="book__cta-note">Takes about a minute &middot; no account needed</span>
+						</div>
 						<p class="book__fallback">
 							Trouble booking?
 							<a
 								href="https://getsqr.co/clifton-22"
 								target="_blank"
-								rel="noopener noreferrer">Book directly on SQUIRE</a>
+								rel="noopener noreferrer">Book on SQUIRE's site</a>
 							or call
 							<a href="tel:+13478155706">(347) 815-5706</a>.
 						</p>
 					</section>
 
+					<!--========== HOW IT WORKS ==========-->
 					<section class="article__section">
-						<h2>Before You Book</h2>
-						<p>
-							Al-Hakeem's Tonsorial is located inside
-							<a
-								href="https://maps.app.goo.gl/E2xanCu54EYtj8u49"
-								target="_blank"
-								rel="noopener noreferrer">Salontra Select Suites</a>:
+						<h2>How It Works</h2>
+						<ol class="book__steps">
+							<li class="book__step">
+								<i class="ri-scissors-2-line"></i>
+								<b>1. Pick your service</b>
+								<p>Cuts, beard work, and treatments &mdash; the same menu and prices as in the shop.</p>
+							</li>
+							<li class="book__step">
+								<i class="ri-calendar-line"></i>
+								<b>2. Choose your time</b>
+								<p>Live availability, Tuesday through Sunday. Grab the slot that fits your week.</p>
+							</li>
+							<li class="book__step">
+								<i class="ri-check-double-line"></i>
+								<b>3. You're booked</b>
+								<p>Instant confirmation with reminders, and easy rescheduling if plans change.</p>
+							</li>
+						</ol>
+					</section>
+
+					<!--========== MOST BOOKED ==========-->
+					<section class="article__section">
+						<h2>Most Booked</h2>
+						<div class="book__services">
+							<div class="services-page__item">
+								<div class="services-page__item-header">
+									<h3>Signature Cut</h3>
+									<span class="services-page__price">$60</span>
+								</div>
+								<span class="services-page__duration"><i class="ri-time-line"></i> 40 minutes</span>
+								<p>A precision haircut for men &amp; women with razor lineup and light beard shaping.</p>
+								<a
+									href="https://getsqr.co/clifton-22"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="button__link book__service-link"
+									data-squire-open>
+									<span>Book this</span>
+									<i class="ri-arrow-right-line"></i>
+								</a>
+							</div>
+							<div class="services-page__item">
+								<div class="services-page__item-header">
+									<h3>New Client / Reset Cut</h3>
+									<span class="services-page__price">$75</span>
+								</div>
+								<span class="services-page__duration"><i class="ri-time-line"></i> 45 minutes</span>
+								<p>First visit? Start here &mdash; includes a full consultation on the right look and aftercare.</p>
+								<a
+									href="https://getsqr.co/clifton-22"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="button__link book__service-link"
+									data-squire-open>
+									<span>Book this</span>
+									<i class="ri-arrow-right-line"></i>
+								</a>
+							</div>
+							<div class="services-page__item">
+								<div class="services-page__item-header">
+									<h3>Beard Wash, Shape &amp; Sculpt</h3>
+									<span class="services-page__price">$65</span>
+								</div>
+								<span class="services-page__duration"><i class="ri-time-line"></i> 40 minutes</span>
+								<p>Full beard ritual: wash, precise shaping, and a sculpted finish.</p>
+								<a
+									href="https://getsqr.co/clifton-22"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="button__link book__service-link"
+									data-squire-open>
+									<span>Book this</span>
+									<i class="ri-arrow-right-line"></i>
+								</a>
+							</div>
+						</div>
+						<p class="book__menu-link">
+							Looking for something else? See the
+							<a href="/services">full service menu and memberships</a>.
 						</p>
-						<address class="faq__address">
-							10200 Grand Central Avenue, Suite 21
-							<br />
-							Owings Mills, MD 21117
-						</address>
-						<p>
-							Walk-ins are accommodated when availability allows, but booking ahead ensures you
-							get the time slot that works best for your schedule. Please cancel or reschedule
-							online with reasonable notice. See all
-							<a href="/services">services and pricing</a>.
-						</p>
+					</section>
+
+					<!--========== GOOD TO KNOW ==========-->
+					<section class="article__section">
+						<h2>Good to Know</h2>
+						<div class="book__info">
+							<div class="book__info-card">
+								<i class="ri-map-pin-2-line"></i>
+								<b>Location</b>
+								<address>
+									Inside Salontra Select Suites
+									<br />
+									10200 Grand Central Avenue, Suite 21
+									<br />
+									Owings Mills, MD 21117
+								</address>
+								<a
+									href="https://maps.app.goo.gl/E2xanCu54EYtj8u49"
+									target="_blank"
+									rel="noopener noreferrer">Get directions</a>
+							</div>
+							<div class="book__info-card">
+								<i class="ri-time-line"></i>
+								<b>Hours</b>
+								<p>
+									Tuesday &ndash; Friday: 10 AM &ndash; 6 PM
+									<br />
+									Saturday: 10 AM &ndash; 4 PM
+									<br />
+									Sunday: 10 AM &ndash; 3 PM
+									<br />
+									(Closed Mondays)
+								</p>
+							</div>
+							<div class="book__info-card">
+								<i class="ri-walk-line"></i>
+								<b>Walk-ins</b>
+								<p>
+									Accommodated when the schedule allows, but booking ahead is the only way to
+									guarantee your slot.
+								</p>
+							</div>
+							<div class="book__info-card">
+								<i class="ri-arrow-go-back-line"></i>
+								<b>Cancellations</b>
+								<p>
+									Cancel or reschedule online with reasonable notice. Late cancellations and
+									no-shows can affect priority booking.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<!--========== FINAL CTA ==========-->
+					<section class="blog__callout" id="book-appointment">
+						<h2>Ready When You Are</h2>
+						<p>Thirty years of craft, one chair, and a time slot with your name on it.</p>
+						<a
+							href="https://getsqr.co/clifton-22"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button"
+							data-squire-open>
+							Book Now
+						</a>
 					</section>
 				</div>
 			</article>
@@ -554,42 +651,44 @@
 		<!--=============== MAIN JS ===============-->
 		<script src="assets/js/main.js" defer></script>
 
-		<!--=============== SQUIRE EMBED FALLBACK ===============-->
+		<!--=============== SQUIRE WIDGET WIRING ===============-->
 		<script>
-			/* If the embedded SQUIRE frame never boots -- network failure, CSP
-			   regression, or SQUIRE changing the booking URL slug -- collapse
-			   the frame and surface the hosted booking link so the page is
-			   never a dead end. The success signal is a message from the
-			   getsquire.com origin: the booking app posts to its parent frame
-			   on boot. The iframe's own load event is deliberately NOT used,
-			   because Chromium fires it even for committed error pages, which
-			   would mask a dead embed. Self-correcting: a late boot restores
-			   the frame and re-hides the fallback. Kept inline and independent
-			   of main.js so it runs regardless of the shared bundle's state. */
+			/* Every [data-squire-open] CTA is a real link to the hosted booking
+			   page (getsqr.co), so booking works even if the widget script never
+			   loads -- or with JavaScript off entirely. When the widget is ready,
+			   clicks open SQUIRE's slide-in dialog in place instead. The setup
+			   pins the dialog straight to Clifton's chair (slugs from SQUIRE's
+			   own frame URL), skipping the brand-to-barber lookups. */
 			(function () {
-				var frame = document.getElementById('squire-embed');
-				var fallback = document.getElementById('book-fallback-cta');
-				if (!frame || !fallback) return;
-
-				var embed = frame.parentElement;
-				var loaded = false;
-				var markLoaded = function () {
-					loaded = true;
-					fallback.hidden = true;
-					embed.hidden = false;
+				var SETUP = {
+					brand: 'e5c1da05-ce52-43b3-8151-97659dfd7de6',
+					shop: 'al-hakeems-tonsorial-owings-mills-1',
+					barber: 'clifton-al-hakeem-bey-1'
 				};
 
-				window.addEventListener('message', function (event) {
-					if (event.origin === 'https://getsquire.com') markLoaded();
+				document.addEventListener('click', function (event) {
+					var trigger = event.target.closest('[data-squire-open]');
+					if (!trigger) return;
+					if (window.SquireWidget && typeof window.SquireWidget.open === 'function') {
+						event.preventDefault();
+						window.SquireWidget.open(SETUP);
+					}
+					/* Not ready yet: the anchor falls through to getsqr.co in a
+					   new tab -- never a dead end. */
 				});
-				/* Manual hook for console debugging and tests. */
-				window.__squireEmbedLoaded = markLoaded;
 
-				window.setTimeout(function () {
-					if (loaded) return;
-					embed.hidden = true;
-					fallback.hidden = false;
-				}, 10000);
+				/* Pre-mount the dialog while the page is idle so the first open
+				   is instant instead of booting the app behind an empty panel. */
+				var warm = function () {
+					if (window._squireMountWidgetSetup) window._squireMountWidgetSetup(SETUP);
+				};
+				window.addEventListener('load', function () {
+					if ('requestIdleCallback' in window) {
+						window.requestIdleCallback(warm, { timeout: 4000 });
+					} else {
+						window.setTimeout(warm, 2500);
+					}
+				});
 			})();
 		</script>
 	</body>

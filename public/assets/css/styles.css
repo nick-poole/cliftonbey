@@ -1033,50 +1033,155 @@ img {
 	margin: 0 auto 3rem auto;
 }
 
-/* SQUIRE's booking flow, framed directly in the page. Full width of the
-   content column, and tall enough to work in without touching the frame's
-   internal scrollbar: viewport height minus room for the sticky header,
-   clamped so tiny and huge screens both stay sane. */
-.book__embed {
-	margin: 2rem auto 0 auto;
+/* Primary CTA row: the one emphasized action above the fold, with a quiet
+   reassurance note beside it and the escape hatch (SQUIRE site / phone)
+   underneath. Every Book CTA on this page is a real link to the hosted
+   booking page that the widget script upgrades to an in-page dialog. */
+.book__cta-row {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem 1.25rem;
+	margin: 1.75rem 0 1rem 0;
 }
 
-/* Explicit, so no later display rule can defeat the hidden attribute
-   when the fallback script collapses a dead frame. */
-.book__embed[hidden] {
-	display: none;
+.book__cta {
+	column-gap: 0.5rem;
+	align-items: center;
+	font-size: var(--h3-font-size);
+	padding: 1.15rem 2.5rem;
 }
 
-.book__embed-frame {
-	display: block;
-	width: 100%;
-	height: clamp(640px, calc(100vh - 160px), 1200px);
-	border: 0.5px solid rgb(225, 225, 225);
-	border-radius: 12px;
-	background: rgb(247, 247, 247);
+.book__cta i {
+	font-size: 1.25rem;
 }
 
-.book__fallback {
-	margin-top: 1.5rem;
+.book__cta-note {
+	color: var(--text-color);
 	font-size: var(--small-font-size);
 }
 
-.book__fallback-cta {
-	margin: 2rem 0 0 0;
+.book__fallback {
+	margin-top: 0.5rem;
+	font-size: var(--small-font-size);
 }
 
-.book__fallback-cta span {
+.book__steps {
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1.25rem;
+	padding: 0;
+}
+
+/* Neutralize the global ordered-list treatment (red text + generated
+   counters at ol li::before); the steps carry their own numbering. */
+.book__steps li {
+	margin: 0;
+	color: var(--text-color);
+	counter-increment: none;
+}
+
+.book__steps li::before {
+	content: none;
+}
+
+.book__step {
+	background-color: var(--container-color);
+	border-radius: 8px;
+	padding: 1.25rem 1.5rem;
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.06);
+}
+
+.book__step i {
+	font-size: 1.5rem;
+	color: var(--persian-red);
+}
+
+.book__step b {
 	display: block;
-	margin-bottom: 0.75rem;
+	margin: 0.5rem 0 0.25rem 0;
+	color: var(--title-color);
 }
 
-/* Explicit, so no later display rule can defeat the hidden attribute. */
-.book__fallback-cta[hidden] {
-	display: none;
+.book__step p {
+	line-height: 1.6;
 }
 
-#book .faq__address {
-	margin-bottom: 1rem;
+.book__services {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1.25rem;
+}
+
+.book__services .services-page__item {
+	display: flex;
+	flex-direction: column;
+}
+
+.book__services .services-page__item p {
+	line-height: 1.6;
+	margin: 0.5rem 0 0.75rem 0;
+}
+
+.book__service-link {
+	margin-top: auto;
+	font-weight: var(--font-semi-bold);
+}
+
+.book__menu-link {
+	margin-top: 1.25rem;
+}
+
+.book__info {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1.25rem;
+}
+
+/* Navy accent: informational cards, as opposed to the red accent on
+   bookable service cards. */
+.book__info-card {
+	background-color: var(--container-color);
+	border-left: 4px solid var(--prussian-blue);
+	border-radius: 0 8px 8px 0;
+	padding: 1.25rem 1.5rem;
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.06);
+}
+
+.book__info-card i {
+	font-size: 1.35rem;
+	color: var(--prussian-blue);
+}
+
+.book__info-card b {
+	display: block;
+	margin: 0.35rem 0 0.5rem 0;
+	color: var(--title-color);
+}
+
+.book__info-card p,
+.book__info-card address {
+	font-style: normal;
+	line-height: 1.7;
+}
+
+.book__info-card address {
+	margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 700px) {
+	.book__steps,
+	.book__services {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.book__info {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 /*=============== CRANIAL ===============*/
