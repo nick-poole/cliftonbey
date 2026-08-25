@@ -305,12 +305,11 @@
 							consultation.
 						</p>
 
-						<!--========== SQUIRE BOOKING WIDGET MOUNT ==========-->
-						<!-- The head snippet runs with x-squire-inline-enabled. If the widget
-							 auto-injects into <body>, this container is inert and harmless; if it
-							 targets a container, it is already here. Confirm which on the deploy
-							 preview and tighten if SQUIRE expects a specific id. -->
-						<div id="squire-booking" class="book__widget"></div>
+						<!--========== SQUIRE BOOKING WIDGET ==========-->
+						<!-- No mount element: verified on the Netlify deploy preview, the head
+							 snippet's inline mode ignores local containers and appends its own
+							 #squire_booking_widget_root plus an iframe.squire_widget (loading
+							 from getsquire.com) to the end of <body>. -->
 
 						<!-- Revealed by the script at the end of this page only if SQUIRE
 							 never rendered, so the page can never be a dead end. -->
@@ -543,22 +542,24 @@
 
 		<!--=============== SQUIRE WIDGET FALLBACK ===============-->
 		<script>
-			/* SQUIRE renders asynchronously. If nothing has appeared after a few
-			   seconds -- script blocked, request failed, brand not live yet, or
-			   inline mode wanted a container we did not provide -- surface the
+			/* SQUIRE renders asynchronously and -- verified on the deploy
+			   preview -- appends its own #squire_booking_widget_root and an
+			   iframe.squire_widget (loading from getsquire.com) to the end of
+			   <body>. If that iframe has not appeared after a few seconds --
+			   script blocked, request failed, or brand not live -- surface the
 			   hosted booking link so the page is never a dead end. Kept inline
 			   and independent of main.js so it runs regardless of the shared
 			   bundle's state. */
 			(function () {
-				var mount = document.getElementById('squire-booking');
 				var fallback = document.getElementById('book-fallback-cta');
-				if (!mount || !fallback) return;
+				if (!fallback) return;
 
-				/* Look beyond the mount: if inline mode injected into <body>
-				   instead of our container, the widget is working. */
+				/* Match SQUIRE's own iframe, never just any iframe: Netlify's
+				   deploy-preview toolbar is an iframe too, and matching it
+				   would mask a dead widget during preview testing. */
 				var rendered = function () {
-					return !!mount.firstElementChild || !!document.querySelector(
-						'iframe, [id*="squire" i]:not(#squire-booking), [class*="squire" i]'
+					return !!document.querySelector(
+						'iframe[src*="getsquire" i], iframe.squire_widget'
 					);
 				};
 

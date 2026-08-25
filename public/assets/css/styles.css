@@ -1033,13 +1033,6 @@ img {
 	margin: 0 auto 3rem auto;
 }
 
-/* Only reserves space once SQUIRE has populated the container, so the
-   mount stays a zero-footprint no-op if the widget injects elsewhere. */
-.book__widget:not(:empty) {
-	margin: 2rem 0;
-	min-height: 600px;
-}
-
 .book__fallback {
 	margin-top: 1.5rem;
 	font-size: var(--small-font-size);
