@@ -1033,12 +1033,12 @@ img {
 	margin: 0 auto 3rem auto;
 }
 
-/* SQUIRE's booking flow, framed directly in the page. Sized to the app's
-   native panel height (727px, from SQUIRE's own widget CSS) with breathing
-   room on short viewports; internal scrolling belongs to the app. */
+/* SQUIRE's booking flow, framed directly in the page. Full width of the
+   content column, and tall enough to work in without touching the frame's
+   internal scrollbar: viewport height minus room for the sticky header,
+   clamped so tiny and huge screens both stay sane. */
 .book__embed {
 	margin: 2rem auto 0 auto;
-	max-width: 760px;
 }
 
 /* Explicit, so no later display rule can defeat the hidden attribute
@@ -1050,8 +1050,7 @@ img {
 .book__embed-frame {
 	display: block;
 	width: 100%;
-	height: min(80vh, 727px);
-	min-height: 540px;
+	height: clamp(640px, calc(100vh - 160px), 1200px);
 	border: 0.5px solid rgb(225, 225, 225);
 	border-radius: 12px;
 	background: rgb(247, 247, 247);
