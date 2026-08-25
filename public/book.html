@@ -684,6 +684,34 @@
 						window.setTimeout(warm, 2500);
 					}
 				});
+
+				/* SQUIRE's bookButton.js mounts its corner launcher with INLINE
+				   "display: block !important", which no stylesheet rule can
+				   override (the rules in styles.css are belt-and-braces only).
+				   Neutralize it at the source: write display:none !important
+				   into the element's own style attribute, and re-assert if
+				   SQUIRE ever rewrites it. Guarded so our own writes cannot
+				   loop the observer. */
+				var hideBubble = function (el) {
+					if (!el) return;
+					if (el.style.getPropertyValue('display') !== 'none') {
+						el.style.setProperty('display', 'none', 'important');
+						el.style.setProperty('opacity', '0', 'important');
+						el.style.setProperty('pointer-events', 'none', 'important');
+					}
+				};
+				var bubbleArmed = false;
+				var armBubble = function () {
+					var el = document.getElementById('squire_booking_widget_root');
+					if (!el || bubbleArmed) return;
+					bubbleArmed = true;
+					hideBubble(el);
+					new MutationObserver(function () {
+						hideBubble(el);
+					}).observe(el, { attributes: true, attributeFilter: ['style'] });
+				};
+				armBubble();
+				new MutationObserver(armBubble).observe(document.body, { childList: true });
 			})();
 		</script>
 	</body>
