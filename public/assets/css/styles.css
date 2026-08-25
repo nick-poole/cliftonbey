@@ -1021,8 +1021,14 @@ img {
 /*=============== BOOK ===============*/
 .book__hero {
 	height: 300px;
-	background-image: url('/assets/images/tonsorial-hero.webp');
-	background-position: 50% 40%;
+	background-image: url('/assets/images/book-hero.webp');
+	background-position: 50% 50%;
+	background-color: #1a1a1a;
+}
+
+/* Keep phone numbers on one line wherever they appear on this page. */
+#book a[href^='tel:'] {
+	white-space: nowrap;
 }
 
 /* /book gets a wider canvas than the default 1120px container (precedent:
@@ -1171,6 +1177,9 @@ img {
 	align-items: center;
 	column-gap: 0.5rem;
 	margin-bottom: 0.6rem;
+	color: var(--title-color);
+	font-size: var(--normal-font-size);
+	font-weight: var(--font-semi-bold);
 }
 
 .book__info-head i {

@@ -1,0 +1,10 @@
+{
+	"extends": ["html-validate:recommended"],
+	"rules": {
+		"void-style": ["error", { "style": "selfclosing" }],
+		"no-inline-style": "off",
+		"long-title": "off",
+		"script-type": "off",
+		"tel-non-breaking": "off"
+	}
+}
