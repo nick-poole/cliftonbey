@@ -8,7 +8,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-		<link rel="preconnect" href="https://widget.getsquire.com" crossorigin />
+		<link rel="preconnect" href="https://getsquire.com" />
 
 		<meta name="robots" content="index, follow" />
 		<meta
@@ -17,10 +17,12 @@
 		<title>Book an Appointment | Al-Hakeem's Tonsorial | Owings Mills, MD</title>
 		<link rel="canonical" href="https://alhakeems.com/book" />
 
-		<!--=============== SQUIRE BOOKING WIDGET ===============-->
-		<!-- Scoped to this page only: keeps the third-party request off every
-			 other page and stops the widget injecting UI site-wide. -->
-		<script type="text/javascript">!function(e,t){var i=e.createElement("script"),sa="setAttribute";i.src="https://widget.getsquire.com/widget.js?"+Date.now(),i[sa]("defer",""),i[sa]("type","text/javascript"),i[sa]("brand",t.brand),i[sa]("x-squire-inline-enabled",t.inline||!1),e.head.appendChild(i)}(document,{brand:"e5c1da05-ce52-43b3-8151-97659dfd7de6",inline:true});</script>
+		<!-- SQUIRE booking is embedded in the page body as a direct iframe of
+			 the booking flow (see the SQUIRE BOOKING EMBED section). SQUIRE's
+			 widget.js loader is intentionally NOT used: it only offers a
+			 floating launcher bubble plus a fixed slide-in dialog, never an
+			 in-page embed. Brand ID for reference:
+			 e5c1da05-ce52-43b3-8151-97659dfd7de6 -->
 
 		<!--=============== OpenGraph ===============-->
 		<meta property="og:type" content="website" />
@@ -305,14 +307,26 @@
 							consultation.
 						</p>
 
-						<!--========== SQUIRE BOOKING WIDGET ==========-->
-						<!-- No mount element: verified on the Netlify deploy preview, the head
-							 snippet's inline mode ignores local containers and appends its own
-							 #squire_booking_widget_root plus an iframe.squire_widget (loading
-							 from getsquire.com) to the end of <body>. -->
+						<!--========== SQUIRE BOOKING EMBED ==========-->
+						<!-- Direct embed of SQUIRE's booking flow, in the page flow. SQUIRE's
+							 own widget loader offers no inline mode -- its frameLoader.js
+							 hardcodes a fixed-position slide-in dialog plus a floating launcher
+							 button -- so we frame the same booking URL its widget uses
+							 (verified loading on this origin, deploy preview 25). The slug
+							 (al-hakeems-tonsorial-owings-mills-1 / clifton-al-hakeem-bey-1)
+							 comes from SQUIRE; if it ever changes, the fallback below and the
+							 short link https://getsqr.co/clifton-22 still work. -->
+						<div class="book__embed">
+							<iframe
+								id="squire-embed"
+								class="book__embed-frame"
+								src="https://getsquire.com/booking/book/al-hakeems-tonsorial-owings-mills-1/barber/clifton-al-hakeem-bey-1/services?platform=widget&viewMode=singleBarber"
+								title="Book an appointment at Al-Hakeem's Tonsorial"
+								allow="geolocation; payment"></iframe>
+						</div>
 
-						<!-- Revealed by the script at the end of this page only if SQUIRE
-							 never rendered, so the page can never be a dead end. -->
+						<!-- Revealed by the script at the end of this page only if the SQUIRE
+							 frame never loads, so the page can never be a dead end. -->
 						<p id="book-fallback-cta" class="book__fallback-cta" hidden>
 							<span>The booking widget didn't load, but you can still book on SQUIRE directly.</span>
 							<a
@@ -540,48 +554,42 @@
 		<!--=============== MAIN JS ===============-->
 		<script src="assets/js/main.js" defer></script>
 
-		<!--=============== SQUIRE WIDGET FALLBACK ===============-->
+		<!--=============== SQUIRE EMBED FALLBACK ===============-->
 		<script>
-			/* SQUIRE renders asynchronously and -- verified on the deploy
-			   preview -- appends its own #squire_booking_widget_root and an
-			   iframe.squire_widget (loading from getsquire.com) to the end of
-			   <body>. If that iframe has not appeared after a few seconds --
-			   script blocked, request failed, or brand not live -- surface the
-			   hosted booking link so the page is never a dead end. Kept inline
-			   and independent of main.js so it runs regardless of the shared
-			   bundle's state. */
+			/* If the embedded SQUIRE frame never boots -- network failure, CSP
+			   regression, or SQUIRE changing the booking URL slug -- collapse
+			   the frame and surface the hosted booking link so the page is
+			   never a dead end. The success signal is a message from the
+			   getsquire.com origin: the booking app posts to its parent frame
+			   on boot. The iframe's own load event is deliberately NOT used,
+			   because Chromium fires it even for committed error pages, which
+			   would mask a dead embed. Self-correcting: a late boot restores
+			   the frame and re-hides the fallback. Kept inline and independent
+			   of main.js so it runs regardless of the shared bundle's state. */
 			(function () {
+				var frame = document.getElementById('squire-embed');
 				var fallback = document.getElementById('book-fallback-cta');
-				if (!fallback) return;
+				if (!frame || !fallback) return;
 
-				/* Match SQUIRE's own iframe, never just any iframe: Netlify's
-				   deploy-preview toolbar is an iframe too, and matching it
-				   would mask a dead widget during preview testing. */
-				var rendered = function () {
-					return !!document.querySelector(
-						'iframe[src*="getsquire" i], iframe.squire_widget'
-					);
+				var embed = frame.parentElement;
+				var loaded = false;
+				var markLoaded = function () {
+					loaded = true;
+					fallback.hidden = true;
+					embed.hidden = false;
 				};
 
-				var timer = window.setTimeout(function () {
-					if (!rendered()) fallback.hidden = false;
-				}, 6000);
-
-				/* Self-correcting: on a slow connection the widget can arrive
-				   after the timeout, which would otherwise leave "didn't load"
-				   sitting above a perfectly working widget. */
-				var observer = new MutationObserver(function () {
-					if (!rendered()) return;
-					fallback.hidden = true;
-					window.clearTimeout(timer);
-					observer.disconnect();
+				window.addEventListener('message', function (event) {
+					if (event.origin === 'https://getsquire.com') markLoaded();
 				});
-				observer.observe(document.body, { childList: true, subtree: true });
+				/* Manual hook for console debugging and tests. */
+				window.__squireEmbedLoaded = markLoaded;
 
-				/* Stop watching after a minute; nothing is coming. */
 				window.setTimeout(function () {
-					observer.disconnect();
-				}, 60000);
+					if (loaded) return;
+					embed.hidden = true;
+					fallback.hidden = false;
+				}, 10000);
 			})();
 		</script>
 	</body>
