@@ -1033,6 +1033,14 @@ img {
 	margin: 0 auto 3rem auto;
 }
 
+/* Hide SQUIRE's floating corner bubble; this page's own Book CTAs open the
+   dialog instead. Hidden with CSS rather than x-squire-show-btn="false"
+   because that attribute also skips dataPreloader.js, whose
+   window._squireQueryClient is required by SquireWidget.open(). */
+#squire_booking_widget_root {
+	display: none;
+}
+
 /* Primary CTA row: the one emphasized action above the fold, with a quiet
    reassurance note beside it and the escape hatch (SQUIRE site / phone)
    underneath. Every Book CTA on this page is a real link to the hosted

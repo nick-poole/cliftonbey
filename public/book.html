@@ -20,11 +20,14 @@
 
 		<!--=============== SQUIRE BOOKING WIDGET ===============-->
 		<!-- Loads SQUIRE's slide-in booking dialog, scoped to this page only.
-			 x-squire-show-btn="false" (undocumented, verified in widget.js
-			 source) suppresses SQUIRE's floating corner bubble -- our own Book
-			 CTAs open the dialog instead via window.SquireWidget.open(); see
-			 the wiring script at the end of <body>. -->
-		<script type="text/javascript">!function(e,t){var i=e.createElement("script"),sa="setAttribute";i.src="https://widget.getsquire.com/widget.js?"+Date.now(),i[sa]("defer",""),i[sa]("type","text/javascript"),i[sa]("brand",t.brand),i[sa]("x-squire-inline-enabled",t.inline||!1),i[sa]("x-squire-show-btn","false"),e.head.appendChild(i)}(document,{brand:"e5c1da05-ce52-43b3-8151-97659dfd7de6",inline:true});</script>
+			 Our own Book CTAs open it via window.SquireWidget.open(); see the
+			 wiring script at the end of <body>. SQUIRE's floating corner
+			 bubble is hidden with CSS (#squire_booking_widget_root), NOT with
+			 the x-squire-show-btn="false" attribute: that attribute also stops
+			 dataPreloader.js from loading, which is what defines
+			 window._squireQueryClient -- and SquireWidget.open() crashes
+			 without it. Learned the hard way; do not "clean this up". -->
+		<script type="text/javascript">!function(e,t){var i=e.createElement("script"),sa="setAttribute";i.src="https://widget.getsquire.com/widget.js?"+Date.now(),i[sa]("defer",""),i[sa]("type","text/javascript"),i[sa]("brand",t.brand),i[sa]("x-squire-inline-enabled",t.inline||!1),e.head.appendChild(i)}(document,{brand:"e5c1da05-ce52-43b3-8151-97659dfd7de6",inline:true});</script>
 
 		<!--=============== OpenGraph ===============-->
 		<meta property="og:type" content="website" />
@@ -671,7 +674,20 @@
 					if (!trigger) return;
 					if (window.SquireWidget && typeof window.SquireWidget.open === 'function') {
 						event.preventDefault();
-						window.SquireWidget.open(SETUP);
+						try {
+							var opening = window.SquireWidget.open(SETUP);
+							/* If the dialog fails to mount, fall back to the
+							   hosted booking page rather than a dead click. */
+							if (opening && typeof opening.catch === 'function') {
+								opening.catch(function () {
+									window.open(trigger.href, '_blank', 'noopener') ||
+										(window.location.href = trigger.href);
+								});
+							}
+						} catch (error) {
+							window.open(trigger.href, '_blank', 'noopener') ||
+								(window.location.href = trigger.href);
+						}
 					}
 					/* Not ready yet: the anchor falls through to getsqr.co in a
 					   new tab -- never a dead end. */
