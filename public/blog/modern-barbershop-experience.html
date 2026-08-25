@@ -115,7 +115,11 @@
 							"@type": "ReserveAction",
 							"target": {
 								"@type": "EntryPoint",
-								"urlTemplate": "https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
+								"urlTemplate": "https://alhakeems.com/book",
+								"actionPlatform": [
+									"https://schema.org/DesktopWebPlatform",
+									"https://schema.org/MobileWebPlatform"
+								]
 							},
 							"result": {
 								"@type": "Reservation",
@@ -308,6 +312,9 @@
 
 				<div class="nav__menu" id="nav-menu">
 					<ul class="nav__list">
+						<li class="nav__item--cta">
+							<a href="/book" title="Book an Appointment" class="nav__link button">Book</a>
+						</li>
 						<li>
 							<a href="/" class="nav__link">Home</a>
 						</li>
@@ -327,7 +334,7 @@
 						</li>
 
 						<li>
-							<a href="/#contact" class="nav__link button">Contact</a>
+							<a href="/#contact" title="Contact" class="nav__link">Contact</a>
 						</li>
 					</ul>
 
@@ -436,12 +443,7 @@
 					<section class="blog__callout" id="book-appointment">
 						<h2>Book Your Appointment</h2>
 						<p>Ready to experience the Al-Hakeem's Tonsorial difference? Book your appointment today.</p>
-						<a
-							href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-							class="button"
-							target="_blank"
-							rel="noopener noreferrer"
-							title="Book an Appointment">
+						<a href="/book" class="button" title="Book an Appointment">
 							Book Now
 						</a>
 					</section>
@@ -628,13 +630,7 @@
 							<a href="/blog" class="footer__link">Blog</a>
 						</li>
 						<li>
-							<a
-								href="https://app.thecut.co/barbers/Clifton--Al-Hakeem-Bey-cbtb2nl"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="footer__link">
-								Booking
-							</a>
+							<a href="/book" class="footer__link" title="Booking">Booking</a>
 						</li>
 						<li>
 							<a href="/cranial-prosthesis" class="footer__link">Cranial Prosthesis</a>

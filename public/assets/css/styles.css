@@ -1018,6 +1018,229 @@ img {
 	margin: 0 0 1rem 1rem;
 }
 
+/*=============== BOOK ===============*/
+.book__hero {
+	height: 300px;
+	background-image: url('/assets/images/book-hero.webp');
+	background-position: 50% 50%;
+	background-color: #1a1a1a;
+}
+
+/* Keep phone numbers on one line wherever they appear on this page. */
+#book a[href^='tel:'] {
+	white-space: nowrap;
+}
+
+/* /book gets a wider canvas than the default 1120px container (precedent:
+   #blog-article narrows it to 780px) so large screens are actually used. */
+#book .container {
+	max-width: 1320px;
+}
+
+#book .hero__headings {
+	text-align: center;
+	margin: 2.5rem 0 1rem 0;
+}
+
+#book #article {
+	margin: 0 auto 3.5rem auto;
+}
+
+#book .article__section {
+	margin: 1.75rem 0 1.75rem 0;
+}
+
+#book .article__section p {
+	line-height: 1.7;
+}
+
+/* Hide SQUIRE's floating corner bubble; this page's own Book CTAs open the
+   dialog instead. Hidden with CSS rather than x-squire-show-btn="false"
+   because that attribute also skips dataPreloader.js, whose
+   window._squireQueryClient is required by SquireWidget.open().
+   !important so the rule also beats any inline styles bookButton.js sets
+   on its host element. */
+#squire_booking_widget_root,
+.squire_booking_widget_root {
+	display: none !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+}
+
+/* Top block: pitch and primary CTA on the left, the three-step explainer on
+   the right, so the space above the fold is used on desktop instead of a
+   single narrow column of text. */
+.book__top {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.5rem;
+}
+
+#book .book__intro > p:first-of-type {
+	font-size: var(--h3-font-size);
+	line-height: 1.7;
+}
+
+.book__cta-row {
+	margin: 1.75rem 0 0.9rem 0;
+}
+
+.book__cta {
+	column-gap: 0.5rem;
+	align-items: center;
+	font-size: var(--h3-font-size);
+	padding: 1.15rem 2.75rem;
+}
+
+.book__cta i {
+	font-size: 1.35rem;
+}
+
+.book__cta-note {
+	font-size: var(--small-font-size);
+}
+
+#book .book__fallback {
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+	font-size: var(--small-font-size);
+}
+
+#book .book__menu-link {
+	font-size: var(--small-font-size);
+}
+
+.book__steps {
+	list-style: none;
+	display: grid;
+	gap: 0.75rem;
+	margin: 0;
+	padding: 0;
+}
+
+/* Neutralize the global ordered-list treatment (red text, generated
+   counters, and the 1.5rem li margins from .article__section ol li --
+   #book scoping is needed to outrank those ID-weighted rules); the steps
+   carry their own numbering. */
+#book .book__steps li {
+	margin: 0;
+	color: var(--text-color);
+	counter-increment: none;
+}
+
+#book .book__steps li::before {
+	content: none;
+}
+
+.book__step {
+	display: flex;
+	align-items: flex-start;
+	column-gap: 1rem;
+	background-color: var(--container-color);
+	border-radius: 8px;
+	padding: 1.2rem 1.4rem;
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.06);
+}
+
+.book__step i {
+	font-size: 1.5rem;
+	line-height: 1;
+	color: var(--persian-red);
+	margin-top: 0.2rem;
+}
+
+.book__step b {
+	display: block;
+	color: var(--title-color);
+	margin-bottom: 0.25rem;
+}
+
+#book .book__step p {
+	line-height: 1.65;
+	margin-bottom: 0;
+}
+
+.book__info {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+	margin-top: 1.5rem;
+}
+
+/* Navy accent: informational cards, as opposed to the red accent used for
+   actions everywhere else on the site. */
+.book__info-card {
+	background-color: var(--container-color);
+	border-left: 4px solid var(--prussian-blue);
+	border-radius: 0 8px 8px 0;
+	padding: 1.35rem 1.5rem;
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.06);
+}
+
+#book .book__info-head {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	margin-bottom: 0.6rem;
+	color: var(--title-color);
+	font-size: var(--normal-font-size);
+	font-weight: var(--font-semi-bold);
+}
+
+.book__info-head i {
+	font-size: 1.25rem;
+	color: var(--prussian-blue);
+}
+
+.book__info-head b {
+	color: var(--title-color);
+}
+
+#book .book__info-card p,
+#book .book__info-card address {
+	font-style: normal;
+	line-height: 1.7;
+	margin-bottom: 0;
+}
+
+#book .book__info-card address {
+	margin-bottom: 0.5rem;
+}
+
+#book .blog__callout {
+	margin-top: 2.5rem;
+	padding: 2.75rem 2rem;
+}
+
+@media screen and (min-width: 700px) {
+	.book__info {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1150px) {
+	.book__top {
+		grid-template-columns: 1.05fr 1fr;
+		column-gap: 4.5rem;
+		align-items: start;
+	}
+
+	.book__top .article__section {
+		margin-top: 1rem;
+	}
+
+	/* Balance the columns: the pitch block floats at the vertical middle
+	   of the taller steps column instead of leaving dead space below. */
+	.book__top .book__intro {
+		align-self: center;
+		margin-top: 0;
+	}
+
+	.book__info {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
 /*=============== CRANIAL ===============*/
 .cranial__hero {
 	height: 500px;
@@ -2546,6 +2769,12 @@ ol li::before {
 		flex-direction: row;
 		align-items: center;
 		column-gap: 4rem;
+	}
+	/* Book leads the mobile panel in DOM order so it is the first thing a
+	   thumb reaches; on desktop it moves to the right-hand end, where a nav
+	   CTA conventionally sits. Every other item keeps the default order: 0. */
+	.nav__item--cta {
+		order: 1;
 	}
 	.bg-header {
 		background-color: var(--cornsilk);

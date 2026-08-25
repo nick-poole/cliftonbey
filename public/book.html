@@ -8,38 +8,54 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+		<link rel="preconnect" href="https://widget.getsquire.com" crossorigin />
+		<link rel="preconnect" href="https://getsquire.com" />
 
 		<meta name="robots" content="index, follow" />
 		<meta
 			name="description"
-			content="Custom cranial prosthesis and medical wigs for hair loss from alopecia, chemotherapy, and scalp conditions. Personalized fitting and styling in Owings Mills, MD." />
-		<title>Cranial Prosthesis Services | Al-Hakeem's Tonsorial in Owings Mills, MD</title>
-		<link rel="canonical" href="https://alhakeems.com/cranial-prosthesis" />
+			content="Book your appointment with Clifton 'Al-Hakeem' Bey in about a minute. Precision haircuts and beard work, by appointment only in Owings Mills, MD." />
+		<title>Book an Appointment | Al-Hakeem's Tonsorial | Owings Mills, MD</title>
+		<link rel="canonical" href="https://alhakeems.com/book" />
+
+		<!--=============== SQUIRE BOOKING WIDGET ===============-->
+		<!-- Loads SQUIRE's slide-in booking dialog, scoped to this page only.
+			 Our own Book CTAs open it via window.SquireWidget.open(); see the
+			 wiring script at the end of <body>. SQUIRE's floating corner
+			 bubble is hidden with CSS (#squire_booking_widget_root), NOT with
+			 the x-squire-show-btn="false" attribute: that attribute also stops
+			 dataPreloader.js from loading, which is what defines
+			 window._squireQueryClient -- and SquireWidget.open() crashes
+			 without it. Learned the hard way; do not "clean this up". -->
+		<script type="text/javascript">!function(e,t){var i=e.createElement("script"),sa="setAttribute";i.src="https://widget.getsquire.com/widget.js?"+Date.now(),i[sa]("defer",""),i[sa]("type","text/javascript"),i[sa]("brand",t.brand),i[sa]("x-squire-inline-enabled",t.inline||!1),e.head.appendChild(i)}(document,{brand:"e5c1da05-ce52-43b3-8151-97659dfd7de6",inline:true});</script>
 
 		<!--=============== OpenGraph ===============-->
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Cranial Prosthesis Services - Al-Hakeem's Tonsorial" />
+		<meta property="og:title" content="Book an Appointment - Al-Hakeem's Tonsorial" />
 		<meta
 			property="og:description"
-			content="Custom cranial prosthesis and medical wigs for hair loss from alopecia, chemotherapy, and scalp conditions. Personalized fitting in Owings Mills, MD." />
-		<meta property="og:url" content="https://alhakeems.com/cranial-prosthesis" />
-		<meta property="og:image" content="https://alhakeems.com/assets/images/cranial-wall.jpg" />
-		<meta property="og:image:width" content="4000" />
-		<meta property="og:image:height" content="1848" />
-		<meta property="og:image:alt" content="Image of a cranial prosthesis expertly styled by Clifton Bey." />
+			content="Reserve your chair with Clifton 'Al-Hakeem' Bey. Booking takes about a minute — pick a service, choose a time, done. Owings Mills, MD." />
+		<meta property="og:url" content="https://alhakeems.com/book" />
+		<meta property="og:image" content="https://alhakeems.com/assets/images/book-hero.jpg" />
+		<meta property="og:image:width" content="1797" />
+		<meta property="og:image:height" content="500" />
+		<meta property="og:image:alt" content="Black-and-white view of a barber at work behind the shop counter" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Al-Hakeem's Tonsorial" />
 
 		<!--=============== Twitter Cards ===============-->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Cranial Prosthesis Services - Al-Hakeem's Tonsorial" />
+		<meta name="twitter:title" content="Book an Appointment - Al-Hakeem's Tonsorial" />
 		<meta
 			name="twitter:description"
-			content="Custom cranial prosthesis and medical wigs for hair loss from alopecia, chemotherapy, and scalp conditions. Personalized fitting in Owings Mills, MD." />
-		<meta name="twitter:image" content="https://alhakeems.com/assets/images/cranial-wall.jpg" />
-		<meta name="twitter:image:alt" content="Image of a cranial prosthesis expertly styled by Clifton Bey." />
+			content="Reserve your chair with Clifton 'Al-Hakeem' Bey. Booking takes about a minute — pick a service, choose a time, done. Owings Mills, MD." />
+		<meta name="twitter:image" content="https://alhakeems.com/assets/images/book-hero.jpg" />
+		<meta name="twitter:image:alt" content="Black-and-white view of a barber at work behind the shop counter" />
 		<meta name="twitter:site" content="@CliffAlHakeem" />
 		<meta name="twitter:creator" content="@CliffAlHakeem" />
+
+		<!--=============== PRELOAD LCP HERO IMAGE ===============-->
+		<link rel="preload" as="image" href="/assets/images/book-hero.webp" fetchpriority="high" />
 
 		<!--=============== FAVICON ===============-->
 		<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96" />
@@ -204,11 +220,12 @@
 			}
 		</script>
 
-		<!--=============== BREADCRUMB & PAGE STRUCTURED DATA ===============-->
+		<!--=============== BREADCRUMB STRUCTURED DATA ===============-->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "BreadcrumbList",
+				"@id": "https://alhakeems.com/book#breadcrumb",
 				"itemListElement": [
 					{
 						"@type": "ListItem",
@@ -219,8 +236,8 @@
 					{
 						"@type": "ListItem",
 						"position": 2,
-						"name": "Cranial Prosthesis",
-						"item": "https://alhakeems.com/cranial-prosthesis"
+						"name": "Book",
+						"item": "https://alhakeems.com/book"
 					}
 				]
 			}
@@ -228,28 +245,27 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Service",
-				"name": "Cranial Prosthesis Services",
-				"description": "Custom cranial prosthesis and medical wigs for clients experiencing hair loss from alopecia, chemotherapy, and other medical conditions. Certified fitting and personalized styling in Owings Mills, MD.",
-				"url": "https://alhakeems.com/cranial-prosthesis",
-				"provider": { "@id": "https://alhakeems.com/#business" },
-				"areaServed": [
-					{ "@type": "City", "name": "Owings Mills" },
-					{ "@type": "City", "name": "Baltimore" },
-					{ "@type": "AdministrativeArea", "name": "Baltimore County" }
-				],
-				"serviceType": "Cranial Prosthesis Fitting",
-				"category": ["Hair Replacement", "Medical Wigs", "Cranial Prosthesis"],
-				"audience": {
-					"@type": "MedicalAudience",
-					"audienceType": "Patients experiencing hair loss"
-				}
+				"@type": "WebPage",
+				"@id": "https://alhakeems.com/book#webpage",
+				"url": "https://alhakeems.com/book",
+				"name": "Book an Appointment | Al-Hakeem's Tonsorial | Owings Mills, MD",
+				"description": "Book your appointment with Clifton 'Al-Hakeem' Bey in about a minute. Precision haircuts and beard work, by appointment only in Owings Mills, MD.",
+				"isPartOf": { "@id": "https://alhakeems.com/#website" },
+				"about": { "@id": "https://alhakeems.com/#business" },
+				"breadcrumb": { "@id": "https://alhakeems.com/book#breadcrumb" },
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": "https://alhakeems.com/assets/images/book-hero.jpg",
+					"width": 1797,
+					"height": 500
+				},
+				"inLanguage": "en-US"
 			}
 		</script>
 	</head>
 	<body>
 		<!--========== SKIP TO MAIN ==========-->
-		<a href="#cranial" class="skip-link">Skip to main content</a>
+		<a href="#book" class="skip-link">Skip to main content</a>
 		<!--========== HEADER ==========-->
 		<header class="header" id="header">
 			<nav class="nav container">
@@ -261,10 +277,10 @@
 				<div class="nav__menu" id="nav-menu">
 					<ul class="nav__list">
 						<li class="nav__item--cta">
-							<a href="/book" title="Book an Appointment" class="nav__link button">Book</a>
+							<a href="/book" title="Book an Appointment" class="nav__link button active-link">Book</a>
 						</li>
 						<li>
-							<a href="/" class="nav__link active-link">Home</a>
+							<a href="/" class="nav__link">Home</a>
 						</li>
 						<li>
 							<a href="/about" class="nav__link">About</a>
@@ -287,205 +303,163 @@
 					</ul>
 
 					<!-- Close button -->
-					<button class="nav__close" id="nav-close" aria-label="Close menu">
-						<i class="ri-close-large-line"></i>
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close menu">
+						<i class="ri-close-large-line" aria-hidden="true"></i>
 					</button>
 				</div>
 
 				<!-- Toggle menu -->
-				<button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-					<i class="ri-menu-4-line"></i>
+				<button type="button" class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+					<i class="ri-menu-4-line" aria-hidden="true"></i>
 				</button>
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
-		<main id="cranial">
-			<div class="hero cranial__hero"></div>
+		<main id="book">
+			<div class="hero book__hero"></div>
 
 			<article id="article">
 				<div class="container">
 					<div class="hero__headings">
-						<h1 class="heading">Cranial Prosthesis</h1>
-						<p class="subheading">Custom Medical Hair Solutions for Hair Loss</p>
+						<h1 class="heading">Book Your Appointment</h1>
+						<p class="subheading">Master Barbering in Owings Mills &mdash; by Appointment Only</p>
 					</div>
-					<section class="article__section">
-						<h2>What is Cranial Prosthesis?</h2>
 
-						<p>
-							Cranial prosthesis—also known as a medical wig—refers to the creation and application of
-							customized medical-grade hairpieces designed for individuals experiencing hair loss due to
-							medical conditions such as alopecia, chemotherapy, lupus, or other scalp disorders. Unlike
-							regular wigs, cranial prostheses are considered medical devices and are often eligible for
-							insurance reimbursement.
-						</p>
+					<div class="book__top">
+						<!--========== PRIMARY CTA ==========-->
+						<section class="article__section book__intro">
+							<p>
+								The chair is yours in about a minute: pick a service, choose a time, and you
+								are booked. Booking opens right here on the page through SQUIRE.
+							</p>
+							<div class="book__cta-row">
+								<a
+									href="https://getsqr.co/clifton-22"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="button book__cta"
+									data-squire-open>
+									<i class="ri-calendar-check-line" aria-hidden="true"></i>
+									Book Now
+								</a>
+							</div>
+							<p class="book__cta-note">Takes about a minute &middot; no account needed</p>
+							<p class="book__fallback">
+								Trouble booking?
+								<a
+									href="https://getsqr.co/clifton-22"
+									target="_blank"
+									rel="noopener noreferrer">Book on SQUIRE's site</a>
+								or call
+								<a href="tel:+13478155706">(347) 815-5706</a>.
+							</p>
+							<p class="book__menu-link">
+								Want to browse first? See the
+								<a href="/services">full service menu and pricing</a>.
+							</p>
+						</section>
 
-						<p>
-							These hairpieces are crafted to fit the exact shape of your head, ensuring a natural
-							appearance and comfortable fit. They are made from high-quality, hypoallergenic materials
-							that are lightweight and durable, offering a solution that restores both confidence and
-							self-esteem.
-						</p>
-					</section>
-					<section class="article__section">
-						<h2>Who Can Benefit from Cranial Prosthesis?</h2>
-						<p>Cranial prostheses are ideal for individuals experiencing hair loss due to:</p>
-						<ul class="list grid cranial__list-grid">
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Chemotherapy treatments</b>
-									<br />
-									Custom chemo wigs help patients regain a sense of normalcy during treatment and recovery.
-								</span>
-							</li>
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Alopecia</b>
-									<br />
-									Providing solutions for those with partial or total hair loss.
-								</span>
-							</li>
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Scalp Trauma or Burns</b>
-									<br />
-									Restoring hair for individuals who have suffered scalp injuries.
-								</span>
-							</li>
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Lupus or other autoimmune disorders</b>
-									<br />
-									Addressing hair loss caused by medical conditions.
-								</span>
-							</li>
-						</ul>
-						<p>
-							Whether you’re seeking a natural look or a specific style, a cranial prosthesis offers a
-							personalized solution tailored to your needs.
-						</p>
-					</section>
-				</div>
-				<section class="article__section black__section">
-					<div class="clearfix shove-right">
-						<img
-							src="/assets/images/julian-myles.jpg"
-							class="cranial__portrait float-end"
-							alt="Portrait of a man wearing a custom cranial prosthesis styled by Clifton Bey" />
-						<h2>The Process</h2>
-						<p>
-							Clifton Bey is a certified cranial prosthesis specialist dedicated to providing
-							compassionate care and exceptional results. Here’s how the process works:
-						</p>
-						<ol>
-							<li>
-								<b>Consultation</b>
-								<br />
-								The journey begins with a
-								<b>private consultation</b>
-								where Cliff assesses your scalp condition and discusses your goals. During this session,
-								he’ll take precise measurements of your head to ensure a perfect fit.
-							</li>
-
-							<li>
-								<b>Custom Design</b>
-								<br />
-								Based on your preferences, Cliff will work with you to select the
-								<b>texture, color, and style</b>
-								of your cranial prosthesis. Each piece is designed to look natural and blend seamlessly
-								with your features.
-							</li>
-
-							<li>
-								<b>Creation and Fitting</b>
-								<br />
-								Using the measurements and design preferences, the cranial prosthesis is crafted to
-								exact specifications. Once complete, Cliff ensures a perfect fit by adjusting the
-								prosthesis as needed.
-							</li>
-
-							<li>
-								<b>Styling and Care Guidance</b>
-								<br />
-								After the fitting, Cliff will style your prosthesis to match your desired look and
-								provide detailed instructions on how to maintain it, ensuring longevity and ease of use.
-							</li>
-						</ol>
+						<!--========== HOW IT WORKS ==========-->
+						<section class="article__section book__how">
+							<h2>How It Works</h2>
+							<ol class="book__steps">
+								<li class="book__step">
+									<i class="ri-scissors-2-line" aria-hidden="true"></i>
+									<div>
+										<b>1. Pick your service</b>
+										<p>Cuts, beard work, and treatments &mdash; the same menu and prices as in the shop.</p>
+									</div>
+								</li>
+								<li class="book__step">
+									<i class="ri-calendar-line" aria-hidden="true"></i>
+									<div>
+										<b>2. Choose your time</b>
+										<p>Live availability, Tuesday through Sunday. Grab the slot that fits your week.</p>
+									</div>
+								</li>
+								<li class="book__step">
+									<i class="ri-check-double-line" aria-hidden="true"></i>
+									<div>
+										<b>3. You're booked</b>
+										<p>Instant confirmation with reminders, and easy rescheduling if plans change.</p>
+									</div>
+								</li>
+							</ol>
+						</section>
 					</div>
-				</section>
-				<div class="container">
-					<section class="article__section">
-						<h2>Why Choose Clifton Bey?</h2>
-						<ul class="list grid cranial__list-grid">
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Certified Expertise</b>
+
+					<!--========== GOOD TO KNOW ==========-->
+					<section class="article__section book__know">
+						<h2>Good to Know</h2>
+						<div class="book__info">
+							<div class="book__info-card">
+								<h3 class="book__info-head">
+									<i class="ri-map-pin-2-line" aria-hidden="true"></i>
+									Location
+								</h3>
+								<address>
+									Inside Salontra Select Suites
 									<br />
-									With professional training, a Maryland
-									<a href="/blog/barber-vs-master-barber">master barber license</a>, and CCPS
-									certification in cranial prosthesis, Cliff combines skill and care to deliver
-									exceptional results.
-								</span>
-							</li>
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Personalized Service</b>
+									10200 Grand Central Avenue, Suite 21
 									<br />
-									Each prosthesis is customized to suit your unique needs and preferences.
-								</span>
-							</li>
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>Restoration of Confidence</b>
+									Owings Mills, MD 21117
+								</address>
+								<a
+									href="https://maps.app.goo.gl/E2xanCu54EYtj8u49"
+									target="_blank"
+									rel="noopener noreferrer">Get directions</a>
+							</div>
+							<div class="book__info-card">
+								<h3 class="book__info-head">
+									<i class="ri-time-line" aria-hidden="true"></i>
+									Hours
+								</h3>
+								<p>
+									Tuesday &ndash; Friday: 10 AM &ndash; 6 PM
 									<br />
-									Cliff is dedicated to helping clients feel confident and empowered with a solution
-									tailored to them.
-								</span>
-							</li>
-							<li class="list__item">
-								<i class="ri-checkbox-circle-line"></i>
-								<span>
-									<b>HIPAA-Certified Professional</b>
+									Saturday: 10 AM &ndash; 4 PM
 									<br />
-									Clifton's HIPAA certification ensures that your personal and medical information is
-									handled with the utmost care and confidentiality.
-								</span>
-							</li>
-						</ul>
+									Sunday: 10 AM &ndash; 3 PM
+									<br />
+									(Closed Mondays)
+								</p>
+							</div>
+							<div class="book__info-card">
+								<h3 class="book__info-head">
+									<i class="ri-walk-line" aria-hidden="true"></i>
+									Walk-ins
+								</h3>
+								<p>
+									Accommodated when the schedule allows, but booking ahead is the only way to
+									guarantee your slot.
+								</p>
+							</div>
+							<div class="book__info-card">
+								<h3 class="book__info-head">
+									<i class="ri-arrow-go-back-line" aria-hidden="true"></i>
+									Cancellations
+								</h3>
+								<p>
+									Cancel or reschedule online with reasonable notice. Late cancellations and
+									no-shows can affect priority booking.
+								</p>
+							</div>
+						</div>
 					</section>
-					<section class="article__section">
-						<h2>Schedule a Consultation Today</h2>
-						<p>
-							If you or a loved one are experiencing hair loss due to medical conditions, Clifton Bey's
-							cranial prosthesis services provide a personalized solution to help restore your appearance
-							and confidence. Serving clients in Owings Mills, Baltimore, and throughout Maryland. Start
-							your journey toward a renewed sense of self by reaching out today.
-						</p>
-						<br />
-						<p>
-							<b>For questions or more information, email Clifton directly at:</b>
-							<a
-								href="mailto:clifton@alhakeemsmedicalwigs.com"
-								title="Clifton's Email Address:  clifton@alhakeemsmedicalwigs.com">
-								clifton@alhakeemsmedicalwigs.com
-							</a>
-						</p>
-					</section>
-					<!-- <div class="home__buttons">
+
+					<!--========== FINAL CTA ==========-->
+					<section class="blog__callout" id="book-appointment">
+						<h2>Ready When You Are</h2>
+						<p>Thirty years of craft, one chair, and a time slot with your name on it.</p>
 						<a
-							href="/#contact"
-							class="button article__button"
-							id="cranialButton"
-							title="Get in touch">
-							Get in Touch
+							href="https://getsqr.co/clifton-22"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button"
+							data-squire-open>
+							Book Now
 						</a>
-					</div> -->
+					</section>
 				</div>
 			</article>
 		</main>
@@ -505,8 +479,8 @@
 							title="View Clifton's Facebook Page"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-facebook-circle-line"></i>
+							class="footer__social-link" aria-label="Facebook">
+							<i class="ri-facebook-circle-line" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -514,8 +488,8 @@
 							title="Follow Clifton on Instagram"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-instagram-line"></i>
+							class="footer__social-link" aria-label="Instagram">
+							<i class="ri-instagram-line" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -523,8 +497,8 @@
 							title="Follow Clifton on Threads"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-threads-line"></i>
+							class="footer__social-link" aria-label="Threads">
+							<i class="ri-threads-line" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -532,8 +506,8 @@
 							title="Subscribe to The Corner Chair Experience on YouTube"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-youtube-fill"></i>
+							class="footer__social-link" aria-label="YouTube">
+							<i class="ri-youtube-fill" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -541,8 +515,8 @@
 							title="Follow Clifton on X"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-twitter-x-fill"></i>
+							class="footer__social-link" aria-label="X (Twitter)">
+							<i class="ri-twitter-x-fill" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -550,8 +524,8 @@
 							title="Follow Clifton on TikTok"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-tiktok-fill"></i>
+							class="footer__social-link" aria-label="TikTok">
+							<i class="ri-tiktok-fill" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -559,8 +533,8 @@
 							title="Follow Clifton on LinkedIn"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-linkedin-box-fill"></i>
+							class="footer__social-link" aria-label="LinkedIn">
+							<i class="ri-linkedin-box-fill" aria-hidden="true"></i>
 						</a>
 
 						<a
@@ -568,8 +542,8 @@
 							title="Listen to The Tonsorial Podcast"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="footer__social-link">
-							<i class="ri-mic-line"></i>
+							class="footer__social-link" aria-label="Apple Podcasts">
+							<i class="ri-mic-line" aria-hidden="true"></i>
 						</a>
 					</div>
 				</div>
@@ -579,7 +553,7 @@
 					<h2 class="footer__title">Information</h2>
 					<ul class="footer__list">
 						<li>
-							<i class="ri-phone-fill"></i>
+							<i class="ri-phone-fill" aria-hidden="true"></i>
 							<a
 								href="tel:347-815-5706"
 								class="footer__link"
@@ -590,14 +564,14 @@
 						</li>
 
 						<li>
-							<i class="ri-mail-send-fill"></i>
+							<i class="ri-mail-send-fill" aria-hidden="true"></i>
 
 							<address class="footer__email">
 								<a href="mailto:info@alhakeems.com" class="footer__link">info@alhakeems.com</a>
 							</address>
 						</li>
 						<li>
-							<i class="ri-map-pin-line"></i>
+							<i class="ri-map-pin-line" aria-hidden="true"></i>
 							<address class="footer__info">
 								10200 Grand Central Avenue, Suite 21
 								<br />
@@ -606,7 +580,7 @@
 						</li>
 
 						<li>
-							<i class="ri-time-line"></i>
+							<i class="ri-time-line" aria-hidden="true"></i>
 							<address class="footer__info">
 								Tuesday &ndash; Friday: 10 AM &ndash; 6 PM
 								<br />
@@ -654,9 +628,91 @@
 
 		<!--========== SCROLL UP ==========-->
 		<a href="#" title="Scroll Up" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-			<i class="ri-arrow-up-line"></i>
+			<i class="ri-arrow-up-line" aria-hidden="true"></i>
 		</a>
 		<!--=============== MAIN JS ===============-->
 		<script src="assets/js/main.js" defer></script>
+
+		<!--=============== SQUIRE WIDGET WIRING ===============-->
+		<script>
+			/* Every [data-squire-open] CTA is a real link to the hosted booking
+			   page (getsqr.co), so booking works even if the widget script never
+			   loads -- or with JavaScript off entirely. When the widget is ready,
+			   clicks open SQUIRE's slide-in dialog in place instead. The setup
+			   pins the dialog straight to Clifton's chair (slugs from SQUIRE's
+			   own frame URL), skipping the brand-to-barber lookups. */
+			(function () {
+				var SETUP = {
+					brand: 'e5c1da05-ce52-43b3-8151-97659dfd7de6',
+					shop: 'al-hakeems-tonsorial-owings-mills-1',
+					barber: 'clifton-al-hakeem-bey-1'
+				};
+
+				document.addEventListener('click', function (event) {
+					var trigger = event.target.closest('[data-squire-open]');
+					if (!trigger) return;
+					if (window.SquireWidget && typeof window.SquireWidget.open === 'function') {
+						event.preventDefault();
+						try {
+							var opening = window.SquireWidget.open(SETUP);
+							/* If the dialog fails to mount, fall back to the
+							   hosted booking page rather than a dead click. */
+							if (opening && typeof opening.catch === 'function') {
+								opening.catch(function () {
+									window.open(trigger.href, '_blank', 'noopener') ||
+										(window.location.href = trigger.href);
+								});
+							}
+						} catch (error) {
+							window.open(trigger.href, '_blank', 'noopener') ||
+								(window.location.href = trigger.href);
+						}
+					}
+					/* Not ready yet: the anchor falls through to getsqr.co in a
+					   new tab -- never a dead end. */
+				});
+
+				/* Pre-mount the dialog while the page is idle so the first open
+				   is instant instead of booting the app behind an empty panel. */
+				var warm = function () {
+					if (window._squireMountWidgetSetup) window._squireMountWidgetSetup(SETUP);
+				};
+				window.addEventListener('load', function () {
+					if ('requestIdleCallback' in window) {
+						window.requestIdleCallback(warm, { timeout: 4000 });
+					} else {
+						window.setTimeout(warm, 2500);
+					}
+				});
+
+				/* SQUIRE's bookButton.js mounts its corner launcher with INLINE
+				   "display: block !important", which no stylesheet rule can
+				   override (the rules in styles.css are belt-and-braces only).
+				   Neutralize it at the source: write display:none !important
+				   into the element's own style attribute, and re-assert if
+				   SQUIRE ever rewrites it. Guarded so our own writes cannot
+				   loop the observer. */
+				var hideBubble = function (el) {
+					if (!el) return;
+					if (el.style.getPropertyValue('display') !== 'none') {
+						el.style.setProperty('display', 'none', 'important');
+						el.style.setProperty('opacity', '0', 'important');
+						el.style.setProperty('pointer-events', 'none', 'important');
+					}
+				};
+				var bubbleArmed = false;
+				var armBubble = function () {
+					var el = document.getElementById('squire_booking_widget_root');
+					if (!el || bubbleArmed) return;
+					bubbleArmed = true;
+					hideBubble(el);
+					new MutationObserver(function () {
+						hideBubble(el);
+					}).observe(el, { attributes: true, attributeFilter: ['style'] });
+				};
+				armBubble();
+				new MutationObserver(armBubble).observe(document.body, { childList: true });
+			})();
+		</script>
 	</body>
 </html>
