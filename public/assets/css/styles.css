@@ -1057,9 +1057,14 @@ img {
 /* Hide SQUIRE's floating corner bubble; this page's own Book CTAs open the
    dialog instead. Hidden with CSS rather than x-squire-show-btn="false"
    because that attribute also skips dataPreloader.js, whose
-   window._squireQueryClient is required by SquireWidget.open(). */
-#squire_booking_widget_root {
-	display: none;
+   window._squireQueryClient is required by SquireWidget.open().
+   !important so the rule also beats any inline styles bookButton.js sets
+   on its host element. */
+#squire_booking_widget_root,
+.squire_booking_widget_root {
+	display: none !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
 }
 
 /* Top block: pitch and primary CTA on the left, the three-step explainer on
