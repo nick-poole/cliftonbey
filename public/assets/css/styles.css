@@ -1363,6 +1363,15 @@ img {
 	background-position: 65% 40%;
 }
 
+/* Haircut-cost post: no photo yet. Navy fallback paints the hero band so the heading
+   card overlaps correctly; drop a photo in at this path and it takes over. */
+.blog__hero-9 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+	background-image: url('/assets/images/blog/haircut-cost-hero.webp');
+	background-position: 50% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -2972,7 +2981,8 @@ ol li::before {
 	.blog__hero-5,
 	.blog__hero-6,
 	.blog__hero-7,
-	.blog__hero-8 {
+	.blog__hero-8,
+	.blog__hero-9 {
 		height: 500px;
 	}
 }
