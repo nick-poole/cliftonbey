@@ -960,6 +960,14 @@ img {
 	background-size: cover;
 }
 
+/* Hero banners delivered as a real <img> (indexable, alt text) rather than a background */
+.hero > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .heading,
 .subheading {
 	font-weight: var(--font-bold);
@@ -1363,12 +1371,15 @@ img {
 	background-position: 65% 40%;
 }
 
-/* Haircut-cost post. Navy stays as the fallback color while the image loads. */
+/* Haircut-cost post. The hero is a real <img> inside .hero (see .hero > img);
+   navy shows while it loads. */
 .blog__hero-9 {
 	height: 500px;
 	background-color: var(--prussian-blue);
-	background-image: url('/assets/images/blog/heroes/barber-shears-straight-razor-hero.webp');
-	background-position: 50% 60%;
+}
+
+.blog__hero-9 > img {
+	object-position: 50% 60%;
 }
 
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
@@ -2269,6 +2280,16 @@ img {
 
 .article__table tbody td:first-child {
 	font-weight: var(--font-medium);
+	color: var(--white-color);
+}
+
+.article__table a {
+	color: var(--cornsilk);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.article__table a:hover {
 	color: var(--white-color);
 }
 

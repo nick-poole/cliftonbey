@@ -16,6 +16,15 @@
   bundle = true
   minify = true
 
+# Non-production deploys (Deploy Previews, branch deploys) must never be indexed.
+# The site has no build step, so the only work here is flipping the robots meta
+# in the published HTML. Production defines no command and ships the files as-is.
+[context.deploy-preview]
+  command = 'find public -name "*.html" -exec sed -i "s/name=\"robots\" content=\"index, follow\"/name=\"robots\" content=\"noindex, nofollow\"/g" {} +'
+
+[context.branch-deploy]
+  command = 'find public -name "*.html" -exec sed -i "s/name=\"robots\" content=\"index, follow\"/name=\"robots\" content=\"noindex, nofollow\"/g" {} +'
+
 # Security headers (all pages)
 [[headers]]
   for = "/*"
