@@ -1363,13 +1363,12 @@ img {
 	background-position: 65% 40%;
 }
 
-/* Haircut-cost post: no photo yet. Navy fallback paints the hero band so the heading
-   card overlaps correctly; drop a photo in at this path and it takes over. */
+/* Haircut-cost post. Navy stays as the fallback color while the image loads. */
 .blog__hero-9 {
 	height: 500px;
 	background-color: var(--prussian-blue);
-	background-image: url('/assets/images/blog/haircut-cost-hero.webp');
-	background-position: 50% 50%;
+	background-image: url('/assets/images/blog/heroes/barber-shears-straight-razor-hero.webp');
+	background-position: 50% 60%;
 }
 
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/

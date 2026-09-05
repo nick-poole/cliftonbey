@@ -59,6 +59,7 @@ public/
 │   │   └── swiper-bundle.min.css
 │   ├── images/
 │   │   ├── blog/
+│   │   │   └── heroes/
 │   │   ├── favicons/
 │   │   ├── logo/
 │   │   └── portfolio/
@@ -112,7 +113,7 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ### Haircut-cost article — Why Cheap Haircuts Can Cost More in the Long Run (September 5, 2026)
 
-**New blog post — Why Cheap Haircuts Can Cost More in the Long Run (`/blog/how-much-should-a-haircut-cost`).** Clifton's own essay on price versus value in barbering, published in his voice with his sentences unedited. The SEO layer targets the "how much does a haircut cost" cluster (~1.36K combined monthly searches, KD 0 across the board): the title tag carries the price query while the on-page H1 keeps the author's headline, six of the ten H2s were reworded to match question-format queries, and a two-paragraph national/Baltimore price-range block plus a five-question FAQ ("Common Questions About Haircut Pricing") were added between his sections. Schema follows the site convention (global entity graph referenced by `@id`, BreadcrumbList, BlogPosting with `alternativeHeadline` for the deck, FAQPage mirroring the visible answers). The subtitle is marked up as a styled `<p class="blog__subheading">`, not an H2, so the page has one H1 and a clean heading outline. A new `.blog__hero-9` rule paints a navy hero band and reserves `assets/images/blog/haircut-cost-hero.webp`; the shop hero (`tonsorial-hero.webp`) stands in for the blog card and social image until Clifton supplies a photo. Added to the blog index grid (newest card), the `Blog` structured-data `blogPost` list, and `sitemap.xml`.
+**New blog post — Why Cheap Haircuts Can Cost More in the Long Run (`/blog/how-much-should-a-haircut-cost`).** Clifton's own essay on price versus value in barbering, published in his voice with his sentences unedited. The SEO layer targets the "how much does a haircut cost" cluster (~1.36K combined monthly searches, KD 0 across the board): the title tag carries the price query while the on-page H1 keeps the author's headline, six of the ten H2s were reworded to match question-format queries, and a two-paragraph national/Baltimore price-range block plus a five-question FAQ ("Common Questions About Haircut Pricing") were added between his sections. Schema follows the site convention (global entity graph referenced by `@id`, BreadcrumbList, BlogPosting with `alternativeHeadline` for the deck, FAQPage mirroring the visible answers). The subtitle is marked up as a styled `<p class="blog__subheading">`, not an H2, so the page has one H1 and a clean heading outline. A new `.blog__hero-9` rule sets the hero (`assets/images/blog/heroes/barber-shears-straight-razor-hero.webp`, 2400×1260, navy fallback color while it loads); the matching 1200×630 `-og.webp` is the Open Graph / Twitter image. Both live in a new `assets/images/blog/heroes/` library that also holds seven more hero + OG pairs (barber chairs, clippers, shears in motion, classic interior, barber pole, barbers at work, vintage chair) ready for future posts. Added to the blog index grid (newest card), the `Blog` structured-data `blogPost` list, and `sitemap.xml`.
 
 ### SQUIRE booking migration (August 16, 2026)
 

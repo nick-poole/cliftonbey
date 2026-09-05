@@ -19,11 +19,10 @@
 		<meta property="og:title" content="How Much Should a Haircut Cost? A Master Barber Explains" />
 		<meta property="og:description" content="A master barber with 30+ years in Owings Mills breaks down what a haircut really costs, and why the cheapest one often costs you more." />
 		<meta property="og:url" content="https://alhakeems.com/blog/how-much-should-a-haircut-cost" />
-		<!-- og:image falls back to the shop hero until Clifton supplies a post photo. Swap URL, width, height, alt together. -->
-		<meta property="og:image" content="https://alhakeems.com/assets/images/tonsorial-hero.jpg" />
-		<meta property="og:image:width" content="4000" />
-		<meta property="og:image:height" content="1848" />
-		<meta property="og:image:alt" content="Al-Hakeem's Tonsorial barbershop in Owings Mills, Maryland" />
+		<meta property="og:image" content="https://alhakeems.com/assets/images/blog/heroes/barber-shears-straight-razor-og.webp" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Professional barber shears and a straight razor laid out on a wooden station" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Al-Hakeem's Tonsorial" />
 		<meta property="article:published_time" content="2026-09-05" />
@@ -33,8 +32,8 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="How Much Should a Haircut Cost? A Master Barber Explains" />
 		<meta name="twitter:description" content="A master barber with 30+ years in Owings Mills breaks down what a haircut really costs, and why the cheapest one often costs you more." />
-		<meta name="twitter:image" content="https://alhakeems.com/assets/images/tonsorial-hero.jpg" />
-		<meta name="twitter:image:alt" content="Al-Hakeem's Tonsorial barbershop in Owings Mills, Maryland" />
+		<meta name="twitter:image" content="https://alhakeems.com/assets/images/blog/heroes/barber-shears-straight-razor-og.webp" />
+		<meta name="twitter:image:alt" content="Professional barber shears and a straight razor laid out on a wooden station" />
 		<meta name="twitter:site" content="@CliffAlHakeem" />
 		<meta name="twitter:creator" content="@CliffAlHakeem" />
 
@@ -216,7 +215,10 @@
 				"headline": "Why Cheap Haircuts Can Cost More in the Long Run",
 				"alternativeHeadline": "Understanding the Difference Between Price and Value in Professional Barbering",
 				"description": "A master barber with 30+ years in Owings Mills breaks down what a haircut really costs, and why the cheapest one often costs you more.",
-				"image": "https://alhakeems.com/assets/images/tonsorial-hero.jpg",
+				"image": [
+					"https://alhakeems.com/assets/images/blog/heroes/barber-shears-straight-razor-hero.webp",
+					"https://alhakeems.com/assets/images/blog/heroes/barber-shears-straight-razor-og.webp"
+				],
 				"url": "https://alhakeems.com/blog/how-much-should-a-haircut-cost",
 				"datePublished": "2026-09-05",
 				"dateModified": "2026-09-05",
@@ -300,6 +302,9 @@
 		<meta name="apple-mobile-web-app-title" content="Al-Hakeem's Tonsorial" />
 		<link rel="manifest" href="../assets/images/favicons/site.webmanifest" />
 
+		<!--=============== PRELOAD LCP HERO IMAGE ===============-->
+		<link rel="preload" as="image" href="../assets/images/blog/heroes/barber-shears-straight-razor-hero.webp" fetchpriority="high" />
+
 		<!--=============== REMIXICONS ===============-->
 		<link
 			rel="stylesheet"
@@ -364,12 +369,8 @@
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
-		<!-- Hero: no photo supplied yet. .blog__hero-9 paints a navy fallback and points at
-		     /assets/images/blog/haircut-cost-hero.webp; drop the image in at that path (1800x500 or
-		     similar) and it appears with no code change. Author's concept: barber shears and a straight razor on a wooden
-		     station; alt: "Professional barber shears and a straight razor laid out on a wooden station".
-		     Add a preload + role="img" label at that point. -->
-		<div class="hero blog__hero-9"></div>
+		<!-- Hero: /assets/images/blog/heroes/barber-shears-straight-razor-hero.webp (2400x1260), set as a background image via .blog__hero-9 in styles.css. -->
+		<div class="hero blog__hero-9" role="img" aria-label="Professional barber shears and a straight razor laid out on a wooden station"></div>
 		<main class="blog-post" id="how-much-should-a-haircut-cost">
 			<article id="blog-article">
 				<div class="container">
