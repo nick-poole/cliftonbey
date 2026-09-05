@@ -2838,6 +2838,17 @@ ol li::before {
 	.nav__item--cta {
 		order: 1;
 	}
+	/* Before scroll the header is red and so is the button gradient, so the CTA
+	   read as plain text at the end of the row. Cream fill + navy text keeps it
+	   a visible button; .bg-header (after scroll) restores the red gradient. */
+	.header:not(.bg-header) .nav__item--cta .button {
+		background: var(--cornsilk);
+		color: var(--prussian-blue);
+	}
+	.header:not(.bg-header) .nav__item--cta .button:hover {
+		background: var(--white-color);
+		color: var(--persian-red);
+	}
 	.bg-header {
 		background-color: var(--cornsilk);
 	}

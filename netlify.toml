@@ -34,6 +34,8 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Site is US English only; stops search engines auto-translating results overseas.
+    Content-Language = "en-US"
     # /book loads SQUIRE's widget scripts (widget.getsquire.com) which frame
     # the booking dialog from the getsquire.com APEX. A *.getsquire.com
     # wildcard does NOT match the apex (wildcards cover subdomains only) --
@@ -67,6 +69,15 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Belt-and-braces scheme redirect. Netlify already forces HTTPS at the edge;
+# this makes the http -> https 301 explicit so an HTTP variant can never be
+# served or indexed alongside the canonical.
+[[redirects]]
+  from = "http://alhakeems.com/*"
+  to = "https://alhakeems.com/:splat"
+  status = 301
+  force = true
 
 # Redirect trailing slashes for cleaner URLs
 [[redirects]]
