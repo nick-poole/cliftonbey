@@ -1584,6 +1584,17 @@ img {
 	margin-bottom: 1rem;
 }
 
+/* Inline links inside the navy callout copy (the .button keeps its own colors) */
+.blog__callout p a {
+	color: var(--cornsilk);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.blog__callout p a:hover {
+	color: var(--white-color);
+}
+
 .blog__callout .button {
 	background: var(--persian-red);
 	color: var(--white-color);
