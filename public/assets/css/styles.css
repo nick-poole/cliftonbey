@@ -2328,6 +2328,28 @@ img {
 	}
 }
 
+/*=============== TABLE: PRICING (service name + price, two columns) ===============*/
+/* Two columns only, so it must fit a phone without a horizontal scrollbar:
+   no min-width floor, fixed layout, names wrap, price column stays narrow. */
+.article__table--pricing {
+	min-width: 0;
+	table-layout: fixed;
+}
+
+.article__table--pricing tbody th {
+	text-align: left;
+	font-weight: var(--font-medium);
+	color: var(--white-color);
+	overflow-wrap: anywhere;
+}
+
+.article__table--pricing th:last-child,
+.article__table--pricing td:last-child {
+	width: 5.5rem;
+	text-align: right;
+	white-space: nowrap;
+}
+
 /* Full-bleed: let the table span the whole viewport width on phones so the
    columns get maximum room and never trigger a horizontal scrollbar. No
    ancestor clips overflow, so this needs no markup restructuring. */
