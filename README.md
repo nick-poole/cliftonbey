@@ -22,6 +22,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Book | `/book` | Booking landing page — SQUIRE dialog opened by on-page CTAs, hosted short link as fallback |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: Why Cheap Haircuts Can Cost More in the Long Run (September 5, 2026) |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
 | Blog Post | `/blog/is-a-barbershop-membership-worth-it` | Article: Is a Barbershop Membership Worth It? The Value of Consistent Professional Grooming (July 5, 2026) |
 | Blog Post | `/blog/father-son-haircut-owings-mills` | Article: Why Father-Son Haircuts Build Confidence, Discipline, and Tradition (June 5, 2026) |
@@ -65,6 +66,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── how-much-should-a-haircut-cost.html
 │   ├── low-fade-vs-mid-fade-vs-high-fade.html
 │   ├── is-a-barbershop-membership-worth-it.html
 │   ├── father-son-haircut-owings-mills.html
@@ -107,6 +109,10 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Haircut-cost article — Why Cheap Haircuts Can Cost More in the Long Run (September 5, 2026)
+
+**New blog post — Why Cheap Haircuts Can Cost More in the Long Run (`/blog/how-much-should-a-haircut-cost`).** Clifton's own essay on price versus value in barbering, published in his voice with his sentences unedited. The SEO layer targets the "how much does a haircut cost" cluster (~1.36K combined monthly searches, KD 0 across the board): the title tag carries the price query while the on-page H1 keeps the author's headline, six of the ten H2s were reworded to match question-format queries, and a two-paragraph national/Baltimore price-range block plus a five-question FAQ ("Common Questions About Haircut Pricing") were added between his sections. Schema follows the site convention (global entity graph referenced by `@id`, BreadcrumbList, BlogPosting with `alternativeHeadline` for the deck, FAQPage mirroring the visible answers). The subtitle is marked up as a styled `<p class="blog__subheading">`, not an H2, so the page has one H1 and a clean heading outline. A new `.blog__hero-9` rule paints a navy hero band and reserves `assets/images/blog/haircut-cost-hero.webp`; the shop hero (`tonsorial-hero.webp`) stands in for the blog card and social image until Clifton supplies a photo. Added to the blog index grid (newest card), the `Blog` structured-data `blogPost` list, and `sitemap.xml`.
 
 ### SQUIRE booking migration (August 16, 2026)
 
