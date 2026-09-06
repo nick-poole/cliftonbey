@@ -17,6 +17,8 @@
 	--title-color: hsl(204, 93%, 11%);
 	--text-color: hsl(225, 12%, 24%);
 	--text-color-light: hsl(255, 4%, 70%);
+	/* Muted text that still passes 4.5:1 on white and cream (the light tone above does not) */
+	--text-color-muted: hsl(255, 4%, 42%);
 	/* --body-color: hsl(48, 90%, 92%); */
 	--body-color: hsl(84, 22%, 95%);
 	--container-color: hsl(0, 0%, 100%);
@@ -194,8 +196,19 @@ img {
 .text-center {
 	text-align: center;
 }
+/* Visually hidden but still read by assistive tech (display:none would hide it from
+   screen readers too, which defeated every label that used this class). */
 .visually-hidden {
-	display: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
 }
 
 .skip-link {
@@ -454,7 +467,7 @@ img {
 
 .home__description {
 	margin-bottom: 2.5rem;
-	color: var(--text-color-light);
+	color: var(--text-color-muted);
 }
 
 .home__buttons {
@@ -573,6 +586,11 @@ img {
 
 .about__description {
 	margin-bottom: 2rem;
+}
+
+.about__description a {
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
 }
 
 /* .list {
@@ -958,6 +976,14 @@ img {
 	margin-top: var(--header-height);
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+/* Hero banners delivered as a real <img> (indexable, alt text) rather than a background */
+.hero > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .heading,
@@ -1363,6 +1389,17 @@ img {
 	background-position: 65% 40%;
 }
 
+/* Haircut-cost post. The hero is a real <img> inside .hero (see .hero > img);
+   navy shows while it loads. */
+.blog__hero-9 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-9 > img {
+	object-position: 50% 60%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -1418,7 +1455,7 @@ img {
 
 .blog__caption {
 	font-size: var(--small-font-size);
-	color: var(--text-color-light);
+	color: var(--text-color-muted);
 	text-align: center;
 	margin-top: -1rem;
 	margin-bottom: 1.5rem;
@@ -1575,6 +1612,17 @@ img {
 	margin-bottom: 1rem;
 }
 
+/* Inline links inside the navy callout copy (the .button keeps its own colors) */
+.blog__callout p a {
+	color: var(--cornsilk);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.blog__callout p a:hover {
+	color: var(--white-color);
+}
+
 .blog__callout .button {
 	background: var(--persian-red);
 	color: var(--white-color);
@@ -1703,7 +1751,7 @@ img {
 	justify-content: space-between;
 	align-items: center;
 	font-size: var(--small-font-size);
-	color: var(--text-color-light);
+	color: var(--text-color-muted);
 	padding-top: 0.75rem;
 	border-top: 1px solid var(--gray-border);
 }
@@ -1868,7 +1916,7 @@ img {
 	align-items: center;
 	gap: 0.25rem;
 	font-size: var(--small-font-size);
-	color: var(--text-color-light);
+	color: var(--text-color-muted);
 	margin-bottom: 0.5rem;
 }
 
@@ -2253,6 +2301,16 @@ img {
 	color: var(--white-color);
 }
 
+.article__table a {
+	color: var(--cornsilk);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.article__table a:hover {
+	color: var(--white-color);
+}
+
 /*=============== TABLE: COMPARISON (metrics as rows, plans as columns) ===============*/
 /* Same orientation as the Services membership comparison table. The data
    columns are short numbers, so the table stays narrow enough to fit small
@@ -2286,6 +2344,28 @@ img {
 		padding: 0.55rem 0.35rem;
 		font-size: 0.75rem;
 	}
+}
+
+/*=============== TABLE: PRICING (service name + price, two columns) ===============*/
+/* Two columns only, so it must fit a phone without a horizontal scrollbar:
+   no min-width floor, fixed layout, names wrap, price column stays narrow. */
+.article__table--pricing {
+	min-width: 0;
+	table-layout: fixed;
+}
+
+.article__table--pricing tbody th {
+	text-align: left;
+	font-weight: var(--font-medium);
+	color: var(--white-color);
+	overflow-wrap: anywhere;
+}
+
+.article__table--pricing th:last-child,
+.article__table--pricing td:last-child {
+	width: 5.5rem;
+	text-align: right;
+	white-space: nowrap;
 }
 
 /* Full-bleed: let the table span the whole viewport width on phones so the
@@ -2359,6 +2439,7 @@ img {
 	caption-side: bottom;
 	font-size: var(--small-font-size);
 	color: var(--text-color);
+	background-color: var(--body-color); /* explicit: contrast checkers otherwise assume the navy table bg */
 	padding: 0.75rem 0.25rem 0;
 	text-align: left;
 	font-style: italic;
@@ -2776,6 +2857,17 @@ ol li::before {
 	.nav__item--cta {
 		order: 1;
 	}
+	/* Before scroll the header is red and so is the button gradient, so the CTA
+	   read as plain text at the end of the row. Cream fill + navy text keeps it
+	   a visible button; .bg-header (after scroll) restores the red gradient. */
+	.header:not(.bg-header) .nav__item--cta .button {
+		background: var(--cornsilk);
+		color: var(--prussian-blue);
+	}
+	.header:not(.bg-header) .nav__item--cta .button:hover {
+		background: var(--white-color);
+		color: var(--persian-red);
+	}
 	.bg-header {
 		background-color: var(--cornsilk);
 	}
@@ -2972,7 +3064,8 @@ ol li::before {
 	.blog__hero-5,
 	.blog__hero-6,
 	.blog__hero-7,
-	.blog__hero-8 {
+	.blog__hero-8,
+	.blog__hero-9 {
 		height: 500px;
 	}
 }
@@ -3011,7 +3104,7 @@ ol li::before {
 
 .chart-card__subtitle {
 	font-size: 0.85rem;
-	color: var(--text-color-light);
+	color: var(--text-color-muted);
 	margin: 0;
 	font-style: italic;
 	line-height: 1.4;
@@ -3029,7 +3122,7 @@ ol li::before {
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	text-align: center;
-	color: var(--text-color-light);
+	color: var(--text-color-muted);
 	border-top: 1px solid var(--gray-border);
 }
 

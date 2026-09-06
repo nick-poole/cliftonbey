@@ -22,6 +22,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Book | `/book` | Booking landing page — SQUIRE dialog opened by on-page CTAs, hosted short link as fallback |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: Why Cheap Haircuts Can Cost More in the Long Run (September 5, 2026) |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
 | Blog Post | `/blog/is-a-barbershop-membership-worth-it` | Article: Is a Barbershop Membership Worth It? The Value of Consistent Professional Grooming (July 5, 2026) |
 | Blog Post | `/blog/father-son-haircut-owings-mills` | Article: Why Father-Son Haircuts Build Confidence, Discipline, and Tradition (June 5, 2026) |
@@ -44,6 +45,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - Eight-link social row in the footer (Facebook, Instagram, Threads, YouTube, X, TikTok, LinkedIn, Apple Podcasts) with a responsive grid (3 columns on mobile, 4 columns at 768px, 8 columns at 1000px)
 - In-article chart components (`.chart-card` with navy, cream, and persian-red themes) used by the Barber vs. Master Barber post for training-hour bars, exam-breakdown bars, competency tables, and overlap cards
 - Site-wide cross-linking between the master-barber article and the five sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
+- The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
@@ -58,6 +60,7 @@ public/
 │   │   └── swiper-bundle.min.css
 │   ├── images/
 │   │   ├── blog/
+│   │   │   └── heroes/
 │   │   ├── favicons/
 │   │   ├── logo/
 │   │   └── portfolio/
@@ -65,6 +68,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── how-much-should-a-haircut-cost.html
 │   ├── low-fade-vs-mid-fade-vs-high-fade.html
 │   ├── is-a-barbershop-membership-worth-it.html
 │   ├── father-son-haircut-owings-mills.html
@@ -107,6 +111,31 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Site-wide validity, accessibility, and interlinking pass (September 6, 2026)
+
+Audited every page with the W3C Nu checker (run locally via `vnu-jar`), `html-validate`, and axe-core (WCAG 2.1 AA + best practices) in headless Chromium.
+
+- **`.visually-hidden` was `display: none`**, which hides text from screen readers as well as sighted users, so every label that relied on it (nav logo text, footer social names) was silent. Replaced with the standard clip-rect pattern.
+- **Footer social links** on eight pages had no text at all (icon only). Each now carries `aria-hidden` on the icon and a visually-hidden name, matching the pattern the blog posts already used. Nav toggle/close buttons declare `type="button"` on every page.
+- **Landmarks.** Blog heroes moved inside `<main>` and the scroll-to-top control inside `<footer>` on all pages, so no content sits outside a landmark.
+- **Contrast.** New `--text-color-muted` token (4.5:1+ on white and cream) replaces the too-light `--text-color-light` on captions, card meta, service durations, chart subtitles/footers, and the home description. Table captions declare their own background so contrast checkers stop assuming the navy table behind them. The homepage inline link is underlined so it does not rely on color alone.
+- **W3C errors cleared:** decorative carousel images no longer pair `alt=""` with `role="presentation"`; the Google Maps iframe drops its `width="100%"` attribute (CSS already sizes it); master-barber chart bars carry `role="img"` with their labels and the captioned figure drops its `role`; services comparison headers declare `scope="col"` and the blank corner header has a hidden "Feature" label. Remaining W3C messages are informational (self-closing slashes on void elements, the house style) plus the placeholder URLs in the blog template.
+- **Interlinking.** The haircut-cost post now links to six siblings; the how-often, membership, and professional-grooming posts link back on natural anchors (see Features).
+- `sitemap.xml` `lastmod` set to 2026-09-05 for every URL (the `lang`/cache-busting change touched every page); how-often `dateModified` bumped to match its retitle.
+- **Known, left as design decisions:** the gold `.section__subtitle` labels on the homepage (`--second-color` on cream, ~1.7:1) fail AA and would need a darker gold (~`hsl(42, 98%, 30%)`) to pass; `public/templates/blog-template.html` is publicly reachable with placeholder URLs and should be moved out of `public/` or given `noindex`.
+
+### Indexing hygiene, nav CTA, and asset cache-busting (September 5, 2026)
+
+- **`<html lang="en-US">` on all 18 pages and templates** (was `en`), plus a site-wide `Content-Language: en-US` response header in `netlify.toml`. Search Console showed the blog picking up auto-translated impressions overseas; both signals tell search engines the site is US English only.
+- **How-often post retitled toward intent.** Title tag is now "How Often Should You Get a Haircut? A Schedule by Style" (55 chars) and the meta / Open Graph / Twitter descriptions lead with the 2-to-4-week answer. The phrase "a master barber" was removed from all of them: the page was drawing ~1.9K zero-click impressions for "almost became a master barber", a query with nothing to do with the article. The `Person` schema still carries the Master Barber job title, which is entity data, not a page-topic signal.
+- **Explicit `http://alhakeems.com/* -> https://` 301 (`force = true`)** in `netlify.toml`. Netlify already forces HTTPS at the edge; the rule makes it declarative so an HTTP variant can never be served alongside the canonical. Audit confirmed every canonical, sitemap `<loc>`, and internal link is already `https://`.
+- **Asset cache-busting.** `/assets/css/*` and `/assets/js/*` are served `immutable, max-age=31536000`, but the filenames never changed, so returning visitors could keep a year-old stylesheet and never see layout fixes (this is why the Book button appeared out of position for some viewers). Every `styles.css` and `main.js` reference now carries `?v=20260905`. **Bump the version string in all 18 files whenever either asset changes.**
+- **Nav Book CTA visible before scroll.** In the un-scrolled header state the red-gradient button sat on the red header and read as plain text. At desktop widths the CTA now renders cream with navy text until `.bg-header` is applied on scroll, when it returns to the red gradient. Placement was already correct: `.nav__item--cta { order: 1 }` puts it at the right-hand end of the row at ≥1150px.
+
+### Haircut-cost article — Why Cheap Haircuts Can Cost More in the Long Run (September 5, 2026)
+
+**New blog post — Why Cheap Haircuts Can Cost More in the Long Run (`/blog/how-much-should-a-haircut-cost`).** Clifton's own essay on price versus value in barbering, published in his voice with his sentences unedited. The SEO layer targets **"how much does a men's haircut cost"** (parent topic "how much is a mens haircut", the only cleanly male-intent term in the cluster; the broader "how much does a haircut cost" rolls up to women's salon pricing and "men's haircut prices" to the budget-chain cluster, so both are deliberately avoided in metadata). The title tag carries the query while the on-page H1 keeps the author's headline; six of the ten H2s were reworded to question format. Between his sections sit a two-paragraph national/Baltimore price-range block, a **"What I Charge at Al-Hakeem's Tonsorial"** `<table>` mirroring the published `/services` rate card (each row links to a new per-service anchor on that page), and a five-question FAQ whose first answer leads with the shop's real $60 price before the national context. Schema follows the site convention (global entity graph referenced by `@id`, BreadcrumbList, BlogPosting with `alternativeHeadline` for the deck, FAQPage mirroring the visible answers) and adds six `Service` nodes with `Offer` prices whose `@id`s match the new `/services#…` anchors, also stamped onto the matching `Service` nodes in the services page's `OfferCatalog`. The subtitle is a styled `<p class="blog__subheading">`, not an H2. The hero is a real `<img>` (`assets/images/blog/heroes/barber-shears-straight-razor-hero.webp`, 2400×1260, `fetchpriority="high"`, alt text) filling the `.blog__hero-9` band via the new `.hero > img` rule; the matching 1200×630 `-og.webp` is the Open Graph / Twitter image. Both live in a new `assets/images/blog/heroes/` library that also holds seven more hero + OG pairs (barber chairs, clippers, shears in motion, classic interior, barber pole, barbers at work, vintage chair) ready for future posts. `netlify.toml` gained `[context.deploy-preview]` and `[context.branch-deploy]` commands that flip every page's robots meta to `noindex, nofollow` on non-production deploys.
 
 ### SQUIRE booking migration (August 16, 2026)
 
