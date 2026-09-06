@@ -45,6 +45,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - Eight-link social row in the footer (Facebook, Instagram, Threads, YouTube, X, TikTok, LinkedIn, Apple Podcasts) with a responsive grid (3 columns on mobile, 4 columns at 768px, 8 columns at 1000px)
 - In-article chart components (`.chart-card` with navy, cream, and persian-red themes) used by the Barber vs. Master Barber post for training-hour bars, exam-breakdown bars, competency tables, and overlap cards
 - Site-wide cross-linking between the master-barber article and the five sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
+- The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
@@ -110,6 +111,19 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Site-wide validity, accessibility, and interlinking pass (September 6, 2026)
+
+Audited every page with the W3C Nu checker (run locally via `vnu-jar`), `html-validate`, and axe-core (WCAG 2.1 AA + best practices) in headless Chromium.
+
+- **`.visually-hidden` was `display: none`**, which hides text from screen readers as well as sighted users, so every label that relied on it (nav logo text, footer social names) was silent. Replaced with the standard clip-rect pattern.
+- **Footer social links** on eight pages had no text at all (icon only). Each now carries `aria-hidden` on the icon and a visually-hidden name, matching the pattern the blog posts already used. Nav toggle/close buttons declare `type="button"` on every page.
+- **Landmarks.** Blog heroes moved inside `<main>` and the scroll-to-top control inside `<footer>` on all pages, so no content sits outside a landmark.
+- **Contrast.** New `--text-color-muted` token (4.5:1+ on white and cream) replaces the too-light `--text-color-light` on captions, card meta, service durations, chart subtitles/footers, and the home description. Table captions declare their own background so contrast checkers stop assuming the navy table behind them. The homepage inline link is underlined so it does not rely on color alone.
+- **W3C errors cleared:** decorative carousel images no longer pair `alt=""` with `role="presentation"`; the Google Maps iframe drops its `width="100%"` attribute (CSS already sizes it); master-barber chart bars carry `role="img"` with their labels and the captioned figure drops its `role`; services comparison headers declare `scope="col"` and the blank corner header has a hidden "Feature" label. Remaining W3C messages are informational (self-closing slashes on void elements, the house style) plus the placeholder URLs in the blog template.
+- **Interlinking.** The haircut-cost post now links to six siblings; the how-often, membership, and professional-grooming posts link back on natural anchors (see Features).
+- `sitemap.xml` `lastmod` set to 2026-09-05 for every URL (the `lang`/cache-busting change touched every page); how-often `dateModified` bumped to match its retitle.
+- **Known, left as design decisions:** the gold `.section__subtitle` labels on the homepage (`--second-color` on cream, ~1.7:1) fail AA and would need a darker gold (~`hsl(42, 98%, 30%)`) to pass; `public/templates/blog-template.html` is publicly reachable with placeholder URLs and should be moved out of `public/` or given `noindex`.
 
 ### Indexing hygiene, nav CTA, and asset cache-busting (September 5, 2026)
 

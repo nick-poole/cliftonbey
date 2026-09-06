@@ -372,20 +372,20 @@
 					</ul>
 
 					<!-- Close button -->
-					<button class="nav__close" id="nav-close" aria-label="Close menu">
+					<button type="button" class="nav__close" id="nav-close" aria-label="Close menu">
 						<i class="ri-close-large-line" aria-hidden="true"></i>
 					</button>
 				</div>
 
 				<!-- Toggle menu -->
-				<button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+				<button type="button" class="nav__toggle" id="nav-toggle" aria-label="Open menu">
 					<i class="ri-menu-4-line" aria-hidden="true"></i>
 				</button>
 			</nav>
 		</header>
 		<!--========== MAIN ==========-->
-		<div class="hero blog__hero-5"></div>
 		<main class="blog-post" id="barber-vs-master-barber">
+		<div class="hero blog__hero-5"></div>
 			<article id="blog-article">
 				<div class="container">
 					<div class="blog__headings">
@@ -462,7 +462,7 @@
 						<p>And with that title comes a specific legal privilege. Only a master barber can supervise and train apprentices in Maryland. That's not a marketing distinction. It's a regulatory one. The state trusts master barbers to train the next generation, because they've proven through examination and experience that they know the craft at a level worth passing on.</p>
 
 						<!-- Chart 1: Maryland Barber Training Requirements -->
-						<figure class="chart-card chart-card--navy" role="group" aria-labelledby="chart-training-title">
+						<figure class="chart-card chart-card--navy" aria-labelledby="chart-training-title">
 							<div class="chart-card__header">
 								<h3 class="chart-card__title" id="chart-training-title">Maryland Barber Training Requirements</h3>
 								<p class="chart-card__subtitle">Minimum hours before you can legally cut hair in Maryland (school path; apprentice path is longer)</p>
@@ -472,7 +472,7 @@
 									<div class="chart-training__row chart-training__row--unlicensed">
 										<span class="chart-training__label">Unlicensed</span>
 										<div class="chart-training__track">
-											<div class="chart-training__bar chart-training__bar--zero" style="width: 2%;" aria-label="Zero hours of training"></div>
+											<div class="chart-training__bar chart-training__bar--zero" style="width: 2%;" role="img" aria-label="Zero hours of training"></div>
 										</div>
 										<span class="chart-training__hours">0 hrs</span>
 									</div>
@@ -480,7 +480,7 @@
 									<div class="chart-training__row">
 										<span class="chart-training__label">Barber-Stylist</span>
 										<div class="chart-training__track">
-											<div class="chart-training__bar chart-training__bar--school" style="width: 42%;" aria-label="900 hours of barber school"></div>
+											<div class="chart-training__bar chart-training__bar--school" style="width: 42%;" role="img" aria-label="900 hours of barber school"></div>
 										</div>
 										<span class="chart-training__hours">900 hrs</span>
 									</div>
@@ -488,7 +488,7 @@
 									<div class="chart-training__row">
 										<span class="chart-training__label">Licensed Barber</span>
 										<div class="chart-training__track">
-											<div class="chart-training__bar chart-training__bar--school" style="width: 56%;" aria-label="1,200 hours of barber school"></div>
+											<div class="chart-training__bar chart-training__bar--school" style="width: 56%;" role="img" aria-label="1,200 hours of barber school"></div>
 										</div>
 										<span class="chart-training__hours">1,200 hrs</span>
 									</div>
@@ -496,14 +496,14 @@
 									<div class="chart-training__row chart-training__row--master">
 										<span class="chart-training__label">Master Barber</span>
 										<div class="chart-training__track">
-											<div class="chart-training__bar chart-training__bar--school" style="width: 56%;" aria-label="1,200 hours of barber school"></div>
-											<div class="chart-training__bar chart-training__bar--experience" style="width: 44%;" aria-label="Plus 15 months of professional experience"></div>
+											<div class="chart-training__bar chart-training__bar--school" style="width: 56%;" role="img" aria-label="1,200 hours of barber school"></div>
+											<div class="chart-training__bar chart-training__bar--experience" style="width: 44%;" role="img" aria-label="Plus 15 months of professional experience"></div>
 										</div>
 										<span class="chart-training__hours">2,160+</span>
 									</div>
 								</div>
 
-								<div class="chart-card__legend" aria-label="Chart legend">
+								<div class="chart-card__legend" role="group" aria-label="Chart legend">
 									<span class="chart-card__legend-item">
 										<span class="chart-card__legend-swatch" style="background: hsl(207, 60%, 47%);"></span>
 										School path hours
@@ -545,7 +545,7 @@
 						<p>Skip this knowledge and you put a client's health at risk every appointment. Every time clippers break skin (even a nick) without proper protocols, that's a transmission risk. The state takes this seriously. So should you.</p>
 
 						<!-- Chart 2: Exam Breakdown -->
-						<figure class="chart-card chart-card--red" role="group" aria-labelledby="chart-exam-title">
+						<figure class="chart-card chart-card--red" aria-labelledby="chart-exam-title">
 							<div class="chart-card__header">
 								<h3 class="chart-card__title" id="chart-exam-title">Maryland Barber Theory Exam</h3>
 								<p class="chart-card__subtitle">100 questions &middot; 2 hours &middot; 70% minimum to pass</p>
@@ -783,7 +783,7 @@
 						<p><strong>What an unlicensed person uniquely risks:</strong> cross-contamination, misidentified scalp conditions, permanent hairline damage, chemical burns, infection transmission, and zero legal recourse for the client if something goes wrong.</p>
 
 						<!-- Chart 4: Where They Overlap (navy theme) -->
-						<figure class="chart-card chart-card--navy chart-venn" role="group" aria-labelledby="chart-venn-title">
+						<figure class="chart-card chart-card--navy chart-venn" aria-labelledby="chart-venn-title">
 							<div class="chart-card__header">
 								<h3 class="chart-card__title" id="chart-venn-title">Where They Overlap, and Where They Don't</h3>
 								<p class="chart-card__subtitle">Unlicensed &middot; Licensed Barber &middot; Master Barber</p>
@@ -994,7 +994,7 @@
 						<span class="visually-hidden">Al-Hakeem's Tonsorial Emblem</span>
 						<img
 							src="../assets/images/logo/500/emblem-bgrm-500x500.png"
-							alt="Al-Hakeem's Tonsorial emblem" />
+							alt="" />
 					</a>
 				</div>
 				<div class="footer__social-box">
@@ -1159,12 +1159,12 @@
 			</div>
 
 			<span class="footer__copy">2026 &#169; Al-Hakeem's Enterprises LLC</span>
-		</footer>
-
 		<!--========== SCROLL UP ==========-->
 		<a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
 			<i class="ri-arrow-up-line" aria-hidden="true"></i>
 		</a>
+		</footer>
+
 		<!--=============== MAIN JS ===============-->
 		<script src="../assets/js/main.js?v=20260905" defer></script>
 	</body>
