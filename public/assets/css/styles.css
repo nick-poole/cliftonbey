@@ -2448,13 +2448,14 @@ img {
 
 /*=============== SOURCES (end-of-article references) ===============*/
 .article__sources ol {
-	padding-left: 1.25rem;
+	padding-left: 1.75rem;
 }
 
 .article__sources ol li {
 	margin: 0.5rem 0;
 	font-size: var(--small-font-size);
 	line-height: 1.6;
+	color: var(--text-color); /* numbered lists elsewhere use the accent color for questions */
 }
 
 /*=============== FAQ SECTION ===============*/
