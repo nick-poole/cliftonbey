@@ -2447,15 +2447,47 @@ img {
 }
 
 /*=============== SOURCES (end-of-article references) ===============*/
-.article__sources ol {
-	padding-left: 1.75rem;
+/* Reference-style [1] markers rather than bare decimals. Overrides the generic
+   .article__section ol padding/margin, so both are reset explicitly. */
+.blog-post .article__sources h2 {
+	font-size: 1.1rem;
 }
 
-.article__sources ol li {
-	margin: 0.5rem 0;
-	font-size: var(--small-font-size);
-	line-height: 1.6;
-	color: var(--text-color); /* numbered lists elsewhere use the accent color for questions */
+.blog-post .article__sources ol {
+	list-style: none;
+	counter-reset: source;
+	margin: 1rem 0 0 0;
+	padding-left: 0;
+}
+
+.blog-post .article__sources ol li {
+	counter-increment: source;
+	position: relative;
+	margin: 0 0 0.6rem 0;
+	padding-left: 2.1rem;
+	font-size: 0.75rem;
+	line-height: 1.55;
+	color: var(--text-color);
+}
+
+.blog-post .article__sources ol li::before {
+	content: '[' counter(source) ']';
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--persian-red);
+	font-weight: var(--font-medium);
+	font-style: normal;
+}
+
+@media screen and (min-width: 1150px) {
+	.blog-post .article__sources h2 {
+		font-size: 1.25rem;
+	}
+
+	.blog-post .article__sources ol li {
+		font-size: 0.8rem;
+	}
 }
 
 /*=============== FAQ SECTION ===============*/
