@@ -2446,6 +2446,17 @@ img {
 	margin-bottom: 1rem;
 }
 
+/*=============== SOURCES (end-of-article references) ===============*/
+.article__sources ol {
+	padding-left: 1.25rem;
+}
+
+.article__sources ol li {
+	margin: 0.5rem 0;
+	font-size: var(--small-font-size);
+	line-height: 1.6;
+}
+
 /*=============== FAQ SECTION ===============*/
 .article__faq {
 	background-color: var(--container-color);
