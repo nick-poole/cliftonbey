@@ -36,17 +36,11 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # Site is US English only; stops search engines auto-translating results overseas.
     Content-Language = "en-US"
-    # /book loads SQUIRE's widget scripts (widget.getsquire.com) which frame
-    # the booking dialog from the getsquire.com APEX. A *.getsquire.com
-    # wildcard does NOT match the apex (wildcards cover subdomains only) --
-    # verified the hard way on deploy preview 25 -- so the apex must stay
-    # listed explicitly in frame-src. connect-src covers the widget's
-    # page-context lookups (api.getsquire.com); everything the framed app
-    # loads internally is governed by SQUIRE's own CSP, not this one.
-    # Netlify applies every matching [[headers]] rule and browsers intersect
-    # duplicate CSP headers, so this stays a single site-wide policy rather
-    # than a /book-scoped one; hosts unreferenced by a page have no effect.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://widget.getsquire.com https://*.getsquire.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src https://www.google.com https://getsquire.com https://*.getsquire.com; connect-src 'self' https://getsquire.com https://*.getsquire.com"
+    # Booking (/book) is a plain outbound link to Booksy in a new tab, so no
+    # third-party booking host needs to be allowed here. Netlify applies every
+    # matching [[headers]] rule and browsers intersect duplicate CSP headers,
+    # so this stays a single site-wide policy rather than a per-page one.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self'"
 
 # Cache static assets (1 year)
 [[headers]]
