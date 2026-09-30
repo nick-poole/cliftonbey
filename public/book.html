@@ -8,33 +8,26 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-		<link rel="preconnect" href="https://widget.getsquire.com" crossorigin />
-		<link rel="preconnect" href="https://getsquire.com" />
+		<link rel="preconnect" href="https://alhakeemstonsorial.booksy.com" />
 
 		<meta name="robots" content="index, follow" />
 		<meta
 			name="description"
-			content="Book your appointment with Clifton 'Al-Hakeem' Bey in about a minute. Precision haircuts and beard work, by appointment only in Owings Mills, MD." />
+			content="Book your appointment with Clifton 'Al-Hakeem' Bey online through Booksy in about a minute. Precision haircuts and beard work, by appointment only in Owings Mills, MD." />
 		<title>Book an Appointment | Al-Hakeem's Tonsorial | Owings Mills, MD</title>
 		<link rel="canonical" href="https://alhakeems.com/book" />
 
-		<!--=============== SQUIRE BOOKING WIDGET ===============-->
-		<!-- Loads SQUIRE's slide-in booking dialog, scoped to this page only.
-			 Our own Book CTAs open it via window.SquireWidget.open(); see the
-			 wiring script at the end of <body>. SQUIRE's floating corner
-			 bubble is hidden with CSS (#squire_booking_widget_root), NOT with
-			 the x-squire-show-btn="false" attribute: that attribute also stops
-			 dataPreloader.js from loading, which is what defines
-			 window._squireQueryClient -- and SquireWidget.open() crashes
-			 without it. Learned the hard way; do not "clean this up". -->
-		<script type="text/javascript">!function(e,t){var i=e.createElement("script"),sa="setAttribute";i.src="https://widget.getsquire.com/widget.js?"+Date.now(),i[sa]("defer",""),i[sa]("type","text/javascript"),i[sa]("brand",t.brand),i[sa]("x-squire-inline-enabled",t.inline||!1),e.head.appendChild(i)}(document,{brand:"e5c1da05-ce52-43b3-8151-97659dfd7de6",inline:true});</script>
+		<!--=============== BOOKING ===============-->
+		<!-- Booking is handled by Booksy. Every Book CTA on this page is a plain
+			 link to the hosted Booksy page (opens in a new tab); no third-party
+			 script is loaded here. -->
 
 		<!--=============== OpenGraph ===============-->
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Book an Appointment - Al-Hakeem's Tonsorial" />
 		<meta
 			property="og:description"
-			content="Reserve your chair with Clifton 'Al-Hakeem' Bey. Booking takes about a minute — pick a service, choose a time, done. Owings Mills, MD." />
+			content="Reserve your chair with Clifton 'Al-Hakeem' Bey on Booksy. Booking takes about a minute — pick a service, choose a time, done. Owings Mills, MD." />
 		<meta property="og:url" content="https://alhakeems.com/book" />
 		<meta property="og:image" content="https://alhakeems.com/assets/images/book-hero.jpg" />
 		<meta property="og:image:width" content="1797" />
@@ -48,7 +41,7 @@
 		<meta name="twitter:title" content="Book an Appointment - Al-Hakeem's Tonsorial" />
 		<meta
 			name="twitter:description"
-			content="Reserve your chair with Clifton 'Al-Hakeem' Bey. Booking takes about a minute — pick a service, choose a time, done. Owings Mills, MD." />
+			content="Reserve your chair with Clifton 'Al-Hakeem' Bey on Booksy. Booking takes about a minute — pick a service, choose a time, done. Owings Mills, MD." />
 		<meta name="twitter:image" content="https://alhakeems.com/assets/images/book-hero.jpg" />
 		<meta name="twitter:image:alt" content="Black-and-white view of a barber at work behind the shop counter" />
 		<meta name="twitter:site" content="@CliffAlHakeem" />
@@ -152,7 +145,8 @@
 							"https://www.threads.com/@alhakeemthebarber",
 							"https://x.com/CliffAlHakeem",
 							"https://www.tiktok.com/@starmel53",
-							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/"
+							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/",
+							"https://alhakeemstonsorial.booksy.com"
 						],
 						"potentialAction": {
 							"@type": "ReserveAction",
@@ -249,7 +243,8 @@
 				"@id": "https://alhakeems.com/book#webpage",
 				"url": "https://alhakeems.com/book",
 				"name": "Book an Appointment | Al-Hakeem's Tonsorial | Owings Mills, MD",
-				"description": "Book your appointment with Clifton 'Al-Hakeem' Bey in about a minute. Precision haircuts and beard work, by appointment only in Owings Mills, MD.",
+				"description": "Book your appointment with Clifton 'Al-Hakeem' Bey online through Booksy in about a minute. Precision haircuts and beard work, by appointment only in Owings Mills, MD.",
+				"significantLink": "https://alhakeemstonsorial.booksy.com",
 				"isPartOf": { "@id": "https://alhakeems.com/#website" },
 				"about": { "@id": "https://alhakeems.com/#business" },
 				"breadcrumb": { "@id": "https://alhakeems.com/book#breadcrumb" },
@@ -330,28 +325,30 @@
 						<section class="article__section book__intro">
 							<p>
 								The chair is yours in about a minute: pick a service, choose a time, and you
-								are booked. Booking opens right here on the page through SQUIRE.
+								are booked. Booking runs through Booksy and opens in a new tab.
 							</p>
 							<div class="book__cta-row">
 								<a
-									href="https://getsqr.co/clifton-22"
+									href="https://alhakeemstonsorial.booksy.com"
 									target="_blank"
-									rel="noopener noreferrer"
-									class="button book__cta"
-									data-squire-open>
+									rel="noopener"
+									class="button book__cta">
 									<i class="ri-calendar-check-line" aria-hidden="true"></i>
 									Book Now
+									<span class="visually-hidden">(opens Booksy in a new tab)</span>
 								</a>
 							</div>
-							<p class="book__cta-note">Takes about a minute &middot; no account needed</p>
+							<p class="book__cta-note">Takes about a minute &middot; opens on Booksy</p>
 							<p class="book__fallback">
 								Trouble booking?
 								<a
-									href="https://getsqr.co/clifton-22"
+									href="https://alhakeemstonsorial.booksy.com"
 									target="_blank"
-									rel="noopener noreferrer">Book on SQUIRE's site</a>
+									rel="noopener"
+									>Book on Booksy<span class="visually-hidden"> (opens in a new tab)</span></a
+								>
 								or call
-								<a href="tel:+13478155706">(347) 815-5706</a>.
+								<a href="tel:347-815-5706">(347) 815-5706</a>.
 							</p>
 							<p class="book__menu-link">
 								Want to browse first? See the
@@ -407,7 +404,9 @@
 								<a
 									href="https://maps.app.goo.gl/E2xanCu54EYtj8u49"
 									target="_blank"
-									rel="noopener noreferrer">Get directions</a>
+									rel="noopener noreferrer"
+									>Get directions<span class="visually-hidden"> (opens in a new tab)</span></a
+								>
 							</div>
 							<div class="book__info-card">
 								<h3 class="book__info-head">
@@ -452,12 +451,12 @@
 						<h2>Ready When You Are</h2>
 						<p>Thirty years of craft, one chair, and a time slot with your name on it.</p>
 						<a
-							href="https://getsqr.co/clifton-22"
+							href="https://alhakeemstonsorial.booksy.com"
 							target="_blank"
-							rel="noopener noreferrer"
-							class="button"
-							data-squire-open>
+							rel="noopener"
+							class="button">
 							Book Now
+							<span class="visually-hidden">(opens Booksy in a new tab)</span>
 						</a>
 					</section>
 				</div>
@@ -632,87 +631,5 @@
 
 		<!--=============== MAIN JS ===============-->
 		<script src="assets/js/main.js?v=20260905" defer></script>
-
-		<!--=============== SQUIRE WIDGET WIRING ===============-->
-		<script>
-			/* Every [data-squire-open] CTA is a real link to the hosted booking
-			   page (getsqr.co), so booking works even if the widget script never
-			   loads -- or with JavaScript off entirely. When the widget is ready,
-			   clicks open SQUIRE's slide-in dialog in place instead. The setup
-			   pins the dialog straight to Clifton's chair (slugs from SQUIRE's
-			   own frame URL), skipping the brand-to-barber lookups. */
-			(function () {
-				var SETUP = {
-					brand: 'e5c1da05-ce52-43b3-8151-97659dfd7de6',
-					shop: 'al-hakeems-tonsorial-owings-mills-1',
-					barber: 'clifton-al-hakeem-bey-1'
-				};
-
-				document.addEventListener('click', function (event) {
-					var trigger = event.target.closest('[data-squire-open]');
-					if (!trigger) return;
-					if (window.SquireWidget && typeof window.SquireWidget.open === 'function') {
-						event.preventDefault();
-						try {
-							var opening = window.SquireWidget.open(SETUP);
-							/* If the dialog fails to mount, fall back to the
-							   hosted booking page rather than a dead click. */
-							if (opening && typeof opening.catch === 'function') {
-								opening.catch(function () {
-									window.open(trigger.href, '_blank', 'noopener') ||
-										(window.location.href = trigger.href);
-								});
-							}
-						} catch (error) {
-							window.open(trigger.href, '_blank', 'noopener') ||
-								(window.location.href = trigger.href);
-						}
-					}
-					/* Not ready yet: the anchor falls through to getsqr.co in a
-					   new tab -- never a dead end. */
-				});
-
-				/* Pre-mount the dialog while the page is idle so the first open
-				   is instant instead of booting the app behind an empty panel. */
-				var warm = function () {
-					if (window._squireMountWidgetSetup) window._squireMountWidgetSetup(SETUP);
-				};
-				window.addEventListener('load', function () {
-					if ('requestIdleCallback' in window) {
-						window.requestIdleCallback(warm, { timeout: 4000 });
-					} else {
-						window.setTimeout(warm, 2500);
-					}
-				});
-
-				/* SQUIRE's bookButton.js mounts its corner launcher with INLINE
-				   "display: block !important", which no stylesheet rule can
-				   override (the rules in styles.css are belt-and-braces only).
-				   Neutralize it at the source: write display:none !important
-				   into the element's own style attribute, and re-assert if
-				   SQUIRE ever rewrites it. Guarded so our own writes cannot
-				   loop the observer. */
-				var hideBubble = function (el) {
-					if (!el) return;
-					if (el.style.getPropertyValue('display') !== 'none') {
-						el.style.setProperty('display', 'none', 'important');
-						el.style.setProperty('opacity', '0', 'important');
-						el.style.setProperty('pointer-events', 'none', 'important');
-					}
-				};
-				var bubbleArmed = false;
-				var armBubble = function () {
-					var el = document.getElementById('squire_booking_widget_root');
-					if (!el || bubbleArmed) return;
-					bubbleArmed = true;
-					hideBubble(el);
-					new MutationObserver(function () {
-						hideBubble(el);
-					}).observe(el, { attributes: true, attributeFilter: ['style'] });
-				};
-				armBubble();
-				new MutationObserver(armBubble).observe(document.body, { childList: true });
-			})();
-		</script>
 	</body>
 </html>
