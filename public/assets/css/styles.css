@@ -1387,6 +1387,16 @@ img {
 	object-position: 50% 60%;
 }
 
+/* Safe-space post. Same real-<img> hero pattern as .blog__hero-9. */
+.blog__hero-10 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-10 > img {
+	object-position: 50% 50%;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -3096,7 +3106,8 @@ ol li::before {
 	.blog__hero-6,
 	.blog__hero-7,
 	.blog__hero-8,
-	.blog__hero-9 {
+	.blog__hero-9,
+	.blog__hero-10 {
 		height: 500px;
 	}
 }

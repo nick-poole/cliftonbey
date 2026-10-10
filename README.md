@@ -22,6 +22,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Book | `/book` | Booking landing page — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/barbershop-as-a-safe-space` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 10, 2026) |
 | Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: How Much Should a Haircut Cost? (September 5, 2026) |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
 | Blog Post | `/blog/is-a-barbershop-membership-worth-it` | Article: Is a Barbershop Membership Worth It? The Value of Consistent Professional Grooming (July 5, 2026) |
@@ -47,6 +48,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - Site-wide cross-linking between the master-barber article and the five sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
 - The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
+- The safe-space article (`/blog/barbershop-as-a-safe-space`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -68,6 +70,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── barbershop-as-a-safe-space.html
 │   ├── how-much-should-a-haircut-cost.html
 │   ├── low-fade-vs-mid-fade-vs-high-fade.html
 │   ├── is-a-barbershop-membership-worth-it.html
@@ -111,6 +114,10 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Safe-space article — The Barbershop as a Safe Space: Why It Still Matters (October 10, 2026)
+
+**New blog post — The Barbershop as a Safe Space: Why It Still Matters (`/blog/barbershop-as-a-safe-space`).** Clifton's October essay on trust, discretion, and community in the barbershop, written around his move back into a private suite. Published in his voice with his sentences unedited; his one-line paragraphs were grouped into normal paragraphs for the web, and two runs of parallel lines (the values he is carrying into the suite, and the "Can you expect…" consistency questions) became `<ul>` lists with each item verbatim. The deck "More Than a Haircut: Trust, Community, and the Importance of the Barber-Client Relationship" is a styled `<p class="blog__subheading">` and the schema `alternativeHeadline`. The headline is kept as both the title tag and the H1 (52 characters); the SEO layer targets the long-tail cluster around **barbershop as a safe space / why the barbershop still matters / private barber suite vs. traditional barbershop** in the meta description and `keywords`. Ahrefs had no API units left when the post was built, so no volume data backs that choice; re-check the cluster when units reset. Between his sections sits a four-question FAQ (what a safe space means here, private suite vs. traditional shop, discretion, what builds trust) whose answers are drawn only from his own text and mirrored in the `FAQPage` JSON-LD. Schema follows the site convention (global entity graph by `@id`, BreadcrumbList, BlogPosting, FAQPage). Cross-links: "Last month, I wrote about…" goes to the haircut-cost post; tradition → father-son; consistency → membership; "a premium grooming environment" → modern barbershop; "changes in their appearance" → cranial prosthesis; three decades → about; CTA → `/services` and `/book`. The haircut-cost post ("the relationships that develop over time") and the modern-barbershop post ("the relationship between a client and their barber") link back, with their `dateModified` bumped. Hero is the `classic-barbershop-interior` pair from the heroes library (real `<img>`, 2400×1260, `fetchpriority="high"`; the 1200×630 `-og.webp` is the social image) via a new `.blog__hero-10` rule, which is why the `styles.css` / `main.js` cache-bust string is now `?v=20261010` across all 19 HTML files. Added to the blog index grid (newest card), the `Blog` schema `blogPost` list, and `sitemap.xml` (every `lastmod` set to 2026-10-10, since the cache-bust touched every page). Clifton offered a photo for the piece; swap the two hero files under the same names if he sends one.
 
 ### Site-wide validity, accessibility, and interlinking pass (September 6, 2026)
 
