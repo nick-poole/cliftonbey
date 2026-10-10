@@ -49,7 +49,6 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - The safe-space article (`/blog/barbershop-as-a-safe-space`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
-- BuyBlack.org member badge centered under the footer social row on every page, hosted locally (`assets/images/badges/buyblack-member-badge.png`, 240×240 shown at 120px) and linked with `rel="nofollow noopener"`; the directory listing URL sits in the business `sameAs` array
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -115,10 +114,6 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
-
-### BuyBlack.org member badge (October 10, 2026)
-
-Clifton completed the shop's listing on BuyBlack.org, a national directory of Black-owned businesses, and asked for the member badge on the site. The badge sits in the footer on all 19 HTML files (18 pages plus both blog templates), centered under the eight-icon social row via a new `.footer__badge` rule, so blog readers who never see the homepage still see it. The PNG is hosted locally (resized from the 480×480 original to 240×240, shown at 120px with explicit dimensions, lazy-loaded) rather than hotlinked from buyblack.org, and the embed's inline style was dropped. **The link is deliberately `rel="nofollow noopener"`.** BuyBlack's listing links back to `alhakeems.com` with no `rel` (followed, with UTM tags), but a sitewide footer badge link is a textbook reciprocal pattern that Google discounts, and the badge's value to visitors is identical either way; the listing's real SEO value is the citation. To that end the listing URL (`https://www.buyblack.org/united-states/owings-mills/beauty-spas/al-hakeems-tonsorial`) was added to the business node's `sameAs` on the 18 files that carry the entity graph (`404.html` has none), beside the Booksy profile. The badge link itself points at BuyBlack's `?from=badge` tracking URL, as their embed code specified.
 
 ### Safe-space article — The Barbershop as a Safe Space: Why It Still Matters (October 10, 2026)
 
