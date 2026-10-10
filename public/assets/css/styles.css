@@ -2308,6 +2308,15 @@ img {
 	color: var(--white-color);
 }
 
+/* Caption links sit on the page background, not the navy table, so they need the page link color. */
+.article__table caption a {
+	color: var(--first-color);
+	text-decoration: underline;
+}
+.article__table caption a:hover {
+	color: var(--prussian-blue);
+}
+
 /*=============== TABLE: COMPARISON (metrics as rows, plans as columns) ===============*/
 /* Same orientation as the Services membership comparison table. The data
    columns are short numbers, so the table stays narrow enough to fit small
@@ -3154,6 +3163,12 @@ ol li::before {
 
 .chart-card__body {
 	padding: 1.25rem 1.75rem 1.5rem;
+}
+
+/* Prose inside a chart card (e.g. the At a Glance definition box) reads at article line-height. */
+.chart-card__body > p {
+	line-height: 1.7;
+	margin: 0;
 }
 
 .chart-card__footer {

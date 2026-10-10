@@ -117,3 +117,9 @@
   from = "/booking"
   to = "/book"
   status = 301
+
+# Old how-often slug still shows in Search Console.
+[[redirects]]
+  from = "/blog/how-often-should-get-a-haircut"
+  to = "/blog/how-often-should-you-get-a-haircut"
+  status = 301
