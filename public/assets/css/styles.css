@@ -2607,6 +2607,22 @@ ol li::before {
 	transform: translateY(-0.55rem);
 	color: var(--cornsilk);
 }
+
+/* BuyBlack.org member badge: centered under the social row, nofollow link. */
+.footer__badge {
+	display: block;
+	width: 120px;
+	margin: 0.75rem auto 0;
+	transition: transform 0.4s ease-in;
+}
+.footer__badge img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.footer__badge:hover {
+	transform: translateY(-0.55rem);
+}
 .footer__email,
 .footer__info {
 	font-style: normal;
