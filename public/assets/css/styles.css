@@ -907,6 +907,17 @@ img {
 	line-height: 1.8;
 }
 
+/* Links on the navy band use the gold accent (about 9:1 on prussian blue). */
+.areas-served__description a {
+	color: var(--second-color);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.areas-served__description a:hover {
+	color: var(--cornsilk);
+}
+
 .areas-served__grid {
 	display: flex;
 	flex-wrap: wrap;

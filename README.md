@@ -102,6 +102,25 @@ templates/
 netlify.toml
 ```
 
+## Voice and Point of View
+
+Clifton is a solo barber, so the site never says "we" or "our" about the shop.
+
+| Where | Point of view | Example |
+|------|------|------|
+| Homepage, About, Cranial Prosthesis, Black-Owned Barbershop | Third person, about Clifton | "Clifton has been cutting hair since 1996." |
+| Services (descriptions, policies, FAQ) | First person, Clifton speaking | "I ask that clients cancel or reschedule online." |
+| Book | Neutral, addressed to the client | "Pick a service, choose a time." |
+| Blog posts | First person, Clifton speaking | "After more than three decades behind the chair, I've learned..." |
+| Blog author bios and sign-off cards | Third person | "Clifton operates Al-Hakeem's Tonsorial in Owings Mills." |
+| FAQ questions | The client's voice | "Do I need an appointment?" |
+
+Rules that follow from it:
+
+- **No "we" or "our" for the business.** "We" is fine when it means people in general ("the decisions we make") or barber and client together ("together, we'll find the style"), and when it is Clifton speaking for barbers as a group in his own essays ("that's not our role").
+- **Third-person pages don't narrate authorship.** Link to a blog post with what the reader gets ("read why, in his own words"), not "Clifton has written about...".
+- **His own words stay his.** Clifton's essays (September and October 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
+
 ## Local Development
 
 This is a static site with no build step. Open any HTML file directly or use a local server:
@@ -119,6 +138,14 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Black-owned page follow-ups: link color, interlinking, point of view (October 11, 2026)
+
+- **Homepage link color.** The "Black-owned barbershop" link in the Areas Served paragraph sat on the navy band in the default red, which read poorly. `.areas-served__description a` now uses the gold accent (`--second-color`, about 9:1 on prussian blue) with an underline and a cornsilk hover. axe-core clean on the section.
+- **Interlinking.** Contextual in-body links to `/black-barbershop-owings-mills` now come from ten pages, each on words already in the copy: homepage (Areas Served), About (bio), Services (location FAQ, "Owings Mills"; the FAQ text itself is unchanged so it still matches its schema), Book (a "Parking and Metro" link beside "Get directions" in the Location card, pointing at `#finding-the-suite`), and the father-son, haircut-cost, membership, modern-barbershop, professional-grooming, beard-maintenance (author bio), master-barber (sign-off card), and private-suite (address line, to `#finding-the-suite`) posts. Not linked on purpose: the fade and how-often posts (no Owings Mills mention in the body to hang a link on), the cranial prosthesis page, the blog index, and the 404. All of them still reach the page through the footer.
+- **Point of view.** A site-wide audit set the convention now documented under *Voice and Point of View* above. Fixes: the new page's two sentences that narrated authorship ("In October, Clifton wrote about..." and "Clifton has written about...") now read "Read why, in his own words" and "built around the father-son haircut tradition"; editorial "our" became "my" in the how-often post (beard care guide, membership options), the modern-barbershop post (haircut guide), and the beard post ("as I covered in my guide"); the services FAQ's "contact us directly so we can make it right" is now "contact me directly so I can make it right", in both the visible answer and its FAQPage schema. `dateModified` bumped on the how-often and modern-barbershop posts.
+- **Housekeeping.** Cache-bust `?v=20261011b` on all 20 HTML files. The sitemap already lists the page (added in the previous commit, priority 0.80, lastmod 2026-10-11).
+- **Validation.** W3C Nu checker: no messages beyond the known heading-less-section notes, across every page. `html-validate` clean on every page. Every JSON-LD block parses; every internal link and `#finding-the-suite` fragment resolves.
 
 ### Black-owned barbershop landing page (October 11, 2026)
 
