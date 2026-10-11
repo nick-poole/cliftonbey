@@ -49,6 +49,7 @@
 						"@type": ["Organization", "LocalBusiness", "BarberShop"],
 						"@id": "https://alhakeems.com/#business",
 						"name": "Al-Hakeem's Tonsorial",
+						"alternateName": ["Al Hakeem's Tonsorial", "Al-Hakeems Tonsorial", "Al Hakeem Tonsorial", "Al-Hakeem the Barber"],
 						"legalName": "Al-Hakeem's Enterprises LLC",
 						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland. Serving Pikesville, Garrison, Randallstown, Milford Mill, Lochearn, and Baltimore County.",
 						"url": "https://alhakeems.com/",
@@ -105,6 +106,18 @@
 							{ "@type": "AdministrativeArea", "name": "Northwest Baltimore" }
 						],
 						"hasMap": "https://maps.app.goo.gl/E2xanCu54EYtj8u49",
+						"containedInPlace": {
+							"@type": "Place",
+							"name": "Salontra Select Suites",
+							"address": {
+								"@type": "PostalAddress",
+								"streetAddress": "10200 Grand Central Avenue",
+								"addressLocality": "Owings Mills",
+								"addressRegion": "MD",
+								"postalCode": "21117",
+								"addressCountry": "US"
+							}
+						},
 						"founder": { "@id": "https://alhakeems.com/#clifton-bey" },
 						"sameAs": [
 							"https://www.facebook.com/alhakeemthebarber",
@@ -113,7 +126,10 @@
 							"https://x.com/CliffAlHakeem",
 							"https://www.tiktok.com/@starmel53",
 							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/",
-							"https://alhakeemstonsorial.booksy.com"
+							"https://alhakeemstonsorial.booksy.com",
+							"https://www.youtube.com/@thecornerchairexperience",
+							"https://podcasts.apple.com/us/podcast/the-tonsorial-podcast/id1878034582",
+							"https://www.buyblack.org/united-states/owings-mills/beauty-spas/al-hakeems-tonsorial"
 						],
 						"potentialAction": {
 							"@type": "ReserveAction",
@@ -135,6 +151,7 @@
 						"@type": "Person",
 						"@id": "https://alhakeems.com/#clifton-bey",
 						"name": "Clifton \"Al-Hakeem\" Bey",
+						"alternateName": ["Al-Hakeem", "Cliff Al-Hakeem", "Clifton Al-Hakeem Bey"],
 						"jobTitle": ["Master Barber", "Certified Cranial Prosthesis Specialist"],
 						"description": "Master Barber with over 30 years of experience specializing in classic cuts, modern fades, and cranial prosthesis fitting.",
 						"image": "https://alhakeems.com/assets/images/portfolio8.jpg",
@@ -209,7 +226,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
 
 		<!--=============== CSS ===============-->
-		<link rel="stylesheet" href="assets/css/styles.css?v=20260905" />
+		<link rel="stylesheet" href="assets/css/styles.css?v=20261011d" />
 	</head>
 
 	<body>
@@ -718,6 +735,11 @@
 							</div>
 						</div>
 					</div>
+
+					<p class="contact__directions">
+						Parking is free in Metro Centre's garages, and the Owings Mills Metro station connects by
+						pedestrian tunnel. <a href="/book#getting-here">See how to find the suite</a>.
+					</p>
 				</div>
 			</section>
 
@@ -728,7 +750,7 @@
 					<h2 class="section__title">Serving the Greater Baltimore Area</h2>
 
 					<p class="areas-served__description">
-						Al-Hakeem's Tonsorial is located inside Salontra Select Suites in Owings Mills, MD,
+						Al-Hakeem's Tonsorial is a <a href="/black-barbershop-owings-mills">Black-owned barbershop</a> located inside Salontra Select Suites in Owings Mills, MD,
 						and proudly serves clients from communities across Baltimore County and Northwest Baltimore.
 						Whether you're coming from down the road or across town, experience precision barbering
 						and personalized grooming tailored to your style.
@@ -902,9 +924,9 @@
 						<li>
 							<i class="ri-map-pin-line"></i>
 							<address class="footer__info">
-								10200 Grand Central Avenue, Suite 21
+								<a href="/book#getting-here" class="footer__link">10200 Grand Central Avenue, Suite 21
 								<br />
-								Owings Mills, MD 21117
+								Owings Mills, MD 21117</a>
 							</address>
 						</li>
 
@@ -944,9 +966,7 @@
 							<a href="/cranial-prosthesis" class="footer__link">Cranial Prosthesis</a>
 						</li>
 						<li>
-							<a href="#local" class="footer__link" title="Your Local Barber in Owings Mills">
-								Your Local Barber
-							</a>
+							<a href="/black-barbershop-owings-mills" class="footer__link">Black-Owned Barbershop</a>
 						</li>
 
 						<li>
@@ -966,6 +986,6 @@
 		<script src="assets/js/swiper-bundle.min.js" defer></script>
 
 		<!--=============== MAIN JS ===============-->
-		<script src="assets/js/main.js?v=20260905" defer></script>
+		<script src="assets/js/main.js?v=20261011d" defer></script>
 	</body>
 </html>

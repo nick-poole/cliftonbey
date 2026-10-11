@@ -20,8 +20,10 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Services | `/services` | Full service menu, pricing, membership comparison table, FAQs |
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
-| Book | `/book` | Booking landing page — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
+| Book | `/book` | Booking landing page; also the site's canonical directions at `/book#getting-here` (parking, Metro, map) — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
+| Black-Owned Barbershop | `/black-barbershop-owings-mills` | Landing page for "Black-owned barbershop" searches in Owings Mills: client gallery, first-visit pricing, directions, FAQ, BuyBlack.org badge |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/private-barber-suite-vs-barbershop` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026) |
 | Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: How Much Should a Haircut Cost? (September 5, 2026) |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
 | Blog Post | `/blog/is-a-barbershop-membership-worth-it` | Article: Is a Barbershop Membership Worth It? The Value of Consistent Professional Grooming (July 5, 2026) |
@@ -47,6 +49,9 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - Site-wide cross-linking between the master-barber article and the five sibling blog posts plus the homepage, about, services, and cranial-prosthesis pages
 - The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
+- The safe-space article (`/blog/private-barber-suite-vs-barbershop`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
+- Black-owned barbershop landing page linked from every footer ("Black-Owned Barbershop" in the Company list, which replaced the old "Your Local Barber" link to `/#local`), the homepage Areas Served paragraph, the About bio, and contextual links across the site
+- Directions live in one place, the **Getting Here** section on `/book` (`id="getting-here"`). Everything else links to it: the footer address on every page, a one-line note under the homepage contact cards, the services location FAQ address, the Book page's Location card, the Black-owned page, and a line in the closing callout of every blog post. Update parking or Metro facts there and nowhere else.
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -59,15 +64,18 @@ public/
 │   │   ├── styles.css
 │   │   └── swiper-bundle.min.css
 │   ├── images/
+│   │   ├── badges/
 │   │   ├── blog/
 │   │   │   └── heroes/
 │   │   ├── favicons/
+│   │   ├── gallery/
 │   │   ├── logo/
 │   │   └── portfolio/
 │   └── js/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── private-barber-suite-vs-barbershop.html
 │   ├── how-much-should-a-haircut-cost.html
 │   ├── low-fade-vs-mid-fade-vs-high-fade.html
 │   ├── is-a-barbershop-membership-worth-it.html
@@ -80,6 +88,7 @@ public/
 ├── templates/
 │   └── blog-template.html
 ├── 404.html
+├── black-barbershop-owings-mills.html
 ├── index.html
 ├── services.html
 ├── about.html
@@ -93,6 +102,25 @@ templates/
 └── blog-template.html
 netlify.toml
 ```
+
+## Voice and Point of View
+
+Clifton is a solo barber, so the site never says "we" or "our" about the shop.
+
+| Where | Point of view | Example |
+|------|------|------|
+| Homepage, About, Cranial Prosthesis, Black-Owned Barbershop | Third person, about Clifton | "Clifton has been cutting hair since 1996." |
+| Services (descriptions, policies, FAQ) | First person, Clifton speaking | "I ask that clients cancel or reschedule online." |
+| Book | Neutral, addressed to the client | "Pick a service, choose a time." |
+| Blog posts | First person, Clifton speaking | "After more than three decades behind the chair, I've learned..." |
+| Blog author bios and sign-off cards | Third person | "Clifton operates Al-Hakeem's Tonsorial in Owings Mills." |
+| FAQ questions | The client's voice | "Do I need an appointment?" |
+
+Rules that follow from it:
+
+- **No "we" or "our" for the business.** "We" is fine when it means people in general ("the decisions we make") or barber and client together ("together, we'll find the style"), and when it is Clifton speaking for barbers as a group in his own essays ("that's not our role").
+- **Third-person pages don't narrate authorship.** Link to a blog post with what the reader gets ("read why, in his own words"), not "Clifton has written about...".
+- **His own words stay his.** Clifton's essays (September and October 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
 
 ## Local Development
 
@@ -112,6 +140,68 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ## Recent Updates
 
+### Fix: BuyBlack badge hidden on phones and tablets (October 11, 2026)
+
+Clifton reported he couldn't find the BuyBlack.org badge on the Black-owned page from his phone. The legacy rule `.article__section img { display: none; float: right; width: 350px; }` (shown only from 1150px up, for the old floated article images) also matched the badge, and the badge's own `.black-owned__badge img` rule had the same specificity but came earlier in the file, so it lost. Below 1150px the badge collapsed to nothing and left a blank gap. The rule is now `.blog-post .article__section .black-owned__badge img` with `display: block; float: none; margin: 0`, verified visible at 120×120 at 360, 390, 600, 900, and 1400px. A scan of every page at 390px found no other unintended hidden images; the ones still hidden on phones (About's two side photos, the homepage contact photo, and the cranial page's side photo) are the decorative desktop-only images that rule exists for. Gallery photos are unaffected because `.blog-post figure img` outranks it. Cache-bust `?v=20261011d`. **Watch for this rule when adding any non-figure `<img>` inside an `.article__section`.**
+
+### Directions moved to /book#getting-here and linked site-wide (October 11, 2026)
+
+The "Finding the Suite" directions built for the Black-owned page were a better fit on `/book`, where people go right before a visit, so the full version now lives there and every other mention points to it.
+
+- **`/book` "Getting Here" section (`id="getting-here"`)**, after Good to Know: the Salontra / Metro Centre sentence, a Parking card (Metro Centre's two free garages, Garage 1 at 5048 Painters Mill Road and Garage 2 at 10450 Grand Central Avenue), a By Metro card (Owings Mills station, last stop on the Metro SubwayLink, pedestrian tunnel under I-795), and the shop's Google map. The cards reuse `.book__info-card`; a new `.book__info--pair` modifier keeps them two across from 768px (the base `.book__info` goes four across at 1150px). The Location card's "Parking and Metro" link now jumps to `#getting-here` on the same page. An HTML comment marks where the entrance and the route to Suite 21 go once Clifton supplies them.
+- **Black-owned page** keeps a short "Finding the Suite": the sentence, the address, one line on parking and Metro linking to `/book#getting-here`, hours, and the map. The full parking/Metro list is gone from it.
+- **Links to `#getting-here`, added:** the footer address on all 20 HTML files is now a link (root `templates/blog-template.html` uses `../book.html#getting-here`); a centered `.contact__directions` line under the homepage contact cards ("See how to find the suite"; the cards themselves are whole-card links, so it can't go inside them); the address in the services location FAQ (link only, so the FAQ text still matches its schema); one neutral line ("Parking is free in Metro Centre's garages, and the Owings Mills Metro station connects by pedestrian tunnel. See how to find the suite.") just above the button in the closing callout of nine blog posts; and the October post's existing address link was repointed from the Black-owned page to `/book#getting-here`. Every page on the site now reaches the directions in one click.
+- **Validation:** W3C Nu checker 0 messages beyond the known heading notes; `html-validate` clean on every page; JSON-LD parses everywhere; no stale `#finding-the-suite` links; axe-core clean on Getting Here at 1400px and 390px, the Black-owned section, a blog callout, and the footer. The homepage contact section's only axe finding is the gold "GET IN TOUCH" label, already logged as a design decision. Cache-bust `?v=20261011c` on all 20 HTML files.
+
+### Black-owned page follow-ups: link color, interlinking, point of view (October 11, 2026)
+
+- **Homepage link color.** The "Black-owned barbershop" link in the Areas Served paragraph sat on the navy band in the default red, which read poorly. `.areas-served__description a` now uses the gold accent (`--second-color`, about 9:1 on prussian blue) with an underline and a cornsilk hover. axe-core clean on the section.
+- **Interlinking.** Contextual in-body links to `/black-barbershop-owings-mills` now come from ten pages, each on words already in the copy: homepage (Areas Served), About (bio), Services (location FAQ, "Owings Mills"; the FAQ text itself is unchanged so it still matches its schema), Book (a "Parking and Metro" link beside "Get directions" in the Location card, pointing at `#finding-the-suite`), and the father-son, haircut-cost, membership, modern-barbershop, professional-grooming, beard-maintenance (author bio), master-barber (sign-off card), and private-suite (address line, to `#finding-the-suite`) posts. Not linked on purpose: the fade and how-often posts (no Owings Mills mention in the body to hang a link on), the cranial prosthesis page, the blog index, and the 404. All of them still reach the page through the footer.
+- **Point of view.** A site-wide audit set the convention now documented under *Voice and Point of View* above. Fixes: the new page's two sentences that narrated authorship ("In October, Clifton wrote about..." and "Clifton has written about...") now read "Read why, in his own words" and "built around the father-son haircut tradition"; editorial "our" became "my" in the how-often post (beard care guide, membership options), the modern-barbershop post (haircut guide), and the beard post ("as I covered in my guide"); the services FAQ's "contact us directly so we can make it right" is now "contact me directly so I can make it right", in both the visible answer and its FAQPage schema. `dateModified` bumped on the how-often and modern-barbershop posts.
+- **Footer.** The "Your Local Barber" link (to the homepage `#local` section) was removed from the Company list on all 20 HTML files; "Black-Owned Barbershop" takes its place as the footer's local-intent link.
+- **Housekeeping.** Cache-bust `?v=20261011b` on all 20 HTML files. The sitemap already lists the page (added in the previous commit, priority 0.80, lastmod 2026-10-11).
+- **Validation.** W3C Nu checker: no messages beyond the known heading-less-section notes, across every page. `html-validate` clean on every page. Every JSON-LD block parses; every internal link and `#finding-the-suite` fragment resolves.
+
+### Black-owned barbershop landing page (October 11, 2026)
+
+**New page — Black-Owned Barbershop in Owings Mills, MD (`/black-barbershop-owings-mills`).** A free page Nick wrote for Clifton, aimed at "Black barbershop near me" searches and written for someone choosing a barber. Built from Nick's October 10 draft; every business fact matches the live site (1996 apprenticeship and 1999 master barber license from `/about`; prices, first-visit description, and the Father & Son $180/month rate from `/services`; walk-in wording now matches the services FAQ exactly: "when availability allows"). Title tag "Black-Owned Barbershop in Owings Mills, MD | Al-Hakeem's" (56 chars), 144-char description, H1 "Black-Owned Barbershop in Owings Mills, MD". URL drops the draft's trailing slash to match the site-wide `/*/ → /:splat` rule; `/black-barbershop-owings-mills.html` 301s to it.
+
+- **Hero** reuses the homepage photo of Clifton at work (`tonsorial-hero.webp`) as a real `<img>` via new `.blog__hero-11`, so returning visitors already have it cached; a 1200×630 crop (`black-barbershop-owings-mills-og.jpg`) is the social image and the WebPage `primaryImageOfPage`.
+- **Gallery** (new `.cut-gallery`, 2 up on phones, 3 up from 768px, uniform 4:5 tiles) uses nine client photos that were already in the repo but unused: seven from `portfolio/reserve/` and two of the five unnamed JPEGs in `assets/images/blog/`, one photo per client, grouped Fades and Tapers / Lineups / Beards / Young Clients. Processed into `assets/images/gallery/` as WebP with descriptive names. `youth-curly-top-taper.webp` is cropped to remove an old Booksy watermark (`al-hakeemsbarbershop.booksy.com`) and avatar. Alt text names the cut, Clifton, and the shop; each photo is also an `ImageObject` with caption and `creator` → Clifton in the page's WebPage node. Nick confirmed permission covers the two youth photos.
+- **Black-Owned, in Owings Mills** quotes Clifton verbatim from his October essay (two passages, cited and linked) instead of new sentences written for him; he signs off before publish. The section carries the BuyBlack.org member badge (`assets/images/badges/buyblack-member-badge.png`, 120px, `rel="nofollow noopener"`, consistent with the earlier sitewide decision) next to the Support Black Owned listing link, plus the Pew Research figure (Maryland ~10% of firms, 2022 data, confirmed at the source) and the 2020 Census line for Owings Mills (35,674 people, about six in ten Black). **The Census figures were read from a secondary copy; confirm on data.census.gov before merge.**
+- **Finding the Suite** uses sourced public facts only: Salontra is in the 10200 Grand Central Avenue building at Metro Centre; Metro Centre's garages are free (Garage 1, 5048 Painters Mill Road; Garage 2, 10450 Grand Central Avenue); the Owings Mills station, last stop on the Metro SubwayLink, connects to Metro Centre by a pedestrian tunnel under I-795. The entrance and the route to Suite 21 are left out until Clifton supplies them. The map embed is the shop's own Google listing, same as the homepage.
+- **Deliberately left out:** the draft's hair-loss sentence and `/cranial-prosthesis` link (the service is not ready to be promoted), straight razor shaves (not on the services menu), a Metro walking distance, and any phone number other than (347) 815-5706.
+- **Schema:** the shared entity graph, BreadcrumbList (Home → page), WebPage (`about` → business, `significantLink` → `/book`, gallery `image` list), and FAQPage mirroring the five visible questions word for word.
+- **Inbound links:** a "Black-Owned Barbershop" item in the footer Company list on all 20 HTML files (the root `templates/blog-template.html` uses its relative `../*.html` link style), "Black-owned barbershop" in the homepage Areas Served sentence, and "a trusted Black-owned barbershop owner in Owings Mills" in the About bio.
+- **Housekeeping:** sitemap gains the URL at priority 0.80 and every `lastmod` moves to 2026-10-11; cache-bust is now `?v=20261011` on all 20 HTML files.
+- **Validation:** W3C Nu checker 0 errors (the only note is the shared heading-less intro section); `html-validate` clean; axe-core WCAG 2.1 AA clean on the page content at 1400px and 390px (the one finding is the site-wide footer phone-link label already logged in the previous entry); JSON-LD parses, every `@id` resolves, FAQ text matches, every schema image exists; no horizontal scroll at 390px.
+
+### Pre-publication validation pass for PR #28 (October 10, 2026)
+
+Run against the whole branch, since the schema change touched 18 pages. Tooling: W3C Nu checker 26.10.9 via `vnu-jar` (`java -jar vnu.jar --stdout --format json`, with the house-style "trailing slash on void elements" note filtered), `html-validate` 8 with the repo's `.htmlvalidate.json`, axe-core (WCAG 2.0/2.1 A+AA plus best-practice rules) in headless Chromium through Playwright at 1400px and at a 390px iPhone viewport, a structural JSON-LD audit script (every block parses; every `{"@id"}` reference resolves inside the page's graph; BlogPosting carries headline, image, datePublished, author, publisher, mainEntityOfPage, description; schema image URLs exist as files; breadcrumb positions are sequential and end on the canonical; FAQPage text is compared to the visible FAQ; the business node has name, address, telephone, hours, sameAs, alternateName, containedInPlace), and a sitemap cross-check (every non-404 page is listed, nothing listed is missing, every canonical matches its `<loc>`).
+
+- **W3C:** zero errors on all 18 real pages. The only five errors are the `{{SLUG}}` / `{{FEATURED_IMAGE}}` placeholders in the two blog templates, already noted below as a known item. Seventeen info-level "section lacks heading" notes are the intro `<section>` without an H2 that every post uses.
+- **html-validate:** clean on every page touched in this PR.
+- **axe-core:** the new post is clean at both widths, including the stacked table (`data-label` pseudo-content and the visually hidden `<thead>`). The how-often post is clean. Three pre-existing findings elsewhere were left as they are and are listed here for a later decision: (1) `label-content-name-mismatch` (WCAG 2.5.3) on the phone links in the footer, contact card, and book page, because the digit-by-digit `aria-label` chosen on September 30 does not contain the visible "(347) 815-5706"; the fix that keeps the digit-by-digit reading is to lead the label with the visible text. (2) The gold `.section__subtitle` labels on the homepage, already recorded as a design decision. (3) Low-contrast labels inside the red `.chart-card--red` exam-breakdown chart on the master-barber post (foreground #363a45 on #be3737, about 2:1), which predate this PR.
+- **Schema:** zero structural issues on any page. The FAQ-text comparison shows minor wording drift between visible answers and schema on five older posts and the services page (pre-existing; Google asks only that the content be visible, not identical). The new post's five answers and the new line-up answer match their schema text exactly.
+- **Sitemap:** 16 URLs, matches the page set, canonicals match, `lastmod` 2026-10-10 on every URL because the cache-bust touched every page.
+
+### Search-intent layer on the safe-space post, brand schema, old-slug redirect, line-up FAQ, master-barber retitle (October 10, 2026)
+
+**Safe-space post re-targeted at client-side "private barber suite vs. barbershop."** SERP research showed the "barber suite" results are written for barbers deciding whether to rent; the only client-facing page is a ~250-word post from a one-barber studio in Laurel. Clifton's H1, subtitle, byline, and every sentence of his prose are unchanged; his one-line paragraphs were regrouped into normal paragraphs for the web. What changed around them: slug is now `/blog/private-barber-suite-vs-barbershop` (renamed before anything went live, so no redirect needed); title tag "Private Barber Suite vs. Barbershop: Why Trust Matters" (55 chars) while the H1 keeps his headline; meta/OG/Twitter/BlogPosting description leads with the comparison; `keywords` lead with the primary query; tags are "Barbershop Experience" + "Private Suite". Eight of his twelve H2s were reworded to carry the query while keeping his phrase where he had one (e.g. "How to Know You've Found a Good Barber: Trust Is Built Through Consistency"); "The Barber Chair Has a Unique Perspective" was deliberately kept as written. Added, visibly separate from his prose: an "At a Glance" definition box (`.chart-card`, third person, names Suite 21 at Salontra Select Suites) after the back link; a six-row comparison `<table>` (`.article__table--compare`) as an H3 at the end of the privacy section, caption linking to `/services`, with the new opt-in `.article__table--stack` modifier that turns each row into a labeled card below 640px (Clifton's one review note: the three-column grid was crowded on his phone); a five-question FAQ replacing the previous four (do you have to talk to your barber, is it rude not to talk, confidentiality, is a barber a therapist, suite vs. barbershop) with answers written to say only what his sections already say, mirrored in the FAQPage JSON-LD (no links to `/cranial-prosthesis` remain in the post; the service is not ready to be promoted from it); a sixth question on private hair-loss appointments was drafted and removed because the cranial prosthesis service is not ready to be promoted from this post; the CTA heading is now "Book a Private Barber Suite Appointment in Owings Mills" with the full suite address in plain text. **Not added, on purpose:** any HIPAA claim (not verifiable from the site), a "silent appointment" service promise, the audiobook entity, links to locale pages that do not exist, and the Suite 21 hero photo (Nick is not asking Clifton for one; the stock interior stays).
+
+**Brand entity schema, site-wide (18 files; `404.html` carries no graph).** The business node gained `alternateName` (Al Hakeem's Tonsorial, Al-Hakeems Tonsorial, Al Hakeem Tonsorial, Al-Hakeem the Barber) for the spelling variants Search Console shows, `containedInPlace` → Salontra Select Suites with its postal address, and three `sameAs` entries the footer already linked or the shop already holds: the YouTube channel, the Apple Podcasts show, and the BuyBlack.org listing (citation only; the badge itself was reverted in the same PR). The Person node gained `alternateName` (Al-Hakeem, Cliff Al-Hakeem, Clifton Al-Hakeem Bey). Target: the site averaged position 9.2 for its own name.
+
+**Old slug redirect.** `/blog/how-often-should-get-a-haircut` still appears in Search Console and had no rule; `netlify.toml` now 301s it to the current slug. The `http://alhakeems.com/*` → HTTPS forced 301 from September 5 already covers the HTTP homepage variant; the HTTP clicks in GSC predate it.
+
+**"How long does a line up last?"** The how-often post answered how often to get one but never how long one lasts (578 impressions at position 6.3, 1 click). Added a sentence under the lineups heading and a visible FAQ + FAQPage entry: about 1 to 2 weeks, consistent with the post's existing 1-to-2-week maintenance interval. `dateModified` bumped.
+
+**Master-barber post retitled toward "what is a master barber"** (position 8.5, 551 impressions, vs. 2.6 for "barber vs master barber", 63). Title tag is now "What Is a Master Barber? Barber vs. Master Barber Explained" (59 chars, brand suffix dropped from the 69-char original); OG/Twitter titles match; the four descriptions lead with the definition. The H1, the "What Is a Master Barber?" section, and its bolded direct-answer paragraph were already in place, so no body change. `dateModified` bumped.
+
+### Safe-space article — The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026)
+
+**New blog post — The Barbershop as a Safe Space: Why It Still Matters (`/blog/private-barber-suite-vs-barbershop`).** Clifton's October essay on trust, discretion, and community in the barbershop, written around his move back into a private suite. Published in his voice with his sentences unedited; his one-line paragraphs were grouped into normal paragraphs for the web, and two runs of parallel lines (the values he is carrying into the suite, and the "Can you expect…" consistency questions) became `<ul>` lists with each item verbatim. The deck "More Than a Haircut: Trust, Community, and the Importance of the Barber-Client Relationship" is a styled `<p class="blog__subheading">` and the schema `alternativeHeadline`. The headline is kept as both the title tag and the H1 (52 characters); the SEO layer targets the long-tail cluster around **barbershop as a safe space / why the barbershop still matters / private barber suite vs. traditional barbershop** in the meta description and `keywords`. Ahrefs had no API units left when the post was built, so no volume data backs that choice; re-check the cluster when units reset. Between his sections sits a four-question FAQ (what a safe space means here, private suite vs. traditional shop, discretion, what builds trust) whose answers are drawn only from his own text and mirrored in the `FAQPage` JSON-LD. Schema follows the site convention (global entity graph by `@id`, BreadcrumbList, BlogPosting, FAQPage). Cross-links: "Last month, I wrote about…" goes to the haircut-cost post; tradition → father-son; consistency → membership; "a premium grooming environment" → modern barbershop; "changes in their appearance" → cranial prosthesis; three decades → about; CTA → `/services` and `/book`. The haircut-cost post ("the relationships that develop over time") and the modern-barbershop post ("the relationship between a client and their barber") link back, with their `dateModified` bumped. Hero is the `classic-barbershop-interior` pair from the heroes library (real `<img>`, 2400×1260, `fetchpriority="high"`; the 1200×630 `-og.webp` is the social image) via a new `.blog__hero-10` rule, which is why the `styles.css` / `main.js` cache-bust string is now `?v=20261010c` across all 19 HTML files. Added to the blog index grid (newest card), the `Blog` schema `blogPost` list, and `sitemap.xml` (every `lastmod` set to 2026-10-10, since the cache-bust touched every page). Clifton offered a photo for the piece; swap the two hero files under the same names if he sends one.
+
 ### Site-wide validity, accessibility, and interlinking pass (September 6, 2026)
 
 Audited every page with the W3C Nu checker (run locally via `vnu-jar`), `html-validate`, and axe-core (WCAG 2.1 AA + best practices) in headless Chromium.
@@ -130,7 +220,7 @@ Audited every page with the W3C Nu checker (run locally via `vnu-jar`), `html-va
 - **`<html lang="en-US">` on all 18 pages and templates** (was `en`), plus a site-wide `Content-Language: en-US` response header in `netlify.toml`. Search Console showed the blog picking up auto-translated impressions overseas; both signals tell search engines the site is US English only.
 - **How-often post retitled toward intent.** Title tag is now "How Often Should You Get a Haircut? A Schedule by Style" (55 chars) and the meta / Open Graph / Twitter descriptions lead with the 2-to-4-week answer. The phrase "a master barber" was removed from all of them: the page was drawing ~1.9K zero-click impressions for "almost became a master barber", a query with nothing to do with the article. The `Person` schema still carries the Master Barber job title, which is entity data, not a page-topic signal.
 - **Explicit `http://alhakeems.com/* -> https://` 301 (`force = true`)** in `netlify.toml`. Netlify already forces HTTPS at the edge; the rule makes it declarative so an HTTP variant can never be served alongside the canonical. Audit confirmed every canonical, sitemap `<loc>`, and internal link is already `https://`.
-- **Asset cache-busting.** `/assets/css/*` and `/assets/js/*` are served `immutable, max-age=31536000`, but the filenames never changed, so returning visitors could keep a year-old stylesheet and never see layout fixes (this is why the Book button appeared out of position for some viewers). Every `styles.css` and `main.js` reference now carries `?v=20260905`. **Bump the version string in all 18 files whenever either asset changes.**
+- **Asset cache-busting.** `/assets/css/*` and `/assets/js/*` are served `immutable, max-age=31536000`, but the filenames never changed, so returning visitors could keep a year-old stylesheet and never see layout fixes (this is why the Book button appeared out of position for some viewers). Every `styles.css` and `main.js` reference now carries `?v=20260905`. **Bump the version string in all 20 HTML files whenever either asset changes.**
 - **Nav Book CTA visible before scroll.** In the un-scrolled header state the red-gradient button sat on the red header and read as plain text. At desktop widths the CTA now renders cream with navy text until `.bg-header` is applied on scroll, when it returns to the red gradient. Placement was already correct: `.nav__item--cta { order: 1 }` puts it at the right-hand end of the row at ≥1150px.
 
 ### Haircut-cost article — How Much Should a Haircut Cost? (September 5, 2026)

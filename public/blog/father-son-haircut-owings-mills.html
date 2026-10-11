@@ -46,6 +46,7 @@
 						"@type": ["Organization", "LocalBusiness", "BarberShop"],
 						"@id": "https://alhakeems.com/#business",
 						"name": "Al-Hakeem's Tonsorial",
+						"alternateName": ["Al Hakeem's Tonsorial", "Al-Hakeems Tonsorial", "Al Hakeem Tonsorial", "Al-Hakeem the Barber"],
 						"legalName": "Al-Hakeem's Enterprises LLC",
 						"description": "Full-service barbershop offering expert haircuts, beard sculpting, straight razor shaves, and certified cranial prosthesis services in Owings Mills, Maryland. Serving Pikesville, Garrison, Randallstown, Milford Mill, Lochearn, and Baltimore County.",
 						"url": "https://alhakeems.com/",
@@ -102,6 +103,18 @@
 							{ "@type": "AdministrativeArea", "name": "Northwest Baltimore" }
 						],
 						"hasMap": "https://maps.app.goo.gl/E2xanCu54EYtj8u49",
+						"containedInPlace": {
+							"@type": "Place",
+							"name": "Salontra Select Suites",
+							"address": {
+								"@type": "PostalAddress",
+								"streetAddress": "10200 Grand Central Avenue",
+								"addressLocality": "Owings Mills",
+								"addressRegion": "MD",
+								"postalCode": "21117",
+								"addressCountry": "US"
+							}
+						},
 						"founder": { "@id": "https://alhakeems.com/#clifton-bey" },
 						"sameAs": [
 							"https://www.facebook.com/alhakeemthebarber",
@@ -110,7 +123,10 @@
 							"https://x.com/CliffAlHakeem",
 							"https://www.tiktok.com/@starmel53",
 							"https://www.linkedin.com/in/clifton-al-hakeem-bey-970833a2/",
-							"https://alhakeemstonsorial.booksy.com"
+							"https://alhakeemstonsorial.booksy.com",
+							"https://www.youtube.com/@thecornerchairexperience",
+							"https://podcasts.apple.com/us/podcast/the-tonsorial-podcast/id1878034582",
+							"https://www.buyblack.org/united-states/owings-mills/beauty-spas/al-hakeems-tonsorial"
 						],
 						"potentialAction": {
 							"@type": "ReserveAction",
@@ -132,6 +148,7 @@
 						"@type": "Person",
 						"@id": "https://alhakeems.com/#clifton-bey",
 						"name": "Clifton \"Al-Hakeem\" Bey",
+						"alternateName": ["Al-Hakeem", "Cliff Al-Hakeem", "Clifton Al-Hakeem Bey"],
 						"jobTitle": ["Master Barber", "Certified Cranial Prosthesis Specialist"],
 						"description": "Master Barber with over 30 years of experience specializing in classic cuts, modern fades, and cranial prosthesis fitting.",
 						"image": "https://alhakeems.com/assets/images/portfolio8.jpg",
@@ -314,7 +331,7 @@
 		<!--=============== GOOGLE FONTS ===============-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" />
 		<!--=============== CSS ===============-->
-		<link rel="stylesheet" href="../assets/css/styles.css?v=20260905" />
+		<link rel="stylesheet" href="../assets/css/styles.css?v=20261011d" />
 	</head>
 	<body>
 		<!--========== SKIP TO MAIN ==========-->
@@ -470,7 +487,7 @@
 					<section class="article__section" id="serving-owings-mills">
 						<h2>Serving Dads and Sons Across Owings Mills and Baltimore County</h2>
 
-						<p>My shop, Al-Hakeem's Tonsorial, sits inside Salontra Select Suites at 10200 Grand Central Avenue, Suite 21, in Owings Mills, MD. I'm in the chair Tuesday through Friday from 10 AM to 6 PM, Saturdays until 4 PM, and Sundays until 3 PM (closed Mondays).</p>
+						<p>My shop, <a href="/black-barbershop-owings-mills">Al-Hakeem's Tonsorial</a>, sits inside Salontra Select Suites at 10200 Grand Central Avenue, Suite 21, in Owings Mills, MD. I'm in the chair Tuesday through Friday from 10 AM to 6 PM, Saturdays until 4 PM, and Sundays until 3 PM (closed Mondays).</p>
 
 						<p>Families come to me for father-son and youth haircuts from across the area: Owings Mills, Pikesville, Randallstown, Reisterstown, Garrison, Milford Mill, Lochearn, Woodlawn, and Northwest Baltimore County. If you've been searching for a father-son haircut near me, you're in the right neighborhood. As <a href="/blog/barber-vs-master-barber">a Maryland-licensed master barber</a> with more than 30 years behind the chair, I treat every cut, for the dad and the son, with the same care.</p>
 					</section>
@@ -479,6 +496,8 @@
 					<section class="blog__callout" id="book-appointment">
 						<h2>Standards Passed Down, One Cut at a Time</h2>
 						<p>At Al-Hakeem's Tonsorial in Owings Mills, every cut is more than a cut. Being a father isn't something you celebrate one day a year. It's something you live every day, in the standards you keep and the example you set. That is the whole idea behind The Corner Chair Experience: a father and son, side by side, passing down confidence, discipline, and self-respect from one generation to the next. Bring your son in, take the seat next to him, and start a tradition you'll both keep coming back to.</p>
+						<p>Parking is free in Metro Centre's garages, and the Owings Mills Metro station connects by pedestrian tunnel. <a href="/book#getting-here">See how to find the suite</a>.</p>
+
 						<a href="/book" class="button" title="Book Your Father-Son Haircut">
 							Book Now
 						</a>
@@ -641,9 +660,9 @@
 						<li>
 							<i class="ri-map-pin-line" aria-hidden="true"></i>
 							<address class="footer__info">
-								10200 Grand Central Avenue, Suite 21
+								<a href="/book#getting-here" class="footer__link">10200 Grand Central Avenue, Suite 21
 								<br />
-								Owings Mills, MD 21117
+								Owings Mills, MD 21117</a>
 							</address>
 						</li>
 
@@ -682,9 +701,7 @@
 							<a href="/cranial-prosthesis" class="footer__link">Cranial Prosthesis</a>
 						</li>
 						<li>
-							<a href="/#local" class="footer__link" title="Your Local Barber in Owings Mills">
-								Your Local Barber
-							</a>
+							<a href="/black-barbershop-owings-mills" class="footer__link">Black-Owned Barbershop</a>
 						</li>
 						<li>
 							<a href="https://nickpoole.dev" class="footer__link" title="Website by Nick Poole" target="_blank" rel="noopener noreferrer">Webmaster</a>
@@ -701,6 +718,6 @@
 		</footer>
 
 		<!--=============== MAIN JS ===============-->
-		<script src="../assets/js/main.js?v=20260905" defer></script>
+		<script src="../assets/js/main.js?v=20261011d" defer></script>
 	</body>
 </html>
