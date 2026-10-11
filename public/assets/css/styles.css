@@ -1397,6 +1397,106 @@ img {
 	object-position: 50% 50%;
 }
 
+/* Black-owned barbershop page. Reuses the homepage hero photo as a real <img>. */
+.blog__hero-11 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-11 > img {
+	object-position: 35% 30%;
+}
+
+/* Client photo gallery: 2 up on phones, 3 up from 768px. Uniform 4:5 tiles. */
+/* Selectors repeat .article__section to outrank the article list rules (dash marker, li padding). */
+.blog-post .article__section .cut-gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0.75rem 0 2rem;
+}
+
+.blog-post .article__section .cut-gallery li {
+	margin: 0;
+	padding: 0;
+}
+
+.blog-post .article__section .cut-gallery li::before {
+	content: none;
+}
+
+.blog-post .cut-gallery figure {
+	margin: 0;
+}
+
+.blog-post .cut-gallery img {
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.blog-post .cut-gallery figcaption {
+	font-size: var(--small-font-size);
+	line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) {
+	.blog-post .article__section .cut-gallery {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+}
+
+/* Badge + listing line, side by side; stacks under 480px. */
+.black-owned__listings {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	margin-top: 1.5rem;
+}
+
+.black-owned__badge {
+	flex: 0 0 120px;
+	display: block;
+	transition: transform 0.4s ease-in;
+}
+
+.black-owned__badge img {
+	display: block;
+	width: 120px;
+	height: auto;
+}
+
+.black-owned__badge:hover {
+	transform: translateY(-0.35rem);
+}
+
+.black-owned__listings p {
+	margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.black-owned__listings {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.black-owned__address {
+	font-style: normal;
+	font-weight: var(--font-medium);
+	color: var(--title-color);
+	margin-bottom: 1rem;
+}
+
+.black-owned__map {
+	margin-top: 1.5rem;
+	border-radius: 8px;
+}
+
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
 .blog-post .blog__headings {
 	position: relative;
@@ -3178,7 +3278,8 @@ ol li::before {
 	.blog__hero-7,
 	.blog__hero-8,
 	.blog__hero-9,
-	.blog__hero-10 {
+	.blog__hero-10,
+	.blog__hero-11 {
 		height: 500px;
 	}
 }

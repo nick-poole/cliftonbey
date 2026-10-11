@@ -21,6 +21,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
 | Book | `/book` | Booking landing page — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
+| Black-Owned Barbershop | `/black-barbershop-owings-mills` | Landing page for "Black-owned barbershop" searches in Owings Mills: client gallery, first-visit pricing, directions, FAQ, BuyBlack.org badge |
 | Blog | `/blog` | Blog landing page |
 | Blog Post | `/blog/private-barber-suite-vs-barbershop` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026) |
 | Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: How Much Should a Haircut Cost? (September 5, 2026) |
@@ -49,6 +50,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - The safe-space article (`/blog/private-barber-suite-vs-barbershop`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
+- Black-owned barbershop landing page linked from every footer ("Black-Owned Barbershop" in the Company list), the homepage Areas Served paragraph, and the About bio
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -61,9 +63,11 @@ public/
 │   │   ├── styles.css
 │   │   └── swiper-bundle.min.css
 │   ├── images/
+│   │   ├── badges/
 │   │   ├── blog/
 │   │   │   └── heroes/
 │   │   ├── favicons/
+│   │   ├── gallery/
 │   │   ├── logo/
 │   │   └── portfolio/
 │   └── js/
@@ -83,6 +87,7 @@ public/
 ├── templates/
 │   └── blog-template.html
 ├── 404.html
+├── black-barbershop-owings-mills.html
 ├── index.html
 ├── services.html
 ├── about.html
@@ -114,6 +119,20 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Black-owned barbershop landing page (October 11, 2026)
+
+**New page — Black-Owned Barbershop in Owings Mills, MD (`/black-barbershop-owings-mills`).** A free page Nick wrote for Clifton, aimed at "Black barbershop near me" searches and written for someone choosing a barber. Built from Nick's October 10 draft; every business fact matches the live site (1996 apprenticeship and 1999 master barber license from `/about`; prices, first-visit description, and the Father & Son $180/month rate from `/services`; walk-in wording now matches the services FAQ exactly: "when availability allows"). Title tag "Black-Owned Barbershop in Owings Mills, MD | Al-Hakeem's" (56 chars), 144-char description, H1 "Black-Owned Barbershop in Owings Mills, MD". URL drops the draft's trailing slash to match the site-wide `/*/ → /:splat` rule; `/black-barbershop-owings-mills.html` 301s to it.
+
+- **Hero** reuses the homepage photo of Clifton at work (`tonsorial-hero.webp`) as a real `<img>` via new `.blog__hero-11`, so returning visitors already have it cached; a 1200×630 crop (`black-barbershop-owings-mills-og.jpg`) is the social image and the WebPage `primaryImageOfPage`.
+- **Gallery** (new `.cut-gallery`, 2 up on phones, 3 up from 768px, uniform 4:5 tiles) uses nine client photos that were already in the repo but unused: seven from `portfolio/reserve/` and two of the five unnamed JPEGs in `assets/images/blog/`, one photo per client, grouped Fades and Tapers / Lineups / Beards / Young Clients. Processed into `assets/images/gallery/` as WebP with descriptive names. `youth-curly-top-taper.webp` is cropped to remove an old Booksy watermark (`al-hakeemsbarbershop.booksy.com`) and avatar. Alt text names the cut, Clifton, and the shop; each photo is also an `ImageObject` with caption and `creator` → Clifton in the page's WebPage node. Nick confirmed permission covers the two youth photos.
+- **Black-Owned, in Owings Mills** quotes Clifton verbatim from his October essay (two passages, cited and linked) instead of new sentences written for him; he signs off before publish. The section carries the BuyBlack.org member badge (`assets/images/badges/buyblack-member-badge.png`, 120px, `rel="nofollow noopener"`, consistent with the earlier sitewide decision) next to the Support Black Owned listing link, plus the Pew Research figure (Maryland ~10% of firms, 2022 data, confirmed at the source) and the 2020 Census line for Owings Mills (35,674 people, about six in ten Black). **The Census figures were read from a secondary copy; confirm on data.census.gov before merge.**
+- **Finding the Suite** uses sourced public facts only: Salontra is in the 10200 Grand Central Avenue building at Metro Centre; Metro Centre's garages are free (Garage 1, 5048 Painters Mill Road; Garage 2, 10450 Grand Central Avenue); the Owings Mills station, last stop on the Metro SubwayLink, connects to Metro Centre by a pedestrian tunnel under I-795. The entrance and the route to Suite 21 are left out until Clifton supplies them. The map embed is the shop's own Google listing, same as the homepage.
+- **Deliberately left out:** the draft's hair-loss sentence and `/cranial-prosthesis` link (the service is not ready to be promoted), straight razor shaves (not on the services menu), a Metro walking distance, and any phone number other than (347) 815-5706.
+- **Schema:** the shared entity graph, BreadcrumbList (Home → page), WebPage (`about` → business, `significantLink` → `/book`, gallery `image` list), and FAQPage mirroring the five visible questions word for word.
+- **Inbound links:** a "Black-Owned Barbershop" item in the footer Company list on all 20 HTML files (the root `templates/blog-template.html` uses its relative `../*.html` link style), "Black-owned barbershop" in the homepage Areas Served sentence, and "a trusted Black-owned barbershop owner in Owings Mills" in the About bio.
+- **Housekeeping:** sitemap gains the URL at priority 0.80 and every `lastmod` moves to 2026-10-11; cache-bust is now `?v=20261011` on all 20 HTML files.
+- **Validation:** W3C Nu checker 0 errors (the only note is the shared heading-less intro section); `html-validate` clean; axe-core WCAG 2.1 AA clean on the page content at 1400px and 390px (the one finding is the site-wide footer phone-link label already logged in the previous entry); JSON-LD parses, every `@id` resolves, FAQ text matches, every schema image exists; no horizontal scroll at 390px.
 
 ### Pre-publication validation pass for PR #28 (October 10, 2026)
 
@@ -159,7 +178,7 @@ Audited every page with the W3C Nu checker (run locally via `vnu-jar`), `html-va
 - **`<html lang="en-US">` on all 18 pages and templates** (was `en`), plus a site-wide `Content-Language: en-US` response header in `netlify.toml`. Search Console showed the blog picking up auto-translated impressions overseas; both signals tell search engines the site is US English only.
 - **How-often post retitled toward intent.** Title tag is now "How Often Should You Get a Haircut? A Schedule by Style" (55 chars) and the meta / Open Graph / Twitter descriptions lead with the 2-to-4-week answer. The phrase "a master barber" was removed from all of them: the page was drawing ~1.9K zero-click impressions for "almost became a master barber", a query with nothing to do with the article. The `Person` schema still carries the Master Barber job title, which is entity data, not a page-topic signal.
 - **Explicit `http://alhakeems.com/* -> https://` 301 (`force = true`)** in `netlify.toml`. Netlify already forces HTTPS at the edge; the rule makes it declarative so an HTTP variant can never be served alongside the canonical. Audit confirmed every canonical, sitemap `<loc>`, and internal link is already `https://`.
-- **Asset cache-busting.** `/assets/css/*` and `/assets/js/*` are served `immutable, max-age=31536000`, but the filenames never changed, so returning visitors could keep a year-old stylesheet and never see layout fixes (this is why the Book button appeared out of position for some viewers). Every `styles.css` and `main.js` reference now carries `?v=20260905`. **Bump the version string in all 18 files whenever either asset changes.**
+- **Asset cache-busting.** `/assets/css/*` and `/assets/js/*` are served `immutable, max-age=31536000`, but the filenames never changed, so returning visitors could keep a year-old stylesheet and never see layout fixes (this is why the Book button appeared out of position for some viewers). Every `styles.css` and `main.js` reference now carries `?v=20260905`. **Bump the version string in all 20 HTML files whenever either asset changes.**
 - **Nav Book CTA visible before scroll.** In the un-scrolled header state the red-gradient button sat on the red header and read as plain text. At desktop widths the CTA now renders cream with navy text until `.bg-header` is applied on scroll, when it returns to the red gradient. Placement was already correct: `.nav__item--cta { order: 1 }` puts it at the right-hand end of the row at ≥1150px.
 
 ### Haircut-cost article — How Much Should a Haircut Cost? (September 5, 2026)

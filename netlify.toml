@@ -110,6 +110,11 @@
   to = "/book"
   status = 301
 
+[[redirects]]
+  from = "/black-barbershop-owings-mills.html"
+  to = "/black-barbershop-owings-mills"
+  status = 301
+
 # Likely guess-type for the booking page. /book/ -> /book is already covered
 # by the trailing-slash rule above, so no rule is added for it -- adding one
 # would fight that rule and loop.
