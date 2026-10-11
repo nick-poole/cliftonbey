@@ -20,7 +20,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Services | `/services` | Full service menu, pricing, membership comparison table, FAQs |
 | About | `/about` | Clifton Bey's bio and background |
 | Cranial Prosthesis | `/cranial-prosthesis` | Dedicated page for certified cranial prosthesis services |
-| Book | `/book` | Booking landing page — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
+| Book | `/book` | Booking landing page; also the site's canonical directions at `/book#getting-here` (parking, Metro, map) — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
 | Black-Owned Barbershop | `/black-barbershop-owings-mills` | Landing page for "Black-owned barbershop" searches in Owings Mills: client gallery, first-visit pricing, directions, FAQ, BuyBlack.org badge |
 | Blog | `/blog` | Blog landing page |
 | Blog Post | `/blog/private-barber-suite-vs-barbershop` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026) |
@@ -51,6 +51,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - The safe-space article (`/blog/private-barber-suite-vs-barbershop`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
 - Black-owned barbershop landing page linked from every footer ("Black-Owned Barbershop" in the Company list, which replaced the old "Your Local Barber" link to `/#local`), the homepage Areas Served paragraph, the About bio, and contextual links across the site
+- Directions live in one place, the **Getting Here** section on `/book` (`id="getting-here"`). Everything else links to it: the footer address on every page, a one-line note under the homepage contact cards, the services location FAQ address, the Book page's Location card, the Black-owned page, and a line in the closing callout of every blog post. Update parking or Metro facts there and nowhere else.
 - Google Maps embed for business location
 - Sitemap and robots.txt for SEO
 
@@ -138,6 +139,15 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Directions moved to /book#getting-here and linked site-wide (October 11, 2026)
+
+The "Finding the Suite" directions built for the Black-owned page were a better fit on `/book`, where people go right before a visit, so the full version now lives there and every other mention points to it.
+
+- **`/book` "Getting Here" section (`id="getting-here"`)**, after Good to Know: the Salontra / Metro Centre sentence, a Parking card (Metro Centre's two free garages, Garage 1 at 5048 Painters Mill Road and Garage 2 at 10450 Grand Central Avenue), a By Metro card (Owings Mills station, last stop on the Metro SubwayLink, pedestrian tunnel under I-795), and the shop's Google map. The cards reuse `.book__info-card`; a new `.book__info--pair` modifier keeps them two across from 768px (the base `.book__info` goes four across at 1150px). The Location card's "Parking and Metro" link now jumps to `#getting-here` on the same page. An HTML comment marks where the entrance and the route to Suite 21 go once Clifton supplies them.
+- **Black-owned page** keeps a short "Finding the Suite": the sentence, the address, one line on parking and Metro linking to `/book#getting-here`, hours, and the map. The full parking/Metro list is gone from it.
+- **Links to `#getting-here`, added:** the footer address on all 20 HTML files is now a link (root `templates/blog-template.html` uses `../book.html#getting-here`); a centered `.contact__directions` line under the homepage contact cards ("See how to find the suite"; the cards themselves are whole-card links, so it can't go inside them); the address in the services location FAQ (link only, so the FAQ text still matches its schema); one neutral line ("Parking is free in Metro Centre's garages, and the Owings Mills Metro station connects by pedestrian tunnel. See how to find the suite.") just above the button in the closing callout of nine blog posts; and the October post's existing address link was repointed from the Black-owned page to `/book#getting-here`. Every page on the site now reaches the directions in one click.
+- **Validation:** W3C Nu checker 0 messages beyond the known heading notes; `html-validate` clean on every page; JSON-LD parses everywhere; no stale `#finding-the-suite` links; axe-core clean on Getting Here at 1400px and 390px, the Black-owned section, a blog callout, and the footer. The homepage contact section's only axe finding is the gold "GET IN TOUCH" label, already logged as a design decision. Cache-bust `?v=20261011c` on all 20 HTML files.
 
 ### Black-owned page follow-ups: link color, interlinking, point of view (October 11, 2026)
 

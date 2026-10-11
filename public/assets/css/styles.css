@@ -811,6 +811,21 @@ img {
 	color: var(--text-color);
 }
 
+/* One-line directions note under the homepage contact cards. */
+.contact__directions {
+	text-align: center;
+	max-width: 640px;
+	margin: 2rem auto 0 auto;
+	line-height: 1.7;
+	color: var(--text-color);
+}
+
+.contact__directions a {
+	color: var(--first-color);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
 .contact__container {
 	row-gap: 3rem;
 	padding-block: 1.5rem 3rem;
@@ -1189,6 +1204,19 @@ img {
 	grid-template-columns: 1fr;
 	gap: 1.25rem;
 	margin-top: 1.5rem;
+}
+
+/* Two-card row (Getting Here): side by side from 768px and stays two wide on
+   desktop, where the four-card Good to Know row goes four across. */
+@media screen and (min-width: 768px) {
+	.book__info.book__info--pair {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.book__map {
+	margin-top: 1.5rem;
+	border-radius: 8px;
 }
 
 /* Navy accent: informational cards, as opposed to the red accent used for
