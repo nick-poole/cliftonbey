@@ -140,6 +140,10 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ## Recent Updates
 
+### Fix: BuyBlack badge hidden on phones and tablets (October 11, 2026)
+
+Clifton reported he couldn't find the BuyBlack.org badge on the Black-owned page from his phone. The legacy rule `.article__section img { display: none; float: right; width: 350px; }` (shown only from 1150px up, for the old floated article images) also matched the badge, and the badge's own `.black-owned__badge img` rule had the same specificity but came earlier in the file, so it lost. Below 1150px the badge collapsed to nothing and left a blank gap. The rule is now `.blog-post .article__section .black-owned__badge img` with `display: block; float: none; margin: 0`, verified visible at 120×120 at 360, 390, 600, 900, and 1400px. A scan of every page at 390px found no other unintended hidden images; the ones still hidden on phones (About's two side photos, the homepage contact photo, and the cranial page's side photo) are the decorative desktop-only images that rule exists for. Gallery photos are unaffected because `.blog-post figure img` outranks it. Cache-bust `?v=20261011d`. **Watch for this rule when adding any non-figure `<img>` inside an `.article__section`.**
+
 ### Directions moved to /book#getting-here and linked site-wide (October 11, 2026)
 
 The "Finding the Suite" directions built for the Black-owned page were a better fit on `/book`, where people go right before a visit, so the full version now lives there and every other mention points to it.

@@ -1503,8 +1503,12 @@ img {
 	transition: transform 0.4s ease-in;
 }
 
-.black-owned__badge img {
+/* Scoped through .article__section to outrank the legacy `.article__section img
+   { display: none }` rule, which hid the badge below 1150px. */
+.blog-post .article__section .black-owned__badge img {
 	display: block;
+	float: none;
+	margin: 0;
 	width: 120px;
 	height: auto;
 }
