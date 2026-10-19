@@ -811,6 +811,21 @@ img {
 	color: var(--text-color);
 }
 
+/* One-line directions note under the homepage contact cards. */
+.contact__directions {
+	text-align: center;
+	max-width: 640px;
+	margin: 2rem auto 0 auto;
+	line-height: 1.7;
+	color: var(--text-color);
+}
+
+.contact__directions a {
+	color: var(--first-color);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
 .contact__container {
 	row-gap: 3rem;
 	padding-block: 1.5rem 3rem;
@@ -905,6 +920,17 @@ img {
 	max-width: 700px;
 	margin: 0 auto 2rem auto;
 	line-height: 1.8;
+}
+
+/* Links on the navy band use the gold accent (about 9:1 on prussian blue). */
+.areas-served__description a {
+	color: var(--second-color);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.areas-served__description a:hover {
+	color: var(--cornsilk);
 }
 
 .areas-served__grid {
@@ -1180,6 +1206,19 @@ img {
 	margin-top: 1.5rem;
 }
 
+/* Two-card row (Getting Here): side by side from 768px and stays two wide on
+   desktop, where the four-card Good to Know row goes four across. */
+@media screen and (min-width: 768px) {
+	.book__info.book__info--pair {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.book__map {
+	margin-top: 1.5rem;
+	border-radius: 8px;
+}
+
 /* Navy accent: informational cards, as opposed to the red accent used for
    actions everywhere else on the site. */
 .book__info-card {
@@ -1385,6 +1424,120 @@ img {
 
 .blog__hero-9 > img {
 	object-position: 50% 60%;
+}
+
+/* Safe-space post. Same real-<img> hero pattern as .blog__hero-9. */
+.blog__hero-10 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-10 > img {
+	object-position: 50% 50%;
+}
+
+/* Black-owned barbershop page. Reuses the homepage hero photo as a real <img>. */
+.blog__hero-11 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-11 > img {
+	object-position: 35% 30%;
+}
+
+/* Client photo gallery: 2 up on phones, 3 up from 768px. Uniform 4:5 tiles. */
+/* Selectors repeat .article__section to outrank the article list rules (dash marker, li padding). */
+.blog-post .article__section .cut-gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0.75rem 0 2rem;
+}
+
+.blog-post .article__section .cut-gallery li {
+	margin: 0;
+	padding: 0;
+}
+
+.blog-post .article__section .cut-gallery li::before {
+	content: none;
+}
+
+.blog-post .cut-gallery figure {
+	margin: 0;
+}
+
+.blog-post .cut-gallery img {
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.blog-post .cut-gallery figcaption {
+	font-size: var(--small-font-size);
+	line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) {
+	.blog-post .article__section .cut-gallery {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+}
+
+/* Badge + listing line, side by side; stacks under 480px. */
+.black-owned__listings {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	margin-top: 1.5rem;
+}
+
+.black-owned__badge {
+	flex: 0 0 120px;
+	display: block;
+	transition: transform 0.4s ease-in;
+}
+
+/* Scoped through .article__section to outrank the legacy `.article__section img
+   { display: none }` rule, which hid the badge below 1150px. */
+.blog-post .article__section .black-owned__badge img {
+	display: block;
+	float: none;
+	margin: 0;
+	width: 120px;
+	height: auto;
+}
+
+.black-owned__badge:hover {
+	transform: translateY(-0.35rem);
+}
+
+.black-owned__listings p {
+	margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.black-owned__listings {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.black-owned__address {
+	font-style: normal;
+	font-weight: var(--font-medium);
+	color: var(--title-color);
+	margin-bottom: 1rem;
+}
+
+.black-owned__map {
+	margin-top: 1.5rem;
+	border-radius: 8px;
 }
 
 /*=============== BLOG POST TYPOGRAPHY (localized) ===============*/
@@ -2298,6 +2451,15 @@ img {
 	color: var(--white-color);
 }
 
+/* Caption links sit on the page background, not the navy table, so they need the page link color. */
+.article__table caption a {
+	color: var(--first-color);
+	text-decoration: underline;
+}
+.article__table caption a:hover {
+	color: var(--prussian-blue);
+}
+
 /*=============== TABLE: COMPARISON (metrics as rows, plans as columns) ===============*/
 /* Same orientation as the Services membership comparison table. The data
    columns are short numbers, so the table stays narrow enough to fit small
@@ -2330,6 +2492,68 @@ img {
 	.article__table--compare td {
 		padding: 0.55rem 0.35rem;
 		font-size: 0.75rem;
+	}
+}
+
+/*=============== TABLE: STACKED ON PHONES (opt-in modifier) ===============*/
+/* For comparison tables whose cells are sentences, not numbers. Below 640px
+   each row becomes a card: the row header is a bar, each cell shows its
+   column name (from data-label) above the text. The real <thead> stays in
+   the DOM for assistive tech but is visually hidden. */
+@media screen and (max-width: 640px) {
+	/* The <table> itself keeps display: table so the caption stays below it. */
+	.article__table--stack tbody,
+	.article__table--stack tr,
+	.article__table--stack th,
+	.article__table--stack td {
+		display: block;
+	}
+	.article__table--stack thead {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+	.article__table--stack tbody tr {
+		border-bottom: 1px solid hsla(0, 0%, 100%, 0.12);
+		padding-bottom: 0.5rem;
+	}
+	.article__table--stack tbody tr:last-child {
+		border-bottom: 0;
+	}
+	.article__table--stack tbody th {
+		background-color: hsla(0, 0%, 0%, 0.25);
+		color: var(--cornsilk);
+		font-family: var(--second-font);
+		font-size: 0.8rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding: 0.65rem 1rem;
+		border-bottom: 0;
+	}
+	.article__table--stack tbody td {
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		padding: 0.6rem 1rem 0.25rem;
+		border-bottom: 0;
+	}
+	.article__table--stack tbody td::before {
+		content: attr(data-label);
+		display: block;
+		font-family: var(--second-font);
+		font-weight: var(--font-bold);
+		font-size: 0.68rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--cornsilk);
+		opacity: 0.85;
+		margin-bottom: 0.15rem;
 	}
 }
 
@@ -3096,7 +3320,9 @@ ol li::before {
 	.blog__hero-6,
 	.blog__hero-7,
 	.blog__hero-8,
-	.blog__hero-9 {
+	.blog__hero-9,
+	.blog__hero-10,
+	.blog__hero-11 {
 		height: 500px;
 	}
 }
@@ -3143,6 +3369,12 @@ ol li::before {
 
 .chart-card__body {
 	padding: 1.25rem 1.75rem 1.5rem;
+}
+
+/* Prose inside a chart card (e.g. the At a Glance definition box) reads at article line-height. */
+.chart-card__body > p {
+	line-height: 1.7;
+	margin: 0;
 }
 
 .chart-card__footer {
