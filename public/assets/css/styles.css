@@ -2511,11 +2511,7 @@ img {
    column name (from data-label) above the text. The real <thead> stays in
    the DOM for assistive tech but is visually hidden. */
 @media screen and (max-width: 640px) {
-	/* The <table> itself keeps display: table so the caption stays below it.
-	   Drop the 480px floor so a stacked table never scrolls sideways on a phone. */
-	.article__table--stack {
-		min-width: 0;
-	}
+	/* The <table> itself keeps display: table so the caption stays below it. */
 	.article__table--stack tbody,
 	.article__table--stack tr,
 	.article__table--stack th,
