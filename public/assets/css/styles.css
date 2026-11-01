@@ -1446,6 +1446,16 @@ img {
 	object-position: 35% 30%;
 }
 
+/* Consistent-grooming post (November 2026). Same real-<img> hero pattern as .blog__hero-9. */
+.blog__hero-12 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-12 > img {
+	object-position: 50% 85%;
+}
+
 /* Client photo gallery: 2 up on phones, 3 up from 768px. Uniform 4:5 tiles. */
 /* Selectors repeat .article__section to outrank the article list rules (dash marker, li padding). */
 .blog-post .article__section .cut-gallery {
@@ -3322,7 +3332,8 @@ ol li::before {
 	.blog__hero-8,
 	.blog__hero-9,
 	.blog__hero-10,
-	.blog__hero-11 {
+	.blog__hero-11,
+	.blog__hero-12 {
 		height: 500px;
 	}
 }
@@ -3375,6 +3386,27 @@ ol li::before {
 .chart-card__body > p {
 	line-height: 1.7;
 	margin: 0;
+}
+
+/* Numbered steps inside a chart card (the consistent-grooming post's At a Glance box). */
+.chart-card__body > ol {
+	list-style: decimal;
+	margin: 0.75rem 0 0;
+	padding-left: 1.5rem;
+	line-height: 1.7;
+}
+
+.chart-card__body > ol li {
+	color: var(--text-color);
+}
+
+.chart-card__body > ol li + li {
+	margin-top: 0.4rem;
+}
+
+.chart-card__body > ol li::marker {
+	color: var(--first-color);
+	font-weight: var(--font-bold);
 }
 
 .chart-card__footer {

@@ -23,6 +23,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Book | `/book` | Booking landing page; also the site's canonical directions at `/book#getting-here` (parking, Metro, map) — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
 | Black-Owned Barbershop | `/black-barbershop-owings-mills` | Landing page for "Black-owned barbershop" searches in Owings Mills: client gallery, first-visit pricing, directions, FAQ, BuyBlack.org badge |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/consistent-grooming-routine` | Article: Why Consistent Grooming Is the Secret to Always Looking Sharp (November 5, 2026) |
 | Blog Post | `/blog/private-barber-suite-vs-barbershop` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026) |
 | Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: How Much Should a Haircut Cost? (September 5, 2026) |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
@@ -50,6 +51,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - The safe-space article (`/blog/private-barber-suite-vs-barbershop`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
+- The consistent-grooming article (`/blog/consistent-grooming-routine`) links out to seven sibling posts (fades, how-often, beard maintenance, membership, professional grooming, father-son, haircut cost) plus the about, services, and book pages, and receives inbound links from the how-often, membership, and professional-grooming posts
 - Black-owned barbershop landing page linked from every footer ("Black-Owned Barbershop" in the Company list, which replaced the old "Your Local Barber" link to `/#local`), the homepage Areas Served paragraph, the About bio, and contextual links across the site
 - Directions live in one place, the **Getting Here** section on `/book` (`id="getting-here"`). Everything else links to it: the footer address on every page, a one-line note under the homepage contact cards, the services location FAQ address, the Book page's Location card, the Black-owned page, and a line in the closing callout of every blog post. Update parking or Metro facts there and nowhere else.
 - Google Maps embed for business location
@@ -75,6 +77,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── consistent-grooming-routine.html
 │   ├── private-barber-suite-vs-barbershop.html
 │   ├── how-much-should-a-haircut-cost.html
 │   ├── low-fade-vs-mid-fade-vs-high-fade.html
@@ -120,7 +123,7 @@ Rules that follow from it:
 
 - **No "we" or "our" for the business.** "We" is fine when it means people in general ("the decisions we make") or barber and client together ("together, we'll find the style"), and when it is Clifton speaking for barbers as a group in his own essays ("that's not our role").
 - **Third-person pages don't narrate authorship.** Link to a blog post with what the reader gets ("read why, in his own words"), not "Clifton has written about...".
-- **His own words stay his.** Clifton's essays (September and October 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
+- **His own words stay his.** Clifton's essays (September, October, and November 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
 
 ## Local Development
 
@@ -139,6 +142,17 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### November article — Why Consistent Grooming Is the Secret to Always Looking Sharp (November 5, 2026)
+
+**New blog post — Why Consistent Grooming Is the Secret to Always Looking Sharp (`/blog/consistent-grooming-routine`).** Clifton's November essay for The Tonsorial Journal on building and keeping a practical grooming routine, deliberately not re-covering the membership and haircut-frequency topics of earlier posts. Published in his voice with his sentences unedited; his one-line paragraphs were grouped into normal paragraphs for the web, and the three "ask yourself" questions became a `<ul>` with each item verbatim. He supplied no deck, so the heading card carries the H1 alone. The headline is the H1 and the schema `headline` (61 characters); the title tag is "Grooming Routine for Men: Why Consistency Keeps You Sharp" (57), aimed at the **grooming routine for men / consistent grooming / how to look sharp** cluster in the meta description (152) and `keywords`. Ahrefs had no API units left when the post was built (same as October), so no volume data backs that choice; re-check when units reset. Byline date is November 5, matching the series' fifth-of-the-month cadence.
+
+- **Editor copy, visibly separate from his prose:** an "At a Glance" `.chart-card` after the back link that restates his six sections as four numbered steps (snippet target for "how to build a grooming routine"; a new `.chart-card__body > ol` rule styles the list, since the article list rules only reach inside `.article__section`), and a four-question FAQ (how to build a routine you can stick to, what to do between appointments, what to do if you miss an appointment, whether a membership is necessary) whose answers are drawn only from his text and mirrored word for word in the `FAQPage` JSON-LD.
+- **CTA:** Clifton's "Make Consistency Part of Your Routine" callout at the bottom, with "membership options at Al-Hakeem's Tonsorial" linked in the copy and the "Explore Membership Options" button going straight to `/services#memberships` (the site's membership section; the centered `.blog__callout` variant, as on the membership post). The standard directions line to `/book#getting-here` sits above the button.
+- **Cross-links on his existing words:** 30 years → about; "a close fade" → fades post; "planning your next visit before you leave the barber chair" → `/book`; "the general rhythm that works for you" → how-often post; "A professional haircut" → `/services`; "keeping a beard clean and conditioned" → beard post; "a membership may provide a useful structure" → membership post; "an interview" → professional-grooming post; "a family gathering" → father-son post; "A good haircut" → haircut-cost post. **Inbound:** the how-often post ("What you do between visits"), the membership post ("becomes a routine"), and the professional-grooming post ("maintain that standard daily") now link to it, with their `dateModified` bumped to 2026-11-05.
+- **Hero:** the previously unused `barber-clippers-tools` pair from the heroes library (real `<img>`, 2400×1260, `fetchpriority="high"`; the 1200×630 `-og.webp` is the social image) via a new `.blog__hero-12` rule, which is why the `styles.css` / `main.js` cache-bust string is now `?v=20261105` across all 20 HTML files. Swap the two files under the same names if Clifton sends a photo.
+- **Housekeeping:** added to the blog index grid (newest card), the `Blog` schema `blogPost` list, and `sitemap.xml` (every `lastmod` set to 2026-11-05, since the cache-bust touched every page). Tags: Grooming, Consistency.
+- **Validation:** `html-validate` clean on the new post, the blog index, and the three edited posts; W3C Nu checker (26.10.12) shows nothing beyond the known heading-less intro section note; every JSON-LD block parses and the visible FAQ matches its schema exactly; every internal link and fragment resolves; axe-core (WCAG 2.1 AA + best practices) 0 violations on the post at 1400px and 390px; no horizontal scroll at 390px.
 
 ### Fix: BuyBlack badge hidden on phones and tablets (October 11, 2026)
 
