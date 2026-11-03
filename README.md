@@ -23,6 +23,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Book | `/book` | Booking landing page; also the site's canonical directions at `/book#getting-here` (parking, Metro, map) — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
 | Black-Owned Barbershop | `/black-barbershop-owings-mills` | Landing page for "Black-owned barbershop" searches in Owings Mills: client gallery, first-visit pricing, directions, FAQ, BuyBlack.org badge |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/consistent-grooming-routine` | Article: Why Consistent Grooming Is the Secret to Always Looking Sharp (November 5, 2026) |
 | Blog Post | `/blog/private-barber-suite-vs-barbershop` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026) |
 | Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: How Much Should a Haircut Cost? (September 5, 2026) |
 | Blog Post | `/blog/low-fade-vs-mid-fade-vs-high-fade` | Article: Which Fade Is Right for You? Low Fade vs. Mid Fade vs. High Fade Explained (August 5, 2026) |
@@ -50,6 +51,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - The haircut-cost article (`/blog/how-much-should-a-haircut-cost`) links out to six sibling posts (fades, how-often, membership, professional grooming, master barber, modern barbershop) plus six per-service anchors on `/services`, and receives inbound links from the how-often, membership, and professional-grooming posts
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - The safe-space article (`/blog/private-barber-suite-vs-barbershop`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
+- The consistent-grooming article (`/blog/consistent-grooming-routine`) links out to seven sibling posts (fades, how-often, beard maintenance, membership, professional grooming, father-son, haircut cost) plus the about, services, and book pages, and receives inbound links from the how-often, membership, and professional-grooming posts
 - Black-owned barbershop landing page linked from every footer ("Black-Owned Barbershop" in the Company list, which replaced the old "Your Local Barber" link to `/#local`), the homepage Areas Served paragraph, the About bio, and contextual links across the site
 - Directions live in one place, the **Getting Here** section on `/book` (`id="getting-here"`). Everything else links to it: the footer address on every page, a one-line note under the homepage contact cards, the services location FAQ address, the Book page's Location card, the Black-owned page, and a line in the closing callout of every blog post. Update parking or Metro facts there and nowhere else.
 - Google Maps embed for business location
@@ -75,6 +77,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── consistent-grooming-routine.html
 │   ├── private-barber-suite-vs-barbershop.html
 │   ├── how-much-should-a-haircut-cost.html
 │   ├── low-fade-vs-mid-fade-vs-high-fade.html
@@ -120,7 +123,7 @@ Rules that follow from it:
 
 - **No "we" or "our" for the business.** "We" is fine when it means people in general ("the decisions we make") or barber and client together ("together, we'll find the style"), and when it is Clifton speaking for barbers as a group in his own essays ("that's not our role").
 - **Third-person pages don't narrate authorship.** Link to a blog post with what the reader gets ("read why, in his own words"), not "Clifton has written about...".
-- **His own words stay his.** Clifton's essays (September and October 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
+- **His own words stay his.** Clifton's essays (September, October, and November 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
 
 ## Local Development
 
@@ -139,6 +142,30 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### Membership update: Bronze, Silver, Gold (November 3, 2026)
+
+Content-only changes from Clifton's November 3 note; the membership section's design, table, and cards are untouched.
+
+- **`/services` comparison table** now has three rows: Signature Haircuts per month (2 / 3 / 4), Maintenance Lineup per month (1 / — / —), and Priority booking (all three). Removed rows: Lineup included, Beard service, 10% off grooming products, Reduced add-on pricing, Complimentary lineup between visits. **Bronze is $125/month** (was $110); Silver $165 and Gold $215 are unchanged.
+- **Terms paragraph** above the table now reads: Bronze, Silver, and Gold require a three-month minimum commitment and renew automatically each month; unused services do not roll over; memberships are non-transferable. Dropped: the six-month minimum, "fees are due the first week of each month", and "membership services are not backdated". The refund-policy FAQ (visible text and FAQPage schema, kept identical) now says memberships renew automatically each month and unused services do not roll over, instead of naming a billing date.
+- **Membership article** (`/blog/is-a-barbershop-membership-worth-it`): the savings table gains a Maintenance Lineups row, Bronze's à-la-carte cost is $145 (two $60 Signature Cuts plus the $25 Shape Up it includes) against $125, so Bronze saves $20/mo, $240/yr; Silver ($15/mo, $180/yr) and Gold ($25/mo, $300/yr) unchanged. The paragraph that listed beard shaping, beard detailing, a full lineup, and the 10% product discount is replaced by one naming priority booking and Bronze's lineup. "Six-month commitment" is now "three-month commitment". The $25 Shape Up figure is the site's price; Booksy shows $30 and that discrepancy is still open.
+- **Left as they were, pending Clifton:** the Youth, Family, and Father & Son plans (his note covered only the three levels), so whether the three-month minimum also applies to them is unconfirmed.
+- **Schema:** the `/services` OfferCatalog gains a "Membership & Grooming Plans" catalog with an `Offer` per plan (Bronze $125, Silver $165, Gold $215, Youth $160, Family $280, Father & Son $180), each with a monthly `UnitPriceSpecification` (`unitCode` MON) and a description that states the included services and the three-month terms. The two services FAQ question names now match the visible wording exactly, and on every page the FAQPage answer text now equals the visible answer word for word (ten pre-existing drifted answers across six posts were aligned; the services "Where is..." answer keeps its punctuated schema version because the visible one is split across line breaks). `dateModified` on the how-often, membership, and professional-grooming posts is 2026-11-03 (they had been set to a future date); the new post keeps its 2026-11-05 publish date.
+- **Sitemap:** every `lastmod` is 2026-11-03, since the cache-bust (`?v=20261103b`) touched every page.
+- **Phone layout:** below 640px the Bronze / Silver / Gold comparison table now fits the viewport instead of scrolling sideways: fixed layout, the existing 40% label column, tighter padding and type, and the wrapper's horizontal scroll turned off. Table width 342px at 390px and 312px at 360px, no page overflow. Desktop unchanged.
+- **Validation:** `html-validate` clean on the touched pages; every JSON-LD block on the site parses, every `@id` resolves, schema images exist, breadcrumbs end on the canonical; axe-core 0 violations on the membership section at 390px.
+
+### November article — Why Consistent Grooming Is the Secret to Always Looking Sharp (November 5, 2026)
+
+**New blog post — Why Consistent Grooming Is the Secret to Always Looking Sharp (`/blog/consistent-grooming-routine`).** Clifton's November essay for The Tonsorial Journal on building and keeping a practical grooming routine, deliberately not re-covering the membership and haircut-frequency topics of earlier posts. Published in his voice with his sentences unedited; his one-line paragraphs were grouped into normal paragraphs for the web, and the three "ask yourself" questions became a `<ul>` with each item verbatim. He supplied no deck, so the heading card carries the H1 alone. The headline is the H1 and the schema `headline` (61 characters); the title tag is "Grooming Routine for Men: Why Consistency Keeps You Sharp" (57), aimed at the **grooming routine for men / consistent grooming / how to look sharp** cluster in the meta description (152) and `keywords`. Ahrefs had no API units left when the post was built (same as October), so no volume data backs that choice; re-check when units reset. Byline date is November 5, matching the series' fifth-of-the-month cadence.
+
+- **Editor copy, visibly separate from his prose:** a "Quick answer" `.chart-card` after the back link, a bold one-sentence answer followed by the four numbered steps his sections build, with no narration about the author (snippet target for "how to build a grooming routine"; a new `.chart-card__body > ol` rule styles the list, since the article list rules only reach inside `.article__section`), and a four-question FAQ (how to build a routine you can stick to, what to do between appointments, what to do if you miss an appointment, whether a membership is necessary) whose answers are drawn only from his text and mirrored word for word in the `FAQPage` JSON-LD.
+- **CTA:** Clifton's "Make Consistency Part of Your Routine" callout at the bottom, with "membership options at Al-Hakeem's Tonsorial" linked in the copy and the "Explore Membership Options" button going straight to `/services#memberships` (the site's membership section; the centered `.blog__callout` variant, as on the membership post). The standard directions line to `/book#getting-here` sits above the button.
+- **Cross-links on his existing words:** 30 years → about; "a close fade" → fades post; "planning your next visit before you leave the barber chair" → `/book`; "the general rhythm that works for you" → how-often post; "A professional haircut" → `/services`; "keeping a beard clean and conditioned" → beard post; "a membership may provide a useful structure" → membership post; "an interview" → professional-grooming post; "a family gathering" → father-son post; "A good haircut" → haircut-cost post. **Inbound:** the how-often post ("What you do between visits"), the membership post ("becomes a routine"), and the professional-grooming post ("maintain that standard daily") now link to it, with their `dateModified` bumped to 2026-11-05.
+- **Hero:** the previously unused `barber-clippers-tools` pair from the heroes library (real `<img>`, 2400×1260, `fetchpriority="high"`; the 1200×630 `-og.webp` is the social image) via a new `.blog__hero-12` rule, which is why the `styles.css` / `main.js` cache-bust string is now `?v=20261105` across all 20 HTML files. Swap the two files under the same names if Clifton sends a photo.
+- **Housekeeping:** added to the blog index grid (newest card), the `Blog` schema `blogPost` list, and `sitemap.xml` (every `lastmod` set to 2026-11-05, since the cache-bust touched every page). Tags: Grooming, Consistency.
+- **Validation:** `html-validate` clean on the new post, the blog index, and the three edited posts; W3C Nu checker (26.10.12) shows nothing beyond the known heading-less intro section note; every JSON-LD block parses and the visible FAQ matches its schema exactly; every internal link and fragment resolves; axe-core (WCAG 2.1 AA + best practices) 0 violations on the post at 1400px and 390px; no horizontal scroll at 390px.
 
 ### Fix: BuyBlack badge hidden on phones and tablets (October 11, 2026)
 
