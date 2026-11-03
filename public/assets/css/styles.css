@@ -2159,6 +2159,39 @@ img {
 	color: var(--cornsilk);
 }
 
+/* Phones: the Bronze / Silver / Gold table fits the viewport instead of scrolling sideways.
+   Fixed layout, 40% label column, tighter padding and type. Design otherwise unchanged. */
+@media screen and (max-width: 640px) {
+	.services-page__comparison-wrapper {
+		overflow-x: visible;
+	}
+	.services-page__comparison-table {
+		min-width: 0;
+		table-layout: fixed;
+	}
+	.services-page__comparison-table th,
+	.services-page__comparison-table td {
+		padding: 0.6rem 0.4rem;
+		font-size: 0.8rem;
+		overflow-wrap: anywhere;
+	}
+	.services-page__comparison-table thead th {
+		font-size: 0.95rem;
+		padding: 0.75rem 0.4rem;
+	}
+	.services-page__comparison-table tbody td:first-child,
+	.services-page__comparison-table tfoot td:first-child {
+		padding-left: 0.75rem;
+	}
+	.services-page__comparison-table tbody td i {
+		font-size: 1rem;
+	}
+	.services-page__comparison-table tfoot td {
+		padding: 0.75rem 0.4rem;
+		font-size: 0.9rem;
+	}
+}
+
 .services-page__comparison-note {
 	font-size: var(--small-font-size);
 	color: var(--text-color);
