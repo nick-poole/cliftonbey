@@ -143,6 +143,16 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 
 ## Recent Updates
 
+### Membership update: Bronze, Silver, Gold (November 3, 2026)
+
+Content-only changes from Clifton's November 3 note; the membership section's design, table, and cards are untouched.
+
+- **`/services` comparison table** now has three rows: Signature Haircuts per month (2 / 3 / 4), Maintenance Lineup per month (1 / — / —), and Priority booking (all three). Removed rows: Lineup included, Beard service, 10% off grooming products, Reduced add-on pricing, Complimentary lineup between visits. **Bronze is $125/month** (was $110); Silver $165 and Gold $215 are unchanged.
+- **Terms paragraph** above the table now reads: Bronze, Silver, and Gold require a three-month minimum commitment and renew automatically each month; unused services do not roll over; memberships are non-transferable. Dropped: the six-month minimum, "fees are due the first week of each month", and "membership services are not backdated". The refund-policy FAQ (visible text and FAQPage schema, kept identical) now says memberships renew automatically each month and unused services do not roll over, instead of naming a billing date.
+- **Membership article** (`/blog/is-a-barbershop-membership-worth-it`): the savings table gains a Maintenance Lineups row, Bronze's à-la-carte cost is $145 (two $60 Signature Cuts plus the $25 Shape Up it includes) against $125, so Bronze saves $20/mo, $240/yr; Silver ($15/mo, $180/yr) and Gold ($25/mo, $300/yr) unchanged. The paragraph that listed beard shaping, beard detailing, a full lineup, and the 10% product discount is replaced by one naming priority booking and Bronze's lineup. "Six-month commitment" is now "three-month commitment". The $25 Shape Up figure is the site's price; Booksy shows $30 and that discrepancy is still open.
+- **Left as they were, pending Clifton:** the Youth, Family, and Father & Son plans (his note covered only the three levels), so whether the three-month minimum also applies to them is unconfirmed.
+- **Validation:** `html-validate` clean on both pages; services FAQ schema matches the visible answer; JSON-LD parses.
+
 ### November article — Why Consistent Grooming Is the Secret to Always Looking Sharp (November 5, 2026)
 
 **New blog post — Why Consistent Grooming Is the Secret to Always Looking Sharp (`/blog/consistent-grooming-routine`).** Clifton's November essay for The Tonsorial Journal on building and keeping a practical grooming routine, deliberately not re-covering the membership and haircut-frequency topics of earlier posts. Published in his voice with his sentences unedited; his one-line paragraphs were grouped into normal paragraphs for the web, and the three "ask yourself" questions became a `<ul>` with each item verbatim. He supplied no deck, so the heading card carries the H1 alone. The headline is the H1 and the schema `headline` (61 characters); the title tag is "Grooming Routine for Men: Why Consistency Keeps You Sharp" (57), aimed at the **grooming routine for men / consistent grooming / how to look sharp** cluster in the meta description (152) and `keywords`. Ahrefs had no API units left when the post was built (same as October), so no volume data backs that choice; re-check when units reset. Byline date is November 5, matching the series' fifth-of-the-month cadence.
