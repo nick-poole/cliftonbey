@@ -1456,6 +1456,16 @@ img {
 	object-position: 50% 85%;
 }
 
+/* Mobile-service / year-end post (December 2026). Same real-<img> hero pattern as .blog__hero-9. */
+.blog__hero-13 {
+	height: 500px;
+	background-color: var(--prussian-blue);
+}
+
+.blog__hero-13 > img {
+	object-position: 60% 50%;
+}
+
 /* Client photo gallery: 2 up on phones, 3 up from 768px. Uniform 4:5 tiles. */
 /* Selectors repeat .article__section to outrank the article list rules (dash marker, li padding). */
 .blog-post .article__section .cut-gallery {
@@ -3366,7 +3376,8 @@ ol li::before {
 	.blog__hero-9,
 	.blog__hero-10,
 	.blog__hero-11,
-	.blog__hero-12 {
+	.blog__hero-12,
+	.blog__hero-13 {
 		height: 500px;
 	}
 }

@@ -23,6 +23,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 | Book | `/book` | Booking landing page; also the site's canonical directions at `/book#getting-here` (parking, Metro, map) — every Book CTA links straight to the hosted Booksy page (`https://alhakeemstonsorial.booksy.com`, new tab) |
 | Black-Owned Barbershop | `/black-barbershop-owings-mills` | Landing page for "Black-owned barbershop" searches in Owings Mills: client gallery, first-visit pricing, directions, FAQ, BuyBlack.org badge |
 | Blog | `/blog` | Blog landing page |
+| Blog Post | `/blog/private-mobile-barber-service` | Article: Professional Barbering Beyond the Shop: A Year of Purpose, Progress, and Service (December 5, 2026) |
 | Blog Post | `/blog/consistent-grooming-routine` | Article: Why Consistent Grooming Is the Secret to Always Looking Sharp (November 5, 2026) |
 | Blog Post | `/blog/private-barber-suite-vs-barbershop` | Article: The Barbershop as a Safe Space: Why It Still Matters (October 5, 2026) |
 | Blog Post | `/blog/how-much-should-a-haircut-cost` | Article: How Much Should a Haircut Cost? (September 5, 2026) |
@@ -52,6 +53,7 @@ Personal barbershop website for Clifton "Al-Hakeem" Bey — Master Barber in Owi
 - The fade-styles article (`/blog/low-fade-vs-mid-fade-vs-high-fade`) cross-links to all seven sibling blog posts plus the about and services pages, and reuses real client fade photos from the portfolio for its Low Fade, Mid Fade, and Temple Taper figures
 - The safe-space article (`/blog/private-barber-suite-vs-barbershop`) links out to six sibling posts (haircut cost, membership, father-son, modern barbershop, professional grooming) plus the about, services, cranial-prosthesis, and book pages, and receives inbound links from the haircut-cost and modern-barbershop posts
 - The consistent-grooming article (`/blog/consistent-grooming-routine`) links out to seven sibling posts (fades, how-often, beard maintenance, membership, professional grooming, father-son, haircut cost) plus the about, services, and book pages, and receives inbound links from the how-often, membership, and professional-grooming posts
+- The year-end / mobile-service article (`/blog/private-mobile-barber-service`) links out to all eleven earlier 2026 posts through its year index, plus the about, services, and book pages; its CTA button goes to the Booksy page in a new tab
 - Black-owned barbershop landing page linked from every footer ("Black-Owned Barbershop" in the Company list, which replaced the old "Your Local Barber" link to `/#local`), the homepage Areas Served paragraph, the About bio, and contextual links across the site
 - Directions live in one place, the **Getting Here** section on `/book` (`id="getting-here"`). Everything else links to it: the footer address on every page, a one-line note under the homepage contact cards, the services location FAQ address, the Book page's Location card, the Black-owned page, and a line in the closing callout of every blog post. Update parking or Metro facts there and nowhere else.
 - Google Maps embed for business location
@@ -77,6 +79,7 @@ public/
 │       ├── main.js
 │       └── swiper-bundle.min.js
 ├── blog/
+│   ├── private-mobile-barber-service.html
 │   ├── consistent-grooming-routine.html
 │   ├── private-barber-suite-vs-barbershop.html
 │   ├── how-much-should-a-haircut-cost.html
@@ -123,7 +126,7 @@ Rules that follow from it:
 
 - **No "we" or "our" for the business.** "We" is fine when it means people in general ("the decisions we make") or barber and client together ("together, we'll find the style"), and when it is Clifton speaking for barbers as a group in his own essays ("that's not our role").
 - **Third-person pages don't narrate authorship.** Link to a blog post with what the reader gets ("read why, in his own words"), not "Clifton has written about...".
-- **His own words stay his.** Clifton's essays (September, October, and November 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
+- **His own words stay his.** Clifton's essays (September, October, November, and December 2026) are published with his sentences unedited; quotes of them elsewhere are verbatim.
 
 ## Local Development
 
@@ -142,6 +145,18 @@ Pushes to the main branch auto-deploy via Netlify. The `netlify.toml` config han
 - Redirects
 
 ## Recent Updates
+
+### December article — Professional Barbering Beyond the Shop (December 5, 2026)
+
+**New blog post — Professional Barbering Beyond the Shop: A Year of Purpose, Progress, and Service (`/blog/private-mobile-barber-service`).** Clifton's year-end essay for The Tonsorial Journal: a look back at the 2026 "Foundation of Grooming" series and the introduction of the Private Mobile Service (individual, family, wedding, and private group grooming at a client's home or another approved indoor location). Published in his voice with his sentences unedited; some of his one-line paragraphs were grouped for the web. The journal masthead lines ("The Tonsorial Journal | December 2026", "2026 Editorial Theme") are not printed, as in earlier months. The headline is the H1 and schema `headline`; the title tag is "Mobile Barber in Owings Mills: Barbering Beyond the Shop" (56), aimed at the **mobile barber Owings Mills / in-home haircut / wedding barber for groomsmen** cluster in the meta description (158) and `keywords`. No keyword-volume data backs that choice. Byline date is December 5, the series' fifth-of-the-month cadence.
+
+- **Bold emphasis is a best guess.** Clifton's email asked for bold "as indicated", but the formatting did not survive into the text the post was built from. Three stand-alone lines are bold: "Grooming is not simply something we do for an occasion. It is an ongoing commitment to caring for ourselves.", "The location may change, but the professional standard should not.", and "Respect the craft. Value the relationship. Maintain the standard." Check against his original document.
+- **Editor copy, visibly separate from his prose:** a "What is the Private Mobile Service?" `.chart-card` after the back link; a "The Tonsorial Journal in 2026: Every Article" list under his recap section linking the eleven earlier posts by month with their published headlines; a "Private Mobile Service at a Glance" table (appointment type, who it serves, how it's arranged); and a six-question FAQ mirrored word for word in the `FAQPage` JSON-LD. All of it restates his text only: October 2026 launch, approved indoor locations, lighting / electricity / seating, the five-mile local travel radius with a possible travel fee beyond it, and custom quotes for wedding and private group grooming. No prices appear because he gave none.
+- **CTA:** his "Experience Professional Barbering Beyond the Shop" callout with the "Explore Private Mobile Services" button. It links to `https://alhakeemstonsorial.booksy.com` in a new tab, the same URL as every other Book CTA, because Booksy exposes no deep link to a service category. If Clifton has a direct link to the mobile-service listings, swap it in. The standard directions line to `/book#getting-here` sits above the button, introduced with "Prefer the private suite?".
+- **Cross-links on his words:** three decades → about; "my private suite" → `/book#getting-here`; "the private-suite experience I've established" → `/services`. No inbound links were added to older posts; the blog index is the only inbound link so far. `/services` and `/book` do not mention the mobile service yet.
+- **Hero:** the previously unused `barber-pole-shaving-brush` pair from the heroes library via a new `.blog__hero-13` rule, so the `styles.css` / `main.js` cache-bust string is now `?v=20261205` across all HTML files.
+- **Housekeeping:** added to the blog index grid (newest card), the `Blog` schema `blogPost` list, and `sitemap.xml` (every `lastmod` set to 2026-12-05, since the cache-bust touched every page). Tags: Mobile Barbering, Year in Review.
+- **Validation:** `html-validate` clean on the new post and the blog index; every JSON-LD block parses and the visible FAQ matches its schema exactly; every internal link and fragment resolves; no horizontal scroll at 1400px or 390px.
 
 ### Membership update: Bronze, Silver, Gold (November 3, 2026)
 
